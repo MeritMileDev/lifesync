@@ -10,8 +10,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Temp test comment */
-
 @layer base {
   @font-face {
     font-family: 'Raleway';
