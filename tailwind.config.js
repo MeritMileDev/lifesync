@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,vue,svelte}', './**/*.{liquid,json}'],
   theme: {
     fontFamily: {
-      sans: ['"Proxima Nova"', 'sans-serif'],
+      sans: ['"Raleway"', 'sans-serif'],
     },
     extend: {
       container: {
@@ -20,7 +20,7 @@ module.exports = {
         '3xl': '1808px',
       },
       fontFamily: {
-        body: 'Proxima Nova',
+        body: 'Raleway',
       },
 
       fontSize: {

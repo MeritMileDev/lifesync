@@ -12,12 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "yotpo_product_reviews_ugc_reviews_DDKWjK": {
-          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "product_slider_VRp7db": {
           "type": "product_slider",
           "settings": {
@@ -56,7 +50,6 @@
         }
       },
       "block_order": [
-        "yotpo_product_reviews_ugc_reviews_DDKWjK",
         "product_slider_VRp7db",
         "product_slider_MwyddU",
         "product_slider_hapXji"

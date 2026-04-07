@@ -1,0 +1,1 @@
+const r=e=>{e.data("counter",()=>({isActivated:!1,init(){const t=this.$el;new IntersectionObserver(([s])=>{s.isIntersecting?this.isActivated=!0:this.isActivated&&(this.isActivated=!1)}).observe(t)}}))};export{r as default};

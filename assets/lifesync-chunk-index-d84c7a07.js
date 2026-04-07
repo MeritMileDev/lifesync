@@ -1,0 +1,1 @@
+const i=s=>{s.data("Difference",a=>({state:"",stateMobile:a||"before",setState(t){const e=t.target.getBoundingClientRect(),n=t.clientX-e.left;this.state=n<e.width/2?"before":"after"},resetState(){this.state=""}}))};export{i as default};
