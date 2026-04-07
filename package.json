@@ -25,7 +25,6 @@
     "@typescript-eslint/parser": "latest",
     "adastra-cli": "latest",
     "adastra-plugin": "latest",
-    "adastra-prettier-config": "latest",
     "autoprefixer": "^10.4.20",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
