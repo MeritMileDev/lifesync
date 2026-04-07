@@ -3,7 +3,7 @@ name: Build and push to development-build subtree
 on:
   push:
     branches:
-      - master
+      - main
       - build/**
     paths-ignore:
       - README.md

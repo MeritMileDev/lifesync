@@ -15,7 +15,7 @@
       "type": "top-header",
       "settings": {
         "message": "Manufacturer Direct Medical Supplies • Order by 2PM for Same-Day Shipping • Transparent Pricing",
-        "bg-color": "#3c4c5f",
+        "bg-color": "#0d0d63",
         "text-color": "#f4f9fc"
       }
     },
@@ -37,15 +37,13 @@
         "submenu_image_LfQMDP": {
           "type": "submenu_image",
           "settings": {
-            "link_text": "Radiolucent ECG leads",
-            "image": "shopify://shop_images/menu-radiolucent-ecg-leads-_2x_bcfcaa85-5d61-4d12-bab0-a3bc13d8d892.png"
+            "link_text": "Radiolucent ECG leads"
           }
         },
         "submenu_image_Azq3h8": {
           "type": "submenu_image",
           "settings": {
-            "link_text": "Standardization",
-            "image": "shopify://shop_images/menu-standardization-_2x_ef8ea56e-8738-44a5-8c4f-4d70aa5dacf8.png"
+            "link_text": "Standardization"
           }
         }
       },

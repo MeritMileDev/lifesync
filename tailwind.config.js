@@ -155,9 +155,9 @@ module.exports = {
       },
       colors: {
         yellow: '#FFD100',
-        'police-blue': '#3C4C5F',
-        'police-blue-20': 'rgba(60, 76, 95, 0.2)',
-        'police-blue-70': '#3C4C5FB2',
+        'police-blue': '#0D0D63',
+        'police-blue-20': 'rgba(13, 13, 99, 0.2)',
+        'police-blue-70': '#0d0d63b3',
         'bright-gray': 'rgba(244, 249, 252, 1)',
         'bright-gray-50': 'rgba(244, 249, 252, 0.5)',
         'bright-gray-20': 'rgba(244, 249, 252, 0.2)',
