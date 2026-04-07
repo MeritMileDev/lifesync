@@ -1,0 +1,202 @@
+{% liquid
+  assign collection_banner_mobile = collection.metafields.custom.collection_page_banner_mobile
+  assign collection_banner_desktop = collection.metafields.custom.collection_page_banner_desktop
+  assign collection_banner_text = collection.metafields.custom.collection_banner_text | metafield_tag
+  assign collection_links = section.settings.collection_links
+
+  assign collection_grid_banner_mobile = section.settings.collection_grid_banner_mobile
+  assign collection_grid_banner_desktop = section.settings.collection_grid_banner_desktop
+  assign collection_grid_banner_title = section.settings.collection_grid_banner_title
+  assign collection_grid_banner_subtitle = section.settings.collection_grid_banner_subtitle
+  assign collection_grid_banner_button_text = section.settings.collection_grid_banner_button_text
+  assign collection_grid_banner_button_link = section.settings.collection_grid_banner_button_link
+%}
+
+<div x-data="facets">
+  <div class="container">
+    <div
+      id="ProductGridContainer"
+      x-ref="productGridContainer"
+      x-data="{isProductFilterVisible: false}"
+      class="{% unless collection.products.size == 0 %}lg:grid-cols-[293px_1fr] lg:grid lg:items-start lg:gap-15 lg:gap-x-6 xl:gap-20 2xl:gap-20{% endunless  %} lg:relative lg:mt-11"
+    >
+      {% unless collection.products.size == 0 %}
+        <aside class="relative overflow-auto lg:sticky lg:top-25 lg:max-h-full">
+          <div x-cloak x-show="loading" class="absolute inset-0 z-20 flex items-center justify-center bg-black/10">
+            {% render 'icon', icon: 'loader' %}
+          </div>
+          <div class="lg:max-h-[calc(100vh_-_180px)] lg:overflow-auto lg:border-b-8 lg:border-white lg:pr-5">
+            {% render 'facets', collection_links: collection_links, results: collection %}
+          </div>
+        </aside>
+      {% endunless %}
+
+      {%- paginate collection.products by section.settings.products_per_page -%}
+        {%- if collection.products.size == 0 -%}
+          <h2 class="my-4 text-center">
+            {{ 'sections.collection_template.empty' | t -}}
+            <br>
+          </h2>
+          <div class="flex justify-center my-8">
+            <a
+              class="inline-flex items-center justify-center border border-police-blue px-4 py-1 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-30"
+              href="javascript:history.back()"
+              title="Back"
+            >
+              <span class="flex">{% render 'icon', icon: 'chevron-left', class: 'size-4' %}</span>
+              <span>Back</span>
+            </a>
+          </div>
+
+        {%- else -%}
+          <div id="product-grid" x-ref="productGrid" data-id="{{ section.id }}" class="lg:pb-20">
+            <div class="lg:flex lg:items-center lg:justify-between">
+              <div class="py-4 text-center lg:py-0">
+                {% if collection.products_count > 1 %}
+                  {{ 'products.product.product_count.other' | t: count: collection.products_count }}
+                {% else %}
+                  {{ 'products.product.product_count.one' | t }}
+                {% endif %}
+              </div>
+              <div class="hidden lg:block">
+                {% render 'collection-sorter', results: collection %}
+              </div>
+            </div>
+
+            <ul class="grid grid-cols-2 gap-x-4 border-t border-police-blue-20 pt-4 lg:border-none lg:pt-12 xl:grid-cols-4 xl:gap-x-6">
+              {%- for product in collection.products -%}
+                {% assign lazy_load = false %}
+                {%- if forloop.index > 2 -%}
+                  {%- assign lazy_load = true -%}
+                {%- endif -%}
+                <li class="mb-16 xl:mb-20">
+                  {% render 'card-product', card_product: product, lazy_load: lazy_load %}
+                </li>
+              {%- endfor -%}
+              {% if paginate.current_page == 1 %}
+                <div class="relative col-span-2 row-start-4 mb-16 xl:col-span-4 xl:row-start-3 xl:mb-20">
+                  <div class="md:absolute md:inset-0">
+                    {% render 'picture',
+                      image_mobile: collection_grid_banner_mobile,
+                      image_desktop: collection_grid_banner_desktop,
+                      is_full_size: true,
+                      class: 'w-full h-full object-cover'
+                    %}
+                  </div>
+                  <div class="absolute bottom-0 left-0 w-full p-6 md:relative 3xl:p-16 3xl:pt-13">
+                    <div
+                      class="mb-2 text-center text-40 font-medium md:text-left md:text-xl xl:text-32 3xl:mb-1 3xl:text-5xl"
+                    >
+                      {{- collection_grid_banner_title -}}
+                    </div>
+                    <div class="mb-5 text-center md:max-w-69 md:text-left">{{ collection_grid_banner_subtitle }}</div>
+                    <a
+                      href="{{- collection_grid_banner_button_link -}}"
+                      class="
+                        inline-flex w-full items-center justify-center gap-2 border border-police-blue bg-white px-10 py-4 text-center text-sm uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-30
+                        md:w-auto
+                      "
+                      title="{{- collection_grid_banner_button_text -}}"
+                    >
+                      {{- collection_grid_banner_button_text -}}
+                    </a>
+                  </div>
+                </div>
+              {% endif %}
+            </ul>
+            {%- if paginate.pages > 1 -%}
+              {% render 'pagination', paginate: paginate %}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
+  </div>
+</div>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": {{ collection.title | json }},
+    "description": {{ collection.description | strip_html | json }},
+    "url": {{ request.origin | append: collection.url | json }},
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": {{ collection.title | json }},
+      "itemListElement": [
+        {%- for product in collection.products -%}
+          {
+            "@type": "Offer",
+            "name": {{ product.title | json }},
+            "description": {{ product.description | strip_html | json }},
+            "url": {{ request.origin | append: product.url | json }},
+            "image": {% if product.images.first %}{{ product.images.first | image_url: width: 1920 | prepend: "https:" | json }}{% else %}""{% endif %},
+            {% if product.selected_or_first_available_variant.sku != blank -%}
+              "sku": {{ product.selected_or_first_available_variant.sku | json }},
+            {%- endif %}
+            "price": {{ product.selected_or_first_available_variant.price | divided_by: 100.00 | json }},
+            "priceCurrency": {{ cart.currency.iso_code | json }},
+            "availability": "http://schema.org/{% if product.selected_or_first_available_variant.available %}InStock{% else %}OutOfStock{% endif %}"
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ]
+    }
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "Collection Grid",
+    "class": "section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 8,
+        "max": 24,
+        "step": 2,
+        "default": 18,
+        "label": "sections.main-collection-product-grid.settings.products_per_page.label"
+      },
+      {
+        "type": "link_list",
+        "id": "collection_links",
+        "label": "sections.main-collection-product-grid.settings.collection_links.label"
+      },
+      {
+        "type": "header",
+        "content": "Collection Grid Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_grid_banner_mobile",
+        "label": "Collection Grid Banner Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_grid_banner_desktop",
+        "label": "Collection Grid Banner Desktop"
+      },
+      {
+        "type": "text",
+        "id": "collection_grid_banner_title",
+        "label": "Collection Grid Banner Title"
+      },
+      {
+        "type": "text",
+        "id": "collection_grid_banner_subtitle",
+        "label": "Collection Grid Banner Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "collection_grid_banner_button_text",
+        "label": "Collection Grid Banner Button Text"
+      },
+      {
+        "type": "url",
+        "id": "collection_grid_banner_button_link",
+        "label": "Collection Grid Banner Button Link"
+      }
+    ]
+  }
+{% endschema %}

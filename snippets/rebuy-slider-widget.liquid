@@ -1,0 +1,273 @@
+{% comment %}
+  Renders a Rebuy slider block
+
+  Accepts:
+  - settings: {object} Section settings or block settings
+  - id: {number} Unique section or block ID
+
+  Usage:
+    {% render 'rebuy-slider-widget', slides_qty_for_desktop: 5, settings: block.settings, id: block.id, is_search_page: true %}
+{% endcomment %}
+
+{% liquid
+  assign section_id = id
+
+  assign is_search_page = is_search_page | default: false
+
+  assign lazy_images = settings.lazy_images
+  assign padding_top_mobile = settings.padding_top_mobile
+  assign padding_bottom_mobile = settings.padding_bottom_mobile
+  assign padding_top_desktop = settings.padding_top_desktop
+  assign padding_bottom_desktop = settings.padding_bottom_desktop
+  assign slides_qty_for_desktop = slides_qty_for_desktop | default: 4
+
+%}
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+{% liquid
+  assign lables = '' | split: ','
+  for metaobject in shop.metaobjects.product_label.values
+    assign lables = lables | append: metaobject.system.id
+  endfor
+%}
+<section id="section-{{ section_id }}">
+  {% if settings.id != blank %}
+    <div
+      class="hidden"
+      data-rebuy-id="{{ settings.id }}"
+      data-rebuy-shopify-product-ids="{{ product.id }}"
+    >
+    </div>
+    <div
+      x-data="
+        rebuyWidget({
+           widgetId: '{{ settings.id }}',
+           isSearchPage: {{ is_search_page }},
+           slidesQtyForDesktop: {{ slides_qty_for_desktop }},
+           labels: {
+           {%- for metaobject in shop.metaobjects['product_label'].values -%}
+              {{ metaobject.system.id }}: {
+                text: '{{ metaobject.text }}',
+                text_color: '{{ metaobject.text_color }}',
+                background_color: '{{ metaobject.background_color }}'}{%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+           }
+        })
+      "
+      id="rebuy-widget-{{ settings.id }}"
+    >
+      <div x-show="!initialized">
+        <div class="mb-5 h-6 w-40 bg-gray-50 {%- if is_search_page %} lg:h-14 lg:mx-auto lg:w-80{%else %} lg:h-8 lg:mb-6 {% endif %}"></div>
+        <div class="flex gap-4">
+          <div class="flex-[46%_1_1] md:flex-1">
+            <div class="mb-4.5 aspect-square w-full bg-gray-50"></div>
+            <div class="mb-1.5 h-3.25 bg-gray-50"></div>
+            <div class="mb-1.5 h-6 bg-gray-50"></div>
+            <div class="mb-3 h-7 bg-gray-50"></div>
+            <div class="h-14 bg-gray-50"></div>
+          </div>
+          <div class="flex-1">
+            <div class="mb-4.5 aspect-[0.35] w-full bg-gray-50 md:aspect-square"></div>
+            <div class="mb-1.5 h-3.25 bg-gray-50"></div>
+            <div class="mb-1.5 h-6 bg-gray-50"></div>
+            <div class="mb-3 h-7 bg-gray-50"></div>
+            <div class="h-14 bg-gray-50"></div>
+          </div>
+          <div class="hidden flex-1 md:block">
+            <div class="mb-4.5 aspect-square w-full bg-gray-50"></div>
+            <div class="mb-1.5 h-3.25 bg-gray-50"></div>
+            <div class="mb-1.5 h-6 bg-gray-50"></div>
+            <div class="mb-3 h-7 bg-gray-50"></div>
+            <div class="h-14 bg-gray-50"></div>
+          </div>
+          <div class="hidden flex-1 lg:block">
+            <div class="mb-4.5 aspect-square w-full bg-gray-50"></div>
+            <div class="mb-1.5 h-3.25 bg-gray-50"></div>
+            <div class="mb-1.5 h-6 bg-gray-50"></div>
+            <div class="mb-3 h-7 bg-gray-50"></div>
+            <div class="h-14 bg-gray-50"></div>
+          </div>
+          {%- if is_search_page -%}
+            <div class="hidden flex-1 lg:block">
+              <div class="mb-4.5 aspect-square w-full bg-gray-50"></div>
+              <div class="mb-1.5 h-3.25 bg-gray-50"></div>
+              <div class="mb-1.5 h-6 bg-gray-50"></div>
+              <div class="mb-3 h-7 bg-gray-50"></div>
+              <div class="h-14 bg-gray-50"></div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      <div
+        x-cloak
+        x-show="initialized && products.length > 0"
+      >
+        <div class="products-slider__grid relative">
+          <div class="products-slider__column mb-5 flex justify-between {% if is_search_page %}lg:mb-10 xl:mb-10{% else %} xl:mb-6 {% endif %}">
+            <h2
+              class="products-slider__heading text-2xl font-medium leading-none xl:text-32 xl:leading-none {% if is_search_page %} lg:text-center lg:flex-1 lg:text-5xl xl:text-5xl {% endif %}"
+              x-text="title"
+            ></h2>
+            <div
+              class="product-slider-nav hidden items-center justify-center space-x-2"
+              :class="{'!flex': products.length > 1, 'md:!hidden': products.length <= 3, 'lg:!hidden': products.length <= {% if is_search_page %} 5 {% else %} 4 {% endif %}}"
+            >
+              <button
+                class="swiper-button-nav swiper-button-prev products-slider-prev flex items-center justify-center"
+              >
+                {% render 'icon', icon: 'chevron-left', class: 'size-6' %}
+              </button>
+              <button
+                class="swiper-button-nav swiper-button-next products-slider-next flex items-center justify-center"
+              >
+                {% render 'icon', icon: 'chevron-right', class: 'size-6' %}
+              </button>
+            </div>
+          </div>
+          <div class="products-slider__column relative col-span-4 md:col-span-12">
+            <div x-ref="carousel" class="swiper products-swiper products-swiper-widget">
+              <div class="swiper-wrapper">
+                <template
+                  x-for="product in products"
+                >
+                  <div class="swiper-slide slide">
+                    <div class="product-card w-full">
+                      <a
+                        x-bind:href="product.link"
+                        x-bind:title="product.title"
+                        class="group relative mb-4.5 flex aspect-square w-full overflow-hidden bg-gray-100 xl:mb-4"
+                      >
+                        <template x-if="product.label">
+                          <div
+                            class="absolute left-0 top-0 z-10 px-3 py-2 leading-none"
+                            :style="{color: product.label.text_color, backgroundColor: product.label.background_color}"
+                            x-text="product.label.text"
+                          >
+                          </div>
+                        </template>
+                        <template x-if="!product.image">
+                          <img
+                            class="h-full w-full object-cover"
+                            src="{{ 'placeholder.jpeg' | asset_url }}"
+                            :alt="product.title"
+                          >
+                        </template>
+                        <template x-if="product.image">
+                          <img
+                            :src="product.image.src"
+                            :alt="product.image.alt"
+                            class="h-full w-full object-contain mix-blend-darken transition duration-300 group-hover:scale-110"
+                            {% if lazy_images == true %}
+                              loading="lazy"
+                            {% endif %}
+                          >
+                        </template>
+                      </a>
+                      <div class="product-card__details flex flex-col">
+                        <a
+                          x-bind:href="product.link"
+                          class="yotpo-link"
+                          x-bind:title="product.title"
+                        >
+                          <div class="mb-1.5 flex items-center gap-1">
+                            <div class="flex gap-px pb-0.5">
+                              <template x-for="star in 5" :key="star">
+                                <div>
+                                  <div
+                                    x-show="product?.ratings?.yotpo_average_star_rating && Number(product?.ratings?.yotpo_average_star_rating) >= star"
+                                  >
+                                    {% render 'icon', icon: 'star-filled' %}
+                                  </div>
+
+                                  <div
+                                    x-show="product?.ratings?.yotpo_average_star_rating && Number(product?.ratings?.yotpo_average_star_rating) >= (star - 0.5) && Number(product?.ratings?.yotpo_average_star_rating) < star"
+                                  >
+                                    {% render 'icon', icon: 'star-half-filled' %}
+                                  </div>
+
+                                  <div
+                                    x-show="!product?.ratings?.yotpo_average_star_rating || Number(product?.ratings?.yotpo_average_star_rating) < (star - 0.5)"
+                                  >
+                                    {% render 'icon', icon: 'star-empty' %}
+                                  </div>
+                                </div>
+                              </template>
+                            </div>
+                            <span
+                              class="text-sm leading-3 text-police-blue-70"
+                              x-text="product.ratings?.yotpo_total_reviews ?? 0"
+                              >0</span
+                            >
+                          </div>
+                        </a>
+                        <a
+                          x-bind:href="product.link"
+                          x-bind:title="product.title"
+                          x-text="product.title"
+                          class="mb-1.5 line-clamp-1 font-medium"
+                        ></a>
+                        <div class="mb-3">
+                          <template x-if="product.variants.length > 1">
+                            <div class="flex items-center text-xl font-normal">
+                              <span x-text="getLowestPrice(product)"></span>
+                            </div>
+                          </template>
+
+                          <template x-if="product.variants.length === 1">
+                            <div class="flex items-center text-xl font-normal">
+                              <span class="sr-only">Sale price</span>
+                              <span
+                                x-text="formatPrice(product.selected_variant.price)"
+                                :class="{'text-red': product.selected_variant.compare_at_price && product.selected_variant.compare_at_price != product.selected_variant.price}"
+                              ></span>
+                              <template x-if="product.selected_variant.compare_at_price && product.selected_variant.compare_at_price != product.selected_variant.price">
+                                <span>
+                                  <span class="sr-only">Regular price</span>
+                                  <span
+                                    class="ml-2 text-base text-police-blue-70 line-through"
+                                    x-text="formatPrice(product.selected_variant.compare_at_price)"
+                                  ></span>
+                                </span>
+                              </template>
+                            </div>
+                          </template>
+                        </div>
+                        <a
+                          class="flex items-center justify-center gap-2 bg-police-blue px-4 py-4.25 text-center text-sm uppercase tracking-wide text-white hover:scale-102 active:scale-100 disabled:opacity-30"
+                          x-bind:href="product.link"
+                          x-bind:title="product.title"
+                        >
+                          {{- 'products.product.add_to_cart' | t -}}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              <div class="swiper-scrollbar mt-4 xl:hidden"></div>
+            </div>
+            {%- if button_url != blank -%}
+              <div
+                class="mt-5 justify-center lg:mt-10 {% if show_button_mobile %} flex {% endif %} {% if show_button_desktop == false %} md:hidden{% endif %}"
+              >
+                <a
+                  href="{{ button_url }}"
+                  class="button !w-full lg:!w-auto"
+                >
+                  {%- if button_text != blank -%}
+                    <span>{{ button_text }}</span>
+                  {%- endif -%}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>

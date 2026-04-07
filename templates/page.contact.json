@@ -1,0 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact LifeSync",
+        "subtitle": "For product complaints or returns, send email to: customerservice@lifesync.com",
+        "image_desktop": "shopify://shop_images/contact-desktop.jpg",
+        "image_mobile": "shopify://shop_images/contact-mobile.jpg"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

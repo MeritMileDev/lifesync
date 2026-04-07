@@ -1,0 +1,31 @@
+{% comment %}
+  Renders product add to cart button
+
+  Accepts:
+  - mini_button: {Boolean} Determines the size of the button.
+
+  Usage:
+  {% render 'add-to-cart-button', class: '' %}
+{% endcomment %}
+
+<button
+  @click.prevent="
+    () => {
+      if ($data.currentVariant && $data.currentVariant.id) {
+        $data.isValid = true;
+        add();
+
+        return;
+      }
+
+      $data.isValid = false;
+    }
+  "
+  :disabled="disabled || !productAgreement || currentVariant.price === 0"
+  type="submit"
+  class="flex gap-2 items-center justify-center text-center font-medium text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 w-full mt-6 tracking-wide font-medium xl:mt-0 {{ class }}"
+>
+  <span x-cloak x-show="loading">{{ 'products.product.adding_to_cart' | t }}</span>
+  <span x-cloak x-show="added">{{ 'products.product.added_to_cart' | t }}</span>
+  <span x-show="!loading && !added && !disabled">{{ 'products.product.add_to_cart' | t }}</span>
+</button>

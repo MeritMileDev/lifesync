@@ -1,0 +1,318 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_hero_banner_xkAXNC": {
+      "type": "section-hero-banner",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/cardiac-hero-mob.jpg",
+        "image_desktop": "shopify://shop_images/cardiac-hero-desktop.jpg",
+        "enable_overlay": false,
+        "banner_icon": "shopify://shop_images/icon-heart-white.svg",
+        "title": "Simplify & standardize your cardiac monitoring and connections",
+        "title_tag": "h1",
+        "subtitle": "<p>Lower cost with unparalleled radiolucency and signal quality.</p>",
+        "subtitle_full_width": false,
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 240,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 336,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "section_image_with_text_3bTWHh": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "LifeSync leads",
+        "title": "Reliable monitoring connections",
+        "title_max_width": 0,
+        "description": "LifeSync Cardiac (formerly AMC/Advantage Medical Cables) is the industry-leading provider of cardiac patient monitoring and leadwires. When signal quality, reliability, and radiolucency are a must, LifeSync is the obvious choice.",
+        "description_max_width": 501,
+        "description_max_width_desktop": 0,
+        "button_label": "Shop Cardiac",
+        "button_link": "shopify://collections/ecg-leadwires-and-monitoring",
+        "image": "shopify://shop_images/image.jpg",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_text_image_bg_NzXcMt": {
+      "type": "section-text-image-bg",
+      "disabled": true,
+      "settings": {
+        "section_subtitle": "LifeSync leads",
+        "section_title": "Reliable monitoring connections",
+        "section_description": "LifeSync Cardiac (formerly AMC/Advantage Medical Cables) is the industry-leading provider of cardiac patient monitoring and leadwires. When signal quality, reliability, and radiolucency are a must, LifeSync is the obvious choice.",
+        "image_bg": "shopify://shop_images/image.jpg",
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 120,
+        "cta_text": "Shop Cardiac",
+        "cta_url": "shopify://collections/ecg-leadwires-and-monitoring"
+      }
+    },
+    "section_difference_pLGQH7": {
+      "type": "section-difference",
+      "settings": {
+        "section_subtitle": "Superior performance",
+        "section_title": "Unmatched signal quality and radiolucency",
+        "section_note": "",
+        "section_title_max_width": 560,
+        "section_description": "<p>Achieve the most accurate monitoring and test results with cables and leadwires that deliver the industry's best signal quality. <a href=\"/pages/radiolucent-leadwires\" title=\"Radiolucent Leadwires\">Radiolucent </a>monitoring connections save caregivers time and ease the patient experience during their treatment.</p>",
+        "section_description_max_width": 540,
+        "label": "See the difference",
+        "tab_name_before": "Traditional",
+        "image_before": "shopify://shop_images/difference-image-before.jpg",
+        "image_before_mobile": "shopify://shop_images/LifeSync.png",
+        "title_before": "Traditional leadwires",
+        "description_before": "<p>Traditional lead wires contain metal that can interfere with imaging, creating artifacts on X-rays, CT scans, and MRIs. These obstructions can obscure critical details, leading to repeat scans and delayed diagnoses. </p>",
+        "tab_name_after": "LifeSync",
+        "image_after": "shopify://shop_images/difference-image-after.jpg",
+        "image_after_mobile": "shopify://shop_images/Taditional.png",
+        "icon_after": "shopify://shop_images/difference-icon-after.svg",
+        "title_after": "Radiolucent leadwires & LeadWear ",
+        "description_after": "<p>LifeSync’s radiolucent lead wires are metal-free, ensuring precise, unobstructed imaging. They eliminate scan interference, reducing the need for repeat scans and improving diagnostic accuracy. </p>",
+        "button_label_after": "SHOP RADIOLUCENT",
+        "button_link_after": "shopify://collections/radiolucent-ecg-lead-wires",
+        "padding_top_mobile": 88,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_multicolumn_fgDJfH": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_X4rcRt": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/ecg_eaa39d44-66cf-4d79-bc1c-802878a49e9d.svg",
+            "title": "Leadwires",
+            "description": "Reliable, high-quality cardiac monitoring.",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "shopify://collections/ecg-leadwires-and-monitoring",
+            "open_in_new_tab": false,
+            "show_button": true,
+            "full_block_button_link": true
+          }
+        },
+        "column_aWxAFU": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-trunk-cables.svg",
+            "title": "Trunk Cables",
+            "description": "Durable connections for patient monitoring.",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "shopify://collections/trunk-cables-and-adapters",
+            "open_in_new_tab": false,
+            "show_button": true,
+            "full_block_button_link": true
+          }
+        },
+        "column_XDAirW": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-spo2.svg",
+            "title": "SpO2 Sensors",
+            "description": "Accurate oxygen saturation readings.",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "shopify://collections/spo2",
+            "open_in_new_tab": false,
+            "show_button": true,
+            "full_block_button_link": true
+          }
+        }
+      },
+      "block_order": [
+        "column_X4rcRt",
+        "column_aWxAFU",
+        "column_XDAirW"
+      ],
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "Our productrs",
+        "section_title": "LifeSync Cardiac offers a complete selection of cardiac patient monitoring cables and leadwires",
+        "section_title_max_width": 750,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "3",
+        "enable_slider": false,
+        "style": "borders",
+        "enable_bottom_border": true,
+        "column_title_size": "medium",
+        "column_title_size_mobile": "small",
+        "column_image_height": 80,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_simple_text_pjeMFG": {
+      "type": "section-simple-text",
+      "settings": {
+        "subtitle": "Effortless Standardization",
+        "title": "Standardization without the pain",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "small",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "<p>Standardizing to one leadwire system ensures staff familiarity, inventory efficiencies, and streamlined procurement across the hospital. For many facilities, single-patient-use LifeSync Leadwire Systems are cost-neutral compared to reusable leadwires, making them an easy choice.</p>",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 700,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 64
+      }
+    },
+    "section_steps_AjBFhb": {
+      "type": "section-steps",
+      "blocks": {
+        "step_MdgNMf": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/cardiac-steps-image-1.jpg",
+            "step_title": "Discovery",
+            "step_content": "<ul><li>Biomedical challenges</li><li>Infection control concerns</li><li>Supply chain pain relief</li></ul>"
+          }
+        },
+        "step_HwA8LY": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/cardiac-steps-image-2.jpg",
+            "step_title": "Evaluation",
+            "step_content": "<ul><li>Clinical evaluation</li><li>Value analysis committee</li><li>Management objectives</li></ul>"
+          }
+        },
+        "step_fpbVVc": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/cardiac-steps-image-3.jpg",
+            "step_title": "Conversion",
+            "step_content": "<ul><li>Site survey</li><li>Inventory and parameter agreement</li><li>Manufactured standardized solution</li></ul>"
+          }
+        },
+        "step_hCWfkc": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/cardiac-steps-image-4.jpg",
+            "step_title": "Customer devotion",
+            "step_content": "<ul><li>Personalized account management</li><li>Customized solutions</li><li>Satisfaction assurance</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "step_MdgNMf",
+        "step_HwA8LY",
+        "step_fpbVVc",
+        "step_hCWfkc"
+      ],
+      "settings": {
+        "enable_bg": true,
+        "enable_bg_desktop": false,
+        "is_static_steps": false,
+        "section_subtitle": "Step-by-step",
+        "section_title": "<p>LifeSync Cardiac <br/>guides standardization <br/>with a four-phase plan</p>",
+        "section_description": "<p>However, standardizing or replacing cardiac cables and connections can feel like an enormous task. <br/>Our dedicated project managers and conversion teams simplify the job with a no-mystery process <br/>of inventory, training, supply chain management, and implementation. <br/><br/>As a vertically-integrated manufacturer, we eliminate the potential of backorders and keep the standardization process running smoothly at every step.</p>",
+        "section_description_max_width": 680,
+        "section_description_max_width_mobile": 328,
+        "bottom_title": "LifeSync can help you standardize all your  ECG connections",
+        "button_label": "Learn more",
+        "button_link": "shopify://pages/standardization",
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_image_with_text_gmyEq4": {
+      "type": "section-image-with-text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "Streamlined procurement",
+        "title": "Simplified ordering & inventory management",
+        "title_max_width": 0,
+        "description": "LifeSync takes the complexity out of having to order and manage cables and leadwires from multiple vendors, allowing you to standardize with one provider and reduce management of vendors, orders, and SKUs.",
+        "description_max_width": 501,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "#",
+        "image": "shopify://shop_images/image_6a565562-e1b0-4b02-bcbc-f0363723e593.jpg",
+        "image_position": "image_right",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_contact_form_7hLRez": {
+      "type": "section-contact-form",
+      "settings": {
+        "image_desktop": "shopify://shop_images/image-cardiac-contact.png",
+        "image_mobile": "shopify://shop_images/image-cardiac-contact-mob.png",
+        "section_title": "Interested in learning more?",
+        "section_description": "Contact Us",
+        "enable_bg": true,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_banner_xkAXNC",
+    "section_image_with_text_3bTWHh",
+    "section_text_image_bg_NzXcMt",
+    "section_difference_pLGQH7",
+    "section_multicolumn_fgDJfH",
+    "section_simple_text_pjeMFG",
+    "section_steps_AjBFhb",
+    "section_image_with_text_gmyEq4",
+    "section_contact_form_7hLRez"
+  ]
+}

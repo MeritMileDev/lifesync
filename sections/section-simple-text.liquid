@@ -1,0 +1,331 @@
+{% liquid
+  assign section_id = section.id
+  assign text_full_width = section.settings.text_full_width
+  assign is_h1_tag = section.settings.is_h1_tag
+  assign title_max_width_mobile = section.settings.title_max_width_mobile
+  assign title_max_width_desktop = section.settings.title_max_width_desktop
+  assign text_max_width_mobile = section.settings.text_max_width_mobile
+  assign text_max_width_desktop = section.settings.text_max_width_desktop
+  assign background_image = section.settings.background_image
+  assign background_image_max_width_mobile = section.settings.background_image_max_width_mobile
+  assign background_image_max_width_desktop = section.settings.background_image_max_width_desktop
+  assign section_background_image_mobile = section.settings.section_background_image_mobile
+  assign section_background_image_desktop = section.settings.section_background_image_desktop
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign title_size = section.settings.title_size
+  case title_size
+    when "small"
+      assign title_class = 'text-2xl'
+    when "medium"
+      assign title_class = 'xl:text-5xl'
+    when "large"
+      assign title_class = 'xl:text-64'
+  endcase
+
+  assign title_size_mobile = section.settings.title_size_mobile
+  case title_size_mobile
+    when "small"
+      assign title_mobile_class = 'text-32'
+    when "medium"
+      assign title_mobile_class = 'text-40'
+  endcase
+
+  assign button_style = section.settings.button_style
+  case button_style
+    when "text"
+      assign button_class = 'text-persian-blue mx-auto max-w-max block uppercase text-sm font-medium underline hover:no-underline active:underline disabled:opacity-30'
+    when "button"
+      assign button_class = 'flex gap-2 items-center justify-center text-center font-medium text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mx-auto md:max-w-max'
+  endcase
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+<style>
+  {% if section.settings.section_max_width > 0 %}
+  #section-{{ section_id }} .section-text {
+    max-width: {{ section.settings.section_max_width }}px;
+  }
+  {% endif %}
+
+  {% if section.settings.section_max_width > 0 %}
+  #section-{{ section_id }} .section-text {
+    max-width: {{ section.settings.section_max_width }}px;
+  }
+  {% endif %}
+
+  #section-{{ section_id }} .section-title {
+    max-width: {% if title_max_width_mobile > 0 %} {{ title_max_width_mobile }}px {% else %} 100% {% endif %};
+
+    @media screen and (min-width: 768px) {
+      max-width: {% if title_max_width_desktop > 0 %} {{ title_max_width_desktop }}px {% else %} 100% {% endif %};
+    }
+  }
+
+  {% unless section.settings.section_max_width > 0 %}
+    #section-{{ section_id }} .section-text {
+      max-width: {% if text_max_width_mobile > 0 %} {{ text_max_width_mobile }}px {% else %} 100% {% endif %};
+
+      @media screen and (min-width: 768px) {
+        max-width: {% if text_max_width_desktop > 0 %} {{ text_max_width_desktop }}px {% else %} 100% {% endif %};
+      }
+    }
+  {% endunless %}
+
+  #section-{{ section_id }} .content-background {
+    max-width: {% if background_image_max_width_mobile > 0 %} {{ background_image_max_width_mobile }}px {% else %} 100% {% endif %};
+
+    @media screen and (min-width: 768px) {
+      max-width: {% if background_image_max_width_desktop > 0 %} {{ background_image_max_width_desktop }}px {% else %} 100% {% endif %};
+    }
+  }
+  {% if section_background_image_mobile != blank and section_background_image_desktop != blank %}
+    #section-{{ section_id }} {
+      position: relative;
+    }
+    #section-{{ section_id }} .section-background {
+      background-image: url({{ section_background_image_mobile | image_url }});
+      background-size: cover;
+      @media screen and (min-width: 768px) {
+        background-image: url({{ section_background_image_desktop | image_url }});
+      }
+    }
+  {% endif %}
+</style>
+<section id="section-{{ section_id }}">
+  {% if section_background_image_mobile != blank and section_background_image_desktop != blank %}
+    <div class="section-background absolute inset-0"></div>
+  {% endif %}
+  <div class="container text-center relative z-10{% if background_image != blank %} relative py-4.5 md:pt-20 md:pb-20 {% endif %}">
+    {% if background_image != blank %}
+      <div class="content-background -z-1 absolute inset-0 mx-auto">
+        {% render 'picture', image_desktop: background_image, image_mobile: background_image %}
+      </div>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <p class="relative mx-auto mb-4 text-sm font-medium uppercase tracking-wide text-police-blue-70 xl:mb-6">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      {% if is_h1_tag %}
+        <h1 class="section-title {{ title_class }} {{ title_mobile_class }} xl:leading-14 relative mx-auto mb-2.5 font-medium leading-10 xl:mb-6 xl:px-0 {% if title_max_width_mobile <=0 %} px-7.5 {% endif %}">
+          {{ section.settings.title }}
+        </h1>
+      {% else %}
+        <p class="section-title {{ title_class }} {{ title_mobile_class }} xl:leading-14 relative mx-auto mb-2.5 font-medium leading-10 xl:mb-6 xl:px-0 {% if title_max_width_mobile <=0 %} px-7.5 {% endif %}">
+          {{ section.settings.title }}
+        </p>
+      {% endif %}
+    {% endif %}
+    {% if section.settings.text != blank %}
+      <div class="section-text rte relative mx-auto text-center lg:px-0 {% if text_full_width != true %} px-7{% endif %}">
+        {{ section.settings.text }}
+      </div>
+    {% endif %}
+    {% if section.settings.button_link != blank %}
+      <a class="button {{ button_class }} mt-4" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Simple Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "is_h1_tag",
+        "label": "Use H1 tag for title",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "title_size",
+        "label": "Title Size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small (32px)"
+          },
+          {
+            "value": "medium",
+            "label": "Medium (48px)"
+          },
+          {
+            "value": "large",
+            "label": "Large (64px)"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "select",
+        "id": "title_size_mobile",
+        "label": "Title Size Mobile",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small (32px)"
+          },
+          {
+            "value": "medium",
+            "label": "Medium (40px)"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width_mobile",
+        "label": "Title Max Width Mobile",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "title_max_width_desktop",
+        "label": "Title Max Width Desktop",
+        "default": 0
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "text_full_width",
+        "label": "Text Full Width",
+        "default": false
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_mobile",
+        "label": "Text Max Width Mobile",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_desktop",
+        "label": "Text Max Width Desktop",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button Style",
+        "options": [
+          {
+            "value": "text",
+            "label": "Text"
+          },
+          {
+            "value": "button",
+            "label": "Button"
+          }
+        ],
+        "default": "button"
+      },
+      {
+        "type": "number",
+        "id": "section_max_width",
+        "label": "Section Max Width",
+        "default": 0
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_background_image_mobile",
+        "label": "Section Background Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_background_image_desktop",
+        "label": "Section Background Image Desktop"
+      },
+      {
+        "type": "number",
+        "id": "background_image_max_width_mobile",
+        "label": "Background Image Max Width Mobile",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "background_image_max_width_desktop",
+        "label": "Background Image Max Width Desktop",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Simple Text"
+      }
+    ]
+  }
+{% endschema %}

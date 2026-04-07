@@ -1,0 +1,54 @@
+{% comment %}
+  Renders a set of links for paginated results. Must be used within paginate tags.
+
+  Usage:
+  {% paginate results by 12 %}
+    {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+  {% endpaginate %}
+
+  Accepts:
+  - paginate: {Object}
+  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+{%- if paginate.pages > 1 -%}
+  {%- if paginate.parts.size > 0 -%}
+    <nav class="relative flex justify-center text-sm font-medium tracking-wide" role="navigation" aria-label="Pagination">
+      <ul role="list" class="flex items-center gap-1">
+        {%- if paginate.previous -%}
+          <li class="lg:static absolute left-0">
+            <a href="{{ paginate.previous.url }}" class="size-10 lg:pl-2.5 lg:pr-4 lg:mr-6 lg:w-auto flex gap-1 items-center justify-center border-2 border-transparent transition duration-300 hover:border-police-blue" aria-label="Previous page">
+              {% render 'icon', icon: 'chevron-left' %}
+              <span class="lg:block hidden uppercase">Prev</span>
+            </a>
+          </li>
+        {%- endif -%}
+        {%- for part in paginate.parts -%}
+          <li>
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}" class="size-10 flex items-center justify-center border-2 border-transparent transition duration-300 hover:border-police-blue" aria-label="Page {{ part.title }}">
+                {{- part.title -}}
+              </a>
+            {%- else -%}
+              {%- if part.title == paginate.current_page -%}
+                <span class="size-10 flex items-center justify-center border-2 border-police-blue" aria-current="page" aria-label="Page {{ part.title }}">
+                  {{- part.title -}}
+                </span>
+              {%- else -%}
+                <span class="size-10 flex items-center justify-center">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+        {%- if paginate.next -%}
+          <li class="lg:static absolute right-0">
+            <a href="{{ paginate.next.url }}" class="size-10 lg:pl-4 lg:pr-2.5 lg:ml-6 lg:w-auto flex gap-1 items-center justify-center border-2 border-transparent transition duration-300 hover:border-police-blue">
+              <span class="lg:block hidden uppercase">Next</span>
+              {% render 'icon', icon: 'chevron-right' %}
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </nav>
+  {%- endif -%}
+{%- endif -%}

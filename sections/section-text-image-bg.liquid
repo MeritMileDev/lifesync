@@ -1,0 +1,141 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  assign cta_text = section.settings.cta_text
+  assign cta_url = section.settings.cta_url
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="relative">
+      <div class="xl:block hidden">
+        {% render 'picture',
+          image_mobile: section.settings.image_bg,
+          image_desktop: section.settings.image_bg,
+          is_full_size: false,
+          class: 'mx-auto'
+        %}
+      </div>
+      <div class="xl:absolute static inset-0 w-full h-full z-10 flex items-center">
+        <div class="w-full grid lg:grid-cols-12 grid-cols-2 lg:gap-6 gap-4">
+          <div class="2xl:col-span-4 lg:col-span-8 col-span-2 2xl:col-start-5 lg:col-start-3 text-center">
+            {% if section.settings.section_subtitle != blank %}
+            <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide mb-2.5 mx-auto">
+              {{ section.settings.section_subtitle }}
+            </p>
+            {% endif %}
+            {% if section.settings.section_title != blank %}
+            <h2
+              class="section-title 3xl:text-64 lg:text-5xl text-32 font-medium mb-3.25 mx-auto xl:leading-14 leading-10 xl:px-0 px-7.5">
+              {{ section.settings.section_title }}
+            </h2>
+            {% endif %}
+            <div class="xl:hidden lg:mb-12">
+              {% render 'picture',
+                image_mobile: section.settings.image_bg,
+                image_desktop: section.settings.image_bg,
+                is_full_size: false,
+                class: 'mx-auto'
+              %}
+            </div>
+            {% if section.settings.section_description != blank %}
+            <div class="section-description max-w-xl mx-auto rte xl:px-0 px-7.5 xl:mb-0 mb-6 lg:mt-0 mt-3">
+              {{ section.settings.section_description }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% if cta_text != blank and cta_url != blank %}
+        <a class="mx-auto relative z-10 flex max-w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max lg:mt-5" href="{{cta_url}}">{{ cta_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Text with Image Bg",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_bg",
+        "label": "Image Background"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Button Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA Button URL"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text with Image Bg"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,206 @@
+{% assign share_url = request.origin | append: article.url %}
+<div class="relative flex min-h-[650px] flex-col pb-12 pt-32 lg:min-h-[600px] lg:pt-32">
+  <div
+    style="background: linear-gradient(180deg, rgba(0, 23, 41, 0.60) 0%, rgba(0, 23, 41, 0.00) 100%);"
+    class="absolute left-0 right-0 top-0 z-10 h-32 w-full"
+  ></div>
+  <div class="absolute inset-0 h-full w-full">
+    {% render 'picture',
+      id: 'article-bg',
+      image_desktop: article.image,
+      image_mobile: article.image,
+      lazy: 'lazy',
+      desktop_size: '1000',
+      is_full_size: true,
+      class: 'object-cover w-full h-full'
+    %}
+    <div class="absolute inset-0 h-full w-full bg-[rgba(0,23,41,0.20)]"></div>
+    <div
+      style="background: linear-gradient(180deg, rgba(0, 23, 41, 0.60) 0%, rgba(0, 23, 41, 0.00) 100%);"
+      class="absolute bottom-0 left-0 right-0 z-10 h-32 w-full rotate-180"
+    ></div>
+  </div>
+  <div class="container relative z-10 grow flex flex-col">
+    <div class="grid-cols-12 lg:grid lg:gap-6 grow flex flex-col">
+      <div class="xl:col-start-2 2xl:col-span-8 xl:col-span-10 col-span-12 2xl:col-start-3 relative grow flex flex-col lg:justify-center justify-end lg:pb-20 pb-30">
+        <h1 class="mb-6 text-center text-bright-gray lg:mb-9 lg:text-left">
+          {{ article.title }}
+        </h1>
+        <p class="text-center text-sm text-bright-gray-50 lg:text-left">
+          {{- article.published_at | date: '%B %e, %Y' -}}
+        </p>
+        <div class="mx-auto max-w-max lg:mx-0 2xl:mt-36 absolute bottom-0 lg:left-auto left-0 lg:right-auto right-0">
+          {% render 'share',
+            share_url: share_url,
+            text_color_class: 'text-bright-gray',
+            icon_color_class: 'text-bright-gray-50'
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pb-16 pt-12 lg:pb-30 lg:pt-30">
+  <div class="container">
+    <div class="grid-cols-12 lg:grid lg:gap-6">
+      <div class="col-span-6 xl:col-span-5 xl:col-start-2 2xl:col-span-4 2xl:col-start-3">
+        <div class="article-content">
+          {{ article.content }}
+        </div>
+        <div class="mb-12 mt-12 flex justify-center border-y border-police-blue-20 py-12 lg:mb-0 lg:mt-16 lg:justify-start lg:border-0 lg:py-0">
+          {% render 'share',
+            share_url: share_url,
+            text_color_class: 'text-police-blue',
+            icon_color_class: 'text-police-blue-70'
+          %}
+        </div>
+      </div>
+      <div class="col-span-1 col-start-7 hidden lg:block">
+        <div class="mx-auto h-full w-px bg-police-blue-20"></div>
+      </div>
+      <div class="col-span-5 col-start-8 xl:col-span-4 2xl:col-span-3">
+        <div class="sticky top-20 2xl:top-32">
+          {% assign form_id = '67616d200822a0124130cec5' %}
+          <div x-data="omnisend({id: '{{ form_id }}'})">
+            <h4 x-show="showTitle" class="mb-6 text-center lg:text-left lg:text-32 text-2xl">{{ section.settings.newsletter_title }}</h4>
+            <p x-show="showTitle" class="mb-6 text-center lg:text-left">{{ section.settings.newsletter_subtitle }}</p>
+          </div>
+          {% render 'newsletter', form_id: form_id %}
+          <div class="mt-12 lg:mt-10 2xl:mt-16">
+            <h4 class="text-police-blue lg:text-32 text-2xl">Read more...</h4>
+            {% assign recent_posts = blogs.blog.articles %}
+            <ul>
+              {% for post in recent_posts %}
+                <li class="mt-6">
+                  {% render 'article-card', article: post, view_mode: 'list' %}
+                </li>
+                {% if forloop.index == section.settings.recent_posts_count %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% style %}
+  .article-content h2,
+  .article-content h3,
+  .article-content h4,
+  .article-content h5,
+  .article-content h6 {
+    margin-top: 64px;
+    margin-bottom: 24px;
+  }
+
+  .article-content h2:first-child,
+  .article-content h3:first-child,
+  .article-content h4:first-child,
+  .article-content h5:first-child,
+  .article-content h6:first-child {
+    margin-top: 0;
+  }
+
+  .article-content p,
+  .article-content ol,
+  .article-content ul {
+    margin-bottom: 24px;
+  }
+
+  .article-content p:last-child,
+  .article-content ol:last-child,
+  .article-content ul:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-content ul a,
+  .article-content ol a {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .article-content a:hover {
+    text-decoration: underline;
+  }
+
+  .article-content ul {
+    list-style-type: disc;
+    padding-left: 24px;
+  }
+
+  .article-content ol {
+    list-style-type: numeric;
+    padding-left: 16px;
+  }
+
+  @media (max-width: 991px) {
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      margin-top: 48px;
+    }
+  }
+{% endstyle %}
+
+{% style %}
+  #MainContent {
+    position: relative;
+  }
+  .breadcrumbs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    color: #fff;
+  }
+  .breadcrumb-link {
+    color: #fff;
+  }
+
+  .breadcrumbs-item:last-child,
+  .breadcrumbs-item:last-child span {
+    color: rgba(244, 249, 252, 0.5);
+  }
+
+  .breadcrumb-current {
+    color: rgba(244, 249, 252, 0.5);
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Article",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Newsletter Title",
+        "default": "Join our readers"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_subtitle",
+        "label": "Newsletter Subtitle",
+        "default": "Sign up for our news and special offers."
+      },
+      {
+        "type": "range",
+        "id": "recent_posts_count",
+        "label": "Number of recent posts",
+        "default": 5,
+        "min": 5,
+        "max": 10,
+        "step": 1
+      }
+    ]
+  }
+{% endschema %}

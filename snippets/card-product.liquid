@@ -1,0 +1,75 @@
+{% comment %}
+  Renders a product card
+  Accepts:
+  - card_product: {Object} Product Liquid object (optional)
+  - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+  Usage:
+  {% render 'card-product' %}
+{% endcomment %}
+
+{%- if card_product and card_product != empty -%}
+  {% liquid
+    assign product_title = card_product.title
+    assign product_url = card_product.url
+    assign product_media_first = card_product.media[1]
+    assign card_product_main_image = card_product.featured_media
+  %}
+  <div class="flex w-full flex-col">
+    <a
+      href="{{ product_url }}"
+      title="{{ product_title }}"
+      class="mb-4 flex overflow-hidden bg-gray-100"
+    >
+      <div class="relative aspect-square w-full overflow-hidden">
+        {% assign product_label = card_product.metafields.custom.product_label.value %}
+        {% if product_label %}
+          <div
+            class="absolute left-0 top-0 z-10 px-3 py-2 leading-none"
+            style="color: {{ product_label.text_color }}; background-color: {{ product_label.background_color }};"
+          >
+            {{ product_label.text }}
+          </div>
+        {% endif %}
+        {% if card_product_main_image != blank %}
+          {% render 'card-product-image',
+            featured_media: card_product_main_image,
+            lazy_load: lazy_load,
+            image_class: 'mix-blend-darken w-full transition duration-300 hover:scale-110'
+          %}
+        {% else %}
+          <img class="w-full object-cover aspect-square mix-blend-darken transition duration-300 hover:scale-110" src="{{ 'placeholder.jpeg' | asset_url }}" alt="{{ product_title }}">
+        {% endif %}
+      </div>
+    </a>
+    <div class="flex flex-col">
+      <div class="mb-1.5">
+         {% render 'yotpo-rating', product_id: card_product.id %} 
+      </div>
+      <a
+        href="{{ product_url }}"
+        title="{{ product_title }}"
+        class="mb-1.5 line-clamp-2 min-h-12 font-medium lg:line-clamp-1 lg:min-h-0 hover:text-police-blue-70 transition-colors"
+      >
+        {{ product_title }}
+      </a>
+      <div class="mb-3">
+        {% render 'price', product: card_product, currency_code_enabled: false, use_variant: false %}
+      </div>
+      {% if card_product.selected_or_first_available_variant.available %}
+        <a
+          class="flex items-center justify-center gap-2 bg-police-blue px-4 py-4.25 text-center text-sm uppercase text-white hover:scale-102 active:scale-100 disabled:opacity-30 tracking-wide"
+          href="{{ product_url }}"
+          title="{{- 'products.product.add_to_cart' | t -}}"
+        >
+          {{- 'products.product.add_to_cart' | t -}}
+        </a>
+      {% else %}
+        <div
+          class="flex h-14 items-center justify-center bg-gray-100 px-2 py-1 text-center text-sm font-semibold lg:px-5 uppercase tracking-wide"
+        >
+          <span class="line-clamp-2">{{ 'products.product.sold_out' | t }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{%- endif -%}

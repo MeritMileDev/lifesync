@@ -1,0 +1,135 @@
+{% liquid
+  assign first_faq = ''
+  for block in section.blocks
+    case block.type
+      when 'faq'
+        assign first_faq = block.id
+        break
+    endcase
+  endfor
+%}
+
+<div x-data="tableOfContents()" x-init="generateTOC()" class="lg:container">
+  <div class="lg:grid lg:grid-cols-12 grid-cols-2 lg:gap-6 gap-4 lg:!mt-7.5 !mt-10 lg:pb-30 pb-16">
+    <div class="col-span-3">
+      <div class="sticky xl:top-44 lg:top-20 top-0">
+        <div
+          class="lg:static left-0 right-0 lg:!px-0 bg-white"
+          @click.outside="isOpen = false"
+          :class="{
+            'fixed': isFixed,
+            '!hidden': !hasItems()
+          }"
+          :style="isFixed && `top: ${headerHeight - 2}px`"
+        >
+        <div x-ref="blur" x-cloak x-show="isOpen" @click="isOpen = false" class="lg:!hidden fixed inset-0 transition-opacity bg-police-blue bg-opacity-80"></div>
+          <h4
+            @click="isOpen = !isOpen"
+            data-sidebar-title
+            class="relative w-full text-left left-0 right-0 text-sm tracking-wider text-police-blue uppercase lg:mb-4.5 bg-white max-sm:container"
+            >
+            <p
+              :class="isFixed && 'border-t-0'"
+              class="flex items-center justify-between sm:container lg:p-0 py-3.25 lg:border-y-0 border-y border-police-blue-20">
+              <span>Contents</span>
+              <span class="lg:hidden flex items-center justify-center" :class="isOpen && 'rotate-180'">
+              {% render 'icon', icon: 'chevron-down' %}
+            </span>
+            </p>
+          </h4>
+          <div class="relative lg:max-h-[calc(100vh_-_200px)] lg:overflow-y-auto lg:no-scrollbar">
+            <template x-if="hasItems()">
+              <div
+                :class="isOpen && '!block'"
+                class="lg:static absolute lg:block hidden left-0 right-0 lg:max-h-none max-h-[330px] sm:max-w-full max-w-none lg:overflow-y-auto overflow-y-scroll lg:pt-0 pt-6 lg:pb-0 pb-3.25 lg:pl-6 lg:pr-0 sm:px-6 px-4 lg:border-l-[3px] lg:border-police-blue-20 lg:shadow-none shadow-shadow-bottom bg-white sm:px-0"
+              >
+                <ul
+                  class="sm:container lg:px-0">
+                  <template x-for="item in tocItems" :key="item.id">
+                    <li class="leading-none pb-[11px]">
+                      <a class="hover:underline" href="javascript:void(0);" @click="scrollToHeading(item.id), isOpen = false" x-text="item.text"></a>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+            </template>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="xl:col-span-6 col-span-7 lg:pt-0 pt-10">
+      <div x-data="{ openFaq: '{{ first_faq}}' }" class="page-content max-lg:container lg:mt-2 mt-0 lg:!pt-0" :style="isFixed && `padding-top: ${titleHeight}px`">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              <h2 class="lg:text-32 text-2xl border-b border-police-blue-20 lg:pb-4 pb-3 mt-13.5 first:mt-0">{{ block.settings.title }}</h2>
+            {% when 'faq' %}
+              
+              <div class="border-b border-police-blue-20">
+                <p @click="openFaq = '{{ block.id }}', setTimeout(() => {
+                  const rect = $el.getBoundingClientRect();
+                  const scrollPosition = window.scrollY || window.pageYOffset;
+                  const elementPosition = rect.top + scrollPosition - 136;
+                  window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                  });
+                  }, 500)" class="lg:text-xl text-base font-medium cursor-pointer lg:py-4.5 py-4 flex gap-5 items-center justify-between">{{ block.settings.question }}
+                  <span class="flex items-center justify-center relative -z-10" :class="openFaq === '{{ block.id }}' && 'rotate-180'">
+                    {% render 'icon', icon: 'chevron-down' %}
+                  </span>
+                </p>
+                <div class="max-h-0 overflow-hidden transition-all duration-500" x-ref="content_{{ block.id }}" :style="openFaq === '{{ block.id }}' ? 'max-height: ' + $refs.content_{{ block.id }}.scrollHeight + 'px' : ''">
+                  <div class="lg:pt-5 pt-0 lg:pb-10 pb-5">{{ block.settings.answer }}</div>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "FAQ",
+    "settings": [
+
+    ],
+    "blocks": [
+      {
+        "type": "title",
+        "name": "Category Title",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      },
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FAQ"
+      }
+    ]
+  }
+{% endschema %}

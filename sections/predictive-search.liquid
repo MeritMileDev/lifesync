@@ -1,0 +1,184 @@
+{%- if predictive_search.performed -%}
+  {% liquid
+    assign result_collections = predictive_search.resources.collections
+    assign result_products = predictive_search.resources.products
+    assign result_pages = predictive_search.resources.pages
+    assign collections_products_count = 0
+    for collection in result_collections
+      assign collections_products_count = collections_products_count | plus: collection.products_count
+    endfor
+    assign result_blog_posts = predictive_search.resources.articles
+  %}
+
+  <div class="container">
+    <div
+      class="pb-4 pt-10.5 {% if collections_products_count > 0 or result_pages.size > 0 or result_blog_posts.size > 0 %}lg:grid lg:grid-cols-[273px_1fr] lg:gap-20 {% endif %} lg:py-6 2xl:pb-20 2xl:pt-18"
+    >
+      <div class="overflow-hidden">
+        {%- if collections_products_count > 0 -%}
+          <div class="mb-1 text-sm uppercase tracking-wide lg:mb-3">{{ 'templates.search.collections' | t }}</div>
+          <ul>
+            {% for collection in result_collections %}
+              {% if collection.products_count > 0 %}
+                <li>
+                  <a
+                    class="text-persian-blue underline hover:no-underline"
+                    title="{{ collection.title }}"
+                    href="{{ collection.url }}"
+                  >
+                    {{- collection.title -}}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {%- if result_pages.size > 0 -%}
+          <div class="mb-1 text-sm uppercase tracking-wide lg:mb-3 {%if collections_products_count > 0%}mt-5 lg:mt-7.5{% endif %}">
+            {{- 'templates.search.pages' | t -}}
+          </div>
+          <ul>
+            {% for page in result_pages %}
+              <li>
+                <a
+                  class="text-persian-blue underline hover:no-underline"
+                  title="{{ page.title }}"
+                  href="{{ page.url }}"
+                >
+                  {{- page.title -}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {%- if result_blog_posts.size > 0 -%}
+        <div class="mb-1 text-sm uppercase tracking-wide lg:mb-3 {%if collections_products_count > 0 or result_pages.size > 0 %}mt-5 lg:mt-7.5{% endif %}">
+          {{- 'templates.search.articles' | t -}}
+        </div>
+        <ul>
+          {% for blog_post in result_blog_posts %}
+            <li class="mb-1">
+              <a
+                class="text-persian-blue underline hover:no-underline"
+                title="{{ blog_post.title }}"
+                href="{{ blog_post.url }}"
+              >
+                {{- blog_post.title -}}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      </div>
+      {%- if result_products.size > 0 -%}
+        <div class="overflow-hidden">
+          <div
+            class="mb-3 flex items-center justify-between text-sm font-medium uppercase tracking-wide lg:mb-5 lg:mt-0.5 {% if collections_products_count > 0 or result_pages.size > 0 %} mt-9 {% endif %}"
+          >
+            <div>{{ 'templates.search.products' | t }}</div>
+            <a class="text-persian-blue underline hover:no-underline" href="/search?q={{- predictive_search.terms -}}">
+              {{- 'templates.search.view_all' | t -}}
+            </a>
+          </div>
+          <div id="section-quick-search-results">
+            <div class="products-slider">
+              <div class="products-slider__container">
+                <div class="products-slider__grid relative">
+                  <div class="products-slider__column relative col-span-4 md:col-span-12">
+                    <div
+                      class="swiper products-swiper w-full"
+                      x-data="
+                        swiper({
+                            loop: false,
+                            slidesPerView: 2,
+                            spaceBetween: 16,
+                            scrollbar: {
+                                el: '#section-quick-search-results .swiper-scrollbar'
+                            },
+                            breakpoints: {
+                                768: {
+                                    slidesPerView: 3
+                                },
+                                1024: {
+                                    slidesPerView: {%- if collections_products_count > 0 or result_pages.size > 0 -%}4{%- else -%}5{%- endif -%},
+                                    spaceBetween: 24
+                                }
+                            }
+                        })
+                      "
+                    >
+                      <div class="swiper-wrapper">
+                        {%- for product in result_products -%}
+                          <div class="swiper-slide slide">
+                            {% render 'card-product.liquid', card_product: product %}
+                          </div>
+                        {%- endfor -%}
+                      </div>
+                      <div class="swiper-scrollbar mt-4"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if result_collections.size == 0 and result_pages.size == 0 and result_products.size == 0 and result_blog_posts.size == 0 -%}
+        <div class="text-gray-500">{{ 'search.no_results' | t: search_term: predictive_search.terms }}</div>
+              {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% style %}
+  #section-quick-search-results {
+    .swiper:not(.swiper-initialized) {
+      .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+        .swiper-slide {
+          &:nth-child(n + 3) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    #section-quick-search-results {
+      .swiper:not(.swiper-initialized) {
+        .swiper-wrapper {
+          grid-template-columns: repeat(3, 1fr);
+          .swiper-slide {
+            &:nth-child(n + 3) {
+              display: block;
+            }
+            &:nth-child(n + 4) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #section-quick-search-results {
+      .swiper:not(.swiper-initialized) {
+        .swiper-wrapper {
+          grid-template-columns: repeat(4, 1fr);
+          .swiper-slide {
+            &:nth-child(n + 4) {
+              display: block;
+            }
+            &:nth-child(n + 5) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+{% endstyle %}

@@ -1,0 +1,254 @@
+{% liquid
+  assign section_id = section.id
+  assign is_one_column = section.settings.is_one_column
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+{% if section.blocks.size > 0 %}
+  <section id="section-{{ section_id }}">
+    <div class="container">
+      <div class="{% unless is_one_column == true %}lg:grid grid-cols-2 gap-6 items-center{% endunless %}">
+        {% for block in section.blocks %}
+          <div class="">
+            {% case block.type %}
+              {% when 'text' %}
+                <div class="text-center xl:p-20 lg:p-10 lg:mb-0 mb-16">
+                  {% if block.settings.subtitle != blank %}
+                    <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide lg:mb-8 mb-6 mx-auto">
+                      {{ block.settings.subtitle }}
+                    </p>
+                  {% endif %}
+                  {% if block.settings.title != blank %}
+                    <h2 class="section-title-{{ block.id }} xl:text-64 lg:text-5xl text-32 font-medium lg:mb-8 mb-6 mx-auto lg:leading-14 leading-10 mx-auto max-w-[560px]">
+                      {{ block.settings.title }}
+                    </h2>
+                  {% endif %}
+                  {% if block.settings.description != blank %}
+                    <p class="section-description-{{ block.id }} mx-auto max-w-[610px]">
+                      {{ block.settings.description }}
+                    </p>
+                  {% endif %}
+                </div>
+              {% when 'video' %}
+                <div class="relative lg:mx-0 -mx-4" x-data="modalPopup()">
+                  {% render 'picture',
+                    image_mobile: block.settings.image,
+                    image_desktop: block.settings.image,
+                    is_full_size: false,
+                    class: 'w-full h-full lg:min-h-[600px] min-h-[650px] object-cover'
+                  %}
+                  <div class="video-block-text absolute text-bright-gray bottom-18 left-0 right-0 px-7.5 max-w-xl mx-auto z-10 text-center">
+                    {{ block.settings.description }}
+                  </div>
+                  <div style="background: rgba(0, 23, 41, 0.40);" class="absolute inset-0 w-full h-full"></div>
+                  <div class="absolute inset-0 w-full h-full flex items-center justify-center">
+                    {% if block.settings.youtube_id != blank %}
+                      {% render 'youtube-video',
+                        video_id: block.settings.youtube_id,
+                        popup_id: block.id,
+                        button_type: 'icon'
+                      %}
+                    {% endif %}
+                  </div>
+                </div>
+              {% when 'video_text' %}
+                <div class="relative lg:mx-0 -mx-4" x-data="modalPopup()">
+                  {% liquid
+                    assign background_image = block.settings.background_image
+                    assign image = block.settings.image
+                    assign title = block.settings.title
+                    assign button_label = block.settings.button_label
+                    assign youtube_id = block.settings.youtube_id
+                    assign background_image_mobile = block.settings.background_image_mobile
+                  %}
+                  {% render 'picture',
+                    image_mobile: background_image_mobile,
+                    image_desktop: background_image,
+                    is_full_size: false,
+                    class: 'w-full h-full lg:min-h-[600px] min-h-[650px] object-cover'
+                  %}
+                  <div class="pt-9 md:pt-0 max-w-[255px] md:max-w-full mx-auto absolute inset-0 md:px-7.5 z-10 text-center flex flex-col items-center justify-center">
+                    {% if image != blank %}
+                      {% render 'picture', image_mobile: image, image_desktop: image %}
+                    {% endif %}
+                    {% if title != blank %}
+                      <div class=" mt-8.5 mb-9 text-40 video-block-title mx-auto md:text-64 font-medium tracking-tighter md:my-15">
+                        {{- title -}}
+                      </div>
+                    {% endif %}
+                    <button
+                      class="text-yellow flex flex-col items-center justify-center gap-5 hover:opacity-80"
+                      @click="$dispatch('trigger-play', '{{ block.id }}')"
+                    >
+                      {% render 'icon', icon: 'play-solid', class: 'size-16' %}
+                      <span class="text-police-blue text-sm uppercase font-medium tracking-[1px]">Watch Video</span>
+                    </button>
+                  </div>
+                  <div class="absolute inset-0 w-full h-full"></div>
+                  <div class="absolute inset-0 w-full h-full flex items-center justify-center">
+                    {% if youtube_id != blank %}
+                      {% render 'youtube-video', video_id: youtube_id, popup_id: block.id, button_type: 'hidden' %}
+                    {% endif %}
+                  </div>
+                </div>
+            {% endcase %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Text Video Blocks",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "is_one_column",
+        "label": "One Column",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Learn More"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      },
+      {
+        "type": "video",
+        "name": "Video",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "youtube_id",
+            "label": "Youtube ID"
+          }
+        ]
+      },
+      {
+        "type": "video_text",
+        "name": "Video With Text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background Image Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "background_image_mobile",
+            "label": "Background Image Mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Content Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label"
+          },
+          {
+            "type": "text",
+            "id": "youtube_id",
+            "label": "Youtube ID"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text Video Blocks"
+      }
+    ]
+  }
+{% endschema %}

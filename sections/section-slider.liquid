@@ -1,0 +1,191 @@
+{% liquid
+  assign section_id = section.id
+
+  assign heading = section.settings.heading
+  assign title = section.settings.title
+  assign no_paddings_desktop = section.settings.no_paddings_desktop
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    {% if heading != blank %}
+      <div class="mb-2 text-center text-sm font-medium uppercase tracking-wide text-police-blue-70 xl:mb-4.5">
+        {{- heading -}}
+      </div>
+    {% endif %}
+    {% if title != blank %}
+      <div class="mb-7 text-center text-32 font-medium xl:mb-12.5 xl:text-5xl">{{ title }}</div>
+    {% endif %}
+    <div
+      class="swiper slider -mx-4 w-full px-4"
+      x-data="
+        swiper({
+            loop: false,
+            slidesPerView: 1.4,
+            spaceBetween: 16,
+            scrollbar: {
+              el: '#section-{{ section_id }} .swiper-scrollbar'
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: {% if no_paddings_desktop == true %} 24 {%  else %} 0 {% endif %}
+                }
+            }
+        })
+      "
+    >
+      <div class="swiper-wrapper {% if no_paddings_desktop == false %} xl:border-y xl:border-police-blue-20 xl:py-7.5{% endif %}">
+        {% for block in section.blocks %}
+          {% if block.type == 'slide' %}
+            {% liquid
+              assign slide_image = block.settings.slide_image
+              assign slide_link = block.settings.slide_link
+            %}
+            {% if slide_image != blank %}
+              <div class="swiper-slide slide group">
+                {% if slide_link != blank %}
+                  <a
+                    class="group/image relative flex w-full {% if no_paddings_desktop == false %} border border-police-blue-20 xl:group-last:border-r-0 xl:border-b-0 xl:border-l-0 xl:border-r xl:border-t-0 {% else %} border border-police-blue-20 {% endif %}"
+                    href="{{ slide_link }}"
+                  >
+                    <div class="w-full overflow-hidden xl:aspect-auto {% if no_paddings_desktop == true %} {% else %} xl:p-6 {% endif %}">
+                      {% render 'picture',
+                        image_mobile: slide_image,
+                        class: 'w-full object-cover aspect-[230/182]  xl:aspect-[303/240] group-hover/image:scale-110 duration-500'
+                      %}
+                    </div>
+                    {% unless no_paddings_desktop == true %}
+                      <div
+                        class="absolute -bottom-7.5 -top-7.5 left-0 -right-px -mb-px -mt-px hidden border border-black xl:group-hover:block {% unless forloop.first %}-ml-px{% endunless %}"
+                      ></div>
+                    {% endunless %}
+                  </a>
+                {% else %}
+                  <div
+                    class="group/image relative flex w-full {% if no_paddings_desktop == false %} border border-police-blue-20 xl:group-last:border-r-transparent xl:border-b-0 xl:border-l-0 xl:border-r xl:border-t-0 {% else %} border border-police-blue-20 {% endif %}"
+                  >
+                    <div class="w-full overflow-hidden xl:aspect-auto {% if no_paddings_desktop == true %} {% else %} xl:p-6 {% endif %}">
+                      {% render 'picture',
+                        image_mobile: slide_image,
+                        class: 'w-full object-cover aspect-[230/182] xl:aspect-[303/240]'
+                      %}
+                    </div>
+                    {% unless no_paddings_desktop == true %}
+                      <div
+                        class="absolute -bottom-7.5 -top-7.5 left-0 -right-px -mb-px -mt-px hidden border border-black xl:group-hover:block {% unless forloop.first %}-ml-px{% endunless %}"
+                      ></div>
+                    {% endunless %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="swiper-scrollbar mt-4"></div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  #section-{{ section_id }} .swiper.slider {
+    width: calc(100% + 32px);
+
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "no_paddings_desktop",
+        "label": "No Paddings Desktop",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slide_image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "url",
+            "id": "slide_link",
+            "label": "Slide Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slider"
+      }
+    ]
+  }
+{% endschema %}

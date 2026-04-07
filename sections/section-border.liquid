@@ -1,0 +1,97 @@
+{% liquid
+  assign section_id = section.id
+  assign border_mobile = section.settings.border_mobile
+  assign border_desktop = section.settings.border_desktop
+  assign border_color = section.settings.border_color
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<style>
+  #section-{{ section_id }} .section-border {
+    border-top: 1px solid {{ border_color }};
+    display: {% if border_mobile %} block {% else %} none {% endif %};
+
+    @media screen and (min-width: 768px) {
+      display: {% if border_desktop %} block {% else %} none {% endif %};
+    }
+  }
+</style>
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="section-border"></div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Border",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "border_mobile",
+        "label": "Border Mobile",
+      },
+      {
+        "type": "checkbox",
+        "id": "border_desktop",
+        "label": "Border Desktop",
+      },
+      {
+        "type": "text",
+        "id": "border_color",
+        "label": "Border Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Border"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,162 @@
+<section id="section-{{ section_id }}">
+  <div class="border-b border-police-blue-20 pb-10 lg:pb-24">
+    <div class="container">
+      <h1 class="mb-2.5 mt-4 text-center text-40 font-medium tracking-tight lg:mb-4 lg:mt-5.5 lg:text-64">
+        {{- 'customer.account.title' | t: first_name: customer.first_name -}}
+      </h1>
+      <div class="flex justify-center">
+        <a
+          class="inline-flex items-center justify-center border border-police-blue px-4 py-1 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-30"
+          href="{{ routes.account_url }}"
+          title="{{ 'customer.log_out' | t }}"
+        >
+          <span class="flex">{% render 'icon', icon: 'chevron-left', class: 'size-4' %}</span>
+          <span>{{- 'customer.account.return' | t -}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="mb-16 xl:grid xl:grid-cols-12 xl:gap-x-6 xl:pb-35 xl:mb-2.5">
+      <div class="mb-16 pt-6.5 lg:col-span-8 lg:pt-28 xl:mb-0">
+        <h2 class="mb-1 text-center text-32 font-medium lg:mb-5 lg:text-left lg:text-40">
+          {{- 'customer.order.title' | t: name: order.name -}}
+        </h2>
+        <div class="mx-auto mb-8 max-w-75 text-center lg:mb-8 lg:mt-2 lg:max-w-full lg:text-left">
+          {%- assign order_date = order.created_at | time_tag: '%B %d, %Y %H:%M %p' -%}
+          <p class="lg:mb-0.5">
+            <span class="text-police-blue-70">{{ 'customer.order.date_html' | t }}</span>
+            <span>{{ order_date -}}</span>
+          </p>
+          {%- if order.cancelled -%}
+            {%- assign cancelled_at = order.cancelled_at | time_tag: '%B %d, %Y %H:%M %p' -%}
+            <p class="lg:mb-0.5">
+              <span class="text-police-blue-70">{{ 'customer.order.cancelled_html' | t }}</span>
+              <span>{{ cancelled_at }}</span>
+            </p>
+            <p>
+              <span class="text-police-blue-70">{{ 'customer.order.cancelled_reason' | t }}</span>
+              <span>{{ order.cancel_reason_label }}</span>
+            </p>
+          {%- endif -%}
+        </div>
+        <div>
+          <div class="hidden uppercase tracking-wide text-sm leading-none text-police-blue-70 font-medium pb-3 pt-4.5 lg:gap-x-4 lg:grid lg:grid-cols-[48px_1fr_190px_100px_70px_110px] lg:items-center 2xl:grid-cols-[48px_1fr_200px_110px_110px_110px]">
+            <div class="col-span-2">{{ 'customer.order.product' | t }}</div>
+            <div>{{ 'customer.order.sku' | t }}</div>
+            <div>{{ 'customer.order.price' | t }}</div>
+            <div class="lg:hidden">{{ 'customer.order.quantity' | t }}</div>
+            <div class="hidden lg:block text-center">{{ 'customer.order.quantity_full' | t }}</div>
+            <div class="text-right">{{ 'customer.order.total' | t }}</div>
+          </div>
+          <ul class="border-t border-police-blue-20 lg:border-police-blue-70">
+            {%- for line_item in order.line_items -%}
+              {% assign product = line_item.product %}
+              <li class="grid grid-cols-[48px_1fr_auto] gap-x-4 border-b border-police-blue-20 py-4.5 lg:py-6 lg:grid-cols-[48px_1fr_190px_100px_70px_110px] lg:items-center 2xl:grid-cols-[48px_1fr_200px_110px_110px_110px]">
+                <div>
+                  <div class="mt-1.5 aspect-square bg-gray-100 p-1 lg:mt-0">
+                    {% liquid
+                      assign product_img_url = 'placeholder.jpeg' | asset_url
+                      if product.featured_image
+                        assign product_img_url = product.featured_image | product_img_url
+                      endif
+                    %}
+                    <img
+                      class="h-full w-full object-contain mix-blend-darken"
+                      src="{{ product_img_url }}"
+                      alt=""
+                    >
+                  </div>
+                </div>
+                <div class="mb-3 lg:mb-0">
+                  <a
+                    class="text-persian-blue underline hover:no-underline"
+                    href="{{ line_item.url }}"
+                    title="{{ product.title }}"
+                  >
+                    {{- product.title -}}
+                  </a>
+                </div>
+                <div class="col-start-2 mb-2 text-sm leading-none lg:col-start-3 lg:mb-0 lg:text-base">
+                  <span class="text-police-blue-70 lg:hidden">{{ 'customer.order.sku' | t }}: </span>{{ line_item.sku }}
+                </div>
+                <div class="hidden lg:col-start-4 lg:block">{{ line_item.price | money }}</div>
+                <div class="col-start-2 text-sm leading-none lg:col-start-5 lg:text-center lg:text-base">
+                  <span
+                    class="text-police-blue-70 lg:hidden"
+                  >
+                    {{- 'customer.order.quantity' | t }}:
+                  </span>
+                  {{- line_item.quantity }}
+                </div>
+                <div
+                  class="col-start-3 row-start-1 lg:col-start-6 lg:text-right"
+                >
+                  {{- line_item.line_price | money -}}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+          <div>
+            {% for line_item in order.line_items %}
+              {% if line_item.discount_allocations.size > 0 %}
+                {% for discount in line_item.discount_allocations %}
+                  <div class="flex border-b border-police-blue-20 py-5.5 leading-none">
+                    <span class="flex-1">{{ 'customer.order.discount_label' | t: title: discount.discount_application.title }}</span>
+                    <span>{{ discount.amount | money }}</span>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+            <div class="flex border-b border-police-blue-20 py-5.5 leading-none">
+              <span class="flex-1">{{ 'customer.order.subtotal' | t }}</span>
+              <span>{{ order.subtotal_price | money }}</span>
+            </div>
+            <div class="flex border-b border-police-blue-20 py-5.5 leading-none">
+              {%- for shipping_method in order.shipping_methods -%}
+                <span class="flex-1">{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</span>
+                <span>{{ shipping_method.price_with_discounts | money }}</span>
+              {% endfor %}
+            </div>
+            <div class="flex border-b border-police-blue-20 py-4.5 text-xl font-medium leading-none">
+              <span class="flex-1">{{ 'customer.order.total' | t }}</span>
+              <span>{{ order.total_price | money }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:flex lg:gap-6 xl:col-span-4 xl:block xl:pl-10 xl:pt-20 3xl:pl-18">
+        <div class="mb-4 flex-1 bg-bright-gray p-6 xl:mb-6 xl:p-10 xl:pt-7 xl:pb-8.5">
+          <h2 class="mb-4 xl:text-32">
+            {{ 'customer.order.billing_address' | t }}
+          </h2>
+          <div class="mb-4">
+            <span class="text-police-blue-70">{{ 'customer.order.payment_status' | t }}:</span>
+            {{ order.financial_status_label }}
+          </div>
+          <div>
+            {{ order.billing_address | format_address }}
+          </div>
+        </div>
+        <div class="mb-4 flex-1 bg-bright-gray p-6 xl:mb-0 xl:p-10 xl:pt-7 xl:pb-8.5">
+          <h2 class="mb-4 xl:text-32">
+            {{ 'customer.order.shipping_address' | t }}
+          </h2>
+          <div class="mb-4">
+            <span class="text-police-blue-70">{{ 'customer.order.fulfillment_status' | t }}:</span>
+            {{ order.fulfillment_status_label }}
+          </div>
+          <div>
+            {{ order.shipping_address | format_address }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "t:sections.main-order.name",
+    "settings": []
+  }
+{% endschema %}

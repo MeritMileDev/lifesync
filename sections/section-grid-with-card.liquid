@@ -1,0 +1,203 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="md:container">
+    {% liquid
+      assign blocks = section.blocks | where: 'type', 'card'
+      assign column_count = blocks.size
+    %}
+    <div class="md:grid md:grid-cols-{{ column_count }} md:gap-x-10">
+      {% for block in blocks %}
+        {% liquid
+          assign background_color = block.settings.background_color
+          assign image_mobile = block.settings.image_mobile
+          assign image_desktop = block.settings.image_desktop | default: image_mobile
+          assign title = block.settings.title
+          assign title_max_width_mobile = block.settings.title_max_width_mobile
+          assign title_max_width_desktop = block.settings.title_max_width_desktop
+          assign subtitle = block.settings.subtitle
+          assign text = block.settings.text
+          assign text_max_width_mobile = block.settings.text_max_width_mobile
+          assign text_max_width_desktop = block.settings.text_max_width_desktop
+        %}
+        <div
+          class="px-4 py-15 text-center md:row-start-1 md:row-end-5 md:grid md:grid-rows-subgrid md:p-0"
+          id="card-{{ block.id }}"
+        >
+          {% if subtitle != blank %}
+            <div class="mb-3 text-sm font-medium uppercase leading-none tracking-wide text-police-blue-70 md:mt-3 xl:mb-4 xl:mt-10">
+              {{- subtitle -}}
+            </div>
+          {% endif %}
+          {% if title != blank %}
+            <h2 class="card-title mx-auto mb-7 text-32 font-medium xl:text-40 xl:tracking-tight xl:mb-5">{{ title }}</h2>
+          {% endif %}
+          {% if image_mobile %}
+            <div class="aspect-[560/400] md:row-start-1 md:row-end-2">
+              {% assign desktop_size = 100 | divided_by: column_count %}
+              {% render 'picture',
+                image_desktop: image_desktop,
+                image_mobile: image_mobile,
+                class: 'w-full h-full object-cover',
+                lazy: 'lazy',
+                desktop_size: desktop_size
+              %}
+            </div>
+          {% endif %}
+          {% if text != blank %}
+            <div class="card-text mx-auto mt-7 md:mt-0">{{ text }}</div>
+          {% endif %}
+        </div>
+        <style>
+          @media screen and (max-width: 767px) {
+            #card-{{ block.id }} {
+              background-color: {{ background_color }};
+            }
+          }
+
+          @media screen and (max-width: 1279px) {
+            #card-{{ block.id }} {
+              .card-title {
+                max-width: {% if title_max_width_mobile > 0 %} {{ title_max_width_mobile }}px {% else %} 100% {% endif %};
+              }
+
+              .card-text {
+                max-width: {% if text_max_width_mobile > 0 %} {{ text_max_width_mobile }}px {% else %} 100% {% endif %};
+              }
+            }
+          }
+
+          @media screen and (min-width: 1280px) {
+            #card-{{ block.id }} {
+              .card-title {
+                max-width: {% if title_max_width_desktop > 0 %} {{ title_max_width_desktop }}px {% else %} 100% {% endif %};
+              }
+
+              .card-text {
+                max-width: {% if text_max_width_desktop > 0 %} {{ text_max_width_desktop }}px {% else %} 100% {% endif %};
+              }
+            }
+          }
+        </style>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Grid with Card",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "id": "background_color",
+            "type": "color",
+            "label": "Background Color (Mobile)"
+          },
+          {
+            "id": "image_mobile",
+            "type": "image_picker",
+            "label": "Image Mobile"
+          },
+          {
+            "id": "image_desktop",
+            "type": "image_picker",
+            "label": "Image Desktop"
+          },
+          {
+            "id": "subtitle",
+            "type": "richtext",
+            "label": "Subtitle"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          },
+          {
+            "id": "title_max_width_mobile",
+            "type": "number",
+            "label": "Title Max Width Mobile"
+          },
+          {
+            "id": "title_max_width_desktop",
+            "type": "number",
+            "label": "Title Max Width Desktop"
+          },
+          {
+            "id": "text",
+            "type": "richtext",
+            "label": "Text"
+          },
+          {
+            "id": "text_max_width_mobile",
+            "type": "number",
+            "label": "Text Max Width Mobile"
+          },
+          {
+            "id": "text_max_width_desktop",
+            "type": "number",
+            "label": "Text Max Width Desktop"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Grid with Card"
+      }
+    ]
+  }
+{% endschema %}

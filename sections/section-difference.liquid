@@ -1,0 +1,466 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign section_subtitle = section.settings.section_subtitle
+  assign section_title = section.settings.section_title
+  assign section_note = section.settings.section_note
+  assign section_description = section.settings.section_description
+  assign label = section.settings.label
+  assign tab_name_before = section.settings.tab_name_before
+  assign tab_name_after = section.settings.tab_name_after
+  assign image_before = section.settings.image_before
+  assign image_before_mobile = section.settings.image_before_mobile
+  assign image_after = section.settings.image_after
+  assign image_after_mobile = section.settings.image_after_mobile
+  assign title_before = section.settings.title_before
+  assign title_after = section.settings.title_after
+  assign description_before = section.settings.description_before
+  assign description_after = section.settings.description_after
+  assign icon_after = section.settings.icon_after
+  assign button_label_after = section.settings.button_label_after
+  assign button_link_after = section.settings.button_link_after
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<style>
+  {% if section.settings.section_title_max_width > 0 %}
+  #section-{{ section_id }} .section-title {
+    max-width: {{ section.settings.section_title_max_width }}px;
+  }
+  {% endif %}
+  {% if section.settings.section_description_max_width > 0 %}
+  #section-{{ section_id }} .section-description {
+    max-width: {{ section.settings.section_description_max_width }}px;
+  }
+  {% endif %}
+</style>
+
+<section x-data="Difference('after')" id="section-{{ section_id }}">
+  <div class="container text-center lg:mb-12">
+    {% if section_subtitle != blank %}
+      <p class="mx-auto mb-2 text-sm font-medium uppercase tracking-wide text-police-blue-70 xl:mb-3.5">
+        {{ section_subtitle }}
+      </p>
+    {% endif %}
+    {% if section_title != blank %}
+      <h2
+        class="section-title xl:leading-14 mx-auto mb-2 px-7.5 text-32 font-medium leading-10 xl:mb-3 xl:px-0 xl:text-5xl"
+      >
+        {{ section_title }}
+      </h2>
+    {% endif %}
+    {% if section_description != blank %}
+      <div class="section-description rte mx-auto mb-3 max-w-xl px-7.5 xl:mb-0 xl:px-0">
+        {{ section_description }}
+      </div>
+    {% endif %}
+    {% if section_note != blank %}
+      <p class="mb-9.5 text-sm text-police-blue-70 xl:mt-4.5">
+        {{ section_note }}
+      </p>
+    {% endif %}
+  </div>
+  <div class="container mt-7 xl:hidden">
+    <div class="-mb-px flex items-center border-b border-police-blue-20 text-center uppercase tracking-wide">
+      <div
+        @click="stateMobile = 'before'"
+        class="flex-1 cursor-pointer border-b-4 border-transparent px-2 py-4 font-medium transition duration-500"
+        :class="stateMobile === 'before' && '!border-persian-blue text-persian-blue'"
+      >
+        <span>{{ tab_name_before }}</span>
+      </div>
+      <div
+        @click="stateMobile = 'after'"
+        class="flex-1 cursor-pointer border-b-4 border-transparent px-2 py-4 font-medium transition duration-500"
+        :class="stateMobile === 'after' && '!border-persian-blue text-persian-blue'"
+      >
+        <span>{{ tab_name_after }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-15 hidden xl:block">
+    <div
+      class="mx-480 relative mx-auto w-full"
+      @mouseenter="setState($event)"
+      @mouseleave="resetState()"
+    >
+      {% if label != blank %}
+        <div
+          class="absolute left-0 right-0 top-4 z-[13] mx-auto max-w-max bg-white px-4 py-1 text-2xl font-medium text-police-blue"
+        >
+          <span>{{ label }}</span>
+          <div
+            class="absolute left-0 right-0 top-full mx-auto h-0 w-0 translate-x-px rotate-180 transform border-b-8 border-l-8 border-r-8 border-t-0 border-b-white border-l-transparent border-r-transparent border-t-transparent"
+          >
+          </div>
+        </div>
+      {% endif %}
+      <div
+        @mouseenter="state = 'before'"
+        :class="state === 'after' && 'opacity-100 !w-1/5'"
+        style="background-color: rgba(0, 23, 41, 0.60)"
+        class="absolute bottom-0 left-0 top-0 z-[11] h-full w-0 transition-all duration-500 ease-in-out"
+      ></div>
+      <div
+        @mouseenter="state = 'after'"
+        :class="state === 'before' && 'opacity-100 !w-1/5'"
+        style="background-color: rgba(0, 23, 41, 0.60)"
+        class="absolute bottom-0 right-0 top-0 z-[11] h-full w-0 transition-all duration-500 ease-in-out"
+      ></div>
+      <div
+        :class="
+          {
+            'left-[80%]': state === 'before',
+            'left-[20%]': state === 'after',
+          }
+        "
+        class="transition-left pointer-events-none absolute left-0 left-1/2 top-0 z-[12] flex h-full -translate-x-1/2 items-center gap-1.5 duration-500 ease-in-out"
+      >
+        <div :class="state === 'before' && 'opacity-0'" class="transition duration-500">
+          {% render 'icon', icon: 'triangle-left', fill: '#fff' %}
+        </div>
+        <div class="h-full w-0.5 bg-white"></div>
+        <div :class="state === 'after' && 'opacity-0'" class="transition duration-500">
+          {% render 'icon', icon: 'triangle-right', fill: '#fff' %}
+        </div>
+      </div>
+      {% render 'picture',
+        image_mobile: image_before,
+        image_desktop: image_before,
+        is_full_size: true,
+        class: 'w-full h-full object-cover'
+      %}
+      <div
+        :style="
+          {
+            '--exposure': state === 'before' ? '80%'
+                      : state === 'after' ? '20%'
+                      : '50%'
+          }
+        "
+        class="absolute inset-0 h-full w-full transition-all duration-500 ease-in-out"
+        style="--exposure: 50%; clip-path: polygon(var(--exposure) 0, 100% 0, 100% 100%, var(--exposure) 100%);"
+      >
+        {% render 'picture',
+          image_mobile: image_after,
+          image_desktop: image_after,
+          is_full_size: true,
+          class: 'w-full h-full object-cover'
+        %}
+      </div>
+      <div
+        x-cloak
+        x-show="state === 'before'"
+        x-transition:enter="transition ease duration-500"
+        x-transition:enter-start="opacity-0 translate-y-16"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease duration-500"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 translate-y-16"
+        class="absolute inset-0 flex h-full w-full items-center"
+      >
+        <div class="container">
+          <div class="grid grid-cols-12">
+            <div class="relative col-span-6 col-start-4 text-center text-white">
+              <div class="mx-auto max-w-[600px]">
+                <h2 class="mb-6 text-64">
+                  {{ title_before }}
+                </h2>
+                <div class="rte">
+                  {{ description_before }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        x-cloak
+        x-show="state === 'after'"
+        x-transition:enter="transition ease duration-500"
+        x-transition:enter-start="opacity-0 translate-y-16"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease duration-500"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 translate-y-16"
+        class="absolute inset-0 flex h-full w-full items-center"
+      >
+        <div class="container">
+          <div class="grid grid-cols-12">
+            <div class="relative col-span-6 col-start-4 text-center text-white">
+              <div class="mx-auto max-w-[600px]">
+                {% if icon_after != blank %}
+                  {% render 'picture',
+                    image_mobile: icon_after,
+                    image_desktop: icon_after,
+                    is_full_size: false,
+                    class: 'mx-auto max-w-max mb-6'
+                  %}
+                {% endif %}
+                <h2 class="mb-6 text-64">
+                  {{ title_after }}
+                </h2>
+                <div class="rte">
+                  {{ description_after }}
+                </div>
+                {% if button_link_after != blank %}
+                  <a
+                    class="mx-auto mt-6 flex max-w-max items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20"
+                    href="{{ button_link_after }}"
+                  >
+                    {{- button_label_after -}}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-9 block xl:hidden">
+    <div class="container">
+      <div class="mx-auto mb-10 max-w-[600px] text-center text-police-blue lg:mb-0">
+        <div x-cloak x-show="stateMobile === 'before'" class="">
+          {% if image_before_mobile != blank %}
+            {% render 'picture',
+              image_mobile: image_before_mobile,
+              image_desktop: image_before_mobile,
+              is_full_size: false,
+              class: 'mx-auto mb-6'
+            %}
+          {% endif %}
+          <h2 class="mb-2.5 text-2xl">
+            {{ title_before }}
+          </h2>
+          <div class="rte mb-6">
+            {{ description_before }}
+          </div>
+        </div>
+        <div x-show="stateMobile === 'after'" class="">
+          {% if image_after_mobile != blank %}
+            {% render 'picture',
+              image_mobile: image_after_mobile,
+              image_desktop: image_after_mobile,
+              is_full_size: false,
+              class: 'mx-auto mb-6'
+            %}
+          {% endif %}
+          <h2 class="mb-4 text-2xl">
+            {{ title_after }}
+          </h2>
+          <div class="rte">
+            {{ description_after }}
+          </div>
+          {% if button_link_after != blank %}
+            <a
+              class="text-centext-police-blue active:scale-disabled:opacity-20 mx-auto mb-6 mt-6 flex max-w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-sm font-medium uppercase transition duration-100 hover:scale-102 lg:max-w-max"
+              href="{{ button_link_after }}"
+            >
+              {{- button_label_after -}}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% if label != blank %}
+      <div
+        class="relative hidden w-full bg-bright-gray px-4 py-2.5 text-center text-xl font-medium text-police-blue xl:block"
+      >
+        <span>{{ label }}</span>
+        <div
+          class="absolute left-0 right-0 top-full z-10 mx-auto h-0 w-0 translate-x-px rotate-180 transform border-b-8 border-l-8 border-r-8 border-t-0 border-b-white border-l-transparent border-r-transparent border-t-transparent"
+        >
+        </div>
+      </div>
+    {% endif %}
+    <div class="relative hidden xl:block">
+      <div :class="stateMobile === 'after' && 'opacity-0'" class="transition duration-500 ">
+        {% render 'picture',
+          image_mobile: image_before,
+          image_desktop: image_before,
+          is_full_size: false,
+          class: 'md:aspect-auto aspect-[9/10] object-cover object-center'
+        %}
+      </div>
+      <div
+        :class="stateMobile === 'after' && 'opacity-100'"
+        class="absolute inset-0 z-10 h-full w-full opacity-0 transition duration-500"
+      >
+        {% render 'picture',
+          image_mobile: image_after,
+          image_desktop: image_after,
+          is_full_size: false,
+          class: 'md:aspect-auto aspect-[9/10] object-cover object-center'
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Difference",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "section_note",
+        "label": "Note"
+      },
+      {
+        "type": "number",
+        "id": "section_title_max_width",
+        "label": "Section Title Max Width",
+        "default": 0
+      },
+      {
+        "type": "richtext",
+        "id": "section_description",
+        "label": "Description"
+      },
+      {
+        "type": "number",
+        "id": "section_description_max_width",
+        "label": "Section Description Max Width",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Label"
+      },
+      {
+        "type": "header",
+        "content": "Content Before"
+      },
+      {
+        "type": "text",
+        "id": "tab_name_before",
+        "label": "Tab Name Before (mobile)"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_before",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_before_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "text",
+        "id": "title_before",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description_before",
+        "label": "Description"
+      },
+      {
+        "type": "header",
+        "content": "Content After"
+      },
+      {
+        "type": "text",
+        "id": "tab_name_after",
+        "label": "Tab Name After (mobile)"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_after",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_after_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_after",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "title_after",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description_after",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "button_label_after",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link_after",
+        "label": "Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Difference"
+      }
+    ]
+  }
+{% endschema %}

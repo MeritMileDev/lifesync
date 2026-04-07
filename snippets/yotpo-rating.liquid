@@ -1,0 +1,44 @@
+{% comment %}
+  Renders a Yotpo rating widget
+
+  Accepts:
+  - product_id: {mumber}
+  - yotpo_api_key: {string}(optional)
+
+  Usage:
+    {% render 'yotpo-rating', product_id: 'productId', yotpo_api_key: 'yotpo_api_key'  %}
+{% endcomment %}
+
+{% liquid
+  assign yotpo_api_key = yotpo_api_key | default: settings.yotpo_api_key
+%}
+{% if product_id and yotpo_api_key %}
+  <div x-data="yotpoRating('{{ product_id }}', '{{ yotpo_api_key }}')">
+    <div class="flex items-center gap-1">
+      <div class="flex gap-px pb-0.5">
+        <template x-for="star in 5" :key="star">
+          <div>
+            <div x-show="averageScore >= star">
+              {% render 'icon', icon: 'star-filled' %}
+            </div>
+
+            <div x-show="averageScore >= (star - 0.5) && averageScore < star">
+              {% render 'icon', icon: 'star-half-filled' %}
+            </div>
+
+            <div x-show="averageScore < (star - 0.5)">
+              {% render 'icon', icon: 'star-empty' %}
+            </div>
+          </div>
+        </template>
+
+        {% for i in (1..5) %}
+          <span x-init="$el.style.display = 'none'">
+            {% render 'icon', icon: 'star-empty' %}
+          </span>
+        {% endfor %}
+      </div>
+        <span class="text-sm leading-3 text-police-blue-70" x-text="totalReviews || 0"></span>
+    </div>
+  </div>
+{% endif %}

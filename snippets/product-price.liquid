@@ -1,0 +1,69 @@
+{% comment %}
+  Renders a list of product's price (regular, sale)
+
+  Accepts:
+  - product: {object} Product Liquid object (optional)
+  - use_variant: {boolean} Renders selected or first variant price instead of overall product pricing (optional)
+
+  Usage:
+    {% render 'price', product: product %}
+{% endcomment %}
+{% liquid
+  if product.selected_variant
+    assign target = product.selected_variant
+  else
+    assign target = product
+  endif
+%}
+<div class="flex items-center text-xl font-normal">
+  {% if product.has_only_default_variant %}
+    <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
+    <span
+      {% if product.compare_at_price > target.price %}
+        class="text-red"
+      {% endif %}
+    >
+      {{- product.price | money -}}
+    </span>
+    {% if product.compare_at_price > target.price %}
+      <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+      <span class="ml-2 text-base text-police-blue-70 line-through">
+        {{- product.compare_at_price | money -}}
+      </span>
+    {% endif %}
+  {% elsif product.available %}
+    <template x-if="currentVariant.id">
+      <span>
+        <span class="sr-only">{{ 'products.product.price.sale_price' | t }}!</span>
+        <span
+          :class="{'text-red': currentVariant.compare_at_price > currentVariant.price}"
+          x-text="getPrice(currentVariant.price)"
+        ></span>
+      </span>
+    </template>
+    <template x-if="currentVariant.id && currentVariant.compare_at_price > currentVariant.price">
+      <span>
+        <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+        <span
+          class="ml-2 text-base text-police-blue-70 line-through"
+          x-text="getPrice(currentVariant.compare_at_price)"
+        >
+        </span>
+      </span>
+    </template>
+    <template x-if="!currentVariant.id">
+      <span>
+        <span
+          x-text="getLowestPrice() && getLowestPrice() !== getHighestPrice() ? `${getLowestPrice()} - ${getHighestPrice()}`: getHighestPrice()"
+        ></span>
+      </span>
+    </template>
+  {% else %}
+    {% if product.price_max > product.price_min %}
+      <span>{{ product.price_min | money }} - {{ product.price_max | money }}</span>
+    {% else %}
+      <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
+      <span>{{ product.price | money }}</span>
+    {% endif %}
+  {% endif %}
+</div>

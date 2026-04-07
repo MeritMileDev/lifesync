@@ -1,0 +1,95 @@
+body {
+  #omnisend-form-6752f8b00b7287d7960f4831-field-container-62a34db0f7b3732a01429b16-emailField-input.omnisend-form-6752f8b00b7287d7960f4831-field-container-62a34db0f7b3732a01429b16-input {
+    @apply border-0 bg-bright-gray-20 !text-white !rounded-none !outline-none;
+    &::-webkit-input-placeholder {
+      @apply !text-bright-gray-50;
+    }
+    &::-moz-placeholder {
+      @apply !text-bright-gray-50;
+    }
+    &:-ms-input-placeholder {
+      @apply !text-bright-gray-50;
+    }
+    &:-moz-placeholder {
+      @apply !text-bright-gray-50;
+    }
+  }
+  #omnisend-form-6752f8b00b7287d7960f4831-field-container-62a34db0f7b3732a01429b16-emailField-input.omnisend-form-6752f8b00b7287d7960f4831-field-container-62a34db0f7b3732a01429b16-input {
+    @apply font-sans text-base;
+  }
+  #omnisend-form-6752f8b00b7287d7960f4831-action-627932485028ebd8c6660c51.omnisend-form-6752f8b00b7287d7960f4831-action-627932485028ebd8c6660c51 {
+    @apply absolute right-2 top-2 font-sans w-10 h-10 border-0 bg-transparent text-[0] transition duration-300 hover:bg-police-blue-70 before:absolute before:inset-0 before:bg-arrow-right before:bg-no-repeat before:bg-center;
+  }
+  .omnisend-form-6752f8b00b7287d7960f4831-field-container-62a34db0f7b3732a01429b16 {
+    @apply relative;
+  }
+  #omnisend-form-6752f8b00b7287d7960f4831-field-container-62a34db0f7b3732a01429b16-required,
+  #omnisend-form-6752f8b00b7287d7960f4831-field-container-62a34db0f7b3732a01429b16-error {
+    @apply pb-0;
+  }
+  .omnisend-form-6752f8b00b7287d7960f4831-section-6334361f157261686a766272,
+  .omnisend-form-6752f8b00b7287d7960f4831-section-62a3492df7b3732a01429af7,
+  .omnisend-form-6752f8b00b7287d7960f4831-text-62a3492df7b3732a01429af5,
+  .omnisend-form-6752f8b00b7287d7960f4831-text-6328497fe3f9bca2e8014f78,
+  .omnisend-form-6752f8b00b7287d7960f4831-text-6334361f157261686a766271 {
+    @apply p-0 text-white;
+  }
+  .omnisend-form-6752f8b00b7287d7960f4831-text-6334361f157261686a766271, .omnisend-form-6752f8b00b7287d7960f4831-text-6334361f157261686a766271 p, .omnisend-form-6752f8b00b7287d7960f4831-text-6334361f157261686a766271 li,
+  .omnisend-form-6752f8b00b7287d7960f4831-text-62a3492df7b3732a01429af5, .omnisend-form-6752f8b00b7287d7960f4831-text-62a3492df7b3732a01429af5 p, .omnisend-form-6752f8b00b7287d7960f4831-text-62a3492df7b3732a01429af5 li,
+  .omnisend-form-6752f8b00b7287d7960f4831-text-6328497fe3f9bca2e8014f78, .omnisend-form-6752f8b00b7287d7960f4831-text-6328497fe3f9bca2e8014f78 p, .omnisend-form-6752f8b00b7287d7960f4831-text-6328497fe3f9bca2e8014f78 li {
+    @apply !text-white !font-sans mb-1;
+    strong {
+      @apply font-medium;
+    }
+  }
+  .omnisend-form-6752f8b00b7287d7960f4831-success-sections-container,
+  .omnisend-form-6752f8b00b7287d7960f4831-subscribed-sections-container {
+    @apply lg:text-left text-center;
+  }
+  .omnisend-form-6752f8b00b7287d7960f4831-success-sections-container h1,
+  .omnisend-form-67616d200822a0124130cec5-success-sections-container h1 {
+    @apply !text-4xl;
+  }
+
+  #omnisend-form-67616d200822a0124130cec5-field-container-62a34db0f7b3732a01429b16-emailField-input.omnisend-form-67616d200822a0124130cec5-field-container-62a34db0f7b3732a01429b16-input {
+    @apply border border-police-blue-70 !text-police-blue !rounded-none !outline-none font-sans text-base;
+    &::-webkit-input-placeholder {
+      @apply !text-police-blue-70;
+    }
+    &::-moz-placeholder {
+      @apply !text-police-blue-70;
+    }
+    &:-ms-input-placeholder {
+      @apply !text-police-blue-70;
+    }
+    &:-moz-placeholder {
+      @apply !text-police-blue-70;
+    }
+  }
+
+  #omnisend-form-67616d200822a0124130cec5-action-627932485028ebd8c6660c51.omnisend-form-67616d200822a0124130cec5-action-627932485028ebd8c6660c51 {
+    @apply absolute right-2 top-2 font-sans w-10 h-10 border-0 bg-transparent text-[0] transition duration-300 hover:bg-yellow before:absolute before:inset-0 before:bg-arrow-right-grey before:bg-no-repeat before:bg-center;
+  }
+  .omnisend-form-67616d200822a0124130cec5-column-624ab2f927652f651edfd0ae {
+    @apply relative;
+  }
+  #omnisend-form-67616d200822a0124130cec5-field-container-62a34db0f7b3732a01429b16-required,
+  #omnisend-form-67616d200822a0124130cec5-field-container-62a34db0f7b3732a01429b16-error {
+    @apply pb-0;
+  }
+  .omnisend-form-67616d200822a0124130cec5-text-6334361f157261686a766271, .omnisend-form-67616d200822a0124130cec5-text-6334361f157261686a766271 p, .omnisend-form-67616d200822a0124130cec5-text-6334361f157261686a766271 li,
+  .omnisend-form-67616d200822a0124130cec5-text-62a3492df7b3732a01429af5, .omnisend-form-67616d200822a0124130cec5-text-62a3492df7b3732a01429af5 p, .omnisend-form-67616d200822a0124130cec5-text-62a3492df7b3732a01429af5 li {
+    @apply !text-police-blue !font-sans mb-1;
+    strong {
+      @apply font-medium;
+    }
+  }
+  .omnisend-form-67616d200822a0124130cec5-section-6334361f157261686a766272,
+  .omnisend-form-67616d200822a0124130cec5-text-6334361f157261686a766271, .omnisend-form-67616d200822a0124130cec5-text-6334361f157261686a766271 p, .omnisend-form-67616d200822a0124130cec5-text-6334361f157261686a766271 li,
+  .omnisend-form-67616d200822a0124130cec5-text-62a3492df7b3732a01429af5,
+  .omnisend-form-67616d200822a0124130cec5-section-62a3492df7b3732a01429af7,
+  .omnisend-form-67616d200822a0124130cec5-text-6328497fe3f9bca2e8014f78 {
+    @apply p-0;
+  }
+}
+

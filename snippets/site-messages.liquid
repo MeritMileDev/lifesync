@@ -1,0 +1,34 @@
+{% comment %}
+  Renders site messages
+
+  Accepts:
+  - message_variant: {String} Message variant (success, error, info, warning)
+  - message_text: {String} Message text
+  - message_title: {String} Message title (optional)
+
+  Usage:
+  {% render 'site-messages', message_variant: 'info', message_text: 'Message', message_title: 'Title' %}
+{% endcomment %}
+
+{% liquid
+  assign variant = message_variant | default: 'info'
+  assign message_background = 'bg-police-blue/5'
+  assign border_color = 'border-police-blue'
+  assign icon = 'info-1'
+  assign title = ''
+  assign message = message_text | default: ''
+  assign title = message_title | default: ''
+%}
+{% if message != blank %}
+  <div class="message my-5 p-6 {{ message_background }} {{ border_color }}">
+    <div class="flex gap-6 items-start">
+      <div>{% render 'icon', icon: icon %}</div>
+      <div>
+        {% if title != blank %}
+          <div class="font-medium">{{ title }}</div>
+        {% endif %}
+        <div class="text-sm leading-none">{{ message }}</div>
+      </div>
+    </div>
+  </div>
+{% endif %}

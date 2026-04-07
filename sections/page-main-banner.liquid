@@ -1,0 +1,109 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign image_mobile = section.settings.bg_mobile
+  assign image_desktop = section.settings.bg_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="md:min-h-0 md:aspect-[1920/800] relative flex min-h-162 flex-col justify-end pb-14 md:justify-center md:pb-0 md:pt-10.5 xl:pt-37.5">
+    <div class="absolute inset-0">
+      {% render 'picture',
+        image_desktop: image_desktop,
+        image_mobile: image_mobile,
+        lazy: 'eager',
+        class: 'w-full object-cover object-center',
+        id: 'id',
+        mobile_size: '100',
+        desktop_size: '50',
+        is_full_size: false
+      %}
+    </div>
+    <div class="relative">
+      <div class="container">
+        <div class="max-w-65 mx-auto mb-2 text-center text-40 font-medium tracking-tight text-white md:max-w-full md:text-left lg:text-64">{{ title }}</div>
+        <div class="max-w-65 mx-auto text-center text-white md:max-w-full md:text-left">{{ subtitle }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Main Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_mobile",
+        "label": "Background Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_desktop",
+        "label": "Background Image Desktop"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Main Banner"
+      }
+    ]
+  }
+{% endschema %}

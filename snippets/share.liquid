@@ -1,0 +1,20 @@
+<ul class="flex gap-8 items-center">
+  <li>
+    <a class="flex gap-2 items-center {{ text_color_class }} hover:underline" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank">
+      {% render 'icon', icon: 'facebook', class: icon_color_class %}
+      <span class="text-sm font-medium uppercase tracking-wide">Share</span>
+    </a>
+  </li>
+  <li>
+    <a class="flex gap-2 items-center {{ text_color_class }} hover:underline" href="https://twitter.com/share?url={{ share_url }}&text={{ article.title | escape }}" target="_blank">
+      {% render 'icon', icon: 'twitter', class: icon_color_class %}
+      <span class="text-sm font-medium uppercase tracking-wide">Tweet</span>
+    </a>
+  </li>
+  <li>
+    <a class="flex gap-2 items-center {{ text_color_class }} hover:underline" href="mailto:?subject=Check%20out%20this%20page&body={{ share_url }}" target="_blank">
+      {% render 'icon', icon: 'email', class: icon_color_class %}
+      <span class="text-sm font-medium uppercase tracking-wide">Email</span>
+    </a>
+  </li>
+</ul>

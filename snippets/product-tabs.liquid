@@ -1,0 +1,192 @@
+<div class="my-16 xl:my-26" x-data="{ isOpen: 1 }" @reviews.window="isOpen = 5; $el.scrollIntoView({ behavior: 'smooth', block: 'start'})">
+  <div class="mb-12 hidden xl:flex xl:border xl:border-police-blue-70">
+    {% if product.description != blank %}
+      <div
+        :class="{'bg-police-blue text-white': isOpen === 1}"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        @click="isOpen = isOpen === 1 ? 0 : 1"
+      >
+        {{- 'products.product.tabs.description' | t -}}
+      </div>
+    {% endif %}
+    {% if product.metafields.custom.features %}
+      <div
+        :class="{'bg-police-blue text-white': isOpen === 2}"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        @click="isOpen = isOpen === 2 ? 0 : 2"
+      >
+        {{- 'products.product.tabs.features' | t -}}
+      </div>
+    {% endif %}
+    {% if product.metafields.custom.specifications %}
+      <div
+        :class="{'bg-police-blue text-white': isOpen === 3}"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        @click="isOpen = isOpen === 3 ? 0 : 3"
+      >
+        {{- 'products.product.tabs.specifications' | t -}}
+      </div>
+    {% endif %}
+    {% if product.metafields.custom.instructions %}
+      <div
+        :class="{'bg-police-blue text-white': isOpen === 4}"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        @click="isOpen = isOpen === 4 ? 0 : 4"
+      >
+        {{- 'products.product.tabs.instructions' | t -}}
+      </div>
+    {% endif %}
+    <div
+      :class="{'bg-police-blue text-white': isOpen === 5}"
+      class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+      @click="isOpen = isOpen === 5 ? 0 : 5"
+    >
+      <div>
+        <span>
+          {{- 'products.product.tabs.reviews' | t -}}
+        </span>
+        <span x-text="`(${$store.ProductRating.totalReviews})`"></span>
+      </div>
+    </div>
+  </div>
+  {% if product.description != blank %}
+    <div class="border-t border-police-blue-20 xl:border-none last:border-b">
+      <div
+        class="flex items-center py-6 xl:hidden"
+        @click="isOpen = isOpen === 1 ? 0 : 1"
+      >
+        <span
+          class="flex-1 gap-2.5 text-sm font-medium leading-none tracking-wide uppercase"
+        >
+          {{- 'products.product.tabs.description' | t -}}
+        </span>
+        <span class="flex items-center justify-center text-police-blue-70" :class="isOpen === 1 ? '' : 'rotate-180'">
+          {% render 'icon', icon: 'chevron-up', class: 'size-3' %}
+        </span>
+      </div>
+      <div
+        x-ref="content_1"
+        x-bind:style="isOpen === 1 ? 'max-height: ' + $refs.content_1.scrollHeight + 'px' : ''"
+        class="max-h-0 overflow-hidden transition-[max-height] duration-700 lg:transition-none"
+      >
+        <div class="mb-12">
+          {{ product.description }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if product.metafields.custom.features %}
+    <div class="border-t border-police-blue-20 xl:border-none last:border-b">
+      <div
+        class="flex items-center py-6 xl:hidden"
+        @click="isOpen = isOpen === 2 ? 0 : 2"
+      >
+        <span
+          class="flex-1 gap-2.5 text-sm font-medium leading-none tracking-wide uppercase"
+        >
+          {{- 'products.product.tabs.features' | t -}}
+        </span>
+        <span class="flex items-center justify-center text-police-blue-70" :class="isOpen === 2 ? '' : 'rotate-180'">
+          {% render 'icon', icon: 'chevron-up', class: 'size-3' %}
+        </span>
+      </div>
+      <div
+        x-ref="content_2"
+        x-bind:style="isOpen === 2 ? 'max-height: ' + $refs.content_2.scrollHeight + 'px' : ''"
+        class="max-h-0 overflow-hidden transition-[max-height] duration-700 lg:transition-none"
+      >
+        <div class="mb-12">
+          {{ product.metafields.custom.features | metafield_tag }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if product.metafields.custom.specifications %}
+    <div class="border-t border-police-blue-20 xl:border-none last:border-b">
+      <div
+        class="flex items-center py-6 xl:hidden"
+        @click="isOpen = isOpen === 3 ? 0 : 3"
+      >
+        <span
+          class="flex-1 gap-2.5 text-sm font-medium leading-none tracking-wide uppercase"
+        >
+          {{- 'products.product.tabs.specifications' | t -}}
+        </span>
+        <span class="flex items-center justify-center text-police-blue-70" :class="isOpen === 3 ? '' : 'rotate-180'">
+          {% render 'icon', icon: 'chevron-up', class: 'size-3' %}
+        </span>
+      </div>
+      <div
+        x-ref="content_3"
+        x-bind:style="isOpen === 3 ? 'max-height: ' + $refs.content_3.scrollHeight + 'px' : ''"
+        class="max-h-0 overflow-hidden transition-[max-height] duration-700 lg:transition-none"
+      >
+        <div class="mb-12">
+          {{ product.metafields.custom.specifications | metafield_tag }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if product.metafields.custom.instructions %}
+    <div class="border-t border-police-blue-20 xl:border-none last:border-b">
+      <div
+        class="flex items-center py-6 xl:hidden"
+        @click="isOpen = isOpen === 4 ? 0 : 4"
+      >
+        <span
+          class="flex-1 gap-2.5 text-sm font-medium leading-none tracking-wide uppercase"
+        >
+          {{- 'products.product.tabs.instructions' | t -}}
+        </span>
+        <span class="flex items-center justify-center text-police-blue-70" :class="isOpen === 4 ? '' : 'rotate-180'">
+          {% render 'icon', icon: 'chevron-up', class: 'size-3' %}
+        </span>
+      </div>
+      <div
+        x-ref="content_4"
+        x-bind:style="isOpen === 4 ? 'max-height: ' + $refs.content_4.scrollHeight + 'px' : ''"
+        class="max-h-0 overflow-hidden transition-[max-height] duration-700 lg:transition-none"
+      >
+        <div class="mb-12">
+          {{ product.metafields.custom.instructions | metafield_tag }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="border-t border-police-blue-20 xl:border-none last:border-b" x-ref="reviewsTab">
+    <div
+      class="flex items-center py-6 xl:hidden"
+      @click="isOpen = isOpen === 5 ? 0 : 5"
+    >
+      <span
+        class="flex-1 text-sm font-medium leading-none tracking-wide uppercase"
+      >
+        <span>
+          {{- 'products.product.tabs.reviews' | t -}}
+        </span>
+        <span x-text="`(${$store.ProductRating.totalReviews})`"></span>
+      </span>
+      <span class="flex items-center justify-center text-police-blue-70" :class="isOpen === 5 ? '' : 'rotate-180'">
+        {% render 'icon', icon: 'chevron-up', class: 'size-3' %}
+      </span>
+    </div>
+    <div
+      x-ref="content_5"
+      x-bind:style="isOpen === 5 ? 'max-height: none' : ''"
+      class="max-h-0 overflow-hidden transition-[max-height] duration-700 lg:transition-none relative"
+    >
+      <div class="mb-12">
+        {% for block in section.blocks %}
+          {% if block.id contains 'yotpo_product_reviews' %}
+            {% render block %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+

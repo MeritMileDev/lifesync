@@ -1,0 +1,102 @@
+{% comment %}
+  Renders button with thumbnail from Youtube and popup with preview image and video iframe
+
+  Accepts:
+    - video_id: {string} Youtube video ID (required)
+    - popup_id: {string} Popup ID (required)
+
+  Usage:
+  {% render 'youtube-video' video_id: 'youtube_video_id' %}
+{% endcomment %}
+
+{% if video_id and video_id != empty %}
+  <div x-data="videoInitialization('{{ video_id }}', 'video-{{ popup_id }}')">
+    <div @trigger-play.window="() =>{ if($event.detail === '{{ popup_id }}'); {openPopup('{{ popup_id }}'); play()}}">
+      {% unless button_type == 'hidden' %}
+        {% if button_type == 'button' %}
+          <button
+            class="flex gap-2 items-center justify-center text-center font-medium text-police-blue bg-white px-10 py-4.25 text-sm uppercase border border-police-blue hover:scale-102 active:scale-100 disabled:opacity-30 transition duration-100 lg:w-auto w-full"
+            @click="openPopup('{{ popup_id }}'), play()"
+          >
+            {% render 'icon', icon: 'play' %}
+            <span>Watch Video</span>
+          </button>
+        {% else %}
+          <button
+            class="text-yellow flex flex-col items-center justify-center gap-5"
+            @click="openPopup('{{ popup_id }}'), play()"
+          >
+            {% render 'icon', icon: 'play-solid', class: 'size-16' %}
+            <span class="text-white text-sm uppercase font-medium">Watch Video</span>
+          </button>
+        {% endif %}
+      {% endunless %}
+
+      <div
+        x-cloak
+        x-show="isPopupOpen('{{ popup_id }}')"
+        class="fixed inset-0 z-[110] overflow-y-auto bg-police-blue bg-opacity-80"
+        id="{{ popup_id }}"
+      >
+        <div class="flex items-start flex-col justify-center min-h-[100dvh] md:flex-row md:min-h-screen px-4 md:items-center md:px-8 py-4">
+          <div
+            x-cloak
+            @click="closePopup(), stop()"
+            x-show="isPopupOpen('{{ popup_id }}')"
+            x-transition:enter="transition ease-out transform"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200 transform"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 transition-opacity bg-police-blue bg-opacity-80"
+            aria-hidden="true"
+          ></div>
+
+          <div
+            x-cloak
+            x-show="isPopupOpen('{{ popup_id }}')"
+            x-transition:enter="transition ease-out transform"
+            x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
+            x-transition:enter-end="opacity-100 translate-y-0 md:scale-100"
+            x-transition:leave="transition ease-in duration-200 transform"
+            x-transition:leave-start="opacity-100 translate-y-0 md:scale-100"
+            x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
+            class="inline-block w-full xl:max-w-7xl my-20 md:my-2.5 overflow-hidden transition-all transform bg-white"
+            @click.outside="stop()"
+          >
+            {% unless button_type == 'hidden' %}
+              <div class="flex items-center justify-center aspect-video" :class="{ 'hidden': isPlaying }">
+                <img
+                  loading="lazy"
+                  src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg"
+                  alt="placeholder image"
+                  class="object-cover aspect-video w-full h-full"
+                >
+                <div class="absolute">
+                  <button
+                    class="flex items-center justify-center w-22 h-14 rounded-4.5 bg-primary text-green_accent shadow hover:scale-110 transition-transform transform rounded-xl"
+                    @click="play()"
+                  >
+                    {% render 'icon', icon: 'play' %}
+                  </button>
+                </div>
+              </div>
+            {% endunless %}
+            <div class="aspect-video" x-show.transition.in.opacity.duration.500ms="isPlaying" x-cloak>
+              <iframe
+                x-ref="videoElement"
+                src=""
+                class="aspect-video w-full"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

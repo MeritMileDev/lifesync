@@ -1,0 +1,156 @@
+{% liquid
+  assign collection_title = collection.title
+  assign collection_banner_mobile = collection.metafields.custom.collection_page_banner_mobile
+  assign collection_banner_desktop = collection.metafields.custom.collection_page_banner_desktop
+  assign collection_banner_text = collection.metafields.custom.collection_banner_text | metafield_tag
+  assign collection_links = section.settings.collection_links
+%}
+
+<div x-data="facets">
+  <div class="{% if search.results.size != 0 %}container{% endif %}">
+    <div class="container">
+      <h1 class="text-police-blue text-2xl font-medium text-center my-1 lg:text-40 lg:my-0 lg:tracking-tight lg:leading-none">
+        {{- 'search.label' | t: search_term: search.terms -}}
+      </h1>
+    </div>
+    <div
+      id="ProductGridContainer"
+      x-ref="productGridContainer"
+      x-data="{isProductFilterVisible: false}"
+      class="{% if search.results.size != 0 %}lg:grid{% endif %} lg:relative lg:grid-cols-[293px_1fr] lg:items-start lg:gap-15 lg:gap-x-6 xl:gap-20 2xl:gap-20 lg:pt-7.5"
+    >
+      {% if search.results.size != 0 %}
+        <div>
+          <aside class="relative lg:sticky lg:top-25 xl:top-44">
+            <div x-cloak x-show="loading" class="absolute inset-0 z-20 flex items-center justify-center bg-black/10">
+              {% render 'icon', icon: 'loader' %}
+            </div>
+            <div class="lg:max-h-[calc(100vh_-_180px)] lg:overflow-auto lg:pr-5">
+              {% render 'facets', collection_links: collection_links, results: search %}
+            </div>
+          </aside>
+        </div>
+      {% endif %}
+      {%- paginate search.results by section.settings.products_per_page -%}
+        {%- if search.results.size == 0 -%}
+          <div class="container">
+            <form class="mt-6 lg:mt-0 lg:max-w-142.5 mx-auto" action="">
+              <div class="relative">
+                <input
+                  class="px-5 py-3.5 border border-police-blue-70 placeholder:text-police-blue-70 hover:border-police-blue focus:!outline-police-blue focus:!outline focus:!outline-1 disabled:opacity-30 w-full"
+                  type="text"
+                  name="q"
+                  value="{{ search.terms }}"
+                >
+                <button class="absolute right-0 top-0 bottom-0 px-4 text-police-blue-70" type="submit">
+                  {% render 'icon', icon: 'search', class: 'size-6 flex' %}
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="no-results-form-text-container">
+            <div class="no-results-form-text">
+              <div class="container">
+                <p class="text-police-blue-70 text-center py-10 mx-auto max-w-70 lg:max-w-full lg:py-13.5">
+                  {{ 'sections.search_template.empty' | t -}}
+                  <br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="my-16.5 lg:my-29">
+              {% render 'rebuy-slider-widget', settings: section.settings, id: section.id, is_search_page: true %}
+            </div>
+          </div>
+        {%- else -%}
+          <div>
+            <div id="product-grid" x-ref="productGrid" data-id="{{ section.id }}" class="pb-16 lg:pb-20">
+              <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="py-4 text-center lg:py-0">
+                  {% if search.results_count > 1 %}
+                    {{ 'products.product.product_count.other' | t: count: search.results_count }}
+                  {% else %}
+                    {{ 'products.product.product_count.one' | t }}
+                  {% endif %}
+                </div>
+                <div class="hidden lg:block">
+                  {% render 'collection-sorter', results: search %}
+                </div>
+              </div>
+
+              <ul class="grid grid-cols-2 gap-x-4 gap-y-16 border-t border-police-blue-20 pb-16 pt-4 lg:border-none lg:pb-20 lg:pt-12 xl:grid-cols-4 xl:gap-x-6">
+                {%- for product in search.results -%}
+                  {% assign lazy_load = false %}
+                  {%- if forloop.index > 2 -%}
+                    {%- assign lazy_load = true -%}
+                  {%- endif -%}
+                  <li>
+                    {% render 'card-product', card_product: product, lazy_load: lazy_load %}
+                  </li>
+                {%- endfor -%}
+              </ul>
+              {%- if paginate.pages > 1 -%}
+                {% render 'pagination', paginate: paginate %}
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .no-results-form-text-container {
+    background: linear-gradient(180deg, #fff 0%, #f1f7fb 100%);
+  }
+  .no-results-form-text {
+    background-image: url("{{ 'search-results-no-results-mob.png' | asset_url }}");
+  }
+
+  @media screen and (min-width: 1024px) {
+    .no-results-form-text {
+      background-image: url("{{ 'search-results-no-results.png' | asset_url }}");
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Search results",
+    "class": "section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "min": 8,
+        "max": 24,
+        "step": 2,
+        "default": 18,
+        "label": "sections.main-collection-product-grid.settings.products_per_page.label"
+      },
+      {
+        "type": "header",
+        "content": "Empty results carousel settings"
+      },
+      {
+        "type": "text",
+        "id": "id",
+        "label": "Widget ID"
+      },
+      {
+        "type": "checkbox",
+        "id": "lazy_images",
+        "label": "Lazy Load Images",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "slides_qty_for_desktop",
+        "label": "Slides Qty for desktop",
+        "default": 4
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,76 @@
+{% liquid
+  assign section_id = section.id
+
+  assign lazy_images = section.settings.lazy_images
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  assign settings = section.settings
+%}
+
+<div class="container">
+  {% render 'rebuy-slider-widget', slides_qty_for_desktop: settings.slides_qty_for_desktop, settings: settings, id: section_id %}
+</div>
+
+{% schema %}
+  {
+    "name": "Rebuy Slider Widget",
+    "settings": [
+      {
+        "type": "text",
+        "id": "id",
+        "label": "Widget ID"
+      },
+      {
+        "type": "checkbox",
+        "id": "lazy_images",
+        "label": "Lazy Load Images",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "slides_qty_for_desktop",
+        "label": "Slides Qty for desktop",
+        "default": 4
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Rebuy Slider Widget"
+      }
+    ]
+  }
+{% endschema %}

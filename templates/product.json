@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "yotpo_product_reviews_ugc_reviews_DDKWjK": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "product_slider_VRp7db": {
+          "type": "product_slider",
+          "settings": {
+            "id": "188464",
+            "lazy_images": true,
+            "slides_qty_for_desktop": 4,
+            "padding_top_mobile": 0,
+            "padding_bottom_mobile": 64,
+            "padding_top_desktop": 0,
+            "padding_bottom_desktop": 120
+          }
+        },
+        "product_slider_MwyddU": {
+          "type": "product_slider",
+          "settings": {
+            "id": "188465",
+            "lazy_images": true,
+            "slides_qty_for_desktop": 4,
+            "padding_top_mobile": 0,
+            "padding_bottom_mobile": 64,
+            "padding_top_desktop": 0,
+            "padding_bottom_desktop": 120
+          }
+        },
+        "product_slider_hapXji": {
+          "type": "product_slider",
+          "settings": {
+            "id": "188125",
+            "lazy_images": true,
+            "slides_qty_for_desktop": 4,
+            "padding_top_mobile": 0,
+            "padding_bottom_mobile": 64,
+            "padding_top_desktop": 0,
+            "padding_bottom_desktop": 120
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_ugc_reviews_DDKWjK",
+        "product_slider_VRp7db",
+        "product_slider_MwyddU",
+        "product_slider_hapXji"
+      ],
+      "settings": {
+        "icon": "shopify://shop_images/call.svg",
+        "title": "Need help deciding?",
+        "subtitle": "<p>Get in touch with one of our experts.</p>",
+        "button_text": "Contact us",
+        "link_url": "shopify://pages/terms-conditions",
+        "terms_link_text": "Terms and Conditions",
+        "terms_label_text": "By purchasing this product, you accept our"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

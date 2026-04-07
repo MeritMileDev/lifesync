@@ -1,0 +1,188 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+{% if section.blocks.size > 0 %}
+
+  <section x-data="{ currentTab: 1}" class="" id="section-{{ section_id }}">
+    <div class="container">
+      <div class="lg:block hidden border-b border-police-blue-20 lg:mb-21">
+        <ul class="flex items-center -mb-px text-center mx-auto max-w-[1360px]">
+          {% for block in section.blocks %}
+          <li :class="currentTab === {{ forloop.index }} && '!border-persian-blue text-persian-blue'"
+            @{{ section.settings.tab_logic }}="currentTab = {{ forloop.index }}"
+            class="flex-1 py-3 px-2 border-b-4 border-transparent transition duration-500 cursor-pointer text-2xl hover:text-persian-blue relative before:absolute before:block before:content-[''] before:h-12 before:w-px before:bg-police-blue-20 before:left-0 before:top-1/2 before:-translate-y-1/2 first:before:hidden">
+            <p class="mx-auto max-w-36">{{ block.settings.tab_name }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        {% for block in section.blocks %}
+        <div {% if forloop.index != 1 %} x-cloak {% endif %} x-transition:enter="transition ease duration-500"
+          x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-show="currentTab === {{ forloop.index }}"
+          class="max-lg:!block lg:grid grid-cols-2 gap-x-6 items-center lg:mx-0 -mx-4 lg:odd:bg-transparent odd:bg-bright-gray">
+          <div class="3xl:p-20 2xl:p-10 lg:p-0 px-4 py-16 text-center">
+            <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide mb-2.5">
+              {{ block.settings.tab_name }}
+            </p>
+            <h3 class="block-title mx-auto 2xl:text-64 xl:text-40 text-32 2xl: lg:mb-3 mb-7.5">{{ block.settings.title }}
+            </h3>
+            <div class="lg:hidden block">
+              {% render 'picture',
+                image_mobile: block.settings.image,
+                image_desktop: block.settings.image,
+                is_full_size: false,
+                class: 'w-full h-full lg:min-h-[600px] object-cover'
+              %}
+            </div>
+            <div class="block-description-{{ block.id }} rte mx-auto lg:mb-8 lg:mt-0 mt-7.5">{{ block.settings.description }}</div>
+            {% if block.settings.button_link != blank %}
+              <a class="flex gap-2 items-center justify-center text-center font-medium text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max md:mx-auto transition duration-100"
+              href="{{ block.settings.button_link }}">{{ block.settings.button_label }}</a>
+            {% endif %}
+          </div>
+          <div class="lg:block hidden">
+            {% render 'picture',
+              image_mobile: block.settings.image,
+              image_desktop: block.settings.image,
+              is_full_size: false,
+              class: 'w-full h-full lg:min-h-[600px] object-cover'
+            %}
+          </div>
+          <style>
+            @media (max-width: 1807px) {
+              #section-{{ section_id }} .block-description-{{ block.id }} br {
+                display: none;
+              }
+            }
+            {% if block.settings.description_max_width > 0 %}
+            #section-{{ section_id }} .block-description-{{ block.id }} {
+              max-width: {{ block.settings.description_max_width }}px;
+            }
+            {% endif %}
+          </style>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Tabs",
+    "settings": [
+      {
+        "type": "select",
+        "id": "tab_logic",
+        "label": "Tab logic",
+        "options": [
+          {
+            "value": "click",
+            "label": "Click"
+          },
+          {
+            "value": "mouseenter",
+            "label": "Hover"
+          }
+        ],
+        "default": "mouseenter"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "tab_name",
+            "label": "Tab Name"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "number",
+            "id": "description_max_width",
+            "label": "Description Max Width (px)",
+            "default": 0
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Tabs"
+      }
+    ]
+  }
+{% endschema %}

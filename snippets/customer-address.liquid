@@ -1,0 +1,289 @@
+{% liquid
+  if addres_data == customer.default_address
+    assign is_default = true
+  else
+    assign is_default = false
+  endif
+%}
+
+<li class="mb-4 last:mb-0 lg:mb-0" x-data="{activeAddress: null}">
+  <div class="bg-bright-gray p-6 pt-5 lg:p-10 lg:pt-9">
+    <div class="flex">
+      <div class="flex-1">
+        {{ addres_data | format_address }}
+      </div>
+      {%- if is_default -%}
+        <span
+          class="text-sm font-medium uppercase tracking-wide text-police-blue-70"
+        >
+          {{- 'customer.addresses.default' | t -}}
+        </span>
+      {% endif %}
+    </div>
+    <div class="mt-5 flex space-x-6 border-t border-police-blue-20 pt-6 lg:mt-6.5 lg:pt-10">
+      <button class="flex items-center space-x-2" @click.prevent="activeAddress = {{ index }}">
+        <span class="text-police-blue-70">
+          {% render 'icon', icon: 'pen', class: 'size-4' %}
+        </span>
+        <span class="text-sm font-medium uppercase tracking-wide">{{ 'customer.addresses.edit' | t }}</span>
+      </button>
+      <button
+        class="flex items-center space-x-2"
+        data-target="{{ addres_data.url }}"
+        data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+      >
+        <span class="text-police-blue-70">
+          {% render 'icon', icon: 'trash', class: 'size-4' %}
+        </span>
+        <span class="text-sm font-medium uppercase tracking-wide">{{ 'customer.addresses.delete' | t }}</span>
+      </button>
+    </div>
+    <div
+      x-cloak
+      x-show="activeAddress === {{ index }}"
+      class="fixed inset-0 z-20 flex items-center bg-black/50"
+      x-effect="
+        () => {
+                        if (activeAddress) {
+                              document.documentElement.classList.add('aw-menu--active');
+                              document.body.classList.add('aw-menu--active');
+                        } else {
+                               document.documentElement.classList.remove('aw-menu--active');
+        document.body.classList.remove('aw-menu--active');
+                         }
+                      }
+      "
+    >
+      <div
+        class="relative mx-auto max-h-[80vh] max-w-[346px] overflow-y-scroll border border-black bg-white p-5 pt-0  lg:w-full lg:max-w-217"
+        @click.outside="activeAddress = null"
+      >
+        <div class="sticky top-0 z-20 -mx-5 mb-6 flex items-center border-b border-black bg-white text-right">
+          <div class="pl-5 font-semibold">{{ 'customer.addresses.edit_address' | t }}</div>
+          <button type="button" @click.prevent="activeAddress = null" class="ml-auto p-3">
+            {% render 'icon', icon: 'close', class: 'w-6 h-6' %}
+          </button>
+        </div>
+        {%- form 'customer_address', addres_data -%}
+          <div class="lg:grid lg:grid-cols-2 lg:gap-5">
+            <div class="field mb-6">
+              <div class="relative">
+                <input
+                  class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-1 focus:!outline-police-blue disabled:opacity-30"
+                  type="text"
+                  id="AddressFirstName_{{ form.id }}"
+                  name="address[first_name]"
+                  value="{{ form.first_name }}"
+                  autocomplete="given-name"
+                  placeholder="{{ 'customer.addresses.first_name' | t }}"
+                >
+                <label
+                  class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                  for="AddressFirstName_{{ form.id }}"
+                >
+                  {{- 'customer.addresses.first_name' | t -}}
+                </label>
+              </div>
+            </div>
+            <div class="field mb-6">
+              <div class="relative">
+                <input
+                  class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30"
+                  type="text"
+                  id="AddressLastName_{{ form.id }}"
+                  name="address[last_name]"
+                  value="{{ form.last_name }}"
+                  autocomplete="family-name"
+                  placeholder="{{ 'customer.addresses.last_name' | t }}"
+                >
+                <label
+                  class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                  for="AddressLastName_{{ form.id }}"
+                >
+                  {{- 'customer.addresses.last_name' | t -}}
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="field mb-6">
+            <div class="relative">
+              <input
+                class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30"
+                type="text"
+                id="AddressCompany_{{ form.id }}"
+                name="address[company]"
+                value="{{ form.company }}"
+                autocomplete="organization"
+                placeholder="{{ 'customer.addresses.company' | t }}"
+              >
+              <label
+                class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                for="AddressCompany_{{ form.id }}"
+              >
+                {{- 'customer.addresses.company' | t -}}
+              </label>
+            </div>
+          </div>
+          <div class="field mb-6">
+            <div class="relative">
+              <input
+                class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30"
+                type="text"
+                id="AddressAddress1_{{ form.id }}"
+                name="address[address1]"
+                value="{{ form.address1 }}"
+                autocomplete="address-line1"
+                placeholder="{{ 'customer.addresses.address1' | t }}"
+              >
+              <label
+                class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                for="AddressAddress1_{{ form.id }}"
+              >
+                {{- 'customer.addresses.address1' | t -}}
+              </label>
+            </div>
+          </div>
+          <div class="field mb-6">
+            <div class="relative">
+              <input
+                class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-1 focus:!outline-police-blue disabled:opacity-30"
+                type="text"
+                id="AddressAddress2_{{ form.id }}"
+                name="address[address2]"
+                value="{{ form.address2 }}"
+                autocomplete="address-line2"
+                placeholder="{{ 'customer.addresses.address2' | t }}"
+              >
+              <label
+                class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                for="AddressAddress2_{{ form.id }}"
+              >
+                {{- 'customer.addresses.address2' | t -}}
+              </label>
+            </div>
+          </div>
+          <div class="lg:grid lg:grid-cols-2 lg:gap-x-5">
+            <div class="field mb-6">
+              <div class="relative">
+                <input
+                  class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30"
+                  type="text"
+                  id="AddressCity_{{ form.id }}"
+                  name="address[city]"
+                  value="{{ form.city }}"
+                  autocomplete="address-level2"
+                  placeholder="{{ 'customer.addresses.city' | t }}"
+                >
+                <label
+                  class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                  for="AddressCity_{{ form.id }}"
+                >
+                  {{- 'customer.addresses.city' | t -}}
+                </label>
+              </div>
+            </div>
+            <div class="mb-6">
+              <div class="select">
+                <select
+                  class="w-full cursor-pointer appearance-none border border-police-blue-70 bg-select-arrow bg-right-2 bg-no-repeat px-5 py-3.5 pr-10 text-base placeholder:text-police-blue-70 hover:border-police-blue focus:!outline focus:!outline-police-blue disabled:opacity-30"
+                  id="AddressCountry_{{ form.id }}"
+                  name="address[country]"
+                  data-address-country-select
+                  data-default="{{ form.country }}"
+                  data-form-id="{{ form.id }}"
+                  autocomplete="country"
+                >
+                  {{ all_country_option_tags }}
+                </select>
+              </div>
+            </div>
+            <div class="mb-6" id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+              <div class="select">
+                <select
+                  class="w-full cursor-pointer appearance-none border border-police-blue-70 bg-select-arrow bg-right-2 bg-no-repeat px-5 py-3.5 pr-10 text-base placeholder:text-police-blue-70 hover:border-police-blue focus:!outline focus:!outline-police-blue disabled:opacity-30"
+
+                  id="AddressProvince_{{ form.id }}"
+                  name="address[province]"
+                  data-default="{{ form.province }}"
+                  autocomplete="address-level1"
+                ></select>
+              </div>
+            </div>
+            <div class="field mb-6">
+              <div class="relative">
+                <input
+                  class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30"
+                  type="text"
+                  id="AddressZip_{{ form.id }}"
+                  name="address[zip]"
+                  value="{{ form.zip }}"
+                  autocapitalize="characters"
+                  autocomplete="postal-code"
+                  placeholder="{{ 'customer.addresses.zip' | t }}"
+                >
+                <label
+                  class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                  for="AddressZip_{{ form.id }}"
+                >
+                  {{- 'customer.addresses.zip' | t -}}
+                </label>
+              </div>
+            </div>
+            <div class="field col-span-2 mb-6">
+              <div class="relative">
+                <input
+                  class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30"
+                  type="tel"
+                  id="AddressPhone_{{ form.id }}"
+                  name="address[phone]"
+                  value="{{ form.phone }}"
+                  autocomplete="tel"
+                  placeholder="{{ 'customer.addresses.phone' | t }}"
+                >
+                <label
+                  class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                  for="AddressPhone_{{ form.id }}"
+                >
+                  {{- 'customer.addresses.phone' | t -}}
+                </label>
+              </div>
+            </div>
+          </div>
+          {% unless is_default %}
+            <div class="checkbox my-6 leading-none lg:!my-10">
+              {{ form.set_as_default_checkbox }}
+              <label
+                class="relative inline-flex w-full cursor-pointer select-none items-center leading-none text-police-blue before:flex before:size-5 before:shrink-0 before:border before:border-police-blue-70 before:bg-white before:content-['']"
+                for="address_default_address_{{ form.id }}"
+              >
+                <span class="checkbox-icon mr-3">
+                  {% render 'icon',
+                    icon: 'checkmark',
+                    class: 'absolute !w-4 !h-4 top-1/2 -translate-y-1/2 left-0.5 text-white'
+                  %}
+                </span>
+                {{ 'customer.addresses.set_default' | t }}
+              </label>
+            </div>
+          {% endunless %}
+          <div class="items-center border-b border-police-blue-20 pb-8.5 lg:mb-0 lg:border-none lg:pb-0">
+            <button
+              class="flex w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase tracking-wide text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20"
+            >
+              <span class="!px-8">{{ 'customer.addresses.update' | t }}</span>
+            </button>
+            <div class="!mt-8 text-center lg:m-0">
+              <button
+                class="text-persian-blue underline hover:no-underline"
+                type="reset"
+                @click="activeAddress = null"
+              >
+                {{ 'customer.addresses.cancel' | t }}
+              </button>
+            </div>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</li>

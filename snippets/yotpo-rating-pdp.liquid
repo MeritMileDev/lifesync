@@ -1,0 +1,65 @@
+{% comment %}
+  Renders a Yotpo rating widget
+
+  Accepts:
+  - product_id: {mumber}
+  - yotpo_api_key: {string}(optional)
+
+  Usage:
+    {% render 'yotpo-rating', product_id: 'productId', yotpo_api_key: 'yotpo_api_key'  %}
+{% endcomment %}
+
+{% liquid
+  assign yotpo_api_key = yotpo_api_key | default: settings.yotpo_api_key
+%}
+{% if product_id and yotpo_api_key %}
+  <div x-data="yotpoRating('{{ product_id }}', '{{ yotpo_api_key }}')">
+    <div class="flex items-center gap-3">
+      <div class="flex gap-px pb-0.5">
+        <template x-for="star in 5" :key="star">
+          <div>
+            <div x-show="averageScore >= star">
+              {% render 'icon', icon: 'star-filled' %}
+            </div>
+
+            <div x-show="averageScore >= (star - 0.5) && averageScore < star">
+              {% render 'icon', icon: 'star-half-filled' %}
+            </div>
+
+            <div x-show="averageScore < (star - 0.5)">
+              {% render 'icon', icon: 'star-empty' %}
+            </div>
+          </div>
+        </template>
+
+        {% for i in (1..5) %}
+          <span x-init="$el.style.display = 'none'">
+            {% render 'icon', icon: 'star-empty' %}
+          </span>
+        {% endfor %}
+      </div>
+      <div class="flex items-center leading-none">
+        <a href="#" @click.prevent="$dispatch('reviews')" class="text-sm leading-none text-persian-blue underline hover:no-underline">
+          <span x-text="`${totalReviews || 0}`"></span>
+          <template x-if="totalReviews === 1">
+            <span>
+              {{ 'reviews.count.one' | t }}
+            </span>
+          </template>
+          <template x-if="totalReviews > 1 || totalReviews === 0">
+            <span>
+              {{ 'reviews.count.multiple' | t }}
+            </span>
+          </template>
+        </a>
+        <a href="#" @click.prevent="() => {document.querySelector('.write-review-button').click(); $dispatch('reviews');}" class="relative ml-4 pl-4 text-sm leading-none text-persian-blue underline hover:no-underline">
+          <span
+            class="before:absolute before:left-0 before:top-1/2 before:block before:h-3 before:w-px before:-translate-y-1/2 before:bg-police-blue-20 before:content-['']"
+          >
+            Write a review</span
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+{% endif %}

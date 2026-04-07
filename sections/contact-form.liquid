@@ -1,0 +1,179 @@
+{% liquid
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign image_desktop = section.settings.image_desktop
+  assign image_mobile = section.settings.image_mobile
+%}
+
+<div class="overflow-hidden">
+  <div class="container">
+    <div class="items-center xl:grid xl:grid-cols-12 xl:gap-6">
+      <div class="xl:col-span-5 xl:!mt-0 xl:py-24 xl:pr-14">
+        <div>
+          <h1 class="mb-1 mt-3.5 text-center text-40 font-medium 2xl:mb-2.5 2xl:mt-0 2xl:text-64">{{ title }}</h1>
+          <p class="mx-auto mb-8.5 max-w-50 text-center xl:max-w-full 2xl:mb-18">{{ subtitle }}</p>
+          <div>
+            <div class="border-police-blue-20 2xl:flex 2xl:border-t 2xl:pb-5 2xl:pt-6">
+              <div
+                class="flex flex-col items-center border-t border-police-blue-20 py-6.5 2xl:flex-1 2xl:border-r 2xl:border-t-0 2xl:py-3 2xl:pr-4"
+              >
+                <div
+                  class="text-center text-sm font-semibold uppercase tracking-wide text-police-blue-70"
+                >
+                  {{- 'templates.contact.form.toll_free_label' | t -}}
+                </div>
+                {% if settings.store_phone_number != blank %}
+                  <a
+                    class="text-xl font-semibold transition-colors hover:text-police-blue-70"
+                    href="tel:{{- settings.store_phone_number -}}"
+                    title="Toll free (US)"
+                  >
+                    {{- settings.store_phone_number -}}
+                  </a>
+                {% endif %}
+              </div>
+              <div
+                class="flex flex-col items-center border-t border-police-blue-20 py-6.5 2xl:flex-1 2xl:border-r 2xl:border-t-0 2xl:px-4 2xl:py-3"
+              >
+                <div
+                  class="text-center text-sm font-semibold uppercase tracking-wide text-police-blue-70"
+                >
+                  {{- 'templates.contact.form.phone_label' | t -}}
+                </div>
+                {% if settings.store_phone_number_secondary != blank %}
+                  <a
+                    class="text-xl font-semibold transition-colors hover:text-police-blue-70"
+                    href="tel:{{- settings.store_phone_number_secondary -}}"
+                    title="Phone"
+                  >
+                    {{- settings.store_phone_number_secondary -}}
+                  </a>
+                {% endif %}
+              </div>
+              <div
+                class="flex flex-col items-center border-t border-police-blue-20 py-6.5 2xl:flex-1 2xl:border-t-0 2xl:py-3 2xl:pl-4"
+              >
+                <div
+                  class="text-center text-sm font-semibold uppercase tracking-wide text-police-blue-70"
+                >
+                  {{- 'templates.contact.form.fax_label' | t -}}
+                </div>
+                {% if settings.store_fax_number != blank %}
+                  <a
+                    class="text-xl font-semibold transition-colors hover:text-police-blue-70"
+                    href="tel:{{- settings.store_fax_number -}}"
+                    title="Fax"
+                  >
+                    {{- settings.store_fax_number -}}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+            <div class="flex flex-col items-center border-t border-police-blue-20 py-6.5 2xl:py-8.5">
+              <div
+                class="text-center text-sm font-semibold uppercase tracking-wide text-police-blue-70"
+              >
+                {{- 'templates.contact.form.address_label' | t -}}
+              </div>
+              {% if settings.store_address_link != blank and settings.store_address != blank %}
+                <a target="_blank"
+                  href="{{- settings.store_address_link -}}"
+                  class="max-w-56 text-center hover:text-police-blue-70 transition-colors text-xl font-semibold 2xl:max-w-full"
+                >
+                  {{- settings.store_address -}}
+                </a>
+              {% endif %}
+            </div>
+            <div class="flex flex-col items-center border-b border-t border-police-blue-20 py-6.5 2xl:py-8.5">
+              <div
+                class="text-center text-sm font-semibold uppercase tracking-wide text-police-blue-70"
+              >
+                {{- 'templates.contact.form.hours_label' | t -}}
+              </div>
+              {% if settings.store_hours != blank %}
+                <p class="text-xl font-semibold">{{ settings.store_hours }}</p>
+              {% endif %}
+            </div>
+          </div>
+          <div>
+            <h2 class="mb-6.5 mt-7 text-center text-32 2xl:text-5xl 2xl:mt-17 2xl:mb-9">{{ 'templates.contact.form.title' | t }}</h2>
+            {% render 'contact-form' %}
+          </div>
+        </div>
+      </div>
+      <div class="-mx-4 mt-9 xl:relative xl:col-span-7 xl:mx-0 xl:mt-0 xl:h-full xl:min-h-[912px]">
+        <div class="aspect-square xl:absolute xl:left-0 xl:aspect-[1097/912] xl:h-full xl:w-[58vw] xl:max-w-275">
+          {% render 'picture',
+            image_desktop: image_desktop,
+            image_mobile: image_mobile,
+            lazy: 'lazy',
+            desktop_size: '60',
+            is_full_size: true,
+            class: 'object-cover w-full h-full'
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+  @media (min-width: 1280px) {
+    #MainContent {
+      position: relative;
+    }
+
+    .breadcrumbs {
+      position: absolute;
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "t:sections.contact-form.name",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Contact LifeSync",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "default": "Need to get in touch with us? We’re all ears.",
+        "label": "Subtitle"
+      },
+      {
+        "type": "header",
+        "content": "Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image mobile"
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.contact-form.presets.name"
+      }
+    ]
+  }
+{% endschema %}

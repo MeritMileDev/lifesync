@@ -1,0 +1,312 @@
+{% assign t = template | split: '.' | first %}
+{% unless template == 'index'
+  or t == 'customers/login'
+  or t == 'customers/register'
+  or t == 'customers/reset_password'
+  or template == 'page.about-us'
+%}
+  {% assign transparent_header = transparent_template %}
+  {% if template.suffix contains 'transparent-header' %}
+    {% assign transparent_header = true %}
+  {% endif %}
+  {% assign hideBreadcrumbs = false %}
+  <div class="breadcrumbs group {% if transparent_header %}absolute top-16 z-10 text-bright-gray-50 left-0 right-0 xl:top-21 {% endif %}">
+    <div class="container">
+      <nav role="navigation" aria-label="breadcrumbs">
+        <ol class="no-scrollbar my-px flex overflow-auto whitespace-nowrap py-2.5 text-sm lg:m-0 lg:py-4.75">
+          <li class="breadcrumbs-item">
+            <a
+              class="breadcrumb-link breadcrumb-link--root text-persian-blue underline hover:no-underline group-[.absolute]:text-white"
+              href="/"
+              title="{{ 'breadcrumbs.home_label' | t }}"
+            >
+              {{- 'breadcrumbs.home_label' | t -}}
+            </a>
+          </li>
+          {% case t %}
+            {% when 'page' %}
+              {% if page.title == 'Wishlist' %}
+                <li class="breadcrumbs-item flex">
+                  <span class="mx-1 flex items-center">
+                    {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                  </span>
+                  <a
+                    class="capitalize breadcrumb-link breadcrumb-link--root text-persian-blue underline hover:no-underline"
+                    href="/account"
+                  >
+                    {{- 'customer.account_fallback' | t -}}
+                  </a>
+                </li>
+              {% endif %}
+              <span class="mx-1 flex items-center">
+                {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+              </span>
+              <li class="breadcrumbs-item">
+                <span class="text-police-blue-70 group-[.absolute]:text-bright-gray-50" aria-current="page">
+                  {{- page.title -}}
+                </span>
+              </li>
+
+            {% when 'product' %}
+              {% if product.collections.size > 0 %}
+                {% assign collection = product.collections.first %}
+              {% endif %}
+              {% liquid
+                assign first_level_menu = nill
+                assign second_level_menu = nill
+                assign third_level_menu = nill
+                for first_level in linklists['shop-menu'].links
+                  unless first_level_menu
+                    if first_level.handle == collection.handle
+                      assign first_level_menu = first_level
+                    else
+                      for second_level in first_level.links
+                        unless second_level_menu
+                          if second_level.handle == collection.handle
+                            assign first_level_menu = first_level
+                            assign second_level_menu = second_level
+                          else
+                            for third_level in second_level.links
+                              unless third_level_menu
+                                if third_level.handle == collection.handle
+                                  assign first_level_menu = first_level
+                                  assign second_level_menu = second_level
+                                  assign third_level_menu = third_level
+                                endif
+                              endunless
+                            endfor
+                          endif
+                        endunless
+                      endfor
+                    endif
+                  endunless
+                endfor
+              %}
+
+              {% if first_level_menu %}
+                <li class="breadcrumbs-item flex">
+                  <span class="mx-1 flex items-center">
+                    {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                  </span>
+                  <a
+                    class="breadcrumb-link text-persian-blue underline hover:no-underline"
+                    title="{{ first_level_menu.title }}"
+                    href="{{ first_level_menu.url }}"
+                  >
+                    {{- first_level_menu.title -}}
+                  </a>
+                </li>
+              {% endif %}
+              {% if second_level_menu %}
+                <li class="breadcrumbs-item flex">
+                  <span class="mx-1 flex items-center">
+                    {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                  </span>
+                  <a
+                    class="breadcrumb-link text-persian-blue underline hover:no-underline"
+                    title="{{ second_level_menu.title }}"
+                    href="{{ second_level_menu.url }}"
+                  >
+                    {{- second_level_menu.title -}}
+                  </a>
+                </li>
+              {% endif %}
+              {% if third_level_menu %}
+                <li class="breadcrumbs-item flex">
+                  <span class="mx-1 flex items-center">
+                    {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                  </span>
+                  <a
+                    class="breadcrumb-link text-persian-blue underline hover:no-underline"
+                    title="{{ second_level_menu.title }}"
+                    href="{{ second_level_menu.url }}"
+                  >
+                    {{- second_level_menu.title -}}
+                  </a>
+                </li>
+              {% endif %}
+              <li class="breadcrumbs-item flex">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <span class="mx-1 flex items-center">
+                  {{ product.title }}
+                </span>
+              </li>
+
+            {% when 'collection' and collection.handle %}
+              {% liquid
+                assign first_level_menu = nill
+                assign second_level_menu = nill
+                assign third_level_menu = nill
+                for first_level in linklists['shop-menu'].links
+                  unless first_level_menu
+                    if first_level.handle == collection.handle
+                      assign first_level_menu = first_level
+                    else
+                      for second_level in first_level.links
+                        unless second_level_menu
+                          if second_level.handle == collection.handle
+                            assign first_level_menu = first_level
+                            assign second_level_menu = second_level
+                          else
+                            for third_level in second_level.links
+                              unless third_level_menu
+                                if third_level.handle == collection.handle
+                                  assign first_level_menu = first_level
+                                  assign second_level_menu = second_level
+                                  assign third_level_menu = third_level
+                                endif
+                              endunless
+                            endfor
+                          endif
+                        endunless
+                      endfor
+                    endif
+                  endunless
+                endfor
+              %}
+
+              {% if first_level_menu %}
+                <li class="breadcrumbs-item flex">
+                  <span class="mx-1 flex items-center">
+                    {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                  </span>
+                  {% if second_level_menu %}
+                    <a
+                      class="breadcrumb-link text-persian-blue underline hover:no-underline"
+                      title="{{ first_level_menu.title }}"
+                      href="{{ first_level_menu.url }}"
+                    >
+                      {{- first_level_menu.title -}}
+                    </a>
+                  {% else %}
+                    <span class="breadcrumb-current text-police-blue-70">{{ first_level_menu.title }}</span>
+                  {% endif %}
+                </li>
+              {% else %}
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <span class="text-police-blue-70" aria-current="page">{{ collection.title }}</span>
+              {% endif %}
+              {% if second_level_menu %}
+                <li class="breadcrumbs-item flex">
+                  <span class="mx-1 flex items-center">
+                    {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                  </span>
+                  {% if third_level_menu %}
+                    <a
+                      class="breadcrumb-link text-persian-blue underline hover:no-underline"
+                      title="{{ second_level_menu.title }}"
+                      href="{{ second_level_menu.url }}"
+                    >
+                      {{- second_level_menu.title -}}
+                    </a>
+                  {% else %}
+                    <span class="breadcrumb-current text-police-blue-70">{{ second_level_menu.title }}</span>
+                  {% endif %}
+                </li>
+              {% endif %}
+              {% if third_level_menu %}
+                <li class="breadcrumbs-item flex">
+                  <span class="mx-1 flex items-center">
+                    {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                  </span>
+                  <span class="breadcrumb-current text-police-blue-70">{{ third_level_menu.title }}</span>
+                </li>
+              {% endif %}
+
+            {% when 'search' %}
+              <span class="mx-1 flex items-center">
+                {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+              </span>
+              <span class="text-police-blue-70">
+                {{ 'breadcrumbs.search_label' | t }}
+              </span>
+
+            {% when 'customers/order' %}
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <a
+                  class="capitalize breadcrumb-link breadcrumb-link--root text-persian-blue underline hover:no-underline"
+                  href="/account"
+                >
+                  {{- 'customer.account_fallback' | t -}}
+                </a>
+              </li>
+
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <span class="text-police-blue-70" aria-current="page">{{ page_title }}</span>
+              </li>
+
+            {% when 'customers/addresses' %}
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <a
+                  class="capitalize breadcrumb-link breadcrumb-link--root text-persian-blue underline hover:no-underline"
+                  href="/account"
+                >
+                  {{- 'customer.account_fallback' | t -}}
+                </a>
+              </li>
+
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <span class="text-police-blue-70" aria-current="page">{{ page_title }}</span>
+              </li>
+
+            {% when 'article' %}
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <a
+                  class="capitalize breadcrumb-link breadcrumb-link--root text-persian-blue underline hover:no-underline"
+                  href="{{ blog.url }}"
+                >
+                  {{- blog.title -}}
+                </a>
+              </li>
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <span class="text-police-blue-70" aria-current="page">{{ page_title }}</span>
+              </li>
+            {% when '404' %}
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <span class="text-police-blue-70" aria-current="page">Page not found</span>
+              </li>
+            {% else %}
+              <li class="breadcrumbs-item flex" aria-current="page">
+                <span class="mx-1 flex items-center">
+                  {% render 'icon', icon: 'chevron-right', class: 'size-3 inline-block' %}
+                </span>
+                <span class="text-police-blue-70" aria-current="page">{{ page_title }}</span>
+              </li>
+          {% endcase %}
+        </ol>
+      </nav>
+    </div>
+  </div>
+  {% if template.suffix contains 'transparent-header' %}
+    <style>
+      #MainContent {
+        position: relative;
+      }
+    </style>
+  {% endif %}
+{% endunless %}

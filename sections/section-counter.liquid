@@ -1,0 +1,174 @@
+{% liquid
+  assign section_id = section.id
+  assign title = section.settings.title
+  assign text = section.settings.text
+  assign counter = section.settings.counter
+  assign counter_label = section.settings.counter_label
+  assign text_max_width_mobile = section.settings.text_max_width_mobile
+  assign text_max_width_desktop = section.settings.text_max_width_desktop
+  assign background_mobile = section.settings.background_mobile
+  assign background_desktop = section.settings.background_desktop
+  assign banner_text = section.settings.banner_text
+  assign banner_text_max_width_mobile = section.settings.banner_text_max_width_mobile
+  assign banner_text_max_width_desktop = section.settings.banner_text_max_width_desktop
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<style>
+  #section-{{ section_id }} .block-text {
+    max-width: {% if text_max_width_mobile > 0 %} {{ text_max_width_mobile }}px {% else %} 100% {% endif %};
+    @media screen and (min-width: 768px) {
+      max-width: {% if text_max_width_desktop > 0 %} {{ text_max_width_desktop }}px {% else %} 100% {% endif %};
+    }
+  }
+  #section-{{ section_id }} .main-section {
+    background-image: url({{ background_mobile | img_url: 'master' }});
+    background-size: cover;
+    background-position: bottom;
+    @media screen and (min-width: 768px) {
+      background-image: url({{ background_desktop | img_url: 'master' }});
+    }
+  }
+  #section-{{ section_id }} .banner-text {
+    max-width: {% if banner_text_max_width_mobile > 0 %} {{ banner_text_max_width_mobile }}px {% else %} 100% {% endif %};
+    @media screen and (min-width: 768px) {
+      max-width: {% if banner_text_max_width_desktop > 0 %} {{ banner_text_max_width_desktop }}px {% else %} 100% {% endif %};
+    }
+  }
+</style>
+
+<section id="section-{{ section_id }}">
+  <div class="relative">
+    <div class="main-section max-w-480 mx-auto">
+      <div class="container">
+        <div class="pb-[70%] pt-16 large:pb-[60%] 2.5xl:pb-[43%] lg:pt-28">
+          <div class="text-center text-32 font-medium leading-none lg:text-5xl">{{ title }}</div>
+          <div class="block-text mx-auto mt-2.5 text-center">{{ text }}</div>
+          <div class="mt-8.5 text-center text-64 font-medium text-persian-blue h-17 overflow-hidden">
+            {%  render 'counter', input_string: counter %}
+            </div>
+          <div class="text-center font-medium">{{ counter_label }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:absolute lg:bottom-11 lg:flex justify-center lg:w-full">
+      <div class="mx-auto max-w-200 border-t-4 border-persian-blue bg-white">
+        <div class="container">
+          <div class="banner-text mx-auto pb-16 pt-15 text-center text-2xl font-medium lg:px-5">{{ banner_text }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Counter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_mobile",
+        "label": "Text Max Width Mobile"
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_desktop",
+        "label": "Text Max Width Desktop"
+      },
+      {
+        "type": "text",
+        "id": "counter",
+        "label": "Counter"
+      },
+      {
+        "type": "text",
+        "id": "counter_label",
+        "label": "Counter Label"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_mobile",
+        "label": "Background Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_desktop",
+        "label": "Background Desktop"
+      },
+      {
+        "type": "richtext",
+        "id": "banner_text",
+        "label": "Banner Text"
+      },
+      {
+        "type": "number",
+        "id": "banner_text_max_width_mobile",
+        "label": "Banner Text Max Width Mobile"
+      },
+      {
+        "type": "number",
+        "id": "banner_text_max_width_desktop",
+        "label": "Banner Text Max Width Desktop"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Counter"
+      }
+    ]
+  }
+{% endschema %}

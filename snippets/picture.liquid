@@ -1,0 +1,109 @@
+{% comment %}
+  Renders picture element.
+
+  Accepts:
+  - image_desktop: {Object}
+  - image_mobile: {Object}
+  - placeholder: {String} (optional)
+  - lazy: {String}
+  - class: {String}
+  - id: {String}
+  - mobile_size: {String} (optional) Width of the image on mobile in relation to container width
+  - desktop_size: {String} (optional) Width of the image on desktop in relation to container width
+  - is_full_size: {Boolean} (optional) Use it if you want to render image with width greater than container width
+
+  Usage:
+      {% render 'picture', image_desktop: image, image_mobile: image, lazy: 'eager', class: 'class', id: 'id', mobile_size: '100', desktop_size: '50', is_full_size: false, breakpoint: 768 %}
+{% endcomment %}
+
+{% liquid
+  assign breakpoint = breakpoint| default: 768
+  assign container_width = 1760
+  assign is_full_size = is_full_size | default: false
+
+  if is_full_size
+    assign container_width = 1920
+  endif
+
+  if placeholder == blank
+    assign placeholder = 'hero-apparel-1' | placeholder_svg_tag: 'w-full'
+  endif
+
+  assign focal_point_desktop = image_desktop.presentation.focal_point
+  assign focal_point_mobile = image_mobile.presentation.focal_point | default: focal_point_desktop
+
+  assign desktop_size = desktop_size | plus: 0
+  if desktop_size == 0
+    assign desktop_size = 1
+  else
+    assign desktop_size = desktop_size | times: 0.01
+  endif
+  assign mobile_size = mobile_size | plus: 0
+  if mobile_size == 0
+    assign mobile_size = 1
+  else
+    assign mobile_size = mobile_size | times: 0.01
+  endif
+  assign all_sizes = '400, 500, 600, 768, 1024, 1228, 1440, 1760' | split: ','
+%}
+{% if image_mobile != blank or image_desktop != blank %}
+  <picture class="picture--{{ id }}">
+    {% for size in all_sizes %}
+      {% liquid
+        assign size_difference = size | minus: 0 | minus: breakpoint
+        assign base_size = mobile_size
+        assign base_image = image_mobile
+        if size_difference > 0
+          assign base_size = desktop_size
+          assign base_image = image_desktop
+        endif
+        assign size_1x = size | times: base_size
+        assign size_2x = size | times: 2 | times: base_size
+        assign size_3x = size | times: 3 | times: base_size
+      %}
+      <source
+        srcset="
+          {{ base_image | image_url: width: size_1x }},
+          {{ base_image | image_url: width: size_2x }} 2x,
+          {{ base_image | image_url: width: size_3x }} 3x
+        "
+        media="(max-width: {{ size | minus: 1 }}px)"
+      >
+    {% endfor %}
+    {% liquid
+      assign size_1x = container_width | times: desktop_size
+      assign size_2x = container_width | times: 2 | times: desktop_size
+      assign size_3x = container_width | times: 3 | times: desktop_size
+    %}
+    <source
+      srcset="
+        {{ image_desktop | image_url: width: size_1x }},
+        {{ image_desktop | image_url: width: size_2x }} 2x,
+        {{ image_desktop | image_url: width: size_3x }} 3x
+      "
+      media="(min-width: {{ all_sizes.last }}px)"
+    >
+    <img
+      src="{{ image_mobile | image_url: width: breakpoint }}"
+      alt="{{ image_mobile.alt | default: 'Image' }}"
+      loading="{{ lazy | default: 'lazy' }}"
+      height="{{ image_mobile.height }}"
+      width="{{ image_mobile.width }}"
+      class="block mb-0{% if class != blank %} {{ class }}{% endif %}"
+    >
+  </picture>
+
+  {% style %}
+    .picture--{{ id }} img {
+    object-position: {{ focal_point_mobile }};
+    }
+
+    @media screen and (min-width: 768px) {
+    .picture--{{ id }} img {
+    object-position: {{ focal_point_desktop }};
+    }
+    }
+  {% endstyle %}
+{% else %}
+  {{ placeholder }}
+{% endif %}

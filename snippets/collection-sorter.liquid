@@ -1,0 +1,42 @@
+{% comment %}
+  Renders a products sort by dropdown
+
+  Accepts:
+  - results: {Object} Collection object (required)
+
+  Usage:
+  {% render 'collection-sorter', results: collection %}
+{% endcomment %}
+
+{% if results %}
+  <div>
+    <form 
+        class="flex items-center leading-none text-base">
+      {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+      <label
+        for="SortBy"
+        class="divide-police-blue-70 mr-2"
+      >
+        {{ 'products.facets.sort_by_label' | t }}
+      </label>
+      <select
+        name="sort_by"
+        class="text-base text-police-blue cursor-pointer lg:pr-5"
+        id="SortBy"
+        x-ref="facetSortSelect"
+        @change="$refs.sortBy.value = $el.value; $refs.sortBy.dispatchEvent(new Event('change'))"
+      >
+        {%- for option in results.sort_options -%}
+          <option
+            value="{{ option.value | escape }}"
+            {% if option.value == results.sort_by %}
+              selected="selected"
+            {% endif %}
+          >
+            {{ option.name | escape }}
+          </option>
+        {%- endfor -%}
+      </select>
+    </form>
+  </div>
+{% endif %}

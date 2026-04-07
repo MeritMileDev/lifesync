@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_banner_GxQqec": {
+      "type": "page-banner",
+      "settings": {
+        "image_mobile": "{{ collection.metafields.custom.collection_page_banner_mobile.value }}",
+        "image_desktop": "{{ collection.metafields.custom.collection_page_banner_desktop.value }}",
+        "title": "{{ collection.title }}",
+        "subtitle": "{{ collection.metafields.custom.collection_banner_text | metafield_tag }}",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 20,
+        "collection_links": "shop-menu",
+        "collection_grid_banner_mobile": "shopify://shop_images/collection-grid-banner.jpg",
+        "collection_grid_banner_desktop": "shopify://shop_images/collection-grid-banner-desktop.jpg",
+        "collection_grid_banner_title": "The standard in signal quality",
+        "collection_grid_banner_subtitle": "The reliability of any neuro test is only as  good as the monitoring connection.",
+        "collection_grid_banner_button_text": "Learn more",
+        "collection_grid_banner_button_link": "shopify://pages/neuro"
+      }
+    }
+  },
+  "order": [
+    "page_banner_GxQqec",
+    "main"
+  ]
+}

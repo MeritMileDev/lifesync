@@ -1,0 +1,162 @@
+{% comment %}
+  Accepts:
+  - product: {Object} Product liquid object
+
+  Usage:
+  {% render 'product-gallery', %}
+{% endcomment %}
+
+{% assign images_count = 0 %}
+{% assign video_count = 0 %}
+<div
+  id="ProductGallery"
+  class="relative -mx-4 aspect-[708/621] xl:mx-0"
+  x-data="
+    {
+      initialized: false,
+      images: [],
+      videos: [],
+      initialImages: [
+        {%- if product.images -%}
+          {%- for additional_image in product.images -%}
+            {% assign images_count = images_count | plus: 1 %}
+
+            {%- unless forloop.first -%},{%- endunless -%}
+            '{{ additional_image | image_url: width: 200 }}'
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if images_count == 0 and product.media[0] -%}
+          '{{ product.media[0] | image_url: width: 200 }}'
+        {%- elsif images_count == 0 -%}
+          `{{ 'placeholder.svg' | asset_url }}`
+        {%- endif -%}
+      ],
+      initialVideos: [
+        {%- for media in product.media -%}
+          {%- if media.media_type == 'external_video' -%}
+            {% assign video_count = video_count | plus: 1 %}
+            {%- if video_count > 1 -%},{%- endif -%}
+            {
+              preview: '{{ media.preview_image.src | image_url: width: 920 }}',
+              alt: '{{ media.alt | escape }}',
+              externalId: '{{ media.external_id }}',
+              host: '{{ media.host }}',
+              aspectRatio: '{{ media.aspect_ratio }}'
+            }
+          {%- endif -%}
+        {%- endfor -%}
+      ],
+        nonVariantImagesArray: [
+        {%- for image in product.images -%}
+          {%- assign is_variant_image = false -%}
+
+          {%- for variant in product.variants -%}
+            {%- if variant.image == image -%}
+              {%- assign is_variant_image = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if is_variant_image == false -%}
+            '{{ image | image_url: width: 920 }}',
+          {%- endif -%}
+        {%- endfor -%}
+        ]
+    }
+  "
+  x-init="allImages = initialImages; nonVariantImages = nonVariantImagesArray;"
+>
+  {% if images_count == 0 %}
+    <img class="h-full w-full object-contain" src="{{ 'placeholder.jpeg' | asset_url }}" alt="">
+  {% else %}
+    <div x-show="!initialized" class="flex flex-col xl:flex-row xl:gap-2">
+      <div class="w-full bg-gray-100 xl:order-2 p-2">
+        <img
+          class="aspect-square h-full w-full object-contain mix-blend-darken"
+          src="{{ product.media[0] | image_url: width: 720 }}"
+          alt=""
+        >
+      </div>
+      <div class="flex gap-x-2 px-2 pt-2 xl:order-1 xl:w-20 xl:shrink-0 xl:flex-col xl:gap-2 xl:p-0">
+        <div class="aspect-square flex-1 bg-gray-100 xl:flex-grow-0"></div>
+        <div class="aspect-square flex-1 bg-gray-100 xl:flex-grow-0"></div>
+        <div class="aspect-square flex-1 bg-gray-100 xl:flex-grow-0"></div>
+        <div class="aspect-square flex-1 bg-gray-100 xl:flex-grow-0"></div>
+      </div>
+    </div>
+    <div
+      class="product-gallery-slider xl:flex xl:gap-2"
+      x-data="productGallery"
+      x-effect="
+        currentImages;
+        if (currentImages.length) {
+          images = currentImages;
+          videos = [];
+        } else {
+          images = initialImages;
+          videos = initialVideos;
+        }
+        slidesCount = images.length + videos.length;
+      "
+    >
+      <div x-ref="gallerySliderMain" class="swiper transition-all xl:order-2 xl:grow">
+        <div class="swiper-wrapper">
+          <template x-for="(image, index) in images">
+            <div
+              class="swiper-slide group relative aspect-square w-full cursor-pointer overflow-hidden bg-gray-100 p-2"
+            >
+              <template x-if="image">
+                <img
+                  class="h-full w-full object-contain mix-blend-darken transition-all"
+                  :src="image.replace('width=200', `width=${window.innerWidth > 1279 ? 913 * window.devicePixelRatio : window.innerWidth * window.devicePixelRatio}`)"
+                  alt="{{ product.title }}"
+                  width="720"
+                  height="720"
+                >
+              </template>
+            </div>
+          </template>
+        </div>
+      </div>
+      <div
+        x-ref="gallerySliderThumbs"
+        class="swiper gallery-pagination mt-1.5 max-w-full px-2 transition-all xl:relative xl:order-1 xl:mt-0 xl:max-h-113.5 xl:shrink-0 xl:basis-20 xl:px-0.5 xl:pb-9"
+      >
+        <div class="swiper-wrapper py-0.5 xl:pb-0">
+          <template x-for="(image, index) in images">
+            <div
+              class="swiper-slide group relative flex aspect-square !h-full w-full cursor-pointer justify-center overflow-hidden bg-gray-100 p-2 xl:!h-19"
+            >
+              <template x-if="image">
+                <img
+                  class="h-full w-full object-contain mix-blend-darken transition-all"
+                  :src="image"
+                  alt="{{ product.title }}"
+                >
+              </template>
+            </div>
+          </template>
+        </div>
+        <div
+          x-cloak
+          x-show="images.length > 4"
+          class="swiper-button-next bottom-0 left-0 right-0 z-10 hidden cursor-pointer border border-police-blue-20 py-1.75 text-police-blue-70 transition-colors hover:border-police-blue/50 hover:text-police-blue xl:absolute xl:bg-white"
+          :class="{'xl:block': images.length > 4 }"
+        >
+          <span class="flex items-center justify-center">
+            {% render 'icon', icon: 'chevron-up', class: 'size-4 rotate-180' %}
+          </span>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% style %}
+  .product-gallery-slider {
+    .gallery-pagination {
+      .swiper-slide-thumb-active {
+        outline: 2px solid #3c4c5f;
+      }
+    }
+  }
+{% endstyle %}

@@ -1,0 +1,156 @@
+{% liquid
+  assign section_id = section.id
+  assign background_color = section.settings.background_color
+
+  assign heading = section.settings.heading
+  assign title = section.settings.title
+  assign text = section.settings.text
+  assign content_image = section.settings.content_image
+
+  assign image_1_mobile = section.settings.image_1_mobile
+  assign image_1_desktop = section.settings.image_1_desktop
+  assign image_2_mobile = section.settings.image_2_mobile
+  assign image_2_desktop = section.settings.image_2_desktop
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+{% if background_color %}
+  <style>
+    #section-{{ section_id }} {
+      background-color: {{ background_color }};
+    }
+  </style>
+{% endif %}
+
+<section id="section-{{ section_id }}">
+  <div class="relative max-w-480 mx-auto">
+    <div class="container">
+      <div class="max-w-82 mx-auto xl:absolute xl:top-0 xl:max-w-[8.75%] xl:right-[12%]">
+        {% render 'picture', image_desktop: image_1_desktop, image_mobile: image_1_mobile, breakpoint: 1280 %}
+      </div>
+      <div class="mb-16 mt-14.5 xl:py-20 2xl:py-40 xl:my-0 ">
+        {% if heading != blank %}
+          <div class="mb-2 text-center text-sm font-medium uppercase tracking-wide text-police-blue-70">
+            {{- heading -}}
+          </div>
+        {% endif %}
+        {% if title != blank %}
+          <div class="mx-auto mb-2 max-w-75 text-center text-32 font-medium text-police-blue xl:text-64 xl:max-w-120 xl:mb-3.5">{{ title }}</div>
+        {% endif %}
+        {% if text != blank %}
+          <div class="text-center max-w-152.5 mx-auto">{{ text }}</div>
+        {% endif %}
+        {% if content_image != blank %}
+          <div class="max-w-82 mx-auto mt-14 xl:max-w-120 xl:mt-6">
+            {% render 'picture', image_mobile: content_image %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="max-w-82 mx-auto xl:absolute xl:max-w-[24.5%] xl:left-0 xl:top-1/2 xl:-translate-y-1/2">
+        {% render 'picture', image_desktop: image_2_desktop, image_mobile: image_2_mobile, breakpoint: 1024 %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Comprehensive options",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#F4F9FC"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "content_image",
+        "label": "Content Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1_mobile",
+        "label": "Image 1 Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1_desktop",
+        "label": "Image 1 Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2_mobile",
+        "label": "Image 2 Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2_desktop",
+        "label": "Image 2 Desktop"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Comprehensive options"
+      }
+    ]
+  }
+{% endschema %}

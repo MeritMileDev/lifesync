@@ -1,0 +1,126 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section style="background-color: {{ section.settings.background_color }};" id="section-{{ section_id }}">
+  <div class="container">
+    <div class="py-6 flex flex-wrap md:py-10">
+      {% assign count = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'category' %}
+          {% liquid
+            assign icon = block.settings.icon
+            assign title = block.settings.title
+            assign url = block.settings.url | default: '#'
+            assign count = count | plus: 1
+          %}
+          {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+          <a
+            href="{{ url }}"
+            class="text-center flex-[1_1_50%] pt-4 pb-3 md:flex-1 hover:text-police-blue-70 {% if thecycle == 'even' %} border-l border-police-blue-20 md:border-none{% endif %}"
+          >
+            {% if icon != blank %}
+              <img src="{{ icon | img_url }}" width="163" height="64" alt="{{ title }}" class="mb-3 mx-auto md:mb-12 h-16 w-auto">
+            {% endif %}
+            {% if title != blank %}
+              <div class="text-2xl font-medium leading-none large:text-32">{{ title }}</div>
+            {% endif %}
+          </a>
+          {% unless forloop.last %}
+            {% if thecycle == 'even' %}
+              <hr class="w-full my-6 md:hidden">
+            {% endif %}
+            <div class="hidden md:block w-px bg-police-blue-20 mx-2 large:mx-6"></div>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Category Grid",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#F4F9FC"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "category",
+        "name": "Category",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Catgeory Grid"
+      }
+    ]
+  }
+{% endschema %}

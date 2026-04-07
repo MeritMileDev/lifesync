@@ -1,0 +1,66 @@
+{% liquid
+  assign message = section.settings.message
+  assign bg-color = section.settings['bg-color']
+  assign text-color = section.settings['text-color']
+  assign is_enabled = section.settings.is_enabled
+%}
+
+<div class="top-header" x-ref="top_header">
+  <div class="container">
+    <div class="items-center xl:grid xl:grid-cols-[1fr_2fr_1fr] xl:py-2.5">
+      <div class="col-start-2 py-2.5 text-center text-sm leading-5 tracking-wide xl:py-0">
+        {{ message }}
+      </div>
+      <div class="hidden items-center space-x-6 justify-self-end text-sm leading-5 xl:flex">
+        <a
+          class="text-sm leading-none text-white transition-colors xl:block xl:tracking-wide xl:hover:text-white/80"
+          href="tel:{{settings.store_phone_number}}"
+          title="{{'general.phone_number' | t}}"
+        >
+          {{- settings.store_phone_number -}}
+        </a>
+        <a
+          class="text-sm uppercase leading-none text-white transition-colors xl:block xl:tracking-wide xl:hover:text-white/80"
+          href="/pages/contact"
+          title="{{ 'general.contact_button_label' | t }}"
+        >
+          {{ 'general.contact_button_label' | t }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% style %}
+  .top-header {
+    color: {{ text-color }};
+    background-color: {{ bg-color }}
+  }
+  .top-header b {
+    font-weight: 800;
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Top Header",
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "message",
+        "label": "Message"
+      },
+      {
+        "type": "color",
+        "id": "bg-color",
+        "default": "transparent",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "text-color",
+        "label": "Text Color"
+      }
+    ]
+  }
+{% endschema %}

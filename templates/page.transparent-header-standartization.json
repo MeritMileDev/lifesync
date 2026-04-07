@@ -1,0 +1,353 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_banner_wdiBDa": {
+      "type": "section-hero-banner",
+      "custom_css": [],
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/banner.jpg",
+        "image_desktop": "shopify://shop_images/standartization-banner-d.jpg",
+        "enable_overlay": false,
+        "title": "Standardize Cardiac Patient Monitoring Connections",
+        "title_max_width_mobile": 328,
+        "subtitle": "<p>1 Patient = 1 Leadwire = 1 Time Placement</p>",
+        "subtitle_full_width": true,
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 417,
+        "padding_bottom_mobile": 55,
+        "padding_top_desktop": 550,
+        "padding_bottom_desktop": 70
+      }
+    },
+    "section_simple_text_WLCcYq": {
+      "type": "section-simple-text",
+      "custom_css": [
+        ".section-title {@media (min-width: 1280px) {margin-bottom: 12px; }}"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Streamlined efficiency",
+        "title_size": "medium",
+        "title_size_mobile": "small",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "<p>LifeSync's AMC Leadwire System - LWS® is the only complete system that allows hospitals to standardize and elevate efficiency throughout the facility.</p>",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 535,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 55,
+        "padding_bottom_mobile": 55,
+        "padding_top_desktop": 110,
+        "padding_bottom_desktop": 55
+      }
+    },
+    "section_grid_with_card_wTQMEN": {
+      "type": "section-grid-with-card",
+      "blocks": {
+        "card_yxaajH": {
+          "type": "card",
+          "settings": {
+            "background_color": "#f4f9fc",
+            "image_mobile": "shopify://shop_images/image_1.jpg",
+            "image_desktop": "shopify://shop_images/image_1_d.jpg",
+            "subtitle": "<p>Streamlined connectivity</p>",
+            "title": "\"Ready connect\" standardization for patient flow efficiency",
+            "title_max_width_desktop": 380,
+            "text": "<p>Multiple leadwires and monitor connections can create disorder with different and competing connections, baffling staff, and slowing patient care.</p>",
+            "text_max_width_mobile": 295,
+            "text_max_width_desktop": 380
+          }
+        },
+        "card_KMCLJn": {
+          "type": "card",
+          "settings": {
+            "background_color": "",
+            "image_mobile": "shopify://shop_images/image_2.jpg",
+            "image_desktop": "shopify://shop_images/image_2_d.jpg",
+            "subtitle": "<p>Direct compatibility</p>",
+            "title": "A single leadwire that is compatible with your existing monitors",
+            "title_max_width_mobile": 325,
+            "title_max_width_desktop": 370,
+            "text": "<p>The LifeSync leadwire system (formerly AMC) plugs directly into monitors, telemetry, and defibrillation connections. No adapters or cable extension are needed in most cases.</p>",
+            "text_max_width_mobile": 300,
+            "text_max_width_desktop": 410
+          }
+        },
+        "card_NpD6xq": {
+          "type": "card",
+          "settings": {
+            "background_color": "#f4f9fc",
+            "image_mobile": "shopify://shop_images/image_3.jpg",
+            "image_desktop": "shopify://shop_images/image_3_d.jpg",
+            "subtitle": "<p>Continuous monitoring</p>",
+            "title": "One leadwire for the patient's entire stay",
+            "title_max_width_mobile": 225,
+            "title_max_width_desktop": 255,
+            "text": "<p>LifeSync leadwires move with the patient, easily connecting to different monitors and reducing cross-contamination risks from reusable leadwires.</p>",
+            "text_max_width_mobile": 300,
+            "text_max_width_desktop": 385
+          }
+        }
+      },
+      "block_order": [
+        "card_yxaajH",
+        "card_KMCLJn",
+        "card_NpD6xq"
+      ],
+      "custom_css": [
+        "section {@media (768px <= width <= 1023px) {padding-bottom: 0 !important; }}"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 135
+      }
+    },
+    "section_steps_HE6AWE": {
+      "type": "section-steps",
+      "blocks": {
+        "step_EwXGmw": {
+          "type": "step",
+          "settings": {
+            "step_title": "Site survey",
+            "step_content": "<p>90 day before the transition date, our team conducts an onsite survey, inventorying equipment and connection needs, meeting with stakeholders.</p>",
+            "content_max-width_desktop": 500
+          }
+        },
+        "step_BEnrDi": {
+          "type": "step",
+          "settings": {
+            "step_title": "Inventory & parameter agreement",
+            "step_content": "<p>Our team discusses equipment changes and upgrades with each affected department, and then set priorities.</p>",
+            "content_max-width_desktop": 390
+          }
+        },
+        "step_cGttzL": {
+          "type": "step",
+          "settings": {
+            "step_title": "Manufacture standardized solutions",
+            "step_content": "<p>LifeSync expertly manufactures the standardized solutions the teams have agreed on.</p>",
+            "content_max-width_desktop": 370
+          }
+        },
+        "step_6UqbqJ": {
+          "type": "step",
+          "settings": {
+            "step_title": "In-service staff",
+            "step_content": "<p>Ten days before the transition date, our team walks through the transition to new equipment with the affected departments.</p>",
+            "content_max-width_desktop": 415
+          }
+        },
+        "step_hDt6n4": {
+          "type": "step",
+          "settings": {
+            "step_title": "Go live",
+            "step_content": "<p>We swap inventory, replacing old equipment with new equipment, ensuring all connections are operational.</p>",
+            "content_max-width_desktop": 440
+          }
+        },
+        "step_CLNdcM": {
+          "type": "step",
+          "settings": {
+            "step_title": "Update ongoing standardization protocol",
+            "step_content": "<p>Our team updates the protocol to keep it current.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_EwXGmw",
+        "step_BEnrDi",
+        "step_cGttzL",
+        "step_6UqbqJ",
+        "step_hDt6n4",
+        "step_CLNdcM"
+      ],
+      "settings": {
+        "enable_bg": false,
+        "enable_bg_desktop": true,
+        "is_static_steps": true,
+        "static_image": "shopify://shop_images/steps.jpg",
+        "section_subtitle": "Seamless transition",
+        "section_title": "<p>Six steps to standardization</p>",
+        "section_description": "<p>Standardizing or replacing cardiac cables and connections can feel like an enormous task. Our expert staff and conversion teams will guide you through the process of inventory, training, supply chain management, and implementation to ensure a successful transition. We use our six phase standardization process to ensure a seamless transition to LifeSync Cardiac monitoring connections.</p>",
+        "section_description_max_width": 0,
+        "section_description_max_width_mobile": 0,
+        "bottom_title": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 54,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_video_banners_hpdn4c": {
+      "type": "section-video-banners",
+      "blocks": {
+        "video_banner_jWQYYx": {
+          "type": "video_banner",
+          "settings": {
+            "image_mobile": "shopify://shop_images/banner-1-d.jpg",
+            "image_desktop": "shopify://shop_images/banner-1-d.jpg",
+            "description": "<p>Our innovative solution offers universal lead wires that can seamlessly connect to any monitor regardless of the brand.</p>",
+            "description_max_width_mobile": 330,
+            "description_max_width_desktop": 415,
+            "button_text": "Watch video",
+            "youtube_id": "AyLr0QAXFLY"
+          }
+        },
+        "video_banner_CR9FxR": {
+          "type": "video_banner",
+          "settings": {
+            "image_mobile": "shopify://shop_images/banner-2-d.jpg",
+            "image_desktop": "shopify://shop_images/banner-2-d.jpg",
+            "description": "<p>We're experts in the design, manufacturing, and implementation of lead wire technology, helping hospitals transform their systems into one that improves safety and efficiency for streamlined care.</p>",
+            "description_max_width_mobile": 300,
+            "description_max_width_desktop": 615,
+            "button_text": "Watch video",
+            "youtube_id": "cOLsiCkUv14"
+          }
+        }
+      },
+      "block_order": [
+        "video_banner_jWQYYx",
+        "video_banner_CR9FxR"
+      ],
+      "settings": {
+        "padding_top_mobile": 62,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 70
+      }
+    },
+    "section_banner_with_text_x8zkdA": {
+      "type": "section-banner-with-text",
+      "settings": {
+        "subtitle": "<p>Patient Flow</p>",
+        "image_mobile": "shopify://shop_images/banner-3-d.jpg",
+        "image_desktop": "shopify://shop_images/banner-3-d.jpg",
+        "is_image_at_bottom_desktop": true,
+        "title": "One leadwire for the patient's entire stay",
+        "description": "<p>LifeSync leadwires travel with the patient by simply unpluging from one monitor and connecting to the next monitor. The single-patient-use leadwire is designed to avoid the cross-contamination risks associated with reusable leadwires.</p>",
+        "description_max_width_desktop": 540,
+        "border_bottom_mobile": true,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "banner_with_text_i7jWGC": {
+      "type": "banner-with-text",
+      "custom_css": [
+        "section {@media (1023px >= width >= 768px) {padding-top: 80px !important; }}"
+      ],
+      "settings": {
+        "heading_text": "What we do",
+        "heading_text_offset_mobile": 8,
+        "heading_text_offset_desktop": 16,
+        "title": "Easy answer to a daunting task",
+        "title_offset_mobile": 10,
+        "title_offset_desktop": 12,
+        "title_max_width_mobile": 220,
+        "title_max_width_desktop": 0,
+        "text": "<p>The LifeSync team follows a transparent standardization process of complete inventory, training, supply chain management, and implementation. Our team makes a seamless transition possible for your team.</p>",
+        "text_offset_mobile": 0,
+        "text_offset_desktop": 0,
+        "text_max_width_mobile": 320,
+        "text_max_width_desktop": 507,
+        "disclaimer": "",
+        "disclaimer_offset_mobile": 0,
+        "disclaimer_offset_desktop": 0,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "padding_top_desktop": 135,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "section_grid_with_text_JNpBcL": {
+      "type": "section-grid-with-text",
+      "blocks": {
+        "text_block_4FWACw": {
+          "type": "text_block",
+          "settings": {
+            "subtitle": "Reusable costs",
+            "title": "Reusable cost considerations",
+            "description": "<ul><li>Cross-contamination, which may lead to increased time in patient stay.</li><li>Sterilization cost, to include the training of processing department.</li></ul>"
+          }
+        },
+        "text_block_6mUBrt": {
+          "type": "text_block",
+          "settings": {
+            "subtitle": "Cost efficiency",
+            "title": "Single-patient-use cost efficiencies",
+            "description": "<ul><li>AMC Leadwire System - LWS® are cost-neutral compared to reusable leadwires.</li><li>No cost due to cleaning.</li><li>No cost due to processing time.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_4FWACw",
+        "text_block_6mUBrt"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 58,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 115
+      }
+    },
+    "section_simple_text_aCr9NL": {
+      "type": "section-simple-text",
+      "settings": {
+        "subtitle": "Get in touch",
+        "title": "Stay focused on patient care and leave the standardizing to us",
+        "title_size": "medium",
+        "title_size_mobile": "small",
+        "title_max_width_mobile": 320,
+        "title_max_width_desktop": 640,
+        "text": "<p>To find out what standardization might look like for your hospital, contact your LifeSync representative or <a href=\"/pages/contact\" title=\"Contact\">customer service online</a> or by telephone - 1-800-358-2468.</p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 290,
+        "text_max_width_desktop": 600,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 55,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 120
+      }
+    }
+  },
+  "order": [
+    "section_hero_banner_wdiBDa",
+    "section_simple_text_WLCcYq",
+    "section_grid_with_card_wTQMEN",
+    "section_steps_HE6AWE",
+    "section_video_banners_hpdn4c",
+    "section_banner_with_text_x8zkdA",
+    "banner_with_text_i7jWGC",
+    "section_grid_with_text_JNpBcL",
+    "section_simple_text_aCr9NL"
+  ]
+}

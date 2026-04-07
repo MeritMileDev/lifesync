@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "logo": "shopify://shop_images/logo-new.svg",
+    "logo_secondary": "shopify://shop_images/logo-white.svg",
+    "logo_width": 185,
+    "favicon": "shopify://shop_images/favicon-32x32.png",
+    "store_phone_number": "1-800-358-2468",
+    "store_phone_number_secondary": "1-954-345-9800",
+    "store_fax_number": "1-954-345-0507",
+    "store_address": "11705 NW 39th Street, Coral Springs, FL, 33065",
+    "store_address_link": "https://www.google.com/maps/place/11711+NW+39th+St,+Coral+Springs,+FL+33065,+USA/@26.279476,-80.284758,16z/data=!3m1!4b1!4m6!3m5!1s0x88d9100260d3a2a5:0x35d16db80f50b689!8m2!3d26.279476!4d-80.284758!16s%2Fg%2F11c1_f8049?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoJLDEwMjExMjM0SAFQAw%3D%3D",
+    "store_hours": "M - F 9:00 AM to 5:00 PM EST",
+    "socials_x": "https://x.com/lifesyncmed/",
+    "socials_linkedin": "https://www.linkedin.com/company/lifesyncmedical/about/",
+    "yotpo_api_key": "xOdsjUHyEragNfrvnKBoQdcVOWXGErKoxZwaSIy9",
+    "sections": {
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_logo": "shopify://shop_images/logo_8aa86c30-c2bb-4df9-92e9-8c19d3d96d4d.svg",
+          "newsletter_title_1": "Sign up for our newsletter",
+          "newsletter_title_2": "Sign up for our news and special offers.",
+          "footer_column_title_1": "Info",
+          "footer_menu_1": "footer",
+          "footer_column_title_2": "Get in touch",
+          "footer_menu_2": "footer-extra-menu",
+          "description": "LifeSync is the only vertically-integrated company completely focused on patient connections, and is your single-source provider of cardiac cables, leadwires and neuromonitoring connections, as well as contract manufacturing. You’ll find the perfect mix of high-quality connections and cost-effective prices, ideal for the needs of patient care professionals, procurement departments, and device manufacturers."
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "16548475241908962911": {
+        "type": "shopify://apps/oxi-social-login/blocks/social-login-embed/24ad60bc-8f09-42fa-807e-e5eda0fdae17",
+        "disabled": false,
+        "settings": {
+          "enabled_on_page": "account"
+        }
+      },
+      "10641372206048101839": {
+        "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-global-embed/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+        "disabled": false,
+        "settings": {}
+      },
+      "7570552984445421165": {
+        "type": "shopify://apps/yotpo-product-photo-reviews/blocks/settings/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": false,
+        "settings": {}
+      },
+      "5946647744298494267": {
+        "type": "shopify://apps/wishlist-plus/blocks/wishlist-app-embed/80c3b1fc-3a8f-407e-8367-ffdeebb8b612",
+        "disabled": false,
+        "settings": {}
+      },
+      "2270789430191447923": {
+        "type": "shopify://apps/discountly-pos-tier-discount/blocks/ac_tier/c8a31a00-e05e-40b6-952f-fdf860eeac4d",
+        "disabled": false,
+        "settings": {}
+      },
+      "2153490007123654574": {
+        "type": "shopify://apps/consentmo-gdpr/blocks/gdpr_cookie_consent/4fbe573f-a377-4fea-9801-3ee0858cae41",
+        "disabled": false,
+        "settings": {}
+      },
+      "1513253815146976218": {
+        "type": "shopify://apps/omnisend-email-marketing-sms/blocks/app-embed/44704aa2-794f-4c5d-8c8e-039c841158e9",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Default": {}
+  }
+}
