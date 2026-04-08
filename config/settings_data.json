@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/lifesync-logo.svg",
-    "logo_secondary": "shopify://shop_images/lifesync-logo-white.svg",
+    "logo": "shopify://shop_images/logo-new.svg",
+    "logo_secondary": "shopify://shop_images/logo-white.svg",
     "logo_width": 185,
     "favicon": "shopify://shop_images/favicon-32x32.png",
     "store_phone_number": "1-800-358-2468",
