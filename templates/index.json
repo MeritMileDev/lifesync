@@ -60,7 +60,7 @@
             "button_link": "shopify://collections/ecg-leadwires-and-monitoring",
             "open_in_new_tab": false,
             "show_button": true,
-            "full_block_button_link": false
+            "full_block_button_link": true
           }
         },
         "column_g4fGVJ": {
@@ -88,6 +88,19 @@
             "button_link": "shopify://collections/eeg",
             "open_in_new_tab": false,
             "show_button": true,
+            "full_block_button_link": true
+          }
+        },
+        "column_NrNaxY": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": true,
             "full_block_button_link": false
           }
         },
@@ -102,7 +115,7 @@
             "button_link": "shopify://collections/ionm",
             "open_in_new_tab": false,
             "show_button": true,
-            "full_block_button_link": false
+            "full_block_button_link": true
           }
         }
       },
@@ -110,6 +123,7 @@
         "column_DGJgmw",
         "column_g4fGVJ",
         "column_nGJtin",
+        "column_NrNaxY",
         "column_rh8ekY"
       ],
       "settings": {
