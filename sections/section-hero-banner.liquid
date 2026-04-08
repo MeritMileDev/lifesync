@@ -32,10 +32,10 @@
 
 {% if image_desktop and image_mobile %}
   <section id="section-{{ section_id }}">
-    <div class="relative mx-auto max-w-480">
+    <div class="relative mx-auto max-w-480 rounded-xl">
       <div class="image-wrapper">
         <div
-          style="background: linear-gradient(180deg, rgba(0, 23, 41, 0.60) 0%, rgba(0, 23, 41, 0.00) 100%);"
+          style="background: none;"
           class="absolute z-10 left-0 right-0 top-0 w-full h-32"
         ></div>
         <div class="absolute left-0 top-0 z-0 h-full w-full">
@@ -47,7 +47,7 @@
           %}
           {% if enable_overlay %}
             <div
-              style="background: linear-gradient(0deg, rgba(0, 23, 41, 0.80) 0%, rgba(0, 23, 41, 0.00) 100%);"
+              style="background: none;"
               class="absolute inset-0 w-full h-full"
             ></div>
           {% endif %}
