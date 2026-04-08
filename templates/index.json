@@ -51,6 +51,7 @@
         "column_DGJgmw": {
           "type": "column",
           "settings": {
+            "icon": "shopify://shop_images/placeholder.jpg",
             "title": "ECG Leadwires and Cables",
             "description": "Product description",
             "description_max_width_mob": 0,
@@ -64,6 +65,7 @@
         "column_g4fGVJ": {
           "type": "column",
           "settings": {
+            "icon": "shopify://shop_images/placeholder.jpg",
             "title": "Sp02 Leadwire Automation",
             "description": "Product description",
             "description_max_width_mob": 0,
@@ -77,6 +79,7 @@
         "column_nGJtin": {
           "type": "column",
           "settings": {
+            "icon": "shopify://shop_images/placeholder.jpg",
             "title": "Radiolucent Technology",
             "description": "Product description",
             "description_max_width_mob": 0,
@@ -90,6 +93,7 @@
         "column_rh8ekY": {
           "type": "column",
           "settings": {
+            "icon": "shopify://shop_images/placeholder.jpg",
             "title": "EEG Gold Disposable Electrodes",
             "description": "Product description",
             "description_max_width_mob": 0,
