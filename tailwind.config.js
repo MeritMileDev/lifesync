@@ -152,6 +152,8 @@ module.exports = {
         'arrow-right-grey': "url('/assets/arrow-right-grey.svg')",
         'gradient-bright-gray':
           'linear-gradient(180deg, #F1F7FB 0%, #FFF 40.17%)',
+        'arrow-right-dark-blue': "url('/assets/arrow-right-dark-blue.svg')",
+        'play-light-blue-round': "url('/assets/play-light-blue-round.svg')",
       },
       colors: {
         yellow: '#FFD100',
