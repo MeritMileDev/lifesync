@@ -119,7 +119,7 @@
         "enable_slider": true,
         "style": "background",
         "enable_bottom_border": false,
-        "column_title_size": "medium",
+        "column_title_size": "small",
         "column_title_size_mobile": "small",
         "column_image_height": 0,
         "padding_top_mobile": 64,
