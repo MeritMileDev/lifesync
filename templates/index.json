@@ -91,19 +91,6 @@
             "full_block_button_link": true
           }
         },
-        "column_NrNaxY": {
-          "type": "column",
-          "settings": {
-            "title": "",
-            "description": "",
-            "description_max_width_mob": 0,
-            "button_label": "Learn More",
-            "button_link": "",
-            "open_in_new_tab": false,
-            "show_button": true,
-            "full_block_button_link": false
-          }
-        },
         "column_rh8ekY": {
           "type": "column",
           "settings": {
@@ -123,7 +110,6 @@
         "column_DGJgmw",
         "column_g4fGVJ",
         "column_nGJtin",
-        "column_NrNaxY",
         "column_rh8ekY"
       ],
       "settings": {
