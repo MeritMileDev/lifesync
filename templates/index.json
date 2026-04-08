@@ -134,6 +134,22 @@
     },
     "section_image_with_text_secondary_mXmchx": {
       "type": "section-image-with-text-secondary",
+      "blocks": {
+        "card_bEDATF": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/BluntedNeedles__60327_0426d693-2d88-4ac2-aa23-dd8efe201ed2.png",
+            "card_link": "",
+            "heading": "Standardization Across the Full Patient Stay",
+            "title": "1 Patient, 1 Leadwire, 1 Placement",
+            "text": "LifeSync helps healthcare organizations standardize cardiac monitoring with a single leadwire that stays with the patient throughout the full stay—without adapters, workarounds, or unnecessary complexity. By consolidating vendors and SKUs into a more manageable system, hospitals reduce variation, streamline procurement and inventory management, and improve staff familiarity.",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_bEDATF"
+      ],
       "name": "Image with text secondary",
       "settings": {
         "background_color_mobile": "transparent",
