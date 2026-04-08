@@ -28,6 +28,31 @@
         "padding_bottom_desktop": 210
       }
     },
+    "section_intro_with_cards_VizgQG": {
+      "type": "section-intro-with-cards",
+      "name": "Intro with Cards",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "<p><strong>Different Needs</strong>.  <br/>One Focused Partner. </p>",
+        "title": "Soley Focused on Connecting Care for Over 50 Years",
+        "title_max_width": 0,
+        "description": "LifeSync, an Amphenol company, is a global, vertically integrated designer and manufacturer focused exclusively on patient monitoring connections—helping healthcare organizations and OEMs standardize and simplify ECG, SpO₂, neuro, and custom medical interconnects.<br><br>\nAs part of Amphenol, the world’s largest provider of high-tech interconnect, sensor, and antenna solutions, LifeSync delivers the scale, engineering expertise, and supply chain resiliency that healthcare requires.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_video_banner_with_image_P7WAn3": {
       "type": "section-video-banner-with-image",
       "name": "Video Banner With Image",
@@ -241,6 +266,7 @@
   },
   "order": [
     "section_hero_banner_MWDHA8",
+    "section_intro_with_cards_VizgQG",
     "section_video_banner_with_image_P7WAn3",
     "section_multicolumn_rQ4XbU",
     "section_image_with_text_WMNbwy",
