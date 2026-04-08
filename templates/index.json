@@ -28,6 +28,23 @@
         "padding_bottom_desktop": 210
       }
     },
+    "section_video_banner_en3djG": {
+      "type": "section-video-banner",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/lifesync-video-bg.webp",
+        "image_desktop": "shopify://shop_images/lifesync-video-bg.webp",
+        "icon": "shopify://shop_images/icon-lifesync.svg",
+        "title": "See how LifeSync delivers patient monitoring at scale.",
+        "title_tag": "h2",
+        "subtitle": "",
+        "youtube_id": "ursb7u2MQos",
+        "padding_top_mobile": 340,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 230,
+        "padding_bottom_desktop": 230
+      }
+    },
     "section_multicolumn_rQ4XbU": {
       "type": "section-multicolumn",
       "blocks": {
@@ -110,27 +127,11 @@
         "padding_top_desktop": 120,
         "padding_bottom_desktop": 120
       }
-    },
-    "section_video_banner_en3djG": {
-      "type": "section-video-banner",
-      "settings": {
-        "horizontal_alignment": "left",
-        "image_mobile": "shopify://shop_images/lifesync-video-bg.webp",
-        "image_desktop": "shopify://shop_images/lifesync-video-bg.webp",
-        "title": "See how LifeSync delivers patient monitoring at scale.",
-        "title_tag": "h2",
-        "subtitle": "",
-        "youtube_id": "ursb7u2MQos",
-        "padding_top_mobile": 340,
-        "padding_bottom_mobile": 64,
-        "padding_top_desktop": 230,
-        "padding_bottom_desktop": 230
-      }
     }
   },
   "order": [
     "section_hero_banner_MWDHA8",
-    "section_multicolumn_rQ4XbU",
-    "section_video_banner_en3djG"
+    "section_video_banner_en3djG",
+    "section_multicolumn_rQ4XbU"
   ]
 }
