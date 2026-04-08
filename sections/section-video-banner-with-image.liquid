@@ -8,6 +8,7 @@
 
   assign image_mobile = section.settings.image_mobile
   assign image_desktop = section.settings.image_desktop
+  assign image_featured = section.settings.image_featured
   assign title = section.settings.title
   assign title_tag = section.settings.title_tag
   assign subtitle = section.settings.subtitle
@@ -123,6 +124,11 @@
         "type": "text",
         "id": "title",
         "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_featured",
+        "label": "Featured Image"
       },
             {
         "type": "select",
