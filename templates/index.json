@@ -43,7 +43,7 @@
         "description_max_width_desktop": 0,
         "button_label": "",
         "button_link": "",
-        "image_position": "image_left",
+        "image_position": "image_right",
         "image_position_mobile": "bottom",
         "enable_bg": false,
         "narrow_section": false,
