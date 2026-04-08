@@ -34,78 +34,52 @@
         "column_DGJgmw": {
           "type": "column",
           "settings": {
-            "title": "ECG",
-            "description": "Precise lead wires for cardiac monitoring",
+            "title": "ECG Leadwires and Cables",
+            "description": "Product description",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/ecg-leadwires-and-monitoring",
             "open_in_new_tab": false,
-            "show_button": false,
+            "show_button": true,
             "full_block_button_link": true
           }
         },
         "column_g4fGVJ": {
           "type": "column",
           "settings": {
-            "title": "EMG",
-            "description": "Reliable supplies for muscle and nerve tests",
+            "title": "Sp02 Leadwire Automation",
+            "description": "Product description",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/emg",
             "open_in_new_tab": false,
-            "show_button": false,
+            "show_button": true,
             "full_block_button_link": true
           }
         },
         "column_nGJtin": {
           "type": "column",
           "settings": {
-            "title": "EEG",
-            "description": "Essential electrodes for brain monitoring",
+            "title": "Radiolucent Technology",
+            "description": "Product description",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/eeg",
             "open_in_new_tab": false,
-            "show_button": false,
+            "show_button": true,
             "full_block_button_link": true
           }
         },
         "column_rh8ekY": {
           "type": "column",
           "settings": {
-            "title": "IONM",
-            "description": "Advanced tools for surgical neuro monitoring",
+            "title": "EEG Gold Disposable Electrodes",
+            "description": "Product description",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/ionm",
             "open_in_new_tab": false,
-            "show_button": false,
-            "full_block_button_link": true
-          }
-        },
-        "column_kQ6mDw": {
-          "type": "column",
-          "settings": {
-            "title": "NCS",
-            "description": "Trusted solutions for nerve studies",
-            "description_max_width_mob": 0,
-            "button_label": "Learn More",
-            "button_link": "shopify://collections/ncs",
-            "open_in_new_tab": false,
-            "show_button": false,
-            "full_block_button_link": true
-          }
-        },
-        "column_pCMV3E": {
-          "type": "column",
-          "settings": {
-            "title": "PSG",
-            "description": "Quality accessories for sleep diagnostics",
-            "description_max_width_mob": 0,
-            "button_label": "Learn More",
-            "button_link": "shopify://collections/psg",
-            "open_in_new_tab": false,
-            "show_button": false,
+            "show_button": true,
             "full_block_button_link": true
           }
         }
@@ -114,19 +88,17 @@
         "column_DGJgmw",
         "column_g4fGVJ",
         "column_nGJtin",
-        "column_rh8ekY",
-        "column_kQ6mDw",
-        "column_pCMV3E"
+        "column_rh8ekY"
       ],
       "settings": {
         "enable_gradient": false,
         "solid_bg": false,
-        "section_subtitle": "Our products",
-        "section_title": "Cost-effective without compromise",
-        "section_title_max_width": 0,
-        "section_description": "LifeSync is the only vertically-integrated company completely focused on patient connections, and is your single-source provider of cardiac cables, leadwires and neuromonitoring connections, as well as contract manufacturing.",
+        "section_subtitle": "",
+        "section_title": "Superior Performance. Operational Simplicity. Dependable Supply.",
+        "section_title_max_width": 800,
+        "section_description": "",
         "section_description_max_width": 0,
-        "column_count": "6",
+        "column_count": "4",
         "enable_slider": true,
         "style": "background",
         "enable_bottom_border": false,
