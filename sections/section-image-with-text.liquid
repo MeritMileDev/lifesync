@@ -72,7 +72,7 @@
         <div class="section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-20 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
           <div class="">
             {% if section.settings.subtitle != blank %}
-              <h2 class="text-sm uppercase {% if section.settings.enable_bg %} text-white/50 {% else %} text-police-blue-70{% endif %} font-medium tracking-wide lg:mb-2.5 mb-2">
+              <h2 class="text-sm {% if section.settings.enable_bg %} text-white/50 {% else %} text-police-blue{% endif %} font-bold tracking-wide lg:mb-3.25 mb-2">
                 {{ section.settings.subtitle }}
               </h2>
             {% endif %}
@@ -89,7 +89,7 @@
             {% endif %}
             <p class="block-description mx-auto lg:mb-8 mb-7 lg:mt-0 mt-7.5">{{ section.settings.description }}</p>
             {% if section.settings.button_link != blank and section.settings.button_label != blank %}
-              <a class="flex gap-2 items-center justify-center text-center font-medium text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+              <a class="flex gap-2 items-center justify-center text-center font-medium text-police-blue px-10 py-4.25 text-sm hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
             {% endif %}
           </div>
         </div>
