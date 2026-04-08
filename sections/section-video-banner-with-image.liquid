@@ -25,12 +25,12 @@
 
 {% if image_desktop and image_mobile %}
   <section id="section-{{ section_id }}">
-    <div class="lg:container">
+    <div class="lg:container rounded-xl">
       <div x-data="modalPopup()" class="relative xl:px-24 lg:px-12 px-4">
-        <div class="image-wrapper">
+        <div class="image-wrapper rounded-xl">
           <div style=""
             class="absolute z-10 left-0 right-0 top-0 w-full h-32"></div>
-          <div class="absolute -z-10 left-0 top-0 h-full w-full">
+          <div class="absolute -z-10 left-0 top-0 h-full w-full rounded-xl">
             {% render 'picture',
             image_mobile: image_mobile,
             image_desktop: image_desktop,
