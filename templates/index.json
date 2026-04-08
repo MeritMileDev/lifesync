@@ -132,30 +132,100 @@
         "padding_bottom_desktop": 120
       }
     },
-    "section_image_with_text_secondary_mXmchx": {
-      "type": "section-image-with-text-secondary",
-      "blocks": {
-        "card_bEDATF": {
-          "type": "card",
-          "settings": {
-            "card_image_mobile": "shopify://shop_images/BluntedNeedles__60327_0426d693-2d88-4ac2-aa23-dd8efe201ed2.png",
-            "card_link": "",
-            "heading": "Standardization Across the Full Patient Stay",
-            "title": "1 Patient, 1 Leadwire, 1 Placement",
-            "text": "LifeSync helps healthcare organizations standardize cardiac monitoring with a single leadwire that stays with the patient throughout the full stay—without adapters, workarounds, or unnecessary complexity. By consolidating vendors and SKUs into a more manageable system, hospitals reduce variation, streamline procurement and inventory management, and improve staff familiarity.",
-            "button_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "card_bEDATF"
-      ],
-      "name": "Image with text secondary",
+    "section_image_with_text_WMNbwy": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
       "settings": {
-        "background_color_mobile": "transparent",
-        "background_color_desktop": "transparent",
-        "heading": "Standardization Across the Full Patient Stay",
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "Standardization Across the Full Patient Stay",
         "title": "1 Patient, 1 Leadwire, 1 Placement",
+        "title_max_width": 0,
+        "description": "LifeSync helps healthcare organizations standardize cardiac monitoring with a single leadwire that stays with the patient throughout the full stay—without adapters, workarounds, or unnecessary complexity. By consolidating vendors and SKUs into a more manageable system, hospitals reduce variation, streamline procurement and inventory management, and improve staff familiarity.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "Simplify Leadwire Management ",
+        "button_link": "#",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_image_with_text_HkD8Yx": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "Radiolucent ECG Leadwires",
+        "title": "Clarity without compromise",
+        "title_max_width": 0,
+        "description": "LifeSync radiolucent leadwires are engineered to minimize interference during fluoroscopy and other imaging procedures, resulting in clearer imaging, improved workflow efficiency, and uninterrupted monitoring as patients move across care settings. By reducing the need to reposition leads, clinicians save time and avoid unnecessary procedural disruption. ",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "See the Difference",
+        "button_link": "#",
+        "image_position": "image_right",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_image_with_text_pVhdLR": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "FDA 510(k)-Cleared ECG Leadwire Reprocessing",
+        "title": "A responsible approach to lifecycle management",
+        "title_max_width": 0,
+        "description": "ReLife, by LifeSync, is the only FDA 510(k)-cleared reprocessed ECG leadwire designed to help hospitals reduce medical waste, control costs, and maintain clinical quality through a standardized, closed-loop model. ReLife gives you a disciplined lifecycle approach that supports environmental and financial goals—without variability or compromise.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "Learn About Reprocessing ",
+        "button_link": "#",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_image_with_text_UJwmxU": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "Manufacturing Automation ",
+        "title": "Engineered for precision and scale ",
+        "title_max_width": 0,
+        "description": "LifeSync is the industry-proven leader in automated SpO₂ and ECG manufacturing. Our global, ISO-certified operations leverage modular, scalable automation for consistent quality and cost efficiency across any production volume. Automated assembly, testing, and validation delivers a stable 99% First Pass Yield (FPY) from pilot to production.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "Learn About Automation",
+        "button_link": "#",
+        "image_position": "image_right",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
@@ -167,6 +237,9 @@
     "section_hero_banner_MWDHA8",
     "section_video_banner_en3djG",
     "section_multicolumn_rQ4XbU",
-    "section_image_with_text_secondary_mXmchx"
+    "section_image_with_text_WMNbwy",
+    "section_image_with_text_HkD8Yx",
+    "section_image_with_text_pVhdLR",
+    "section_image_with_text_UJwmxU"
   ]
 }
