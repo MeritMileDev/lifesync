@@ -17,7 +17,7 @@
   case horizontal_alignment
   assign column_class = ''
     when 'left'
-      assign column_class = 'col-span-5 col-start-1 lg:text-left'
+      assign column_class = 'col-span-5 col-start-2 lg:text-left'
     when 'right'
       assign column_class = 'col-span-5 col-start-6 lg:text-left'
   endcase 
@@ -51,13 +51,13 @@
                     %}
                   {% endif %} 
                   <{{ title_tag }} class="max-w-75 text-30 font-medium tracking-tight xl:text-48">{{ title }}</{{ title_tag }}>
-                  <div class="lg:mb-6 mb-3 lg:mx-0 mx-auto max-w-56 md:max-w-max text-center lg:text-left {% if horizontal_alignment == 'center' %} lg:mx-auto lg:text-center{% elsif horizontal_alignment == 'right' %} lg:ml-auto lg:text-right{% endif %}">{{ subtitle }}</div>
+                  <div class="lg:mb-6 mb-3 lg:mx-0 mx-auto max-w-56 md:max-w-max lg:text-left text-center">{{ subtitle }}</div>
                   
                   {% if section.settings.youtube_id != blank %}
                     {% render 'youtube-video', video_id: section.settings.youtube_id, popup_id: section_id, button_type: 'button' %}
                   {% endif %}
                 </div>
-                <div class="text-white col-span-5">
+                <div class="text-white col-span-5 md:mx-0 mx-10">
                   {% render 'picture',
                     image_desktop: image_featured,
                     is_full_size: false,
