@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "dev": "adastra dev --theme-editor-sync --store=https://5fd081-35.myshopify.com --port 9255",
+    "dev": "adastra dev",
     "build": "adastra build",
     "preview": "adastra preview",
     "check": "adastra check"

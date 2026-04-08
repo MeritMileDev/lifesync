@@ -1,7 +1,7 @@
 {% liquid
   assign blocks = section.blocks
   assign transparent_template = false
-  if template.suffix contains 'transparent-header' or template == 'index' or template == 'page.radiolucent-leadwires'
+  if template.suffix contains 'transparent-header' or template == 'page.radiolucent-leadwires'
     assign transparent_template = true
   endif
 %}
@@ -139,7 +139,7 @@
                             :style="selected === 'main_{{ forloop.index }}' ? 'max-height: ' + $el.scrollHeight + 'px' : ''"
                           >
                             <div class="container">
-                              <ul class="grid gap-4.5 xl:grid-cols-[400px_400px] xl:justify-center xl:gap-20 xl:py-20">
+                              <ul class="grid gap-4.5 xl:grid-cols-[300px_300px_300px] xl:justify-center xl:gap-10 xl:py-20">
                                 {% for child_link in link.links %}
                                   <li class="first:pt-8 xl:first:pt-0">
                                     {% for block in blocks %}
