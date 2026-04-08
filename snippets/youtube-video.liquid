@@ -15,7 +15,7 @@
       {% unless button_type == 'hidden' %}
         {% if button_type == 'button' %}
           <button
-            class="flex gap-2 items-center justify-center font-bold text-white text-lg hover:scale-102 active:scale-100 disabled:opacity-30 transition duration-100 lg:w-auto w-full"
+            class="flex gap-2 items-center justify-center font-bold text-white text-lg hover:scale-102 active:scale-100 disabled:opacity-30 transition duration-100 lg:w-auto w-full mb-5"
             @click="openPopup('{{ popup_id }}'), play()"
           >
             <span>Watch the Video</span>
