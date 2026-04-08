@@ -15,19 +15,19 @@
       {% unless button_type == 'hidden' %}
         {% if button_type == 'button' %}
           <button
-            class="flex gap-2 items-center justify-center text-center font-medium text-police-blue bg-white px-10 py-4.25 text-sm uppercase border border-police-blue hover:scale-102 active:scale-100 disabled:opacity-30 transition duration-100 lg:w-auto w-full"
+            class="flex gap-2 items-center justify-center font-medium text-white text-md hover:scale-102 active:scale-100 disabled:opacity-30 transition duration-100 lg:w-auto w-full"
             @click="openPopup('{{ popup_id }}'), play()"
           >
+            <span>Watch the Video</span>
             {% render 'icon', icon: 'play' %}
-            <span>Watch Video</span>
           </button>
         {% else %}
           <button
             class="text-yellow flex flex-col items-center justify-center gap-5"
             @click="openPopup('{{ popup_id }}'), play()"
           >
+            <span class="text-white text-sm uppercase font-medium">Watch the Video</span>
             {% render 'icon', icon: 'play-solid', class: 'size-16' %}
-            <span class="text-white text-sm uppercase font-medium">Watch Video</span>
           </button>
         {% endif %}
       {% endunless %}
