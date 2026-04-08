@@ -209,7 +209,7 @@
                       @mouseenter="debounce((event) =>  selected !== 'shop_menu' ? toggleSelected(event, 'shop_menu') : '', selected ? 0 : 300, event)"
                       
                     >
-                      <span class="leading-none text-yellow underline-offset-2" :class="{'underline': selected == 'shop_menu'}">Shop</span>
+                      <span class="leading-none underline-offset-2" :class="{'underline': selected == 'shop_menu'}">Shop</span>
                       <span
                         :class="{'!rotate-0': selected == 'shop_menu', 'xl:!text-police-blue': sticky || selected}"
                         class="rotate-180 text-bright-gray/50 group-[.header-transparent]:text-white xl:text-police-blue group-[.header-transparent]:xl:text-white"
