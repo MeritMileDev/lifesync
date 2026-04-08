@@ -60,7 +60,7 @@
             "button_link": "shopify://collections/ecg-leadwires-and-monitoring",
             "open_in_new_tab": false,
             "show_button": true,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_g4fGVJ": {
@@ -88,7 +88,7 @@
             "button_link": "shopify://collections/eeg",
             "open_in_new_tab": false,
             "show_button": true,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_rh8ekY": {
@@ -102,7 +102,7 @@
             "button_link": "shopify://collections/ionm",
             "open_in_new_tab": false,
             "show_button": true,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         }
       },
