@@ -61,12 +61,7 @@
     <div class="lg:grid {% if section.settings.narrow_section == true %}lg:grid-cols-12 {% else %}grid-cols-2 {% endif %} gap-6 items-center">
       <div class="{% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %}">
         <div class="{% if image_position_mobile == 'bottom' %}lg:block hidden{% else %}mb-6 lg:mb-0{% endif %}">
-          {% render 'picture',
-            image_mobile: section.settings.image,
-            image_desktop: section.settings.image,
-            is_full_size: false,
-            class: 'w-full'
-          %}
+          Right Side Ready For New Content
         </div>
         </div>
         <div class="section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-20 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
