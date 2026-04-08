@@ -1,0 +1,198 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign image_mobile = section.settings.image_mobile
+  assign image_desktop = section.settings.image_desktop
+  assign title = section.settings.title
+  assign title_tag = section.settings.title_tag
+  assign subtitle = section.settings.subtitle
+
+  assign horizontal_alignment = section.settings.horizontal_alignment
+  case horizontal_alignment
+  assign column_class = ''
+    when 'left'
+      assign column_class = 'col-span-5 col-start-1 lg:text-left'
+    when 'center'
+      assign column_class = 'col-span-6 col-start-4'
+    when 'right'
+      assign column_class = 'col-span-5 col-start-8 lg:text-right'
+  endcase 
+%}
+
+{% if image_desktop and image_mobile %}
+  <section id="section-{{ section_id }}">
+    <div class="lg:container">
+      <div x-data="modalPopup()" class="relative xl:px-24 lg:px-12 px-4">
+        <div class="image-wrapper">
+          <div style="background: linear-gradient(180deg, rgba(0, 23, 41, 0.60) 0%, rgba(0, 23, 41, 0.00) 100%);"
+            class="absolute z-10 left-0 right-0 top-0 w-full h-32"></div>
+          <div class="absolute -z-10 left-0 top-0 h-full w-full">
+            {% render 'picture',
+            image_mobile: image_mobile,
+            image_desktop: image_desktop,
+            is_full_size: true,
+            class: 'w-full h-full object-cover'
+            %}
+            <div style="background: linear-gradient(0deg, rgba(0, 23, 41, 0.80) 0%, rgba(0, 23, 41, 0.00) 100%);" class="absolute inset-0 w-full h-full"></div>
+          </div>
+          <div class="h-full">
+              <div class="lg:grid lg:gap-6 grid-cols-12">
+                <div class="text-bright-gray text-center {{ column_class }}">
+                  {% if section.settings.icon != blank %}
+                    {% render 'picture',
+                      image_mobile: section.settings.icon,
+                      image_desktop: section.settings.icon,
+                      is_full_size: false,
+                      class: 'lg:mb-14 mb-8 lg:mx-0 mx-auto'
+                    %}
+                  {% endif %} 
+                  <{{ title_tag }} class="lg:mb-14 mb-8 text-40 font-medium tracking-tight md:mb-8 xl:text-64">{{ title }}</{{ title_tag }}>
+                  <div class="lg:mb-14 mb-8 lg:mx-0 mx-auto max-w-56 md:max-w-max text-center lg:text-left {% if horizontal_alignment == 'center' %} lg:mx-auto lg:text-center{% elsif horizontal_alignment == 'right' %} lg:ml-auto lg:text-right{% endif %}">{{ subtitle }}</div>
+                  
+                  {% if section.settings.youtube_id != blank %}
+                    {% render 'youtube-video', video_id: section.settings.youtube_id, popup_id: section_id, button_type: 'button' %}
+                  {% endif %}
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    #section-{{ section.id }} .image-wrapper {
+      padding-top: {{ padding_top_desktop }}px;
+      padding-bottom: {{ padding_bottom_desktop }}px;
+    }
+    @media (max-width: 767px) {
+      #section-{{ section.id }} .image-wrapper {
+        padding-top: {{ padding_top_mobile }}px;
+        padding-bottom: {{ padding_bottom_mobile }}px;
+      }
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Video Banner",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content Alignment"
+      },
+      {
+        "type": "select",
+        "id": "horizontal_alignment",
+        "label": "Horizontal alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+            {
+        "type": "select",
+        "id": "title_tag",
+        "label": "Title Tag",
+        "default": "h1",
+        "options": [
+          {
+            "value": "h1",
+            "label": "H1"
+          },
+          {
+            "value": "h2",
+            "label": "H2"
+          }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "youtube_id",
+        "label": "Youtube id"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video Banner"
+      }
+    ]
+  }
+{% endschema %}
