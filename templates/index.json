@@ -11,7 +11,6 @@
   "sections": {
     "section_hero_banner_MWDHA8": {
       "type": "section-hero-banner",
-      "disabled": true,
       "settings": {
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/home-hero-bg.webp",
@@ -31,6 +30,7 @@
     },
     "page_main_banner_Kd4DAV": {
       "type": "page-main-banner",
+      "disabled": true,
       "name": "Main Banner",
       "settings": {
         "title": "Standardized Patient Monitoring, Made Simple",
