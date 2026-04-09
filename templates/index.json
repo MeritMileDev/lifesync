@@ -18,7 +18,7 @@
         "enable_overlay": true,
         "title": "<p>S<strong>tandardized Patient Monitoring,</strong> Made Simple</p>",
         "title_tag": "h1",
-        "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.<br/><br/></p>",
+        "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
         "subtitle_full_width": false,
         "button_label": "",
         "button_link": "",
@@ -26,6 +26,20 @@
         "padding_bottom_mobile": 64,
         "padding_top_desktop": 660,
         "padding_bottom_desktop": 40
+      }
+    },
+    "page_banner_FHJeYj": {
+      "type": "page-banner",
+      "name": "Page Banner",
+      "settings": {
+        "image_mobile": "shopify://shop_images/home-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/home-hero-bg.webp",
+        "title": "Standardized Patient Monitoring, Made Simple",
+        "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "section_intro_with_cards_VizgQG": {
@@ -247,7 +261,7 @@
         "subtitle": "Manufacturing Automation ",
         "title": "Engineered for precision and scale ",
         "title_max_width": 0,
-        "description": "LifeSync is the industry-proven leader in automated SpO₂ and ECG manufacturing. Our global, ISO-certified operations leverage modular, scalable automation for consistent quality and cost efficiency across any production volume. Automated assembly, testing, and validation delivers a stable 99% First Pass Yield (FPY) from pilot to production.",
+        "description": "",
         "description_max_width": 0,
         "description_max_width_desktop": 0,
         "button_label": "Learn About Automation",
@@ -266,6 +280,7 @@
   },
   "order": [
     "section_hero_banner_MWDHA8",
+    "page_banner_FHJeYj",
     "section_intro_with_cards_VizgQG",
     "section_video_banner_with_image_P7WAn3",
     "section_multicolumn_rQ4XbU",
