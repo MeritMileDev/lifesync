@@ -11,6 +11,7 @@
   "sections": {
     "section_hero_banner_MWDHA8": {
       "type": "section-hero-banner",
+      "disabled": true,
       "settings": {
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/home-hero-bg.webp",
@@ -28,14 +29,14 @@
         "padding_bottom_desktop": 40
       }
     },
-    "page_banner_FHJeYj": {
-      "type": "page-banner",
-      "name": "Page Banner",
+    "page_main_banner_Kd4DAV": {
+      "type": "page-main-banner",
+      "name": "Main Banner",
       "settings": {
-        "image_mobile": "shopify://shop_images/home-hero-bg.webp",
-        "image_desktop": "shopify://shop_images/home-hero-bg.webp",
         "title": "Standardized Patient Monitoring, Made Simple",
-        "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
+        "subtitle": "ECG, SpO₂, neuro, and custom medical interconnects at scale.",
+        "bg_mobile": "shopify://shop_images/home-hero-bg.webp",
+        "bg_desktop": "shopify://shop_images/home-hero-bg.webp",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
@@ -280,7 +281,7 @@
   },
   "order": [
     "section_hero_banner_MWDHA8",
-    "page_banner_FHJeYj",
+    "page_main_banner_Kd4DAV",
     "section_intro_with_cards_VizgQG",
     "section_video_banner_with_image_P7WAn3",
     "section_multicolumn_rQ4XbU",
