@@ -57,7 +57,7 @@
         "description_max_width": 0,
         "description_max_width_desktop": 0,
         "button_label": "",
-        "button_link": "",
+        "button_link": "shopify://pages/patient-connections",
         "image_position": "image_right",
         "image_position_mobile": "bottom",
         "enable_bg": false,

@@ -14,8 +14,8 @@
       "settings": {
         "title": "Contact LifeSync",
         "subtitle": "For product complaints or returns, send email to: customerservice@lifesync.com",
-        "image_desktop": "shopify://shop_images/contact-desktop.jpg",
-        "image_mobile": "shopify://shop_images/contact-mobile.jpg"
+        "image_desktop": "shopify://shop_images/contact-us.webp",
+        "image_mobile": "shopify://shop_images/contact-us.webp"
       }
     }
   },
