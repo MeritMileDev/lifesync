@@ -65,12 +65,22 @@
             <h3 class="text-3xl font-bold mb-6">Choose the problem you want to solve today.</h3>
             <div class="grid grid-cols-2 gap-6">
               <div class="bg-police-accent text-white p-5 rounded-xl">
-                Logo
+                {% render 'picture',
+                  image_mobile: section.settings.cardlogoone,
+                  image_desktop: section.settings.cardlogoone,
+                  is_full_size: false,
+                  class: 'w-full'
+                %}
                 <p>Standardize your ECG monitoring connections across the full patient stay.</p>
                 <button class="text-left">Discover LifeSync Patient Connections</button>
               </div>
               <div class="bg-police-blue text-white p-5 rounded-xl">
-                Logo
+                {% render 'picture',
+                  image_mobile: section.settings.cardlogotwo,
+                  image_desktop: section.settings.cardlogotwo,
+                  is_full_size: false,
+                  class: 'w-full'
+                %}
                 <p>Design and manufacture your custom OEM-grade medical interconnects at scale.</p>
                 <button class="text-left">Learn About LifeSync Advanced Manufacturing</button>
               </div>
@@ -224,6 +234,16 @@
         "id": "narrow_section",
         "label": "Narrow section",
         "default": false  
+      },
+      {
+        "type": "image_picker",
+        "id": "image_card_one",
+        "label": "Card One Image" 
+      },
+      {
+        "type": "image_picker",
+        "id": "image_card_two",
+        "label": "Car Two Image" 
       },
       {
         "type": "header",
