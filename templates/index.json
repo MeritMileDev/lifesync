@@ -13,8 +13,6 @@
       "type": "section-hero-banner",
       "settings": {
         "horizontal_alignment": "left",
-        "image_mobile": "shopify://shop_images/bg-home-hero.webp",
-        "image_desktop": "shopify://shop_images/bg-home-hero.webp",
         "enable_overlay": true,
         "title": "<p>S<strong>tandardized Patient Monitoring,</strong> Made Simple</p>",
         "title_tag": "h1",
