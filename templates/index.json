@@ -22,9 +22,9 @@
         "subtitle_full_width": false,
         "button_label": "",
         "button_link": "",
-        "padding_top_mobile": 600,
+        "padding_top_mobile": 200,
         "padding_bottom_mobile": 64,
-        "padding_top_desktop": 270,
+        "padding_top_desktop": 380,
         "padding_bottom_desktop": 40
       }
     },
