@@ -62,6 +62,8 @@
         "image_position_mobile": "bottom",
         "enable_bg": false,
         "narrow_section": false,
+        "image_card_one": "shopify://shop_images/lifesync-patient-connections-logo.webp",
+        "image_card_two": "shopify://shop_images/lifesync-advanced-manufacturing-logo.webp",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
