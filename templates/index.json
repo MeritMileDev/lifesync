@@ -66,7 +66,7 @@
         "image_card_two": "shopify://shop_images/lifesync-advanced-manufacturing-logo.webp",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
+        "padding_top_desktop": 100,
         "padding_bottom_desktop": 0
       }
     },
