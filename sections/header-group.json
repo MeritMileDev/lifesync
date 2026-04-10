@@ -111,12 +111,66 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 0
       }
+    },
+    "section_image_with_text_JkQcYi": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "Radiolucency for Procedural Efficiency",
+        "title": "The advantages are clear.",
+        "title_max_width": 0,
+        "description": "LifeSync radiolucent ECG leadwires are engineered to provide unobstructed views during fluoroscopy and imaging procedures. With more than 60 radiolucent configurations—including single-use and disposable options for ECG, cardiac catheterization, and electrophysiology—LifeSync eliminates scan interference, reduces repeat imaging, and improves diagnostic accuracy.<br><br>\nRadiolucent leadwires minimize the need to reposition or remove leads, preserving continuous monitoring as patients move across care settings.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "See the Radiolucent Difference",
+        "button_link": "shopify://pages/standardization",
+        "image": "shopify://shop_images/pc-radiolucency.webp",
+        "image_position": "image_right",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_image_with_text_i37tLD": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "ECG Leadwire Reprocessing",
+        "title": "Sustainability without compromise.",
+        "title_max_width": 0,
+        "description": "ReLife extends lifecycle control through FDA 510(k)-cleared reprocessing of ECG leadwires within a closed-loop system. Hospitals can standardize on a single leadwire for both new and reprocessed products—with one SKU, one supplier, and seamless connectivity to your existing equipment.<br>\n<br>\nReprocessing provides a measurable way to reduce medical waste, manage costs, and support sustainability goals while maintaining consistent quality and a dependable supply.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "Discover the Reprocessing Advantages",
+        "button_link": "shopify://pages/standardization",
+        "image": "shopify://shop_images/home-standardization_27398cd6-5ab5-4647-9870-56c88f8ab812.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
     "top-header",
     "main-header",
     "section_hero_banner_9Y9KKD",
-    "section_image_with_text_4aFppD"
+    "section_image_with_text_4aFppD",
+    "section_image_with_text_JkQcYi",
+    "section_image_with_text_i37tLD"
   ]
 }
