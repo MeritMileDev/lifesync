@@ -49,6 +49,9 @@
       "block_order": [
         "text_block_jQkepr"
       ],
+      "custom_css": [
+        "div {background: none;}"
+      ],
       "name": "Grid with Text",
       "settings": {
         "padding_top_mobile": 0,
