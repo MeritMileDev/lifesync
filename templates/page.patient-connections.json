@@ -24,7 +24,7 @@
         "banner_icon": "shopify://shop_images/lifesync-patient-connections-logo.webp",
         "title": "<p><strong>Simplify and Standardized</strong> Cardiac and Neuro Monitoring Connections</p>",
         "title_tag": "h1",
-        "subtitle": "<p> </p>",
+        "subtitle": "<p>Superior quality, less clinical variation, and easier workflows across departments and care settings.</p>",
         "subtitle_full_width": false,
         "button_label": "",
         "button_link": "",
@@ -36,6 +36,19 @@
     },
     "section_grid_with_text_3gfwxz": {
       "type": "section-grid-with-text",
+      "blocks": {
+        "text_block_jQkepr": {
+          "type": "text_block",
+          "settings": {
+            "subtitle": "",
+            "title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_jQkepr"
+      ],
       "name": "Grid with Text",
       "settings": {
         "padding_top_mobile": 0,
