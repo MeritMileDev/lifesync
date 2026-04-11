@@ -291,8 +291,8 @@
         "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 80,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 60,
         "cta_text": "Talk to a LifeSync Exert",
         "cta_url": "shopify://pages/contact"
       }
