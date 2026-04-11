@@ -300,6 +300,9 @@
         "column_HVDxcc",
         "column_GHCRXV"
       ],
+      "custom_css": [
+        "section {margin-top: -20px;}"
+      ],
       "name": "Multicolumn",
       "settings": {
         "enable_gradient": false,
