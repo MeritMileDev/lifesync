@@ -293,6 +293,7 @@
         "description_max_width_desktop": 0,
         "button_label": "",
         "button_link": "",
+        "image": "shopify://shop_images/radioucent-am.webp",
         "image_position": "image_left",
         "image_position_mobile": "bottom",
         "enable_bg": true,
