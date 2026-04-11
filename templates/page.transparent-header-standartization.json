@@ -59,67 +59,58 @@
         "padding_bottom_desktop": 55
       }
     },
-    "section_grid_with_card_wTQMEN": {
-      "type": "section-grid-with-card",
+    "section_innovations_yLnXAa": {
+      "type": "section-innovations",
       "blocks": {
-        "card_yxaajH": {
+        "card_QVVfgW": {
           "type": "card",
           "settings": {
-            "background_color": "#f4f9fc",
-            "image_mobile": "shopify://shop_images/image_1.jpg",
-            "image_desktop": "shopify://shop_images/image_1_d.jpg",
-            "subtitle": "<p>Streamlined connectivity</p>",
-            "title": "\"Ready connect\" standardization for patient flow efficiency",
-            "title_max_width_desktop": 380,
-            "text": "<p>Multiple leadwires and monitor connections can create disorder with different and competing connections, baffling staff, and slowing patient care.</p>",
-            "text_max_width_mobile": 295,
-            "text_max_width_desktop": 380
+            "card_image_mobile": "shopify://shop_images/standarization-simplified-leadwire-management.webp",
+            "card_image_desktop": "shopify://shop_images/standarization-simplified-leadwire-management.webp",
+            "card_link": "",
+            "heading": "Simplified Leadwire Management",
+            "title": "",
+            "text": "<p>LifeSync leadwires reduce the administrative burden of managing multiple SKUs and vendors, improving day-to-day operational efficiency. Standardization enhances staff familiarity, streamlines procurement, simplifies inventory, and supports consistent clinical performance across the organization.<br/><br/></p>",
+            "button_text": ""
           }
         },
-        "card_KMCLJn": {
+        "card_gtFKF4": {
           "type": "card",
           "settings": {
-            "background_color": "",
-            "image_mobile": "shopify://shop_images/image_2.jpg",
-            "image_desktop": "shopify://shop_images/image_2_d.jpg",
-            "subtitle": "<p>Direct compatibility</p>",
-            "title": "A single leadwire that is compatible with your existing monitors",
-            "title_max_width_mobile": 325,
-            "title_max_width_desktop": 370,
-            "text": "<p>The LifeSync leadwire system (formerly AMC) plugs directly into monitors, telemetry, and defibrillation connections. No adapters or cable extension are needed in most cases.</p>",
-            "text_max_width_mobile": 300,
-            "text_max_width_desktop": 410
+            "card_image_mobile": "shopify://shop_images/standardization-direct-device-compatibility.webp",
+            "card_image_desktop": "shopify://shop_images/standardization-direct-device-compatibility.webp",
+            "card_link": "",
+            "heading": "Direct Device Compatibility ",
+            "title": "",
+            "text": "<p>LifeSync leadwires are designed  to connect directly with your existing monitoring equipment. Standardization eliminates cable changes, adapters, and extensions—removing common workarounds and reducing points of failure.</p>",
+            "button_text": ""
           }
         },
-        "card_NpD6xq": {
+        "card_Jg78Ky": {
           "type": "card",
           "settings": {
-            "background_color": "#f4f9fc",
-            "image_mobile": "shopify://shop_images/image_3.jpg",
-            "image_desktop": "shopify://shop_images/image_3_d.jpg",
-            "subtitle": "<p>Continuous monitoring</p>",
-            "title": "One leadwire for the patient's entire stay",
-            "title_max_width_mobile": 225,
-            "title_max_width_desktop": 255,
-            "text": "<p>LifeSync leadwires move with the patient, easily connecting to different monitors and reducing cross-contamination risks from reusable leadwires.</p>",
-            "text_max_width_mobile": 300,
-            "text_max_width_desktop": 385
+            "card_image_mobile": "shopify://shop_images/standardizatoin-continuous-patient-monitoring.webp",
+            "card_image_desktop": "shopify://shop_images/standardizatoin-continuous-patient-monitoring.webp",
+            "card_link": "",
+            "heading": "Continuous Patient Monitoring",
+            "title": "",
+            "text": "<p>LifeSync leadwires remain with the patient from admission through discharge, supporting uninterrupted monitoring across care transitions. Standardization reduces disconnections, reinforces infection control protocols, and eliminates unnecessary lead changes as patients move between departments.<br/><br/></p>",
+            "button_text": ""
           }
         }
       },
       "block_order": [
-        "card_yxaajH",
-        "card_KMCLJn",
-        "card_NpD6xq"
+        "card_QVVfgW",
+        "card_gtFKF4",
+        "card_Jg78Ky"
       ],
-      "custom_css": [
-        "section {@media (768px <= width <= 1023px) {padding-bottom: 0 !important; }}"
-      ],
+      "name": "Innovations",
       "settings": {
+        "title": "",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 135
+        "padding_bottom_desktop": 100
       }
     },
     "section_steps_HE6AWE": {
@@ -346,7 +337,7 @@
   "order": [
     "section_hero_banner_wdiBDa",
     "section_simple_text_WLCcYq",
-    "section_grid_with_card_wTQMEN",
+    "section_innovations_yLnXAa",
     "section_steps_HE6AWE",
     "section_video_banners_hpdn4c",
     "section_banner_with_text_x8zkdA",
