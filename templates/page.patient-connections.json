@@ -110,6 +110,7 @@
       ],
       "name": "Grid Info Boxes",
       "settings": {
+        "title": "",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 40,
@@ -124,7 +125,7 @@
           "settings": {
             "card_image_mobile": "shopify://shop_images/cardiac-tile.webp",
             "card_image_desktop": "shopify://shop_images/cardiac-tile.webp",
-            "card_link": "shopify://collections/all",
+            "card_link": "shopify://collections/ecg-leadwires-and-monitoring",
             "heading": "",
             "text_max-width": 0,
             "title": "Cardiac",
