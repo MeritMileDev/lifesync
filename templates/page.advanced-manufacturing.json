@@ -123,27 +123,13 @@
           "type": "step",
           "settings": {
             "step_title": "Requirements",
-            "step_content": ""
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
           }
         },
         "step_Y8x9Re": {
           "type": "step",
           "settings": {
             "step_title": "Technical / Design",
-            "step_content": ""
-          }
-        },
-        "step_w6tjD7": {
-          "type": "step",
-          "settings": {
-            "step_title": "",
-            "step_content": ""
-          }
-        },
-        "step_zGx4ex": {
-          "type": "step",
-          "settings": {
-            "step_title": "",
             "step_content": ""
           }
         },
@@ -179,8 +165,6 @@
       "block_order": [
         "step_ecim6U",
         "step_Y8x9Re",
-        "step_w6tjD7",
-        "step_zGx4ex",
         "step_9DVAYL",
         "step_CAtdeX",
         "step_WGxG4a",
