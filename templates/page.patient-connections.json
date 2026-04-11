@@ -239,21 +239,23 @@
         "padding_bottom_desktop": 100
       }
     },
-    "section_banner_with_text_z8r7Bw": {
-      "type": "section-banner-with-text",
-      "name": "Section Banner with Text",
+    "section_text_image_bg_cpeCRy": {
+      "type": "section-text-image-bg",
+      "custom_css": [
+        "a {background: white; border-radius: 24px;}"
+      ],
+      "name": "Text with Image Bg",
       "settings": {
-        "subtitle": "",
-        "image_mobile": "shopify://shop_images/cta-bg-ls-sales.webp",
-        "image_desktop": "shopify://shop_images/cta-bg-ls-sales.webp",
-        "is_image_at_bottom_desktop": false,
-        "title": "Talk to a LifeSync Patient Connections Expert",
-        "description": "",
-        "border_bottom_mobile": false,
+        "section_subtitle": "",
+        "section_title": "Talk to a LifeSync Patient <br>Connections Expert",
+        "section_description": "",
+        "image_bg": "shopify://shop_images/cta-bg-ls-sales.webp",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 100
+        "padding_bottom_desktop": 100,
+        "cta_text": "Contact Us",
+        "cta_url": "shopify://pages/contact"
       }
     }
   },
@@ -266,6 +268,6 @@
     "section_image_with_text_zdLWhX",
     "section_image_with_text_GXXcBi",
     "section_image_with_text_BV7GCj",
-    "section_banner_with_text_z8r7Bw"
+    "section_text_image_bg_cpeCRy"
   ]
 }
