@@ -61,12 +61,12 @@
             {% endif %}
             <div class="text-left p-10 bg-police-blue">
               {% if text != blank %}
-                <div class="card-text-{{ block.id }} mb-4 xl:mb-4.5">{{ text }}</div>
+                <div class="card-text-{{ block.id }} mb-4 xl:mb-4.5 x-10 text-white">{{ text }}</div>
               {% endif %}
               {% if button_text != blank and card_link != blank %}
                 <a
                   href="{{ card_link }}"
-                  class="flex items-center justify-center gap-2 bg-yellow px-4 py-4.25 text-center text-sm font-medium uppercase tracking-wide text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:mt-auto lg:w-75 lg:mx-auto"
+                  class="flex items-start justify-center gap-2 px-4 text-left text-sm font-medium tracking-wide text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20"
                 >
                   {{- button_text -}}
                 </a>
