@@ -116,6 +116,109 @@
         "padding_bottom_desktop": 100
       }
     },
+    "section_multicolumn_7TfEj9": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_zD4mQq": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-pulse-oximetry.svg",
+            "title": "Pulse Oximetry",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        },
+        "column_8cC3Qt": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-ecg-ekg.svg",
+            "title": "ECG/EKG",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        },
+        "column_MWt9pX": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-mri-cables.svg",
+            "title": "MRI Cables",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        },
+        "column_mPfUgk": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-electrosurgery.svg",
+            "title": "Electrosurgery",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        },
+        "column_Qn6Rzz": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-laparoscopic.svg",
+            "title": "Laparoscopic",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        }
+      },
+      "block_order": [
+        "column_zD4mQq",
+        "column_8cC3Qt",
+        "column_MWt9pX",
+        "column_mPfUgk",
+        "column_Qn6Rzz"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "",
+        "section_title": "Proven Medical Interconnect Expertise",
+        "section_title_max_width": 500,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "5",
+        "enable_slider": false,
+        "style": "background",
+        "enable_bottom_border": false,
+        "column_title_size": "small",
+        "column_title_size_mobile": "small",
+        "column_image_height": -2,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_steps_T7y3Ja": {
       "type": "section-steps",
       "blocks": {
@@ -210,6 +313,7 @@
     "section_hero_banner_NhPzjA",
     "section_simple_text_ddThWr",
     "section_grid_info_boxes_wCCtV7",
+    "section_multicolumn_7TfEj9",
     "section_steps_T7y3Ja",
     "section_contact_form_R6QqNA"
   ]
