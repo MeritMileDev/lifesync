@@ -16,9 +16,9 @@
   padding_bottom_desktop: padding_bottom_desktop
 %}
 
-<section id="section-{{ section_id }} rounded-xl">
+<section id="section-{{ section_id }}">
   <div class="lg:container">
-    <div class="{% if section.settings.enable_bg %}bg-bright-gray{% endif %} rounded-2xl">
+    <div class="{% if section.settings.enable_bg %}bg-bright-gray{% endif %} rounded-xl">
       <div class="lg:grid grid-cols-12 gap-6">
         <div class="col-span-6 px-10 py-10">
           {% if section.settings.section_title != blank %}
