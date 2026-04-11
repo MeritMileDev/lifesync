@@ -136,6 +136,12 @@
             "slide_link": "shopify://collections/radiolucent-ecg-lead-wires"
           }
         },
+        "slide_Xkq9hG": {
+          "type": "slide",
+          "settings": {
+            "slide_link": ""
+          }
+        },
         "slide_qpy4Mh": {
           "type": "slide",
           "settings": {
@@ -155,6 +161,7 @@
         "slide_dJ9g9x",
         "slide_Jcjiye",
         "slide_tVQWnG",
+        "slide_Xkq9hG",
         "slide_qpy4Mh",
         "slide_aranJx"
       ],
@@ -168,49 +175,6 @@
         "padding_bottom_desktop": 130
       }
     },
-    "section_shop_by_3JHYWd": {
-      "type": "section-shop-by",
-      "blocks": {
-        "card_XhpKHL": {
-          "type": "card",
-          "settings": {
-            "card_image_mobile": "shopify://shop_images/card-1.png",
-            "card_image_desktop": "shopify://shop_images/card-1-d.png",
-            "card_link": "shopify://products/5-leads-radiolucent-ecg-leadwires",
-            "heading": "Cath Lab",
-            "text_max-width": 220,
-            "title": "Cardiac catheterization",
-            "text": "<p>The ideal tool to optimize any cath lab performance.</p>",
-            "button_text": "Shop 5 Lead Radiolucent",
-            "light_background": false
-          }
-        },
-        "card_pd3VFq": {
-          "type": "card",
-          "settings": {
-            "card_image_mobile": "shopify://shop_images/card-2.png",
-            "card_image_desktop": "shopify://shop_images/card-2-d.png",
-            "card_link": "shopify://products/10-leads-radiolucent-ecg-leadwires",
-            "heading": "EP",
-            "title": "Electrophysiology",
-            "text": "<p>The ideal tool to optimize any electrophysiology EP Lab performance.</p>",
-            "button_text": "Shop 10 Lead Radiolucent",
-            "light_background": false
-          }
-        }
-      },
-      "block_order": [
-        "card_XhpKHL",
-        "card_pd3VFq"
-      ],
-      "settings": {
-        "title": "<p>Shop by Lab</p>",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 30,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 60
-      }
-    },
     "section_simple_text_GaEfxm": {
       "type": "section-simple-text",
       "custom_css": [
@@ -218,13 +182,13 @@
       ],
       "settings": {
         "subtitle": "",
-        "title": "Continuously innovating with LifeSync LeadWear® and more",
+        "title": "Radiolucent LeadWear®",
         "is_h1_tag": false,
         "title_size": "medium",
         "title_size_mobile": "medium",
         "title_max_width_mobile": 330,
         "title_max_width_desktop": 616,
-        "text": "<p>Flexible, lightweight, single-patient-use radiolucent LifeSync LeadWear® can travel with the patient outside of procedural areas. Product details like our innovative 360° connector further support fast, accurate results through excellent visibility, grab, conductivity, and signal. We design all of our radiolucent leads with optimal Cath and EP lab use in mind.</p>",
+        "text": "<p>LifeSync LeadWear® is a radiolucent single-patient-use leadwire that travels with the patient outside of procedural areas. The innovative 360° connector encases the electrode, minimizing noise and reducing nuisance alarms. LifeSync LeadWear provide excellent visibility, grab, conductivity, and signal for fast, accurate results across Cath and EP labs.</p>",
         "text_full_width": true,
         "text_max_width_mobile": 0,
         "text_max_width_desktop": 0,
@@ -347,7 +311,6 @@
     "section_simple_text_VF6N6F",
     "comprehensive_options_E9U3J9",
     "section_slider_r6ik9K",
-    "section_shop_by_3JHYWd",
     "section_simple_text_GaEfxm",
     "section_image_with_text_secondary_qLQgrW",
     "section_slider_pmVRDH",
