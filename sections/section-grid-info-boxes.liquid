@@ -39,6 +39,11 @@
 {% endstyle %}
 <section id="section-{{ section_id }}">
   <div class="container overflow-hidden">
+    <div class="text-center lg:flex lg:flex-col">
+      {% if title != blank %}
+        <div class="mb-4 text-center text-32 font-medium xl:text-5xl xl:mb-12.5">{{ title }}</div>
+      {% endif %}
+    </div>
     <div class="mt-14 lg:mt-0 lg:grid lg:grid-cols-4 lg:gap-y-6 lg:pt-12 lg:-mx-6">
       {% for block in section.blocks %}
         {% if block.type == 'grid_item' %}
@@ -76,6 +81,11 @@
   {
     "name": "Grid Info Boxes",
     "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
       {
         "type": "header",
         "content": "Paddings"
