@@ -73,7 +73,7 @@
             "card_link": "shopify://collections/all",
             "heading": "",
             "title": "Cardiac",
-            "text": "View the complete selection of cardiac leadwires, trunk cables, and Sp02 sensors",
+            "text": "<p>View the complete selection of cardiac <br/>leadwires, trunk cables, and Sp02 sensors</p>",
             "button_text": "Shop Cardiac",
             "background_color": false
           }
@@ -86,7 +86,7 @@
             "card_link": "shopify://collections/all",
             "heading": "",
             "title": "Neuro",
-            "text": "Browse neurodiagnostic EEG, EMG, IONM, and PSG products",
+            "text": "<p>Browse neurodiagnostic EEG, EMG, <br/>IONM, and PSG products</p>",
             "button_text": "Shop Neuro",
             "background_color": false
           }
@@ -98,7 +98,7 @@
       ],
       "name": "Shop By",
       "settings": {
-        "title": "Explore LifeSync Leadwires,<br>Cables, and Connections",
+        "title": "Explore LifeSync Leadwires,Cables, and Connections",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 100,
