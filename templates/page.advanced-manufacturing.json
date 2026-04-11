@@ -115,12 +115,26 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 100
       }
+    },
+    "section_contact_form_R6QqNA": {
+      "type": "section-contact-form",
+      "name": "Contact Form Section",
+      "settings": {
+        "section_title": "Start Your Development Conversation",
+        "section_description": "",
+        "enable_bg": true,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
     "main",
     "section_hero_banner_NhPzjA",
     "section_simple_text_ddThWr",
-    "section_grid_info_boxes_wCCtV7"
+    "section_grid_info_boxes_wCCtV7",
+    "section_contact_form_R6QqNA"
   ]
 }
