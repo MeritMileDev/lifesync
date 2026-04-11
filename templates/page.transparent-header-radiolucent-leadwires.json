@@ -93,6 +93,9 @@
     },
     "comprehensive_options_E9U3J9": {
       "type": "comprehensive-options",
+      "custom_css": [
+        ".scaled-image {}"
+      ],
       "settings": {
         "background_color": "#ffffff",
         "heading": "",
