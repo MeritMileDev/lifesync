@@ -12,9 +12,58 @@
     "main": {
       "type": "main-page",
       "settings": {}
+    },
+    "section_hero_banner_LY3Ukw": {
+      "type": "section-hero-banner",
+      "name": "Hero Banner",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/innovations-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/innovations-hero-bg.webp",
+        "enable_overlay": true,
+        "title": "<p><strong>Innovation That Strengthens</strong> <br/>Every Connection</p>",
+        "title_tag": "h1",
+        "subtitle": "",
+        "subtitle_full_width": false,
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 350,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "section_simple_text_7betLy": {
+      "type": "section-simple-text",
+      "name": "Simple Text",
+      "settings": {
+        "subtitle": "",
+        "title": "Focused Advancements in Standardization, Radiolucency, and Sustainability",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 1000,
+        "text": "<p>LifeSync advances patient monitoring through purposeful innovation—focused on safer care, operational simplicity, and sustainable lifecycle management. Our innovation strategy is designed to improve clinical performance, reduce complexity, and lower costs across healthcare environments.<br/><br/></p>",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "section_hero_banner_LY3Ukw",
+    "section_simple_text_7betLy"
   ]
 }
