@@ -94,7 +94,7 @@
     "comprehensive_options_E9U3J9": {
       "type": "comprehensive-options",
       "custom_css": [
-        ".scaled-image {}"
+        ".scaled-image {transform: scale(0.85); }"
       ],
       "settings": {
         "background_color": "#ffffff",
