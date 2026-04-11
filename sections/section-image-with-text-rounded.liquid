@@ -69,7 +69,7 @@
           %}
         </div>
         </div>
-        <div class="section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-10 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
+        <div class="section-subtitle self-end {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-10 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
           <div class="">
             <h3 class="text-32 font-bold text-police-blue mb-3">{{ section.settings.title }}</h3>
             {% if section.settings.subtitle != blank %}
