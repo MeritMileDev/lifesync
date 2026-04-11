@@ -174,7 +174,7 @@
       ],
       "settings": {
         "enable_bg": false,
-        "enable_bg_desktop": true,
+        "enable_bg_desktop": false,
         "is_static_steps": true,
         "static_image": "shopify://shop_images/steps.jpg",
         "section_subtitle": "Seamless transition",
