@@ -12,9 +12,64 @@
     "main": {
       "type": "main-page",
       "settings": {}
+    },
+    "section_grid_info_boxes_wCCtV7": {
+      "type": "section-grid-info-boxes",
+      "blocks": {
+        "grid_item_FXBJQr": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Built for Medical Device OEMs",
+            "title_max_width_desktop": 235,
+            "description": "<p>LifeSync Advanced Manufacturing is purpose-built for the precision, scale, and regulatory discipline medical device OEMs demand. Our model combines embedded engineering collaboration with modular automation and integrated operations to deliver predictable outcomes from prototype through production. <br/><br/></p>",
+            "description_max_width_desktop": 350
+          }
+        },
+        "grid_item_EK6UkM": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Your Team Extended with Embedded Engineering ",
+            "title_max_width_desktop": 235,
+            "description": "<p>One team. One goal. Your success. LifeSync integrates early into your engineering and R&D processes—partnering as an extension of your team, not a downstream assembler. From requirements definition and prototyping through regulatory approval and full production, LifeSync reduces development risk, shortens time to market, and improves production readiness. Quality isn't an inspection step for at the end; it’s engineered from the start. <br/><br/></p>",
+            "description_max_width_mobile": 350
+          }
+        },
+        "grid_item_QWkPKD": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Automation Designed for Scale",
+            "title_max_width_desktop": 250,
+            "description": "<p>LifeSync is the industry proven leader in automated SpO2 & ECG manufacturing. Our global, ISO-certified operations leverage modular, scalable automation to deliver cost efficiency and consistent quality, optimized for complex, high mix-low volume environments. Our automation expertise is engineered into the design process from the outset, enabling rapid transition from prototype to production and high First Pass Yield (FPY) with excellence in predictable supply, yield, and cost control.</p>",
+            "description_max_width_desktop": 350
+          }
+        },
+        "grid_item_yGnAE4": {
+          "type": "grid_item",
+          "settings": {
+            "title": "100% Focused on Medical Interconnects",
+            "title_max_width_desktop": 235,
+            "description": "<p>Unlike multi-industry contract manufacturers, LifeSync focuses exclusively on medical interconnects and is a leader in pulse oximetry, ECG, and complex diagnostic and monitoring applications. We bring the same design-cycle discipline, regulatory expertise, and manufacturing rigor used to develop LifeSync cardiac and neuro connections directly to OEM partnerships. We speak your language because medical devices are all we do. 100% medical, 100% committed.</p>",
+            "description_max_width_desktop": 350
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_FXBJQr",
+        "grid_item_EK6UkM",
+        "grid_item_QWkPKD",
+        "grid_item_yGnAE4"
+      ],
+      "name": "Grid Info Boxes",
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "section_grid_info_boxes_wCCtV7"
   ]
 }
