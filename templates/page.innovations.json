@@ -78,11 +78,13 @@
         "card_8U4Ahw": {
           "type": "card",
           "settings": {
+            "card_image_mobile": "shopify://shop_images/innovations-radiolucent.webp",
+            "card_image_desktop": "shopify://shop_images/innovations-radiolucent.webp",
             "card_link": "",
             "heading": "",
-            "title": "",
-            "text": "",
-            "button_text": ""
+            "title": "Radiolucency",
+            "text": "<p><strong>Clear imaging. Continuous monitoring.</strong><br/><br/>LifeSync radiolucent ECG leadwires are engineered to minimize imaging interference during fluoroscopy and other procedures. With more than 60 radiolucent configurations, LifeSync supports unobstructed imaging, reduced repositioning, and uninterrupted patient monitoring across care environments.</p>",
+            "button_text": "See the Difference"
           }
         },
         "card_YEnb8x": {
@@ -93,7 +95,7 @@
             "card_link": "",
             "heading": "",
             "title": "ECG Leadwire Reprocessing",
-            "text": "<p><strong>Sustainability without compromise.</strong></p><p>ReLife extends lifecycle control through FDA 510(k)-cleared ECG leadwire reprocessing within a closed-loop model. Hospitals can standardize with one leadwire for both new and reprocessed products—reducing medical waste, managing costs, and maintaining dependable supply without sacrificing quality.</p>",
+            "text": "<p><strong>Sustainability without compromise.</strong><br/><br/>ReLife extends lifecycle control through FDA 510(k)-cleared ECG leadwire reprocessing within a closed-loop model. Hospitals can standardize with one leadwire for both new and reprocessed products—reducing medical waste, managing costs, and maintaining dependable supply without sacrificing quality.<br/><br/></p>",
             "button_text": "Discover ReLife"
           }
         }
