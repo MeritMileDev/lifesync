@@ -238,6 +238,23 @@
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 100
       }
+    },
+    "section_banner_with_text_z8r7Bw": {
+      "type": "section-banner-with-text",
+      "name": "Section Banner with Text",
+      "settings": {
+        "subtitle": "",
+        "image_mobile": "shopify://shop_images/cta-bg-ls-sales.webp",
+        "image_desktop": "shopify://shop_images/cta-bg-ls-sales.webp",
+        "is_image_at_bottom_desktop": false,
+        "title": "Talk to a LifeSync Patient Connections Expert",
+        "description": "",
+        "border_bottom_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
     }
   },
   "order": [
@@ -248,6 +265,7 @@
     "section_shop_by_U7yNVg",
     "section_image_with_text_zdLWhX",
     "section_image_with_text_GXXcBi",
-    "section_image_with_text_BV7GCj"
+    "section_image_with_text_BV7GCj",
+    "section_banner_with_text_z8r7Bw"
   ]
 }
