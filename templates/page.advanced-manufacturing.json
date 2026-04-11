@@ -133,6 +133,20 @@
             "step_content": ""
           }
         },
+        "step_w6tjD7": {
+          "type": "step",
+          "settings": {
+            "step_title": "",
+            "step_content": ""
+          }
+        },
+        "step_zGx4ex": {
+          "type": "step",
+          "settings": {
+            "step_title": "",
+            "step_content": ""
+          }
+        },
         "step_9DVAYL": {
           "type": "step",
           "settings": {
@@ -157,7 +171,6 @@
         "step_TLEj7w": {
           "type": "step",
           "settings": {
-            "image": "shopify://shop_images/steps-graphic.webp",
             "step_title": "Customer devotion",
             "step_content": ""
           }
@@ -166,6 +179,8 @@
       "block_order": [
         "step_ecim6U",
         "step_Y8x9Re",
+        "step_w6tjD7",
+        "step_zGx4ex",
         "step_9DVAYL",
         "step_CAtdeX",
         "step_WGxG4a",
@@ -173,12 +188,13 @@
       ],
       "name": "Steps",
       "settings": {
-        "enable_bg": true,
+        "enable_bg": false,
         "enable_bg_desktop": false,
-        "is_static_steps": false,
-        "section_subtitle": "",
-        "section_title": "",
-        "section_description": "",
+        "is_static_steps": true,
+        "static_image": "shopify://shop_images/steps-graphic.webp",
+        "section_subtitle": "A Proven Approach to Design and Scale ",
+        "section_title": "<p>Our Proven 6-Step Design and Manufacturing Process</p>",
+        "section_description": "<p><strong>From Concept to Production</strong></p><p>Our collaborative, embedded engineering model functions as an extension of your team, guided by a proven six-step design-to-production process. We integrate early to reduce development risk, accelerate timelines, and strengthen production readiness.</p><p>This structured approach supports regulatory validation, automation integration, and scalable production—ensuring predictable performance from prototype through full-scale manufacturing.<br/><br/><br/></p>",
         "section_description_max_width": 0,
         "section_description_max_width_mobile": 0,
         "bottom_title": "",
