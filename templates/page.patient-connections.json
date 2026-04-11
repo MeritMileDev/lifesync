@@ -36,32 +36,6 @@
         "padding_bottom_desktop": 40
       }
     },
-    "section_grid_with_text_3gfwxz": {
-      "type": "section-grid-with-text",
-      "blocks": {
-        "text_block_jQkepr": {
-          "type": "text_block",
-          "settings": {
-            "subtitle": "",
-            "title": "",
-            "description": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_block_jQkepr"
-      ],
-      "custom_css": [
-        "div {background: none;}"
-      ],
-      "name": "Grid with Text",
-      "settings": {
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40
-      }
-    },
     "section_intro_with_images_tbK47Q": {
       "type": "section-intro-with-images",
       "name": "Intro with Images",
@@ -268,7 +242,6 @@
   "order": [
     "main",
     "section_hero_banner_fefAmK",
-    "section_grid_with_text_3gfwxz",
     "section_intro_with_images_tbK47Q",
     "section_grid_info_boxes_caVxbL",
     "section_shop_by_U7yNVg",
