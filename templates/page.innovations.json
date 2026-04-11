@@ -116,12 +116,38 @@
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60
       }
+    },
+    "section_intro_quads_pa7VLa": {
+      "type": "section-intro-quads",
+      "name": "Intro with quads",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "title": "",
+        "subtitle": "",
+        "title_max_width": 0,
+        "description": "",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
     "main",
     "section_hero_banner_LY3Ukw",
     "section_simple_text_7betLy",
-    "section_innovations_6VQnUc"
+    "section_innovations_6VQnUc",
+    "section_intro_quads_pa7VLa"
   ]
 }
