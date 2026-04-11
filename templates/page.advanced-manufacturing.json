@@ -34,33 +34,6 @@
         "padding_bottom_desktop": 40
       }
     },
-    "section_simple_text_ddThWr": {
-      "type": "section-simple-text",
-      "name": "Simple Text",
-      "settings": {
-        "subtitle": "",
-        "title": "",
-        "is_h1_tag": false,
-        "title_size": "medium",
-        "title_size_mobile": "medium",
-        "title_max_width_mobile": 0,
-        "title_max_width_desktop": 0,
-        "text": "",
-        "text_full_width": false,
-        "text_max_width_mobile": 0,
-        "text_max_width_desktop": 0,
-        "button_label": "",
-        "button_link": "",
-        "button_style": "button",
-        "section_max_width": 0,
-        "background_image_max_width_mobile": 0,
-        "background_image_max_width_desktop": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 50,
-        "padding_bottom_desktop": 50
-      }
-    },
     "section_intro_with_stats_pJtF6j": {
       "type": "section-intro-with-stats",
       "name": "Intro with stats",
@@ -520,7 +493,6 @@
   "order": [
     "main",
     "section_hero_banner_NhPzjA",
-    "section_simple_text_ddThWr",
     "section_intro_with_stats_pJtF6j",
     "section_grid_info_boxes_wCCtV7",
     "section_image_with_text_rounded_CWWBKz",
