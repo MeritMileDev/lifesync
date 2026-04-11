@@ -275,37 +275,14 @@
         "padding_top_mobile": 56,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 35,
-        "padding_bottom_desktop": 35
-      }
-    },
-    "section_simple_text_f8zEU6": {
-      "type": "section-simple-text",
-      "settings": {
-        "subtitle": "",
-        "title": "",
-        "is_h1_tag": false,
-        "title_size": "medium",
-        "title_size_mobile": "medium",
-        "title_max_width_mobile": 0,
-        "title_max_width_desktop": 0,
-        "text": "<p>To find out what standardization might look like for your hospital, contact your LifeSync representative or <a href=\"/pages/contact\" title=\"Contact\">customer service online</a> or by telephone - <a href=\"tel:1-800-358-2468\" title=\"tel:1-800-358-2468\">1-800-358-2468</a>.</p>",
-        "text_full_width": true,
-        "text_max_width_mobile": 290,
-        "text_max_width_desktop": 570,
-        "button_label": "",
-        "button_link": "",
-        "button_style": "button",
-        "section_max_width": 0,
-        "background_image_max_width_mobile": 0,
-        "background_image_max_width_desktop": 0,
-        "padding_top_mobile": 18,
-        "padding_bottom_mobile": 56,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 112
+        "padding_bottom_desktop": 100
       }
     },
     "section_text_image_bg_3m3aYh": {
       "type": "section-text-image-bg",
+      "custom_css": [
+        "a {background: white; border-radius: 24px;}"
+      ],
       "name": "Text with Image Bg",
       "settings": {
         "section_subtitle": "",
@@ -330,7 +307,6 @@
     "section_simple_text_GaEfxm",
     "section_image_with_text_secondary_qLQgrW",
     "section_slider_pmVRDH",
-    "section_simple_text_f8zEU6",
     "section_text_image_bg_3m3aYh"
   ]
 }
