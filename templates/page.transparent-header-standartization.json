@@ -194,12 +194,32 @@
         "padding_top_desktop": 120,
         "padding_bottom_desktop": 100
       }
+    },
+    "section_text_image_bg_xYKytE": {
+      "type": "section-text-image-bg",
+      "custom_css": [
+        "a {background: white; border-radius: 24px;}"
+      ],
+      "name": "Text with Image Bg",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "Talk to a LifeSync Patient <br>Connections Expert",
+        "section_description": "",
+        "image_bg": "shopify://shop_images/cta-bg-ls-sales.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100,
+        "cta_text": "Contact Us",
+        "cta_url": "shopify://pages/contact"
+      }
     }
   },
   "order": [
     "section_hero_banner_wdiBDa",
     "section_simple_text_WLCcYq",
     "section_innovations_yLnXAa",
-    "section_steps_HE6AWE"
+    "section_steps_HE6AWE",
+    "section_text_image_bg_xYKytE"
   ]
 }
