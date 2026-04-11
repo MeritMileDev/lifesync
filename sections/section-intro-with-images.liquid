@@ -59,7 +59,7 @@
       <div class="bg-police-blue p-4 lg:mx-0 -mx-4">
     {% endif %}
     <div class="grid {% if section.settings.narrow_section == true %}lg:grid-cols-12 {% else %}grid-cols-12 {% endif %} gap-6">
-      <div class="col-span-6 self-end {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
+      <div class="col-span-6 items-center {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
         <div class="">
             {% render 'picture',
                 image_mobile: section.settings.image,
