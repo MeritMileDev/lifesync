@@ -225,8 +225,8 @@
         "column_tre8gN": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/icon-pulse-oximetry.svg",
-            "title": "Pulse Oximetry",
+            "icon": "shopify://shop_images/icon-cable-connector-design.svg",
+            "title": "Cable and Connector Design",
             "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
@@ -239,8 +239,8 @@
         "column_LyLN84": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/icon-ecg-ekg.svg",
-            "title": "ECG/EKG",
+            "icon": "shopify://shop_images/icon-pcba-embedded-electronics.svg",
+            "title": "PCBA and Embedded Electronics",
             "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
@@ -253,8 +253,8 @@
         "column_rHBX4W": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/icon-mri-cables.svg",
-            "title": "MRI Cables",
+            "icon": "shopify://shop_images/icon-laser-marking.svg",
+            "title": "Laser Marking",
             "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
@@ -267,8 +267,8 @@
         "column_HVDxcc": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/icon-electrosurgery.svg",
-            "title": "Electrosurgery",
+            "icon": "shopify://shop_images/icon-programmable-glue-plotting.svg",
+            "title": "Programmable Glue Potting",
             "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
@@ -281,8 +281,8 @@
         "column_GHCRXV": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/icon-laparoscopic.svg",
-            "title": "Laparoscopic",
+            "icon": "shopify://shop_images/icon-ultrasonic-welding.svg",
+            "title": "Ultrasonic Welding",
             "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
