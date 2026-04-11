@@ -7,7 +7,7 @@
   assign padding_bottom_mobile = section.settings.padding_bottom_mobile
   assign padding_top_desktop = section.settings.padding_top_desktop
   assign padding_bottom_desktop = section.settings.padding_bottom_desktop
-  assign background_color = section.settings.background_color
+  assign light_background = section.settings.light_background
 %}
 
 {% render 'offset',
@@ -60,7 +60,7 @@
             {% if title != blank %}
               <div class="text-left text-white px-5 text-3xl font-bold" style="margin-top: -50px; margin-bottom: 10px;">{{ title }}</div>
             {% endif %}
-            <div class="flex justify-between text-left px-5 py-5 {% if background_color %}bg-police-accent{% endif %} rounded-b-xl">
+            <div class="flex justify-between text-left px-5 py-5 {% if light_background %}bg-police-accent{% endif %} rounded-b-xl">
               {% if text != blank %}
                 <div class="card-text-{{ block.id }} text-white max-w-md">{{ text }}</div>
               {% endif %}
@@ -173,7 +173,7 @@
           },
           {
             "type": "checkbox",
-            "id": "background_color",
+            "id": "light_background",
             "label": "Light Background",
             "default": false
           }
