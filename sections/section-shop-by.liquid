@@ -7,7 +7,7 @@
   assign padding_bottom_mobile = section.settings.padding_bottom_mobile
   assign padding_top_desktop = section.settings.padding_top_desktop
   assign padding_bottom_desktop = section.settings.padding_bottom_desktop
-  assign light_background = block.settings.light_background
+
 %}
 
 {% render 'offset',
@@ -45,6 +45,7 @@
             assign text = block.settings.text
             assign button_text = block.settings.button_text
             assign card_link = block.settings.card_link
+            assign light_background = block.settings.light_background
           %}
           <div class="text-center lg:flex lg:flex-col">
             {% if card_image_mobile or card_image_desktop %}
