@@ -142,6 +142,58 @@
         "padding_bottom_desktop": 0
       }
     },
+    "section_image_with_text_rounded_BKhwMn": {
+      "type": "section-image-with-text-rounded",
+      "name": "Image with text rounded",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "Quality Assurance and Compliance Teams",
+        "title_max_width": 300,
+        "description": "All medical cables manufactured by LifeSync are rigorously validated for QA by our in-house medical experts. We test for mechanical, electrical, sterilization, environmental, and chemical analysis attributes to ensure the highest quality, reliability, and performance. <br>\n<br>\nLifeSync quality controls are structured to support compliance with ISO 10993 biocompatibility standards and IEC 60601 electrical safety requirements. We work closely with our OEM customers to ensure materials, processes, and documentation align with their applicable ANSI/AAMI, IEC, UL, and DIN standards. ",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/am-quaity-assurance.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_image_with_text_rounded_fTLpWF": {
+      "type": "section-image-with-text-rounded",
+      "name": "Image with text rounded",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "Procurement and Supply Chain Teams",
+        "title_max_width": 300,
+        "description": "LifeSync gives you unparalleled global Supply chain resilience with our wholly owned in-house manufacturing operations U.S., Costa Rica, and China.<br>\n<br>\nOur diversified sourcing and manufacturing strategy reduces risk, ensures consistent supply, and country-of-origin flexibility while removing single-source dependencies.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/am-procurement.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
+    },
     "section_multicolumn_7TfEj9": {
       "type": "section-multicolumn",
       "blocks": {
@@ -446,6 +498,8 @@
     "section_simple_text_ddThWr",
     "section_grid_info_boxes_wCCtV7",
     "section_image_with_text_rounded_CWWBKz",
+    "section_image_with_text_rounded_BKhwMn",
+    "section_image_with_text_rounded_fTLpWF",
     "section_multicolumn_7TfEj9",
     "section_multicolumn_kmJhma",
     "section_steps_T7y3Ja",
