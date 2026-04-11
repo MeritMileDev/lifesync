@@ -13,6 +13,21 @@
       "type": "main-page",
       "settings": {}
     },
+    "section_banner_with_text_WCa7fQ": {
+      "type": "section-banner-with-text",
+      "name": "Section Banner with Text",
+      "settings": {
+        "subtitle": "",
+        "is_image_at_bottom_desktop": false,
+        "title": "The Manufacturing Leader in SpO2, ECG, and Custom Medical Interconnects",
+        "description": "",
+        "border_bottom_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_grid_info_boxes_wCCtV7": {
       "type": "section-grid-info-boxes",
       "blocks": {
@@ -70,6 +85,7 @@
   },
   "order": [
     "main",
+    "section_banner_with_text_WCa7fQ",
     "section_grid_info_boxes_wCCtV7"
   ]
 }
