@@ -144,6 +144,9 @@
     },
     "section_text_image_bg_inhYLw": {
       "type": "section-text-image-bg",
+      "custom_css": [
+        "a {background: white; border-radius: 24px;}"
+      ],
       "name": "Text with Image Bg",
       "settings": {
         "section_subtitle": "",
