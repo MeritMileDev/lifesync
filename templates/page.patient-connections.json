@@ -62,6 +62,43 @@
         "padding_bottom_desktop": 40
       }
     },
+    "section_shop_by_U7yNVg": {
+      "type": "section-shop-by",
+      "blocks": {
+        "card_PVN9tr": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "heading": "",
+            "title": "Cardiac",
+            "text": "View the complete selection of cardiac leadwires, trunk cables, and Sp02 sensors",
+            "button_text": "Shop Cardiac"
+          }
+        },
+        "card_kGf3z7": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "heading": "",
+            "title": "Neuro",
+            "text": "Browse neurodiagnostic EEG, EMG, IONM, and PSG products",
+            "button_text": "Shop Neuro"
+          }
+        }
+      },
+      "block_order": [
+        "card_PVN9tr",
+        "card_kGf3z7"
+      ],
+      "name": "Shop By",
+      "settings": {
+        "title": "Explore LifeSync Leadwires,<br>Cables, and Connections",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40
+      }
+    },
     "section_image_with_text_zdLWhX": {
       "type": "section-image-with-text",
       "name": "Image with text",
@@ -145,6 +182,7 @@
     "main",
     "section_hero_banner_fefAmK",
     "section_grid_with_text_3gfwxz",
+    "section_shop_by_U7yNVg",
     "section_image_with_text_zdLWhX",
     "section_image_with_text_GXXcBi",
     "section_image_with_text_BV7GCj"
