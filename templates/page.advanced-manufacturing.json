@@ -116,11 +116,85 @@
         "padding_bottom_desktop": 100
       }
     },
+    "section_steps_T7y3Ja": {
+      "type": "section-steps",
+      "blocks": {
+        "step_ecim6U": {
+          "type": "step",
+          "settings": {
+            "step_title": "Requirements",
+            "step_content": ""
+          }
+        },
+        "step_Y8x9Re": {
+          "type": "step",
+          "settings": {
+            "step_title": "Technical / Design",
+            "step_content": ""
+          }
+        },
+        "step_9DVAYL": {
+          "type": "step",
+          "settings": {
+            "step_title": "Design verification",
+            "step_content": ""
+          }
+        },
+        "step_CAtdeX": {
+          "type": "step",
+          "settings": {
+            "step_title": "Process qualification",
+            "step_content": ""
+          }
+        },
+        "step_WGxG4a": {
+          "type": "step",
+          "settings": {
+            "step_title": "Production",
+            "step_content": ""
+          }
+        },
+        "step_TLEj7w": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/steps-graphic.webp",
+            "step_title": "Customer devotion",
+            "step_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_ecim6U",
+        "step_Y8x9Re",
+        "step_9DVAYL",
+        "step_CAtdeX",
+        "step_WGxG4a",
+        "step_TLEj7w"
+      ],
+      "name": "Steps",
+      "settings": {
+        "enable_bg": true,
+        "enable_bg_desktop": false,
+        "is_static_steps": false,
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "section_description_max_width": 0,
+        "section_description_max_width_mobile": 0,
+        "bottom_title": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_contact_form_R6QqNA": {
       "type": "section-contact-form",
       "name": "Contact Form Section",
       "settings": {
-        "section_title": "Start Your Development<br>Conversation",
+        "section_title": "Start Your DevelopmentConversation",
         "section_description": "",
         "enable_bg": true,
         "padding_top_mobile": 0,
@@ -135,6 +209,7 @@
     "section_hero_banner_NhPzjA",
     "section_simple_text_ddThWr",
     "section_grid_info_boxes_wCCtV7",
+    "section_steps_T7y3Ja",
     "section_contact_form_R6QqNA"
   ]
 }
