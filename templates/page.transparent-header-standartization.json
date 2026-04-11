@@ -17,7 +17,8 @@
         "image_mobile": "shopify://shop_images/banner.jpg",
         "image_desktop": "shopify://shop_images/standartization-banner-d.jpg",
         "enable_overlay": false,
-        "title": "Standardize Cardiac Patient Monitoring Connections",
+        "title": "<p><strong>Standardize ECG Leadwires</strong> <br/>Across the Entire Patient Stay</p>",
+        "title_tag": "h1",
         "title_max_width_mobile": 328,
         "subtitle": "<p>1 Patient = 1 Leadwire = 1 Time Placement</p>",
         "subtitle_full_width": true,
@@ -37,6 +38,7 @@
       "settings": {
         "subtitle": "",
         "title": "Streamlined efficiency",
+        "is_h1_tag": false,
         "title_size": "medium",
         "title_size_mobile": "small",
         "title_max_width_mobile": 0,
@@ -185,6 +187,7 @@
         "is_static_steps": true,
         "static_image": "shopify://shop_images/steps.jpg",
         "section_subtitle": "Seamless transition",
+        "section_intro": "",
         "section_title": "<p>Six steps to standardization</p>",
         "section_description": "<p>Standardizing or replacing cardiac cables and connections can feel like an enormous task. Our expert staff and conversion teams will guide you through the process of inventory, training, supply chain management, and implementation to ensure a successful transition. We use our six phase standardization process to ensure a seamless transition to LifeSync Cardiac monitoring connections.</p>",
         "section_description_max_width": 0,
@@ -318,6 +321,7 @@
       "settings": {
         "subtitle": "Get in touch",
         "title": "Stay focused on patient care and leave the standardizing to us",
+        "is_h1_tag": false,
         "title_size": "medium",
         "title_size_mobile": "small",
         "title_max_width_mobile": 320,
