@@ -86,6 +86,8 @@
         "card_YEnb8x": {
           "type": "card",
           "settings": {
+            "card_image_mobile": "shopify://shop_images/innovations-ecg-leadwire-reprocessing.webp",
+            "card_image_desktop": "shopify://shop_images/innovations-ecg-leadwire-reprocessing.webp",
             "card_link": "",
             "heading": "",
             "title": "ECG Leadwire Reprocessing",
