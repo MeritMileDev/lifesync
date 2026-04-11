@@ -41,7 +41,6 @@
           image_desktop: image_1_desktop, 
           image_mobile: image_1_mobile, 
           breakpoint: 1280 
-          class: 'scaled-image' 
         %}
       </div>
       <div class="mb-16 mt-14.5 xl:py-20 2xl:py-40 xl:my-0 ">
@@ -63,7 +62,7 @@
         {% endif %}
       </div>
       <div class="max-w-82 mx-auto xl:absolute xl:max-w-[24.5%] xl:left-0 xl:top-1/2 xl:-translate-y-1/2">
-        {% render 'picture', image_desktop: image_2_desktop, image_mobile: image_2_mobile, breakpoint: 1024 %}
+        {% render 'picture', image_desktop: image_2_desktop, image_mobile: image_2_mobile, breakpoint: 1024, class: 'scaled-image'  %}
       </div>
     </div>
   </div>
