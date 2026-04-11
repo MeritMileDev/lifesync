@@ -38,7 +38,7 @@
             {% endif %}
             {% if section.settings.section_title != blank %}
             <h2
-              class="section-title 3xl:text-48 lg:text-42 text-32 font-medium mb-3.25 mx-auto xl:leading-14 leading-10">
+              class="section-title text-white 3xl:text-48 lg:text-42 text-32 font-medium mb-3.25 mx-auto xl:leading-14 leading-10">
               {{ section.settings.section_title }}
             </h2>
             {% endif %}
@@ -51,16 +51,16 @@
               %}
             </div>
             {% if section.settings.section_description != blank %}
-            <div class="section-description max-w-xl mx-auto rte xl:px-0 px-7.5 xl:mb-0 mb-6 lg:mt-0 mt-3">
+            <div class="section-description text-white max-w-xl mx-auto rte xl:px-0 px-7.5 xl:mb-0 mb-6 lg:mt-0 mt-3">
               {{ section.settings.section_description }}
             </div>
             {% endif %}
           </div>
+          {% if cta_text != blank and cta_url != blank %}
+            <a class="mx-auto relative z-10 flex max-w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max lg:mt-5" href="{{cta_url}}">{{ cta_text }}</a>
+          {% endif %}
         </div>
       </div>
-      {% if cta_text != blank and cta_url != blank %}
-        <a class="mx-auto relative z-10 flex max-w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max lg:mt-5" href="{{cta_url}}">{{ cta_text }}</a>
-      {% endif %}
     </div>
   </div>
 </section>
