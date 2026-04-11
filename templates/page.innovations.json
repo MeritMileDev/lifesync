@@ -141,6 +141,22 @@
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 100
       }
+    },
+    "section_text_image_bg_inhYLw": {
+      "type": "section-text-image-bg",
+      "name": "Text with Image Bg",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "Setting the Standard in Patient Monitoring for Over 50 Years",
+        "section_description": "Innovation at LifeSync is not a single product feature—it is a system-level approach built on standardization, automation, quality, and lifecycle responsibility.",
+        "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "cta_text": "Talk to a LifeSync Specialist",
+        "cta_url": "shopify://pages/contact"
+      }
     }
   },
   "order": [
@@ -148,6 +164,7 @@
     "section_hero_banner_LY3Ukw",
     "section_simple_text_7betLy",
     "section_innovations_6VQnUc",
-    "section_intro_quads_pa7VLa"
+    "section_intro_quads_pa7VLa",
+    "section_text_image_bg_inhYLw"
   ]
 }
