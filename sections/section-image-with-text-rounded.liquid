@@ -39,15 +39,15 @@
 <section id="section-{{ section_id }}">
   <div class="container">
     <div class="text-center">
+      {% if section.settings.section_title != blank %}
+        <h2 class="text-32 font-bold text-police-blue mb-16 max-w-2xl mx-auto lg:leading-14 leading-10 lg:px-0 px-7.5">
+          {{ section.settings.section_title }}
+        </h2>
+      {% endif %}
       {% if section.settings.section_subtitle != blank %}
         <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide lg:mb-8 mb-6">
           {{ section.settings.section_subtitle }}
         </p>
-      {% endif %}
-      {% if section.settings.section_title != blank %}
-        <h2 class="lg:text-5xl text-32 font-medium mb-16 max-w-2xl mx-auto lg:leading-14 leading-10 lg:px-0 px-7.5">
-          {{ section.settings.section_title }}
-        </h2>
       {% endif %}
       {% if section.settings.section_description != blank %}
         <p class="max-w-xl mx-auto">
