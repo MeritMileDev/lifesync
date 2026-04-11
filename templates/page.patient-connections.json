@@ -74,7 +74,8 @@
             "heading": "",
             "title": "Cardiac",
             "text": "View the complete selection of cardiac leadwires, trunk cables, and Sp02 sensors",
-            "button_text": "Shop Cardiac"
+            "button_text": "Shop Cardiac",
+            "background_color": true
           }
         },
         "card_kGf3z7": {
@@ -86,7 +87,8 @@
             "heading": "",
             "title": "Neuro",
             "text": "Browse neurodiagnostic EEG, EMG, IONM, and PSG products",
-            "button_text": "Shop Neuro"
+            "button_text": "Shop Neuro",
+            "background_color": false
           }
         }
       },
