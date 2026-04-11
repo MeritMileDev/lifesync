@@ -18,6 +18,7 @@
         "enable_overlay": true,
         "title": "<p>S<strong>tandardized Patient Monitoring,</strong> Made Simple</p>",
         "title_tag": "h1",
+        "title_max_width_desktop": 800,
         "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
         "subtitle_full_width": false,
         "button_label": "",
