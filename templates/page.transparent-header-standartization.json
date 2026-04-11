@@ -104,6 +104,9 @@
         "card_gtFKF4",
         "card_Jg78Ky"
       ],
+      "custom_css": [
+        "section div div div {border-radius: 24px;}"
+      ],
       "name": "Innovations",
       "settings": {
         "title": "",
