@@ -61,16 +61,14 @@
     <div class="grid {% if section.settings.narrow_section == true %}lg:grid-cols-12 {% else %}grid-cols-12 {% endif %} gap-6">
       <div class="col-span-6 self-end {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
         <div class="{% if image_position_mobile == 'bottom' %}lg:block hidden{% else %}mb-6 lg:mb-0{% endif %}">
-          {% if image_position_mobile != 'bottom' %}
-              <div class="">
-                {% render 'picture',
-                  image_mobile: section.settings.image,
-                  image_desktop: section.settings.image,
-                  is_full_size: false,
-                  class: 'w-full'
-                %}
-              </div>
-            {% endif %}
+          <div class="">
+            {% render 'picture',
+                image_mobile: section.settings.image,
+                image_desktop: section.settings.image,
+                is_full_size: false,
+                class: 'w-full'
+            %}
+            </div>
         </div>
         </div>
         <div class="col-span-6 section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-20 xl:pr-0 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
