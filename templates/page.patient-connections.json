@@ -72,10 +72,11 @@
             "card_image_desktop": "shopify://shop_images/cardiac-tile.webp",
             "card_link": "shopify://collections/all",
             "heading": "",
+            "text_max-width": 0,
             "title": "Cardiac",
             "text": "<p>View the complete selection of cardiac <br/>leadwires, trunk cables, and Sp02 sensors</p>",
             "button_text": "Shop Cardiac",
-            "background_color": true
+            "light_background": true
           }
         },
         "card_kGf3z7": {
@@ -88,7 +89,7 @@
             "title": "Neuro",
             "text": "<p>Browse neurodiagnostic EEG, EMG, <br/>IONM, and PSG products</p>",
             "button_text": "Shop Neuro",
-            "background_color": false
+            "light_background": false
           }
         }
       },
