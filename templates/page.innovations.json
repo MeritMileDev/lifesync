@@ -20,7 +20,7 @@
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/innovations-hero-bg.webp",
         "image_desktop": "shopify://shop_images/innovations-hero-bg.webp",
-        "enable_overlay": true,
+        "enable_overlay": false,
         "title": "<p><strong>Innovation That Strengthens</strong> <br/>Every Connection</p>",
         "title_tag": "h1",
         "subtitle": "<p>Moving patient monitoring forward</p>",
