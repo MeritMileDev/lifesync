@@ -37,7 +37,12 @@
   <div class="relative max-w-480 mx-auto px-10 rounded-xl">
     <div class="container bg-bright-gray-20 rounded-xl">
       <div class="max-w-82 mx-auto xl:absolute xl:top-0 xl:max-w-[8.75%] xl:right-[12%]">
-        {% render 'picture', image_desktop: image_1_desktop, image_mobile: image_1_mobile, breakpoint: 1280 %}
+        {% render 'picture', 
+          image_desktop: image_1_desktop, 
+          image_mobile: image_1_mobile, 
+          breakpoint: 1280 
+          class: 'scaled-image' 
+        %}
       </div>
       <div class="mb-16 mt-14.5 xl:py-20 2xl:py-40 xl:my-0 ">
         {% if heading != blank %}
