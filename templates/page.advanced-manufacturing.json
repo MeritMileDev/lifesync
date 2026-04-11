@@ -57,8 +57,8 @@
         "background_image_max_width_desktop": 0,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
+        "padding_top_desktop": 50,
+        "padding_bottom_desktop": 50
       }
     },
     "section_grid_info_boxes_wCCtV7": {
