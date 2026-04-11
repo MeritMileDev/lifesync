@@ -98,7 +98,7 @@
           "settings": {
             "icon": "shopify://shop_images/home-ecg-leadwires-and-cables.webp",
             "title": "ECG Leadwires and Cables",
-            "description": "Product description",
+            "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/ecg-leadwires-and-monitoring",
@@ -112,7 +112,7 @@
           "settings": {
             "icon": "shopify://shop_images/home-spo2-leadwire-automation.webp",
             "title": "Sp02 Leadwire Automation",
-            "description": "Product description",
+            "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/emg",
@@ -126,7 +126,7 @@
           "settings": {
             "icon": "shopify://shop_images/home-radiolucent-technology.webp",
             "title": "Radiolucent Technology",
-            "description": "Product description",
+            "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/eeg",
@@ -140,7 +140,7 @@
           "settings": {
             "icon": "shopify://shop_images/home-ecg-gold-disposabe-electrodes.webp",
             "title": "EEG Gold Disposable Electrodes",
-            "description": "Product description",
+            "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "shopify://collections/ionm",
