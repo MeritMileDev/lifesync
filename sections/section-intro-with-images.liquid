@@ -59,7 +59,7 @@
       <div class="bg-police-blue p-4 lg:mx-0 -mx-4">
     {% endif %}
     <div class="grid items-center {% if section.settings.narrow_section == true %}lg:grid-cols-12 {% else %}grid-cols-12 {% endif %} gap-6">
-        <div class="col-span-6 {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
+        <div class="col-span-6 {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} p-4">
             <div class="">
                 {% render 'picture',
                     image_mobile: section.settings.image,
@@ -69,7 +69,7 @@
                 %}
             </div>
         </div>
-        <div class="col-span-6 section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left {% if section.settings.enable_bg %}  text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
+        <div class="col-span-6 section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left {% if section.settings.enable_bg %}  text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %} p-4">
           <div class="">            
             <h2 class="2xl:text-64 lg:text-32 text-24 {% if section.settings.enable_bg %} text-white/50 {% else %} text-police-blue{% endif %} font-medium tracking-wide lg:mb-6 mb-3">
               {{ section.settings.title }}
