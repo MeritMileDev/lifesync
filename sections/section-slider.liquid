@@ -59,7 +59,7 @@
               assign slide_link = block.settings.slide_link
             %}
             {% if slide_image != blank %}
-              <div class="swiper-slide slide group">
+              <div class="swiper-slide slide group x-5">
                 {% if slide_link != blank %}
                   <a
                     class="group/image relative flex w-full {% if no_paddings_desktop == false %} border border-police-blue-20 xl:group-last:border-r-0 xl:border-b-0 xl:border-l-0 xl:border-r xl:border-t-0 {% else %} border border-police-blue-20 {% endif %} rounded-xl"
@@ -89,7 +89,7 @@
                     </div>
                     {% unless no_paddings_desktop == true %}
                       <div
-                        class="absolute -bottom-7.5 -top-7.5 left-0 -right-px -mb-px -mt-px hidden border border-black xl:group-hover:block {% unless forloop.first %}-ml-px{% endunless %}"
+                        class="absolute -bottom-7.5 -top-7.5 left-0 -right-px -mb-px -mt-px hidden {% unless forloop.first %}-ml-px{% endunless %}"
                       ></div>
                     {% endunless %}
                   </div>
