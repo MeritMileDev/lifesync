@@ -39,7 +39,7 @@
 {% endstyle %}
 <section id="section-{{ section_id }}">
   <div class="container overflow-hidden">
-    <div class="mt-14 lg:mt-0 lg:grid lg:grid-cols-3 lg:gap-y-6 lg:pt-12 2xl:grid-cols-5 lg:-mx-6">
+    <div class="mt-14 lg:mt-0 lg:grid lg:grid-cols-4 lg:gap-y-6 lg:pt-12 lg:-mx-6">
       {% for block in section.blocks %}
         {% if block.type == 'grid_item' %}
           {% liquid
