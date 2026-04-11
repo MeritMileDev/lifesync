@@ -59,11 +59,60 @@
         "padding_top_desktop": 140,
         "padding_bottom_desktop": 40
       }
+    },
+    "section_innovations_6VQnUc": {
+      "type": "section-innovations",
+      "blocks": {
+        "card_FWaLzt": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "heading": "",
+            "title": "",
+            "text": "",
+            "button_text": ""
+          }
+        },
+        "card_8U4Ahw": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "heading": "",
+            "title": "",
+            "text": "",
+            "button_text": ""
+          }
+        },
+        "card_YEnb8x": {
+          "type": "card",
+          "settings": {
+            "card_link": "",
+            "heading": "",
+            "title": "ECG Leadwire Reprocessing",
+            "text": "<p><strong>One patient. One leadwire. One system.</strong><br/><br/>LifeSync standardizes ECG leadwires across departments and care settings—reducing variation, consolidating vendors and SKUs, and simplifying workflows from admission through discharge. A single leadwire compatible with your existing monitors delivers consistent performance without adapters or workarounds.</p>",
+            "button_text": "Explore Standardization"
+          }
+        }
+      },
+      "block_order": [
+        "card_FWaLzt",
+        "card_8U4Ahw",
+        "card_YEnb8x"
+      ],
+      "name": "Innovations",
+      "settings": {
+        "title": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
     "main",
     "section_hero_banner_LY3Ukw",
-    "section_simple_text_7betLy"
+    "section_simple_text_7betLy",
+    "section_innovations_6VQnUc"
   ]
 }
