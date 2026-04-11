@@ -60,7 +60,7 @@
             {% if title != blank %}
               <div class="text-left text-white px-5 text-3xl font-bold" style="margin-top: -50px; margin-bottom: 10px;">{{ title }}</div>
             {% endif %}
-            <div class="flex justify-between text-left px-5 py-5 {% if background_color %}bg-police-accent{% else %}bg-police-blue{% endif %} rounded-b-xl">
+            <div class="flex justify-between text-left px-5 py-5 {% if background_color %}bg-police-accent{% endif %} rounded-b-xl">
               {% if text != blank %}
                 <div class="card-text-{{ block.id }} text-white max-w-md">{{ text }}</div>
               {% endif %}
