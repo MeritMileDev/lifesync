@@ -47,7 +47,7 @@
         "text": "<p>LifeSync advances patient monitoring through purposeful innovation—focused on safer care, operational simplicity, and sustainable lifecycle management. Our innovation strategy is designed to improve clinical performance, reduce complexity, and lower costs across healthcare environments.<br/><br/></p>",
         "text_full_width": false,
         "text_max_width_mobile": 0,
-        "text_max_width_desktop": 0,
+        "text_max_width_desktop": 550,
         "button_label": "",
         "button_link": "",
         "button_style": "button",
@@ -57,7 +57,7 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
+        "padding_bottom_desktop": 40
       }
     }
   },
