@@ -18,8 +18,8 @@
       "name": "Hero Banner",
       "settings": {
         "horizontal_alignment": "left",
-        "image_mobile": "shopify://shop_images/bg-home-hero.webp",
-        "image_desktop": "shopify://shop_images/bg-home-hero.webp",
+        "image_mobile": "shopify://shop_images/patient-connections-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/patient-connections-hero-bg.webp",
         "enable_overlay": true,
         "banner_icon": "shopify://shop_images/lifesync-patient-connections-logo.webp",
         "title": "<p><strong>Simplify and Standardized</strong> <br/>Cardiac and Neuro Monitoring Connections</p>",
