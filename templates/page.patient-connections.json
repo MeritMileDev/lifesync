@@ -68,6 +68,8 @@
         "card_PVN9tr": {
           "type": "card",
           "settings": {
+            "card_image_mobile": "shopify://shop_images/cardiac-tile.webp",
+            "card_image_desktop": "shopify://shop_images/cardiac-tile.webp",
             "card_link": "",
             "heading": "",
             "title": "Cardiac",
@@ -78,6 +80,8 @@
         "card_kGf3z7": {
           "type": "card",
           "settings": {
+            "card_image_mobile": "shopify://shop_images/neuro-tile.webp",
+            "card_image_desktop": "shopify://shop_images/neuro-tile.webp",
             "card_link": "",
             "heading": "",
             "title": "Neuro",
