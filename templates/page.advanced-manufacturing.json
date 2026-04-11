@@ -116,6 +116,32 @@
         "padding_bottom_desktop": 100
       }
     },
+    "section_image_with_text_rounded_CWWBKz": {
+      "type": "section-image-with-text-rounded",
+      "name": "Image with text rounded",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "Research & Development  and Engineering Teams",
+        "title_max_width": 0,
+        "description": "Everything we design and manufacture is done in our own ISO certified facilities that meet EN ISO 13485 requirements and follow FDA cGMP guidelines.<br>\n<br>\nOur proven 6-step collaborative design process ensures we work as one team, from technical requirements and prototyping to validation and production.  ",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/am-research-and-development.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_multicolumn_7TfEj9": {
       "type": "section-multicolumn",
       "blocks": {
@@ -419,6 +445,7 @@
     "section_hero_banner_NhPzjA",
     "section_simple_text_ddThWr",
     "section_grid_info_boxes_wCCtV7",
+    "section_image_with_text_rounded_CWWBKz",
     "section_multicolumn_7TfEj9",
     "section_multicolumn_kmJhma",
     "section_steps_T7y3Ja",
