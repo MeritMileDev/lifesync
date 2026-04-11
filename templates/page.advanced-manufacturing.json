@@ -130,35 +130,35 @@
           "type": "step",
           "settings": {
             "step_title": "Technical / Design",
-            "step_content": ""
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
           }
         },
         "step_9DVAYL": {
           "type": "step",
           "settings": {
             "step_title": "Design verification",
-            "step_content": ""
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
           }
         },
         "step_CAtdeX": {
           "type": "step",
           "settings": {
             "step_title": "Process qualification",
-            "step_content": ""
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
           }
         },
         "step_WGxG4a": {
           "type": "step",
           "settings": {
             "step_title": "Production",
-            "step_content": ""
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
           }
         },
         "step_TLEj7w": {
           "type": "step",
           "settings": {
             "step_title": "Customer devotion",
-            "step_content": ""
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
           }
         }
       },
