@@ -156,7 +156,7 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0,
+        "padding_bottom_desktop": 60,
         "cta_text": "Talk to a LifeSync Specialist",
         "cta_url": "shopify://pages/contact"
       }
