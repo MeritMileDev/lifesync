@@ -278,25 +278,6 @@
         "padding_bottom_desktop": 100
       }
     },
-    "section_text_image_bg_3m3aYh": {
-      "type": "section-text-image-bg",
-      "custom_css": [
-        "a {background: white; border-radius: 24px;}"
-      ],
-      "name": "Text with Image Bg",
-      "settings": {
-        "section_subtitle": "",
-        "section_title": "Start Seeing the Radiolucent Difference",
-        "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
-        "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 60,
-        "cta_text": "Talk to a LifeSync Exert",
-        "cta_url": "shopify://pages/contact"
-      }
-    },
     "section_image_with_text_QLjGpN": {
       "type": "section-image-with-text",
       "name": "Image with text",
@@ -321,6 +302,25 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 100
       }
+    },
+    "section_text_image_bg_3m3aYh": {
+      "type": "section-text-image-bg",
+      "custom_css": [
+        "a {background: white; border-radius: 24px;}"
+      ],
+      "name": "Text with Image Bg",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "Start Seeing the Radiolucent Difference",
+        "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
+        "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 60,
+        "cta_text": "Talk to a LifeSync Exert",
+        "cta_url": "shopify://pages/contact"
+      }
     }
   },
   "order": [
@@ -332,7 +332,7 @@
     "section_simple_text_GaEfxm",
     "section_image_with_text_secondary_qLQgrW",
     "section_slider_pmVRDH",
-    "section_text_image_bg_3m3aYh",
-    "section_image_with_text_QLjGpN"
+    "section_image_with_text_QLjGpN",
+    "section_text_image_bg_3m3aYh"
   ]
 }
