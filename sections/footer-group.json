@@ -16,7 +16,7 @@
       "settings": {
         "footer_logo": "shopify://shop_images/lifesync-logo-white.svg",
         "newsletter_title_1": "Sign up for our newsletter",
-        "newsletter_title_2": "Sign up for our news and special offers.",
+        "newsletter_title_2": "Sign up for our <br>news and special <br>offers.",
         "footer_column_title_1": "Info",
         "footer_menu_1": "footer",
         "footer_column_title_2": "Get in touch",
