@@ -115,6 +115,11 @@
                 {{ section.settings.section_subtitle }}
               </p>
             {% endif %}
+            {% if section.settings.section_intro != blank %}
+              <p class="mx-auto mb-2 text-sm font-medium uppercase tracking-wide text-police-blue-70 xl:mb-2.5">
+                {{ section.settings.section_intro }}
+              </p>
+            {% endif %}
             {% if section.settings.section_description != blank %}
               <div class="section-description rte mx-auto mb-6 max-w-[670px] md:mx-0 xl:mb-0">
                 {{ section.settings.section_description }}
@@ -270,6 +275,11 @@
         "type": "text",
         "id": "section_subtitle",
         "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_intro",
+        "label": "Section Intro"
       },
       {
         "type": "richtext",
