@@ -301,7 +301,7 @@
         "column_GHCRXV"
       ],
       "custom_css": [
-        "section {margin-top: -20px;}"
+        "section {margin-top: -25px;}"
       ],
       "name": "Multicolumn",
       "settings": {
