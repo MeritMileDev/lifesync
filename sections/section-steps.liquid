@@ -132,16 +132,16 @@
               assign content_max_width_desktop = block.settings['content_max-width_desktop']
             %}
 
-            <div class="relative flex gap-10 border-t border-police-blue-20 last:border-b lg:border-0 last:lg:border-b-0">
+            <div class="relative flex gap-10 border-t border-police-accent last:border-b lg:border-0 last:lg:border-b-0">
               <div class="mb-0.5 hidden w-2 flex-col items-center lg:flex">
                 <div
                   :class="currentStep >= {{ forloop.index }} && '!bg-police-accent'"
-                  class="mb-0.5 h-2 w-2 rounded-full bg-police-blue-20 {% if is_static_steps-%}!bg-police-accent{%- endif -%}"
+                  class="mb-0.5 h-2 w-2 rounded-full bg-police-accent {% if is_static_steps-%}!bg-police-accent{%- endif -%}"
                 ></div>
                 {% unless forloop.last %}
                   <div
                     :class="currentStep >= {{ forloop.index }} + 1 && '!bg-police-accent'"
-                    class="w-0.5 grow bg-police-blue-20 {% if is_static_steps %}lg:!bg-police-accent{% endif %}"
+                    class="w-0.5 grow bg-police-accent {% if is_static_steps %}lg:!bg-police-accent{% endif %}"
                   ></div>
                 {% endunless %}
               </div>
