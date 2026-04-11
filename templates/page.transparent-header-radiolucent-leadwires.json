@@ -13,13 +13,14 @@
       "type": "section-hero-banner",
       "settings": {
         "horizontal_alignment": "left",
-        "image_mobile": "shopify://shop_images/radiolucent-bg-mob.jpg",
-        "image_desktop": "shopify://shop_images/radiolucent-bg-desktop.jpg",
+        "image_mobile": "shopify://shop_images/radiolucency-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/radiolucency-hero-bg.webp",
         "enable_overlay": true,
-        "title": "Radiolucent ECG Leads",
+        "title": "<p><strong>Radiolucent ECG Leadwires</strong> <br/>for Clearer Imaging<br/><br/></p>",
+        "title_tag": "h1",
         "title_max_width_mobile": 200,
         "title_max_width_desktop": 300,
-        "subtitle": "<p>Clear signal, unobstructed views, superior selection, and support.</p>",
+        "subtitle": "<p>Unobstructed views during fluoroscopy with continuous patient monitoring.<br/><br/></p>",
         "subtitle_full_width": false,
         "button_label": "",
         "button_link": "",
@@ -69,6 +70,7 @@
       "settings": {
         "subtitle": "",
         "title": "Reliable solutions from radiolucent experts",
+        "is_h1_tag": false,
         "title_size": "medium",
         "title_size_mobile": "medium",
         "title_max_width_mobile": 0,
@@ -175,8 +177,9 @@
             "heading": "Cath Lab",
             "text_max-width": 220,
             "title": "Cardiac catheterization",
-            "text": "The ideal tool to optimize any cath lab performance.",
-            "button_text": "Shop 5 Lead Radiolucent"
+            "text": "<p>The ideal tool to optimize any cath lab performance.</p>",
+            "button_text": "Shop 5 Lead Radiolucent",
+            "light_background": false
           }
         },
         "card_pd3VFq": {
@@ -187,8 +190,9 @@
             "card_link": "shopify://products/10-leads-radiolucent-ecg-leadwires",
             "heading": "EP",
             "title": "Electrophysiology",
-            "text": "The ideal tool to optimize any electrophysiology EP Lab performance.",
-            "button_text": "Shop 10 Lead Radiolucent"
+            "text": "<p>The ideal tool to optimize any electrophysiology EP Lab performance.</p>",
+            "button_text": "Shop 10 Lead Radiolucent",
+            "light_background": false
           }
         }
       },
@@ -197,7 +201,7 @@
         "card_pd3VFq"
       ],
       "settings": {
-        "title": "Shop by Lab",
+        "title": "<p>Shop by Lab</p>",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 30,
         "padding_top_desktop": 0,
@@ -212,6 +216,7 @@
       "settings": {
         "subtitle": "",
         "title": "Continuously innovating with LifeSync LeadWear® and more",
+        "is_h1_tag": false,
         "title_size": "medium",
         "title_size_mobile": "medium",
         "title_max_width_mobile": 330,
@@ -311,6 +316,7 @@
       "settings": {
         "subtitle": "",
         "title": "",
+        "is_h1_tag": false,
         "title_size": "medium",
         "title_size_mobile": "medium",
         "title_max_width_mobile": 0,
