@@ -59,7 +59,7 @@
             {% if title != blank %}
               <div class="text-left text-white px-10 text-32 font-bold xl:text-32 xl:tracking-tight" style="margin-top: -65px; margin-bottom: 25px;">{{ title }}</div>
             {% endif %}
-            <div class="flex text-left px-10 py-10 bg-police-blue">
+            <div class="flex text-left px-10 py-10 bg-police-blue ">
               {% if text != blank %}
                 <div class="card-text-{{ block.id }} text-white">{{ text }}</div>
               {% endif %}
@@ -166,6 +166,12 @@
             "type": "text",
             "id": "button_text",
             "label": "Button Text"
+          },
+          {
+            "type": "checkbox",
+            "id": "background_color",
+            "label": "Light Background",
+            "default": false
           }
         ]
       }
