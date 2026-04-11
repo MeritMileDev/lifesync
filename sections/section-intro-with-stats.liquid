@@ -1,0 +1,271 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  assign image_position_mobile = section.settings.image_position_mobile
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<style>
+  {% if section.settings.title_max_width > 0 %}
+    #section-{{ section_id }} .block-title {
+      max-width: {{ section.settings.title_max_width }}px;
+    }
+  {% endif %}
+  {% if section.settings.description_max_width > 0 %}
+    #section-{{ section_id }} .block-description {
+      max-width: {{ section.settings.description_max_width }}px;
+    }
+  {% endif %}
+  {% if section.settings.description_max_width_desktop > 0 %}
+      @media screen and (min-width: 768px) {
+        #section-{{ section_id }} .block-description {
+          max-width: {{ section.settings.description_max_width_desktop }}px;
+        }
+      }
+    {% endif %}
+</style>
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="text-center">
+      {% if section.settings.section_subtitle != blank %}
+        <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide lg:mb-8 mb-6">
+          {{ section.settings.section_subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.section_title != blank %}
+        <h2 class="lg:text-5xl text-32 font-medium mb-16 max-w-2xl mx-auto lg:leading-14 leading-10 lg:px-0 px-7.5">
+          {{ section.settings.section_title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.section_description != blank %}
+        <p class="max-w-xl mx-auto">
+          {{ section.settings.section_description }}
+        </p>
+      {% endif %}
+    </div>
+    {% if section.settings.enable_bg %}
+      <div class="bg-police-blue p-4 lg:mx-0 -mx-4">
+    {% endif %}
+    <div class="grid {% if section.settings.narrow_section == true %}lg:grid-cols-12 {% else %}grid-cols-12 {% endif %} gap-6">
+      <div class="col-span-6 self-end {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
+        <div class="{% if image_position_mobile == 'bottom' %}lg:block hidden{% else %}mb-6 lg:mb-0{% endif %}">
+          <div class="bg-police-accent px-10 py-10 rounded-xl">
+            <h3 class="text-3xl font-bold mb-6">Stats</h3>
+          </div>
+        </div>
+        </div>
+        <div class="col-span-6 section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-20 xl:pr-0 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
+          <div class="">            
+            <h2 class="2xl:text-64 lg:text-32 text-24 {% if section.settings.enable_bg %} text-white/50 {% else %} text-police-blue{% endif %} font-medium tracking-wide lg:mb-6 mb-3">
+              {{ section.settings.title }}
+            </h2>
+            {% if section.settings.subtitle != blank %}
+              <h3 class="lg:text-2xl text-xl text-police-accent lg:mb-6 mb-3 lg:max-w-sm" style="font-weight: bold;">{{ section.settings.subtitle }}</h3>
+            {% endif %}
+            {% if image_position_mobile == 'bottom' %}
+              <div class="lg:hidden block">
+                {% render 'picture',
+                  image_mobile: section.settings.image,
+                  image_desktop: section.settings.image,
+                  is_full_size: false,
+                  class: 'w-full'
+                %}
+              </div>
+            {% endif %}
+            <p class="block-description text-lg max-w-xl lg:mb-8 mb-7 lg:mt-0 mt-7.5">{{ section.settings.description }}</p>
+            {% if section.settings.button_link != blank and section.settings.button_label != blank %}
+              <a class="flex gap-2 items-center justify-center font-bold text-police-blue text-md hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100" href="{{ section.settings.button_link }}">
+                {{ section.settings.button_label }} 
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M15.5855 9.39804L10.523 14.4605C10.4174 14.5661 10.2743 14.6254 10.125 14.6254C9.97573 14.6254 9.83258 14.5661 9.72703 14.4605C9.62148 14.355 9.56219 14.2118 9.56219 14.0626C9.56219 13.9133 9.62148 13.7701 9.72703 13.6646L13.8298 9.56257H2.8125C2.66332 9.56257 2.52024 9.50331 2.41475 9.39782C2.30926 9.29233 2.25 9.14925 2.25 9.00007C2.25 8.85088 2.30926 8.70781 2.41475 8.60232C2.52024 8.49683 2.66332 8.43757 2.8125 8.43757H13.8298L9.72703 4.33554C9.62148 4.22999 9.56219 4.08684 9.56219 3.93757C9.56219 3.7883 9.62148 3.64515 9.72703 3.5396C9.83258 3.43405 9.97573 3.37476 10.125 3.37476C10.2743 3.37476 10.4174 3.43405 10.523 3.5396L15.5855 8.6021C15.6378 8.65434 15.6793 8.71638 15.7076 8.78466C15.7359 8.85295 15.7504 8.92615 15.7504 9.00007C15.7504 9.07399 15.7359 9.14719 15.7076 9.21547C15.6793 9.28376 15.6378 9.3458 15.5855 9.39804Z" fill="#0D0D63" stroke="#0D0D63" stroke-width="0.5"/>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% if section.settings.enable_bg %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #section-{{ section_id }} .block-title {
+    font-weight: bold;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Intro with stats",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width",
+        "label": "Block Title Max Width",
+        "default": 0
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "number",
+        "id": "description_max_width",
+        "label": "Block Description Max Width",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "description_max_width_desktop",
+        "label": "Block Description Max Width Desktop",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Image position",
+        "options": [
+          {
+            "value": "image_left",
+            "label": "Image Left"
+          },
+          {
+            "value": "image_right",
+            "label": "Image Right"
+          }
+        ],
+        "default": "image_left"
+      },
+      {
+        "type": "select",
+        "id": "image_position_mobile",
+        "label": "Image position mobile",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "bottom"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_bg",
+        "label": "Enable section background",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "narrow_section",
+        "label": "Narrow section",
+        "default": false  
+      },
+      {
+        "type": "image_picker",
+        "id": "image_card_one",
+        "label": "Card One Image" 
+      },
+      {
+        "type": "image_picker",
+        "id": "image_card_two",
+        "label": "Car Two Image" 
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Intro with stats"
+      }
+    ]
+  }
+{% endschema %}
