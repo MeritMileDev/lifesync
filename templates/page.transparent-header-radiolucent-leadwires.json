@@ -19,7 +19,7 @@
         "title": "<p><strong>Radiolucent ECG Leadwires</strong> <br/>for Clearer Imaging<br/><br/></p>",
         "title_tag": "h1",
         "title_max_width_mobile": 200,
-        "title_max_width_desktop": 300,
+        "title_max_width_desktop": 800,
         "subtitle": "<p>Unobstructed views during fluoroscopy with continuous patient monitoring.<br/><br/></p>",
         "subtitle_full_width": false,
         "button_label": "",
