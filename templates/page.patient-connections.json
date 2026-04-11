@@ -88,7 +88,7 @@
             "title": "Neuro",
             "text": "<p>Browse neurodiagnostic EEG, EMG, <br/>IONM, and PSG products</p>",
             "button_text": "Shop Neuro",
-            "background_color": false
+            "background_color": true
           }
         }
       },
