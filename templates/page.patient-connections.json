@@ -98,7 +98,7 @@
       ],
       "name": "Shop By",
       "settings": {
-        "title": "Explore LifeSync Leadwires, Cables, and Connections",
+        "title": "<p>Explore LifeSync Leadwires, <br/>Cables, and Connections</p>",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 100,
