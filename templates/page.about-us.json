@@ -55,10 +55,37 @@
         "padding_top_desktop": 105,
         "padding_bottom_desktop": 120
       }
+    },
+    "section_image_with_text_NWTrqJ": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "",
+        "title_max_width": 0,
+        "description": "With deep expertise across both provider and OEM environments, LifeSync brings a unique perspective: we manufacture our own patient monitoring connections while partnering directly with medical device OEMs to develop theirs. This dual role strengthens our design discipline, regulatory rigor, and operational execution across everything we build.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/about-deep-expertise.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
     "section_hero_banner_bTAAFL",
-    "section_simple_text_zq3tF3"
+    "section_simple_text_zq3tF3",
+    "section_image_with_text_NWTrqJ"
   ]
 }
