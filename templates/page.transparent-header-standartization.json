@@ -179,7 +179,7 @@
       "settings": {
         "enable_bg": false,
         "enable_bg_desktop": false,
-        "is_static_steps": false,
+        "is_static_steps": true,
         "section_subtitle": "",
         "section_intro": "Six steps to standardization",
         "section_title": "<p>How LifeSync Guides Your Hospital Through the Standardization Process</p>",
