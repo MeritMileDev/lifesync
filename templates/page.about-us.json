@@ -384,16 +384,16 @@
       "type": "section-cta",
       "name": "CTA",
       "settings": {
-        "section_subtitle": "",
-        "section_title": "",
+        "section_subtitle": "Careers",
+        "section_title": "Build the future of patient monitoring connections.",
         "section_description": "",
         "image_bg": "shopify://shop_images/cta-bg.webp",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 80,
-        "cta_text": "",
-        "cta_url": ""
+        "cta_text": "Explore Openings",
+        "cta_url": "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=188c9041-7568-4cb3-b16f-815eccc10736&ccId=19000101_000001&lang=en_US"
       }
     }
   },
