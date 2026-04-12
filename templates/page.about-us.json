@@ -277,8 +277,8 @@
         "text_max_width_desktop": 650,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 80
       }
     },
     "section_team_74kAL4": {
