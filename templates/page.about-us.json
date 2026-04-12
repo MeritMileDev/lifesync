@@ -384,8 +384,9 @@
       "type": "section-cta",
       "name": "CTA",
       "settings": {
+        "cta_position": "cta_center",
         "section_subtitle": "Careers",
-        "section_title": "Build the future of patient monitoring connections.",
+        "section_title": "Build the future of patient <br>monitoring connections.",
         "section_description": "",
         "image_bg": "shopify://shop_images/cta-bg.webp",
         "padding_top_mobile": 0,
