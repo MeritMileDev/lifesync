@@ -119,6 +119,29 @@
     "section_video_banner_with_image_NQ6EMx": {
       "type": "section-video-banner-with-image",
       "custom_css": [
+        "section {margin-bottom: 80px;}",
+        "section h2,section p,section button {color: #0d0d63; max-width: 400px;}",
+        "section h2 {margin-bottom: 2rem;}"
+      ],
+      "name": "Video Banner With Image",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/standardizaton-video-bg-blue.webp",
+        "image_desktop": "shopify://shop_images/standardizaton-video-bg-blue.webp",
+        "title": "A Seamless Transition to Standardization ",
+        "image_featured": "shopify://shop_images/standardization-video-feature.webp",
+        "title_tag": "h2",
+        "subtitle": "<p>Standardizing ECG leadwires across a health system requires coordination across clinical, biomedical, and supply chain teams. LifeSync guides this transition through a proven six-step process designed to minimize disruption and deliver measurable simplification.</p><p>From inventory assessment to implementation and support, our structured approach ensures a controlled, seamless conversion to ECG leadwire standardization.</p>",
+        "youtube_id": "cOLsiCkUv14",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "section_video_banner_with_image_LtHpmt": {
+      "type": "section-video-banner-with-image",
+      "custom_css": [
         "section h2,section p,section button {color: #0d0d63; max-width: 400px;}",
         "section h2 {margin-bottom: 2rem;}"
       ],
@@ -284,6 +307,7 @@
     "section_simple_text_WLCcYq",
     "section_innovations_yLnXAa",
     "section_video_banner_with_image_NQ6EMx",
+    "section_video_banner_with_image_LtHpmt",
     "section_shop_by_jXVKgU",
     "section_steps_text_CHd6xT",
     "section_text_image_bg_xYKytE"
