@@ -195,6 +195,89 @@
         "padding_bottom_desktop": 100
       }
     },
+    "section_steps_text_CHd6xT": {
+      "type": "section-steps-text",
+      "blocks": {
+        "step_CwpDp7": {
+          "type": "step",
+          "settings": {
+            "step_title": "Site survey",
+            "step_content": "<p>90 day before the transition date, our team conducts an onsite survey, inventorying equipment and connection needs, meeting with stakeholders.</p>",
+            "content_max-width_desktop": 500
+          }
+        },
+        "step_nHTjrD": {
+          "type": "step",
+          "settings": {
+            "step_title": "Inventory & parameter agreement",
+            "step_content": ""
+          }
+        },
+        "step_9xwygz": {
+          "type": "step",
+          "settings": {
+            "step_title": "",
+            "step_content": ""
+          }
+        },
+        "step_gDtpUt": {
+          "type": "step",
+          "settings": {
+            "step_title": "",
+            "step_content": ""
+          }
+        },
+        "step_9FBcW8": {
+          "type": "step",
+          "settings": {
+            "step_title": "",
+            "step_content": ""
+          }
+        },
+        "step_mwApWr": {
+          "type": "step",
+          "settings": {
+            "step_title": "",
+            "step_content": ""
+          }
+        },
+        "step_By4BxB": {
+          "type": "step",
+          "settings": {
+            "step_title": "",
+            "step_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "step_CwpDp7",
+        "step_nHTjrD",
+        "step_9xwygz",
+        "step_gDtpUt",
+        "step_9FBcW8",
+        "step_mwApWr",
+        "step_By4BxB"
+      ],
+      "name": "Steps with text",
+      "settings": {
+        "enable_bg": true,
+        "enable_bg_desktop": false,
+        "is_static_steps": false,
+        "section_subtitle": "",
+        "section_intro": "",
+        "section_title": "",
+        "section_description": "",
+        "section_description_max_width": 0,
+        "section_description_max_width_mobile": 0,
+        "bottom_title": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_text_image_bg_xYKytE": {
       "type": "section-text-image-bg",
       "custom_css": [
@@ -220,6 +303,7 @@
     "section_simple_text_WLCcYq",
     "section_innovations_yLnXAa",
     "section_steps_HE6AWE",
+    "section_steps_text_CHd6xT",
     "section_text_image_bg_xYKytE"
   ]
 }
