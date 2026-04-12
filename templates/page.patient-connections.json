@@ -119,22 +119,26 @@
     },
     "section_shop_by_U7yNVg": {
       "type": "section-shop-by",
+      "name": "Shop By",
+      "settings": {}
+    },
+    "section_shop_by_image_tiles_R9pcYQ": {
+      "type": "section-shop-by-image-tiles",
       "blocks": {
-        "card_PVN9tr": {
+        "card_AWjrfm": {
           "type": "card",
           "settings": {
             "card_image_mobile": "shopify://shop_images/cardiac-tile.webp",
             "card_image_desktop": "shopify://shop_images/cardiac-tile.webp",
             "card_link": "shopify://collections/ecg-leadwires-and-monitoring",
             "heading": "",
-            "text_max-width": 0,
             "title": "Cardiac",
             "text": "<p>View the complete selection of cardiac <br/>leadwires, trunk cables, and Sp02 sensors</p>",
             "button_text": "Shop Cardiac",
             "light_background": true
           }
         },
-        "card_kGf3z7": {
+        "card_jRpQp3": {
           "type": "card",
           "settings": {
             "card_image_mobile": "shopify://shop_images/neuro-tile.webp",
@@ -149,16 +153,16 @@
         }
       },
       "block_order": [
-        "card_PVN9tr",
-        "card_kGf3z7"
+        "card_AWjrfm",
+        "card_jRpQp3"
       ],
-      "name": "Shop By",
+      "name": "Shop by image tiles",
       "settings": {
-        "title": "<p>Explore LifeSync Leadwires, <br/>Cables, and Connections</p>",
+        "title": "",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 100,
-        "padding_bottom_desktop": 100
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "section_image_with_text_zdLWhX": {
@@ -265,6 +269,7 @@
     "section_intro_with_images_tbK47Q",
     "section_grid_info_boxes_caVxbL",
     "section_shop_by_U7yNVg",
+    "section_shop_by_image_tiles_R9pcYQ",
     "section_image_with_text_zdLWhX",
     "section_image_with_text_GXXcBi",
     "section_image_with_text_BV7GCj",
