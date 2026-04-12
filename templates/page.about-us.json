@@ -236,6 +236,7 @@
         "member_KXnjqK": {
           "type": "member",
           "settings": {
+            "block_image": "shopify://shop_images/ian-west.webp",
             "name": "Ian West, PhD",
             "job_title": "VP of R&D, Quality, & Regulatory Affairs",
             "description": ""
@@ -244,6 +245,7 @@
         "member_zzFHgA": {
           "type": "member",
           "settings": {
+            "block_image": "shopify://shop_images/josh-stapleton.webp",
             "name": "Josh Stapleton",
             "job_title": "VP of Operations",
             "description": ""
@@ -252,6 +254,7 @@
         "member_xfJnw8": {
           "type": "member",
           "settings": {
+            "block_image": "shopify://shop_images/bob-zinsmaster.webp",
             "name": "Bob Zinsmaster",
             "job_title": "VP of Sales & Customer Service",
             "description": ""
@@ -260,6 +263,7 @@
         "member_T4nQia": {
           "type": "member",
           "settings": {
+            "block_image": "shopify://shop_images/pedro-tejeda.webp",
             "name": "Pedro Tejeda",
             "job_title": "VP of Marketing & Product Management",
             "description": ""
@@ -268,6 +272,7 @@
         "member_yGVkHK": {
           "type": "member",
           "settings": {
+            "block_image": "shopify://shop_images/yullia-varabel.webp",
             "name": "Yuliya Varabei",
             "job_title": "Chief Financial Officer",
             "description": ""
@@ -276,6 +281,7 @@
         "member_cAFmpa": {
           "type": "member",
           "settings": {
+            "block_image": "shopify://shop_images/natalie-salmon.webp",
             "name": "Natalie Salmon",
             "job_title": "Global Director of Human Resources",
             "description": ""
