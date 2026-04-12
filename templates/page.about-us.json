@@ -379,6 +379,22 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 80
       }
+    },
+    "section_cta_q7FQHQ": {
+      "type": "section-cta",
+      "name": "CTA",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "image_bg": "shopify://shop_images/cta-bg.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80,
+        "cta_text": "",
+        "cta_url": ""
+      }
     }
   },
   "order": [
@@ -390,6 +406,7 @@
     "section_video_banner_with_image_eb4aWC",
     "section_text_image_bg_wgzGTq",
     "section_core_values_j6GTwC",
-    "section_team_74kAL4"
+    "section_team_74kAL4",
+    "section_cta_q7FQHQ"
   ]
 }
