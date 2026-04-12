@@ -73,7 +73,9 @@
             <div class="grid-item-title-{{block.id}} mx-auto mb-8 text-center text-2xl font-medium lg:text-32 lg:mb-12">
               {{- title -}}
             </div>
+            {% if block.settings.image_desktop != blank %}
             {% render 'picture', image_mobile: image, image_desktop: image %}
+            {% endif %}
             <div class="grid-item-text-{{block.id}} mx-auto mt-8 text-center lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
           </div>
         {% endif %}
