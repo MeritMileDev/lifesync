@@ -81,11 +81,39 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 80
       }
+    },
+    "section_simple_text_7NXWXH": {
+      "type": "section-simple-text",
+      "custom_css": [],
+      "settings": {
+        "subtitle": "",
+        "title": "Our Mission",
+        "is_h1_tag": true,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 600,
+        "text": "<p>We are committed to delivering reliable connections and simplifying healthcare workflows. From hospitals to specialized practices, our solutions ensure that medical professionals can focus on what matters most—providing exceptional care.</p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 290,
+        "text_max_width_desktop": 600,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 85,
+        "padding_top_desktop": 105,
+        "padding_bottom_desktop": 120
+      }
     }
   },
   "order": [
     "section_hero_banner_bTAAFL",
     "section_simple_text_zq3tF3",
-    "section_image_with_text_NWTrqJ"
+    "section_image_with_text_NWTrqJ",
+    "section_simple_text_7NXWXH"
   ]
 }
