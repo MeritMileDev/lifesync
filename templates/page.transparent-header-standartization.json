@@ -210,42 +210,39 @@
           "type": "step",
           "settings": {
             "step_title": "Inventory & parameter agreement",
-            "step_content": ""
+            "step_content": "<p>Our team discusses equipment changes and upgrades with each affected department, and then set priorities.</p>",
+            "content_max-width_desktop": 390
           }
         },
         "step_9xwygz": {
           "type": "step",
           "settings": {
-            "step_title": "",
-            "step_content": ""
+            "step_title": "Manufacture standardized solutions",
+            "step_content": "<p>LifeSync expertly manufactures the standardized solutions the teams have agreed on.</p>",
+            "content_max-width_desktop": 370
+          }
+        },
+        "step_cMHNy6": {
+          "type": "step",
+          "settings": {
+            "step_title": "In-service staff",
+            "step_content": "<p>Ten days before the transition date, our team walks through the transition to new equipment with the affected departments.</p>",
+            "content_max-width_desktop": 415
           }
         },
         "step_gDtpUt": {
           "type": "step",
           "settings": {
-            "step_title": "",
-            "step_content": ""
+            "step_title": "Go live",
+            "step_content": "<p>We swap inventory, replacing old equipment with new equipment, ensuring all connections are operational.</p>",
+            "content_max-width_desktop": 440
           }
         },
         "step_9FBcW8": {
           "type": "step",
           "settings": {
-            "step_title": "",
-            "step_content": ""
-          }
-        },
-        "step_mwApWr": {
-          "type": "step",
-          "settings": {
-            "step_title": "",
-            "step_content": ""
-          }
-        },
-        "step_By4BxB": {
-          "type": "step",
-          "settings": {
-            "step_title": "",
-            "step_content": ""
+            "step_title": "Update ongoing standardization protocol",
+            "step_content": "<p>Our team updates the protocol to keep it current.</p>"
           }
         }
       },
@@ -253,10 +250,9 @@
         "step_CwpDp7",
         "step_nHTjrD",
         "step_9xwygz",
+        "step_cMHNy6",
         "step_gDtpUt",
-        "step_9FBcW8",
-        "step_mwApWr",
-        "step_By4BxB"
+        "step_9FBcW8"
       ],
       "name": "Steps with text",
       "settings": {
