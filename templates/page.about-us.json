@@ -228,6 +228,7 @@
           "type": "member",
           "settings": {
             "block_image": "shopify://shop_images/bob-buehler.webp",
+            "popup_image": "shopify://shop_images/bob-buehler-p.webp",
             "name": "Bob Buehler",
             "job_title": "Chief Executive Officer",
             "description": "<p>Bob Buehler is the Chief Executive Officer. Bob previously held senior executive positions at two high-growth private equity-backed companies and was actively involved in a number of liquidity events.</p><p>For over twenty-five years, he held senior operating and international business roles at global healthcare companies including RespirTech/Philips Healthcare, 3M Healthcare, and Arizant Healthcare. Bob is also a board member of Somnetics, a private company specializing in treatments for sleep apnea.</p><p>At LifeSync, Bob drives the strategic direction of the company and works throughout the organization to support the company’s values and goal of making superior connections with patients.</p>"
@@ -239,7 +240,7 @@
             "block_image": "shopify://shop_images/ian-west.webp",
             "name": "Ian West, PhD",
             "job_title": "VP of R&D, Quality, & Regulatory Affairs",
-            "description": ""
+            "description": "<p>Ian West is the Vice President of R&D, Quality, and Regulatory Affairs, overseeing LifeSync product innovation, design and compliance.</p><p>Over the last twenty-five years, Ian held leadership positions developing patient monitoring and therapeutic devices at global companies including Johnson & Johnson, GE Healthcare and Philips Healthcare.</p><p>At LifeSync, Ian is focused on creating innovative product solutions that exceed customer’s expectations for quality  and reliability.</p>"
           }
         },
         "member_zzFHgA": {
