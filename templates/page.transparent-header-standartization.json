@@ -119,7 +119,7 @@
     "section_video_banner_with_image_NQ6EMx": {
       "type": "section-video-banner-with-image",
       "custom_css": [
-        "section h2,section p,section a {color: #0d0d63;}",
+        "section h2,section p,section button {color: #0d0d63;}",
         "section h2 {margin-bottom: 2rem;}"
       ],
       "name": "Video Banner With Image",
