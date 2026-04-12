@@ -122,49 +122,6 @@
       "name": "Shop By",
       "settings": {}
     },
-    "section_shop_by_image_tiles_R9pcYQ": {
-      "type": "section-shop-by-image-tiles",
-      "blocks": {
-        "card_AWjrfm": {
-          "type": "card",
-          "settings": {
-            "card_image_mobile": "shopify://shop_images/cardiac-tile.webp",
-            "card_image_desktop": "shopify://shop_images/cardiac-tile.webp",
-            "card_link": "shopify://collections/ecg-leadwires-and-monitoring",
-            "heading": "",
-            "title": "Cardiac",
-            "text": "<p>View the complete selection of cardiac <br/>leadwires, trunk cables, and Sp02 sensors</p>",
-            "button_text": "Shop Cardiac",
-            "light_background": true
-          }
-        },
-        "card_jRpQp3": {
-          "type": "card",
-          "settings": {
-            "card_image_mobile": "shopify://shop_images/neuro-tile.webp",
-            "card_image_desktop": "shopify://shop_images/neuro-tile.webp",
-            "card_link": "shopify://collections/all",
-            "heading": "",
-            "title": "Neuro",
-            "text": "<p>Browse neurodiagnostic EEG, EMG, <br/>IONM, and PSG products</p>",
-            "button_text": "Shop Neuro",
-            "light_background": false
-          }
-        }
-      },
-      "block_order": [
-        "card_AWjrfm",
-        "card_jRpQp3"
-      ],
-      "name": "Shop by image tiles",
-      "settings": {
-        "title": "",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40
-      }
-    },
     "section_image_with_text_zdLWhX": {
       "type": "section-image-with-text",
       "name": "Image with text",
@@ -269,7 +226,6 @@
     "section_intro_with_images_tbK47Q",
     "section_grid_info_boxes_caVxbL",
     "section_shop_by_U7yNVg",
-    "section_shop_by_image_tiles_R9pcYQ",
     "section_image_with_text_zdLWhX",
     "section_image_with_text_GXXcBi",
     "section_image_with_text_BV7GCj",
