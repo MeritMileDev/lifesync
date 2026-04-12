@@ -204,6 +204,22 @@
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 40
       }
+    },
+    "section_text_image_bg_wgzGTq": {
+      "type": "section-text-image-bg",
+      "name": "Text with Image Bg",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "image_bg": "shopify://shop_images/about-world-map.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80,
+        "cta_text": "",
+        "cta_url": ""
+      }
     }
   },
   "order": [
@@ -212,6 +228,7 @@
     "section_multicolumn_4tweFV",
     "section_image_with_text_NWTrqJ",
     "section_simple_text_7NXWXH",
-    "section_video_banner_with_image_eb4aWC"
+    "section_video_banner_with_image_eb4aWC",
+    "section_text_image_bg_wgzGTq"
   ]
 }
