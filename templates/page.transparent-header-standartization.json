@@ -121,6 +121,8 @@
       "name": "Video Banner With Image",
       "settings": {
         "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/standardizaton-video-bg.webp",
+        "image_desktop": "shopify://shop_images/standardizaton-video-bg.webp",
         "title": "A Seamless Transition to Standardization ",
         "image_featured": "shopify://shop_images/standardization-video-feature.webp",
         "title_tag": "h1",
