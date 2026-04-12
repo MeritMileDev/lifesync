@@ -84,6 +84,11 @@
       >
         <div class="col-span-2 hidden lg:col-span-6 lg:block">
           {% if section.settings.section_title != blank %}
+              {% if section.settings.section_intro != blank %}
+                <p class="mx-auto mb-3 text-lg font-medium tracking-wide text-police-accent">
+                    {{ section.settings.section_intro }}
+                </p>
+                {% endif %}
               <h2
                 class="section-title xl:leading-14 mx-auto mb-2 text-32 font-medium leading-10 lg:text-40 xl:mb-3.25 xl:text-48"
               >
@@ -96,11 +101,6 @@
             {% if section.settings.section_subtitle != blank %}
               <p class="mx-auto mb-3 text-2xl font-medium tracking-wide">
                 {{ section.settings.section_subtitle }}
-              </p>
-            {% endif %}
-            {% if section.settings.section_intro != blank %}
-              <p class="mx-auto mb-3 text-lg font-medium tracking-wide text-police-accent">
-                {{ section.settings.section_intro }}
               </p>
             {% endif %}
             {% if section.settings.section_description != blank %}
@@ -110,33 +110,6 @@
             {% endif %}
         </div>
         <div class="col-span-2 lg:col-span-6 lg:pl-8">
-          <div class="mb-12 text-center lg:text-left">
-            {% if section.settings.section_title != blank %}
-              <h2
-                class="section-title xl:leading-14 mx-auto mb-2 text-32 font-medium leading-10 lg:text-40 xl:mb-3.25 xl:text-48"
-              >
-                {{ section.settings.section_title }}
-              </h2>
-              {% if static_image %}
-                {% render 'picture', image_mobile: static_image, class: 'lg:hidden mt-6.5 mb-7.5' %}
-              {% endif %}
-            {% endif %}
-            {% if section.settings.section_subtitle != blank %}
-              <p class="mx-auto mb-3 text-2xl font-medium tracking-wide">
-                {{ section.settings.section_subtitle }}
-              </p>
-            {% endif %}
-            {% if section.settings.section_intro != blank %}
-              <p class="mx-auto mb-3 text-lg font-medium tracking-wide text-police-accent">
-                {{ section.settings.section_intro }}
-              </p>
-            {% endif %}
-            {% if section.settings.section_description != blank %}
-              <div class="section-description rte mx-auto mb-6 max-w-[670px] md:mx-0 xl:mb-0">
-                {{ section.settings.section_description }}
-              </div>
-            {% endif %}
-          </div>
           {% for block in section.blocks %}
             {% liquid
               assign step_image = block.settings.image | img_url: 'master'
