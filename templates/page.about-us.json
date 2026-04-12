@@ -303,6 +303,9 @@
         "member_yGVkHK",
         "member_cAFmpa"
       ],
+      "custom_css": [
+        "section .modal-content picture img {border-radius: 50%;}"
+      ],
       "name": "Team",
       "settings": {
         "section_subtitle": "",
