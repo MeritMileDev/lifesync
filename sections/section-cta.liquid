@@ -53,12 +53,12 @@
               %}
             </div>
             {% if section.settings.section_description != blank %}
-            <div class="section-description text-white max-w-xl mx-auto rte xl:px-0 px-7.5 xl:mb-0 mb-6 lg:mt-0 mt-3">
+            <div class="section-description text-white max-w-xl rte xl:px-0 px-7.5 xl:mb-0 mb-6 lg:mt-0 mt-3">
               {{ section.settings.section_description }}
             </div>
             {% endif %}
             {% if cta_text != blank and cta_url != blank %}
-              <a class="mx-auto relative z-10 flex items-center justify-center gap-2 px-10 py-4 bg-police-accent text-center text-sm font-bold text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max rounded-xl" href="{{cta_url}}">{{ cta_text }}</a>
+              <a class="relative z-10 flex items-center justify-center gap-2 px-10 py-4 bg-police-accent text-center text-sm font-bold text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max rounded-xl" href="{{cta_url}}">{{ cta_text }}</a>
             {% endif %}
           </div>
         </div>
