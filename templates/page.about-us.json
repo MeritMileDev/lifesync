@@ -220,6 +220,88 @@
         "cta_text": "",
         "cta_url": ""
       }
+    },
+    "section_team_74kAL4": {
+      "type": "section-team",
+      "blocks": {
+        "member_neLPyR": {
+          "type": "member",
+          "settings": {
+            "name": "Bob Buehler",
+            "job_title": "Chief Executive Officer",
+            "description": "<p>Bob Buehler is the Chief Executive Officer. Bob previously held senior executive positions at two high-growth private equity-backed companies and was actively involved in a number of liquidity events.</p><p>For over twenty-five years, he held senior operating and international business roles at global healthcare companies including RespirTech/Philips Healthcare, 3M Healthcare, and Arizant Healthcare. Bob is also a board member of Somnetics, a private company specializing in treatments for sleep apnea.</p><p>At LifeSync, Bob drives the strategic direction of the company and works throughout the organization to support the company’s values and goal of making superior connections with patients.</p>"
+          }
+        },
+        "member_KXnjqK": {
+          "type": "member",
+          "settings": {
+            "name": "",
+            "job_title": "",
+            "description": ""
+          }
+        },
+        "member_zzFHgA": {
+          "type": "member",
+          "settings": {
+            "name": "",
+            "job_title": "",
+            "description": ""
+          }
+        },
+        "member_xfJnw8": {
+          "type": "member",
+          "settings": {
+            "name": "",
+            "job_title": "",
+            "description": ""
+          }
+        },
+        "member_T4nQia": {
+          "type": "member",
+          "settings": {
+            "name": "",
+            "job_title": "",
+            "description": ""
+          }
+        },
+        "member_yGVkHK": {
+          "type": "member",
+          "settings": {
+            "name": "",
+            "job_title": "",
+            "description": ""
+          }
+        },
+        "member_cAFmpa": {
+          "type": "member",
+          "settings": {
+            "name": "",
+            "job_title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "member_neLPyR",
+        "member_KXnjqK",
+        "member_zzFHgA",
+        "member_xfJnw8",
+        "member_T4nQia",
+        "member_yGVkHK",
+        "member_cAFmpa"
+      ],
+      "name": "Team",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "Leadership",
+        "section_description": "LifeSync’s leadership team brings deep experience across medical device manufacturing, engineering, quality systems, and global operations. Their focus is clear: strengthen our medical-only expertise, advance automation and innovation, and ensure disciplined execution that enables our customers to deliver reliable patient care at scale.",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80
+      }
     }
   },
   "order": [
@@ -229,6 +311,7 @@
     "section_image_with_text_NWTrqJ",
     "section_simple_text_7NXWXH",
     "section_video_banner_with_image_eb4aWC",
-    "section_text_image_bg_wgzGTq"
+    "section_text_image_bg_wgzGTq",
+    "section_team_74kAL4"
   ]
 }
