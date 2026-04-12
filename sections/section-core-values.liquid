@@ -70,13 +70,13 @@
             }
           </style>
           <div class="pb-8 pt-8 lg:mx-6 lg:pt-0 lg:flex lg:flex-col bg-police-accent rounded-xl">
-            <div class="grid-item-title-{{block.id}} mx-auto mb-8 text-white text-center text-2xl font-medium lg:text-32 lg:mb-12">
+            <div class="grid-item-title-{{block.id}} mx-auto mb-4 text-white text-center text-2xl font-medium text-22">
               {{- title -}}
             </div>
             {% if block.settings.image_desktop != blank %}
               {% render 'picture', image_mobile: image, image_desktop: image %}
             {% endif %}
-            <div class="grid-item-text-{{block.id}} mx-auto mt-8 text-white text-center lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
+            <div class="grid-item-text-{{block.id}} mx-auto mt-8 text-white text-center text-md lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
           </div>
         {% endif %}
       {% endfor %}
