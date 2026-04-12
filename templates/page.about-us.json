@@ -56,6 +56,79 @@
         "padding_bottom_desktop": 60
       }
     },
+    "section_multicolumn_4tweFV": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_wkL7gh": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/lifesync-patient-connections-logo-positive.webp",
+            "title": "",
+            "description": "Cardiac and neuro monitoring connections",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": true,
+            "full_block_button_link": false
+          }
+        },
+        "column_EGY7Dj": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/lifesync-advanced-manufcturing-logo.webp",
+            "title": "",
+            "description": "Custom SpO₂ and ECG medical interconnects at scale",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": true,
+            "full_block_button_link": false
+          }
+        },
+        "column_AUB3wb": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/lifesync-relife-logo.webp",
+            "title": "",
+            "description": "FDA 510(k)-cleared reprocessed leadwires",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": true,
+            "full_block_button_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_wkL7gh",
+        "column_EGY7Dj",
+        "column_AUB3wb"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "",
+        "section_title": "",
+        "section_title_max_width": 0,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "3",
+        "enable_slider": false,
+        "style": "background",
+        "enable_bottom_border": false,
+        "column_title_size": "medium",
+        "column_title_size_mobile": "small",
+        "column_image_height": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80
+      }
+    },
     "section_image_with_text_NWTrqJ": {
       "type": "section-image-with-text",
       "name": "Image with text",
@@ -136,6 +209,7 @@
   "order": [
     "section_hero_banner_bTAAFL",
     "section_simple_text_zq3tF3",
+    "section_multicolumn_4tweFV",
     "section_image_with_text_NWTrqJ",
     "section_simple_text_7NXWXH",
     "section_video_banner_with_image_eb4aWC"
