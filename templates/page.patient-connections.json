@@ -106,12 +106,54 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 100
       }
+    },
+    "section_shop_by_image_tiles_4AV4zw": {
+      "type": "section-shop-by-image-tiles",
+      "blocks": {
+        "card_fkfDqV": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/cardiac-tile.webp",
+            "card_link": "shopify://collections/ecg-leadwires-and-monitoring",
+            "heading": "",
+            "title": "Cardiac",
+            "text": "<p>View the complete selection of cardiac <br/>leadwires, trunk cables, and Sp02 sensors</p>",
+            "button_text": "Shop Cardiac",
+            "light_background": true
+          }
+        },
+        "card_G3VUjc": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/neuro-tile.webp",
+            "card_link": "shopify://collections/all",
+            "heading": "",
+            "title": "Neuro",
+            "text": "<p>Browse neurodiagnostic EEG, EMG, <br/>IONM, and PSG products</p>",
+            "button_text": "Shop Neuro",
+            "light_background": false
+          }
+        }
+      },
+      "block_order": [
+        "card_fkfDqV",
+        "card_G3VUjc"
+      ],
+      "name": "Shop by image tiles",
+      "settings": {
+        "title": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
     }
   },
   "order": [
     "main",
     "section_hero_banner_wRfDjk",
     "section_intro_with_images_DP7qHA",
-    "section_grid_info_boxes_TjLxdW"
+    "section_grid_info_boxes_TjLxdW",
+    "section_shop_by_image_tiles_4AV4zw"
   ]
 }
