@@ -108,12 +108,34 @@
         "padding_top_desktop": 105,
         "padding_bottom_desktop": 120
       }
+    },
+    "section_video_banner_with_image_eb4aWC": {
+      "type": "section-video-banner-with-image",
+      "custom_css": [
+        "section h2,section a,secton button {color: #0d0d63;}"
+      ],
+      "name": "Video Banner With Image",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/standardizaton-video-bg.webp",
+        "image_desktop": "shopify://shop_images/standardizaton-video-bg.webp",
+        "title": "How LifeSync Earns Your Trust",
+        "image_featured": "shopify://shop_images/home-video-featured-image.webp",
+        "title_tag": "h2",
+        "subtitle": "",
+        "youtube_id": "3423vtrwa",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
     "section_hero_banner_bTAAFL",
     "section_simple_text_zq3tF3",
     "section_image_with_text_NWTrqJ",
-    "section_simple_text_7NXWXH"
+    "section_simple_text_7NXWXH",
+    "section_video_banner_with_image_eb4aWC"
   ]
 }
