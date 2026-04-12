@@ -23,15 +23,17 @@
 asdasd
 <div class="container py-12 lg:py-18">
   <div class="mb-12 text-center lg:mb-14 lg:text-left">
-    <img
-      class="mx-auto max-w-[330px] lg:m-0 lg:max-w-none"
-      src="{{ section.settings.footer_logo | image_url: width: 220 }}"
-      srcset="{{ section.settings.footer_logo | image_url: width: 220 }} 1x, {{ section.settings.footer_logo | image_url: width: 440 }} 2x"
-      alt="{{section.settings.footer_logo.alt}}"
-      width="220"
-      height="48"
-      loading="lazy"
-    >
+    <a href="/">
+      <img
+        class="mx-auto max-w-[330px] lg:m-0 lg:max-w-none"
+        src="{{ section.settings.footer_logo | image_url: width: 220 }}"
+        srcset="{{ section.settings.footer_logo | image_url: width: 220 }} 1x, {{ section.settings.footer_logo | image_url: width: 440 }} 2x"
+        alt="{{section.settings.footer_logo.alt}}"
+        width="220"
+        height="48"
+        loading="lazy"
+      >
+    </a>
   </div>
   <div class="lg:grid lg:grid-cols-12 lg:gap-6">
     <div class="lg:col-span-4">
