@@ -116,85 +116,6 @@
         "padding_bottom_desktop": 100
       }
     },
-    "section_steps_HE6AWE": {
-      "type": "section-steps",
-      "blocks": {
-        "step_EwXGmw": {
-          "type": "step",
-          "settings": {
-            "step_title": "Site survey",
-            "step_content": "<p>90 day before the transition date, our team conducts an onsite survey, inventorying equipment and connection needs, meeting with stakeholders.</p>",
-            "content_max-width_desktop": 500
-          }
-        },
-        "step_BEnrDi": {
-          "type": "step",
-          "settings": {
-            "step_title": "Inventory & parameter agreement",
-            "step_content": "<p>Our team discusses equipment changes and upgrades with each affected department, and then set priorities.</p>",
-            "content_max-width_desktop": 390
-          }
-        },
-        "step_cGttzL": {
-          "type": "step",
-          "settings": {
-            "step_title": "Manufacture standardized solutions",
-            "step_content": "<p>LifeSync expertly manufactures the standardized solutions the teams have agreed on.</p>",
-            "content_max-width_desktop": 370
-          }
-        },
-        "step_6UqbqJ": {
-          "type": "step",
-          "settings": {
-            "step_title": "In-service staff",
-            "step_content": "<p>Ten days before the transition date, our team walks through the transition to new equipment with the affected departments.</p>",
-            "content_max-width_desktop": 415
-          }
-        },
-        "step_hDt6n4": {
-          "type": "step",
-          "settings": {
-            "step_title": "Go live",
-            "step_content": "<p>We swap inventory, replacing old equipment with new equipment, ensuring all connections are operational.</p>",
-            "content_max-width_desktop": 440
-          }
-        },
-        "step_CLNdcM": {
-          "type": "step",
-          "settings": {
-            "step_title": "Update ongoing standardization protocol",
-            "step_content": "<p>Our team updates the protocol to keep it current.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "step_EwXGmw",
-        "step_BEnrDi",
-        "step_cGttzL",
-        "step_6UqbqJ",
-        "step_hDt6n4",
-        "step_CLNdcM"
-      ],
-      "settings": {
-        "enable_bg": false,
-        "enable_bg_desktop": false,
-        "is_static_steps": true,
-        "static_image": "shopify://shop_images/steps.jpg",
-        "section_subtitle": "Seamless transition",
-        "section_intro": "",
-        "section_title": "<p>Six steps to standardization</p>",
-        "section_description": "<p>Standardizing or replacing cardiac cables and connections can feel like an enormous task. Our expert staff and conversion teams will guide you through the process of inventory, training, supply chain management, and implementation to ensure a successful transition. We use our six phase standardization process to ensure a seamless transition to LifeSync Cardiac monitoring connections.</p>",
-        "section_description_max_width": 0,
-        "section_description_max_width_mobile": 0,
-        "bottom_title": "",
-        "button_label": "",
-        "button_link": "",
-        "padding_top_mobile": 54,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 120,
-        "padding_bottom_desktop": 100
-      }
-    },
     "section_steps_text_CHd6xT": {
       "type": "section-steps-text",
       "blocks": {
@@ -260,8 +181,8 @@
         "enable_bg_desktop": false,
         "is_static_steps": false,
         "section_subtitle": "",
-        "section_intro": "",
-        "section_title": "",
+        "section_intro": "Six steps to standardization",
+        "section_title": "<p>How LifeSync Guides Your Hospital Through the Standardization Process</p>",
         "section_description": "",
         "section_description_max_width": 0,
         "section_description_max_width_mobile": 0,
@@ -298,7 +219,6 @@
     "section_hero_banner_wdiBDa",
     "section_simple_text_WLCcYq",
     "section_innovations_yLnXAa",
-    "section_steps_HE6AWE",
     "section_steps_text_CHd6xT",
     "section_text_image_bg_xYKytE"
   ]
