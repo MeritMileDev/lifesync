@@ -173,6 +173,58 @@
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 40
       }
+    },
+    "section_image_with_text_xmYXJd": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "Standardization Across the Patient Stay",
+        "title": "One leadwire. Simpler operations. Greater control.",
+        "title_max_width": 0,
+        "description": "LifeSync enables healthcare organizations to standardize cardiac monitoring connections across departments and care settings throughout the full patient stay. From admission to discharge, LifeSync gives you a single leadwire that’s compatible with all your existing monitors without adapters or cable extensions.<br><br>\nLeadwire standardization delivers consistent clinical performance, streamlined procurement and inventory management, and simplified workflows for care providers across the organization.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "Learn How to Standardize",
+        "button_link": "shopify://pages/standardization",
+        "image": "shopify://shop_images/home-standardization.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "section_image_with_text_cKTdT8": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "The advantages are clear.",
+        "title": "Radiolucency for Procedural Efficiency",
+        "title_max_width": 0,
+        "description": "LifeSync radiolucent ECG leadwires are engineered to provide unobstructed views during fluoroscopy and imaging procedures. With more than 60 radiolucent configurations—including single-use and disposable options for ECG, cardiac catheterization, and electrophysiology—LifeSync eliminates scan interference, reduces repeat imaging, and improves diagnostic accuracy.<br>\n<br>\nRadiolucent leadwires minimize the need to reposition or remove leads, preserving continuous monitoring as patients move across care settings.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "See the Radiolucent Difference",
+        "button_link": "shopify://pages/radiolucent-leadwires",
+        "image": "shopify://shop_images/pc-radiolucency.webp",
+        "image_position": "image_right",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40
+      }
     }
   },
   "order": [
@@ -181,6 +233,8 @@
     "section_intro_with_images_DP7qHA",
     "section_grid_info_boxes_TjLxdW",
     "section_shop_by_image_tiles_4AV4zw",
-    "section_image_with_text_WKmTfN"
+    "section_image_with_text_WKmTfN",
+    "section_image_with_text_xmYXJd",
+    "section_image_with_text_cKTdT8"
   ]
 }
