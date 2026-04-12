@@ -145,7 +145,7 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 100
+        "padding_bottom_desktop": 80
       }
     },
     "section_image_with_text_WKmTfN": {
@@ -170,8 +170,8 @@
         "narrow_section": false,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
       }
     },
     "section_image_with_text_cKTdT8": {
@@ -196,8 +196,8 @@
         "narrow_section": false,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 40
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
       }
     },
     "section_image_with_text_xmYXJd": {
@@ -222,8 +222,8 @@
         "narrow_section": false,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 40,
-        "padding_bottom_desktop": 100
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 80
       }
     }
   },
