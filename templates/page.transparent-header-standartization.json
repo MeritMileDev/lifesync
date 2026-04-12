@@ -120,7 +120,7 @@
       "type": "section-video-banner-with-image",
       "custom_css": [
         "section h2,section p,section button {color: #0d0d63;}",
-        "section h2 {margin-bottom: 2rem;}"
+        "section h2 {margin-bottom: 2rem; max-width: 400px;}"
       ],
       "name": "Video Banner With Image",
       "settings": {
