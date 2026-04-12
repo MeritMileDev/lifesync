@@ -227,6 +227,7 @@
         "member_neLPyR": {
           "type": "member",
           "settings": {
+            "block_image": "shopify://shop_images/bob-buehler.webp",
             "name": "Bob Buehler",
             "job_title": "Chief Executive Officer",
             "description": "<p>Bob Buehler is the Chief Executive Officer. Bob previously held senior executive positions at two high-growth private equity-backed companies and was actively involved in a number of liquidity events.</p><p>For over twenty-five years, he held senior operating and international business roles at global healthcare companies including RespirTech/Philips Healthcare, 3M Healthcare, and Arizant Healthcare. Bob is also a board member of Somnetics, a private company specializing in treatments for sleep apnea.</p><p>At LifeSync, Bob drives the strategic direction of the company and works throughout the organization to support the company’s values and goal of making superior connections with patients.</p>"
@@ -235,48 +236,48 @@
         "member_KXnjqK": {
           "type": "member",
           "settings": {
-            "name": "",
-            "job_title": "",
+            "name": "Ian West, PhD",
+            "job_title": "VP of R&D, Quality, & Regulatory Affairs",
             "description": ""
           }
         },
         "member_zzFHgA": {
           "type": "member",
           "settings": {
-            "name": "",
-            "job_title": "",
+            "name": "Josh Stapleton",
+            "job_title": "VP of Operations",
             "description": ""
           }
         },
         "member_xfJnw8": {
           "type": "member",
           "settings": {
-            "name": "",
-            "job_title": "",
+            "name": "Bob Zinsmaster",
+            "job_title": "VP of Sales & Customer Service",
             "description": ""
           }
         },
         "member_T4nQia": {
           "type": "member",
           "settings": {
-            "name": "",
-            "job_title": "",
+            "name": "Pedro Tejeda",
+            "job_title": "VP of Marketing & Product Management",
             "description": ""
           }
         },
         "member_yGVkHK": {
           "type": "member",
           "settings": {
-            "name": "",
-            "job_title": "",
+            "name": "Yuliya Varabei",
+            "job_title": "Chief Financial Officer",
             "description": ""
           }
         },
         "member_cAFmpa": {
           "type": "member",
           "settings": {
-            "name": "",
-            "job_title": "",
+            "name": "Natalie Salmon",
+            "job_title": "Global Director of Human Resources",
             "description": ""
           }
         }
