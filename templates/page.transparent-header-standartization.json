@@ -116,6 +116,48 @@
         "padding_bottom_desktop": 100
       }
     },
+    "section_shop_by_jXVKgU": {
+      "type": "section-shop-by",
+      "blocks": {
+        "card_E98dJa": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/shop-by-cardiac.webp",
+            "card_link": "shopify://collections/ecg-leadwires-and-monitoring",
+            "heading": "",
+            "text_max-width": 300,
+            "title": "Cardiac Catheterization",
+            "text": "Optimize cath lab performance with unobstructed views and accurate cardiac imaging.",
+            "button_text": "Shop Cath Lab Leadwires"
+          }
+        },
+        "card_7TrLcC": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/shop-by-neuro.webp",
+            "card_image_desktop": "shopify://shop_images/shop-by-neuro.webp",
+            "card_link": "shopify://collections/all",
+            "heading": "",
+            "text_max-width": 300,
+            "title": "Electrophysiology",
+            "text": "Eliminate the need to replace or reposition ECG leads during fluoroscopy.",
+            "button_text": "Shop EP Lab Leadwires"
+          }
+        }
+      },
+      "block_order": [
+        "card_E98dJa",
+        "card_7TrLcC"
+      ],
+      "name": "Shop By",
+      "settings": {
+        "title": "Shop for Radiolucent Leadwire",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80
+      }
+    },
     "section_steps_text_CHd6xT": {
       "type": "section-steps-text",
       "blocks": {
@@ -219,6 +261,7 @@
     "section_hero_banner_wdiBDa",
     "section_simple_text_WLCcYq",
     "section_innovations_yLnXAa",
+    "section_shop_by_jXVKgU",
     "section_steps_text_CHd6xT",
     "section_text_image_bg_xYKytE"
   ]
