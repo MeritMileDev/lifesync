@@ -47,7 +47,7 @@
       <div class="section-text text-center mx-auto">{{- text -}}</div>
     {% endif %}
     <div class="hidden lg:block mt-14"></div>
-    <div class="lg:grid lg:grid-cols-3 gap-6 lg:gap-y-6 2xl:grid-cols-5 lg:-mx-10 px-10">
+    <div class="lg:grid lg:grid-cols-3 gap-6 lg:gap-y-6 2xl:grid-cols-5 lg:-mx-6 px-10 core-values">
       {% for block in section.blocks %}
         {% if block.type == 'grid_item' %}
           {% liquid
@@ -69,7 +69,7 @@
               }
             }
           </style>
-          <div class="pb-8 pt-8 lg:px-6 lg:pt-10 lg:flex lg:flex-col bg-police-accent rounded-xl">
+          <div class="pb-8 pt-8 lg:px-6 lg:pt-10 lg:flex lg:flex-col rounded-xl core-value">
             <div class="grid-item-title-{{block.id}} mx-auto mb-6 text-white text-center font-bold text-xl max-w-md px-10">
               {{- title -}}
             </div>
@@ -83,6 +83,9 @@
     </div>
   </div>
 </section>
+<style>
+  .core-values .core-value:nth-child(1) { background-color: black; }
+</style>
 
 {% schema %}
   {
