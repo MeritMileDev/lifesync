@@ -112,13 +112,14 @@
     "section_video_banner_with_image_eb4aWC": {
       "type": "section-video-banner-with-image",
       "custom_css": [
-        "section h2,section a,secton button {color: #0d0d63;}"
+        "section h2,section a,section button {color: #0d0d63;}"
       ],
       "name": "Video Banner With Image",
       "settings": {
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/standardizaton-video-bg.webp",
         "image_desktop": "shopify://shop_images/standardizaton-video-bg.webp",
+        "icon": "shopify://shop_images/icon-pulse-dark-blue.svg",
         "title": "How LifeSync Earns Your Trust",
         "image_featured": "shopify://shop_images/home-video-featured-image.webp",
         "title_tag": "h2",
