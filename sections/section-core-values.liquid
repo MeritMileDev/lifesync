@@ -76,7 +76,7 @@
             {% if block.settings.image_desktop != blank %}
               {% render 'picture', image_mobile: image, image_desktop: image %}
             {% endif %}
-            <div class="grid-item-text-{{block.id}} mx-auto mt-8 text-white text-center text-md lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
+            <div class="grid-item-text-{{block.id}} mx-auto mt-8 text-white text-center text-sm lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
           </div>
         {% endif %}
       {% endfor %}
