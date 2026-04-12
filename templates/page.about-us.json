@@ -9,22 +9,6 @@
  */
 {
   "sections": {
-    "goble_footprint_7ema6A": {
-      "type": "goble-footprint",
-      "custom_css": [
-        ".section-title {max-width: 300px; @media screen and (min-width: 768px) {max-width: 100%; }}"
-      ],
-      "settings": {
-        "title": "Connecting care for over 50 years.",
-        "subtitle": "Global Footprint",
-        "background_mobile": "shopify://shop_images/about-us-hero-mob-_2x_e794ca42-8802-4dca-ade5-7eea903f4c6e.jpg",
-        "background_desktop": "shopify://shop_images/about-us-hero-desk-_2x_44728614-722d-4b30-950e-9a2f3b5265ed.jpg",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
-      }
-    },
     "section_simple_text_zq3tF3": {
       "type": "section-simple-text",
       "custom_css": [],
@@ -44,8 +28,6 @@
         "button_link": "",
         "button_style": "button",
         "section_max_width": 0,
-        "section_background_image_mobile": "shopify://shop_images/our-mission-bg__mob.png",
-        "section_background_image_desktop": "shopify://shop_images/our-mission-background.jpg",
         "background_image_max_width_mobile": 0,
         "background_image_max_width_desktop": 0,
         "padding_top_mobile": 58,
@@ -326,7 +308,6 @@
     }
   },
   "order": [
-    "goble_footprint_7ema6A",
     "section_simple_text_zq3tF3",
     "section_what_we_do_wpCc4R",
     "section_text_video_blocks_GBrWQA",
