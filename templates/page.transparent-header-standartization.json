@@ -116,6 +116,21 @@
         "padding_bottom_desktop": 100
       }
     },
+    "section_video_banner_with_image_NQ6EMx": {
+      "type": "section-video-banner-with-image",
+      "name": "Video Banner With Image",
+      "settings": {
+        "horizontal_alignment": "left",
+        "title": "A Seamless Transition to Standardization ",
+        "title_tag": "h1",
+        "subtitle": "<p>Standardizing ECG leadwires across a health system requires coordination across clinical, biomedical, and supply chain teams. LifeSync guides this transition through a proven six-step process designed to minimize disruption and deliver measurable simplification.</p><p>From inventory assessment to implementation and support, our structured approach ensures a controlled, seamless conversion to ECG leadwire standardization.</p>",
+        "youtube_id": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_shop_by_jXVKgU": {
       "type": "section-shop-by",
       "blocks": {
@@ -245,7 +260,7 @@
       "name": "Text with Image Bg",
       "settings": {
         "section_subtitle": "",
-        "section_title": "Ready to Simplify ECG <br>Leadwire Management?",
+        "section_title": "Ready to Simplify ECG Leadwire Management?",
         "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
         "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
         "padding_top_mobile": 0,
@@ -261,6 +276,7 @@
     "section_hero_banner_wdiBDa",
     "section_simple_text_WLCcYq",
     "section_innovations_yLnXAa",
+    "section_video_banner_with_image_NQ6EMx",
     "section_shop_by_jXVKgU",
     "section_steps_text_CHd6xT",
     "section_text_image_bg_xYKytE"
