@@ -123,7 +123,7 @@
     {% assign popup_id = section_id | append: '_' | append: block.id %}
     {% capture popup_content %}
     <div class="max-w-[500px] mx-auto shadow-bottom">
-      <div class="bg-police-blue text-bright-gray lg:px-10 px-4 pt-4 relative rounded-t" style="border-radius: 24px 25px 0 0;">
+      <div class="bg-police-blue text-bright-gray lg:px-10 px-4 pt-4 relative rounded-t" style="border-radius: 24px 24px 0 0;">
         <div class="absolute right-4 top-4 sizes-4 text-bright-gray-50">
           <button @click.prevent="closePopup()">
             {% render 'icon', icon: 'close' %}
@@ -146,7 +146,7 @@
           </div>
         </div>
       </div>
-      <div class="rte bg-police-blue text-white lg:p-10 p-4 popup-description rounded-b">
+      <div class="rte bg-police-blue text-white lg:p-10 p-4 popup-description" style="border-radius: 0 0 24px 24px">
         {{ block.settings.description }}
       </div>
     </div>
