@@ -172,8 +172,8 @@
         "title": "Shop for Radiolucent Leadwire",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 80
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 100
       }
     },
     "section_steps_text_CHd6xT": {
