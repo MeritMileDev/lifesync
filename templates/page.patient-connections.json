@@ -59,11 +59,59 @@
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 100
       }
+    },
+    "section_grid_info_boxes_TjLxdW": {
+      "type": "section-grid-info-boxes",
+      "blocks": {
+        "grid_item_XpnaLe": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Superior Signal and Clinical Performance",
+            "description": "<p>Cardiac and neuro monitoring environments demand dependable signal integrity. LifeSync leadwires and connections are engineered for consistent transmission, reduced interference, and reliable performance across care settings. The result is clearer diagnostics, fewer disruptions, and stronger clinical confidence.</p>"
+          }
+        },
+        "grid_item_DJxxrn": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Quality Without Compromise",
+            "description": "<p>All LifeSync products are designed, tested, and manufactured within ISO-certified, vertically integrated operations focused exclusively on medical interconnects. In-house design, validation, and quality oversight ensure dependable performance and disciplined regulatory compliance.</p>"
+          }
+        },
+        "grid_item_mCjYV9": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Operational and Staff Simplicity",
+            "description": "<p>LifeSync streamlines the operational demands of patient monitoring connections across departments and care settings. Standardized configurations and vendor consolidation reduce SKU proliferation, simplify replenishment, and improve staff familiarity. Clinical and operational teams spend less time troubleshooting and more time delivering care.</p>"
+          }
+        },
+        "grid_item_8BNNNX": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Reliable Supply and Continuity",
+            "description": "<p>Vertically integrated manufacturing and production in our own LifeSync-operated facilities, supported by global capabilities, ensure consistent availability across high-volume patient monitoring environments. Health systems gain greater confidence in supply continuity and reduced exposure to external disruptions with consistent pricing and measurable cost savings.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_XpnaLe",
+        "grid_item_DJxxrn",
+        "grid_item_mCjYV9",
+        "grid_item_8BNNNX"
+      ],
+      "name": "Grid Info Boxes",
+      "settings": {
+        "title": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
     "main",
     "section_hero_banner_wRfDjk",
-    "section_intro_with_images_DP7qHA"
+    "section_intro_with_images_DP7qHA",
+    "section_grid_info_boxes_TjLxdW"
   ]
 }
