@@ -304,7 +304,7 @@
         "member_cAFmpa"
       ],
       "custom_css": [
-        "section .modal-content picture img {border-radius: 50%;}"
+        "section .modal-content picture img {border-radius: 50%; border: 2px solid #0B8ADC;}"
       ],
       "name": "Team",
       "settings": {
