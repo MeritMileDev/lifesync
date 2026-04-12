@@ -53,7 +53,7 @@
         "padding_top_mobile": 58,
         "padding_bottom_mobile": 85,
         "padding_top_desktop": 105,
-        "padding_bottom_desktop": 120
+        "padding_bottom_desktop": 60
       }
     },
     "section_image_with_text_NWTrqJ": {
@@ -79,7 +79,7 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 80
+        "padding_bottom_desktop": 20
       }
     },
     "section_simple_text_7NXWXH": {
