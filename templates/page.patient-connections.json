@@ -33,10 +33,37 @@
         "padding_top_desktop": 360,
         "padding_bottom_desktop": 40
       }
+    },
+    "section_intro_with_images_DP7qHA": {
+      "type": "section-intro-with-images",
+      "name": "Intro with Images",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "title": "<p><strong>Solely Focused</strong> on Patient <br/>Monitoring Connections</p>",
+        "subtitle": "",
+        "title_max_width": 0,
+        "description": "LifeSync Patient Connections helps healthcare organizations standardize cardiac and neuro patient monitoring connections across departments and care settings. Through sustainable single-patient-use design, leadwire standardization, and closed-loop ECG reprocessing, the experts at LifeSync deliver operational simplicity, safer care, and sustainability—enabled by a single, vertically integrated manufacturing partner focused exclusively on medical patient connections.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/patient-connections-intro.webp",
+        "image_position": "image_right",
+        "image_position_mobile": "bottom",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 100
+      }
     }
   },
   "order": [
     "main",
-    "section_hero_banner_wRfDjk"
+    "section_hero_banner_wRfDjk",
+    "section_intro_with_images_DP7qHA"
   ]
 }
