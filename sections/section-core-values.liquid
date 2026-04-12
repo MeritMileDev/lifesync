@@ -69,14 +69,14 @@
               }
             }
           </style>
-          <div class="border-t border-police-blue-20 pb-8 pt-8 last:border-b lg:border-r lg:border-t-0 lg:px-6 lg:last:border-r-0 lg:last:border-b-0 lg:pt-0 lg:flex lg:flex-col">
-            <div class="grid-item-title-{{block.id}} mx-auto mb-8 text-center text-2xl font-medium lg:text-32 lg:mb-12">
+          <div class="pb-8 pt-8 lg:px-6 lg:pt-0 lg:flex lg:flex-col">
+            <div class="grid-item-title-{{block.id}} mx-auto mb-8 text-white text-center text-2xl font-medium lg:text-32 lg:mb-12">
               {{- title -}}
             </div>
             {% if block.settings.image_desktop != blank %}
-            {% render 'picture', image_mobile: image, image_desktop: image %}
+              {% render 'picture', image_mobile: image, image_desktop: image %}
             {% endif %}
-            <div class="grid-item-text-{{block.id}} mx-auto mt-8 text-center lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
+            <div class="grid-item-text-{{block.id}} mx-auto mt-8 text-white text-center lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
           </div>
         {% endif %}
       {% endfor %}
