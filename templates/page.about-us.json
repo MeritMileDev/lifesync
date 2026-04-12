@@ -67,10 +67,10 @@
             "description": "Cardiac and neuro monitoring connections",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
-            "button_link": "",
+            "button_link": "shopify://pages/patient-connections",
             "open_in_new_tab": false,
-            "show_button": true,
-            "full_block_button_link": false
+            "show_button": false,
+            "full_block_button_link": true
           }
         },
         "column_EGY7Dj": {
@@ -81,10 +81,10 @@
             "description": "Custom SpO₂ and ECG medical interconnects at scale",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
-            "button_link": "",
+            "button_link": "shopify://pages/advanced-manufacturing",
             "open_in_new_tab": false,
-            "show_button": true,
-            "full_block_button_link": false
+            "show_button": false,
+            "full_block_button_link": true
           }
         },
         "column_AUB3wb": {
@@ -95,10 +95,10 @@
             "description": "FDA 510(k)-cleared reprocessed leadwires",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
-            "button_link": "",
+            "button_link": "shopify://pages/relife",
             "open_in_new_tab": false,
-            "show_button": true,
-            "full_block_button_link": false
+            "show_button": false,
+            "full_block_button_link": true
           }
         }
       },
