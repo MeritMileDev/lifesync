@@ -1,0 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "section_hero_banner_wRfDjk": {
+      "type": "section-hero-banner",
+      "name": "Hero Banner",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/patient-connections-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/patient-connections-hero-bg.webp",
+        "enable_overlay": true,
+        "banner_icon": "shopify://shop_images/lifesync-patient-connections-logo.webp",
+        "title": "<p><strong>Simplify and Standardized </strong><br/>Cardiac and Neuro Monitoring Connections</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>Superior quality, less clinical variation, and easier workflows across departments and care settings.</p>",
+        "subtitle_full_width": false,
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 400,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_banner_wRfDjk"
+  ]
+}
