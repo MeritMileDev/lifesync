@@ -304,7 +304,7 @@
         "member_cAFmpa"
       ],
       "custom_css": [
-        "section .modal-content picture img {border-radius: 50%; border: 2px solid #0B8ADC;}"
+        "section .modal-content picture img {border-radius: 50%; border: 2px solid #0b8adc;}"
       ],
       "name": "Team",
       "settings": {
@@ -318,6 +318,66 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 80
       }
+    },
+    "section_core_values_j6GTwC": {
+      "type": "section-core-values",
+      "blocks": {
+        "grid_item_gJV4iX": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Put Customers First",
+            "description": "<p>We know customers will choose us over our competitors if we give them what they need. We commit to being adaptable, resourceful, useful and versatile in the ways we serve them.</p>"
+          }
+        },
+        "grid_item_QpK9x4": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Collaborate With a Positive Attitude",
+            "description": "<p>We commit to work together cooperatively and positively to realize the company’s full potential. With a positive attitude, we look for the good in every situation, and we motivate others with our energy, enthusiasm, optimism and gratitude.</p>"
+          }
+        },
+        "grid_item_zRRFPt": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Naturally Find Solutions",
+            "description": "<p>The word “naturally” in this value statement refers to problem solving being part of the essence of our company-part of our DNA.  Finding solutions is integrated in everything we do.</p>"
+          }
+        },
+        "grid_item_hJU3Qn": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Be Consistently Reliable",
+            "description": "<p>This means doing what we say we will do all the time, internally and externally. By saying “consistently reliable” we aspire to be steadfast and unfailing in this effort.</p>"
+          }
+        },
+        "grid_item_QkzU6w": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Resolutely Do The Right Things",
+            "description": "<p>The word “resolutely” means we are stubborn, tenacious, and persistent about doing the right thing. Doing the right thing pushes us towards the greater good and protects the company.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_gJV4iX",
+        "grid_item_QpK9x4",
+        "grid_item_zRRFPt",
+        "grid_item_hJU3Qn",
+        "grid_item_QkzU6w"
+      ],
+      "name": "Core Values",
+      "settings": {
+        "title": "Our Core Values",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "<p>At LifeSync, our values guide everything we do—from how we innovate to how we partner with our customers. We believe in building meaningful connections, not just through our products but also through our commitment to excellence, integrity, and collaboration.</p>",
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 650,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
@@ -328,6 +388,7 @@
     "section_simple_text_7NXWXH",
     "section_video_banner_with_image_eb4aWC",
     "section_text_image_bg_wgzGTq",
-    "section_team_74kAL4"
+    "section_team_74kAL4",
+    "section_core_values_j6GTwC"
   ]
 }
