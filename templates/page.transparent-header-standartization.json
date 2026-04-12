@@ -177,7 +177,7 @@
       ],
       "name": "Steps with text",
       "settings": {
-        "enable_bg": true,
+        "enable_bg": false,
         "enable_bg_desktop": false,
         "is_static_steps": false,
         "section_subtitle": "",
