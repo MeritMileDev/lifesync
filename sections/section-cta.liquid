@@ -34,13 +34,13 @@
         <div class="w-full grid lg:grid-cols-12 grid-cols-1 lg:gap-6 gap-4">
           <div class="2xl:col-span-4 lg:col-span-8 col-span-2 2xl:col-start-5 lg:col-start-3 text-center">
             {% if section.settings.section_subtitle != blank %}
-            <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide mb-2.5 mx-auto">
+            <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide mb-2.5">
               {{ section.settings.section_subtitle }}
             </p>
             {% endif %}
             {% if section.settings.section_title != blank %}
             <h2
-              class="section-title text-white 3xl:text-48 lg:text-42 text-32 font-medium mb-3.25 mx-auto xl:leading-14 leading-10">
+              class="section-title text-police-blue 3xl:text-48 lg:text-42 text-32 font-medium mb-2 xl:leading-14 leading-10">
               {{ section.settings.section_title }}
             </h2>
             {% endif %}
@@ -58,7 +58,7 @@
             </div>
             {% endif %}
             {% if cta_text != blank and cta_url != blank %}
-              <a class="mx-auto relative z-10 flex items-center justify-center gap-2 px-10 py-4 bg-bright-gray text-center text-sm font-bold text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max lg:mt-10 rounded-xl" href="{{cta_url}}">{{ cta_text }}</a>
+              <a class="mx-auto relative z-10 flex items-center justify-center gap-2 px-10 py-4 bg-police-accent text-center text-sm font-bold text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max rounded-xl" href="{{cta_url}}">{{ cta_text }}</a>
             {% endif %}
           </div>
         </div>
