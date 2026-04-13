@@ -212,7 +212,7 @@
           "type": "step",
           "settings": {
             "step_title": "Site survey",
-            "step_content": "<p>90 day before the transition date, our team conducts an onsite survey, inventorying equipment and connection needs, meeting with stakeholders.</p>",
+            "step_content": "<p>90 days before the transition date, our team conducts an onsite survey, meets with stakeholders, and inventories monitor devices and connection needs.</p>",
             "content_max-width_desktop": 500
           }
         },
