@@ -5,7 +5,6 @@
   assign padding_bottom_mobile = section.settings.padding_bottom_mobile
   assign padding_top_desktop = section.settings.padding_top_desktop
   assign padding_bottom_desktop = section.settings.padding_bottom_desktop
-  assign image_position_mobile = section.settings.image_position_mobile
 %}
 
 {% render 'offset',
@@ -76,16 +75,6 @@
             </h2>
             {% if section.settings.subtitle != blank %}
               <h3 class="lg:text-2xl text-xl text-police-accent lg:mb-6 mb-3 lg:max-w-sm" style="font-weight: bold;">{{ section.settings.subtitle }}</h3>
-            {% endif %}
-            {% if image_position_mobile == 'bottom' %}
-              <div class="lg:hidden block">
-                {% render 'picture',
-                  image_mobile: section.settings.image,
-                  image_desktop: section.settings.image,
-                  is_full_size: false,
-                  class: 'w-full'
-                %}
-              </div>
             {% endif %}
             <p class="block-description text-lg max-w-xl lg:mb-8 mb-7 lg:mt-0 mt-7.5">{{ section.settings.description }}</p>
             {% if section.settings.button_link != blank and section.settings.button_label != blank %}
@@ -193,22 +182,6 @@
           }
         ],
         "default": "image_left"
-      },
-      {
-        "type": "select",
-        "id": "image_position_mobile",
-        "label": "Image position mobile",
-        "options": [
-          {
-            "value": "top",
-            "label": "Top"
-          },
-          {
-            "value": "bottom",
-            "label": "Bottom"
-          }
-        ],
-        "default": "bottom"
       },
       {
         "type": "checkbox",
