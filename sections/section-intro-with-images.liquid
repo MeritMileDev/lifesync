@@ -37,7 +37,7 @@
 
 <section id="section-{{ section_id }}">
   <div class="container">
-    <div class="grid items-center {% if section.settings.narrow_section == true %}lg:grid-cols-12 {% else %}grid-cols-12 {% endif %} gap-6">
+    <div class="grid items-center lg:grid-cols-12 gap-6">
         <div class="col-span-6 {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} p-4">
             <div class="">
                 {% render 'picture',
