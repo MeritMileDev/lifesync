@@ -23,6 +23,14 @@
   endcase 
 %}
 
+<style>
+  {% if section.settings.title_max_width > 0 %}
+    #section-{{ section_id }} .block-title {
+      max-width: {{ section.settings.title_max_width }}px;
+    }
+  {% endif %}
+</style>
+
 {% if image_desktop and image_mobile %}
   <section id="section-{{ section_id }}">
     <div class="lg:container rounded-xl">
@@ -50,7 +58,7 @@
                       class: 'lg:mb-2 mb-4 md:mx-0 mx-auto'
                     %}
                   {% endif %} 
-                  <{{ title_tag }} class="text-30 font-medium tracking-tight xl:text-48 md:mx-0 mx-auto md:text-left text-center">{{ title }}</{{ title_tag }}>
+                  <{{ title_tag }} class="block-title text-30 font-medium tracking-tight xl:text-48 md:mx-0 mx-auto md:text-left text-center">{{ title }}</{{ title_tag }}>
                   <div class="lg:mb-6 mb-3 md:mx-0 mx-auto max-w-56 md:max-w-max md:text-left text-center">{{ subtitle }}</div>
                   
                   {% if section.settings.youtube_id != blank %}
@@ -136,6 +144,12 @@
         "type": "text",
         "id": "title",
         "label": "Title"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width",
+        "label": "Block Title Max Width",
+        "default": 0
       },
       {
         "type": "image_picker",
