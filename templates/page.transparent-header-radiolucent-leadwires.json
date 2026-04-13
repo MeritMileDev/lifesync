@@ -285,7 +285,7 @@
         "subtitle": "",
         "title": "",
         "title_max_width": 0,
-        "description": "\"Through LifeSync Advanced Manufacturing (LSAM), we partner with OEMs to design and scale radiolucent interconnect solutions for demanding clinical and imaging needs. From concept through high-volume production, our process ensures consistent quality, performance, and supply reliability—helping accelerate time to market while reducing complexity and risk.\"",
+        "description": "Through LifeSync Advanced Manufacturing (LSAM), we partner with OEMs to design and scale radiolucent interconnect solutions for demanding clinical and imaging needs. From concept through high-volume production, our process ensures consistent quality, performance, and supply reliability—helping accelerate time to market while reducing complexity and risk.",
         "description_max_width": 0,
         "description_max_width_desktop": 0,
         "button_label": "",
@@ -316,7 +316,7 @@
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 60,
-        "cta_text": "Talk to a LifeSync Exert",
+        "cta_text": "Talk to a LifeSync Expert",
         "cta_url": "shopify://pages/contact"
       }
     }
