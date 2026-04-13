@@ -14,15 +14,15 @@
       "disabled": true,
       "settings": {}
     },
-    "section_hero_banner_with_icon_jUh6Px": {
-      "type": "section-hero-banner--with-icon",
+    "section_hero_banner_with_icon_g7e68G": {
+      "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
         "image_mobile": "shopify://shop_images/patient-connections-hero-bg.webp",
         "image_desktop": "shopify://shop_images/patient-connections-hero-bg.webp",
         "horizontal_alignment": "left",
         "banner_icon": "shopify://shop_images/lifesync-patient-connections-logo.webp",
-        "title": "<p><strong>Simplify and Standardized </strong><br/>Cardiac and Neuro Monitoring Connections</p>",
+        "title": "<p><strong>Simplify and Standardized</strong> <br/>Cardiac and Neuro Monitoring Connections</p>",
         "title_tag": "h1",
         "subtitle": "<p>Superior quality, less clinical variation, and easier workflows across departments and care settings.</p>",
         "button_label": "",
@@ -243,7 +243,7 @@
   },
   "order": [
     "main",
-    "section_hero_banner_with_icon_jUh6Px",
+    "section_hero_banner_with_icon_g7e68G",
     "section_intro_with_images_DP7qHA",
     "section_grid_info_boxes_TjLxdW",
     "section_shop_by_image_tiles_4AV4zw",
