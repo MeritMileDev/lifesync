@@ -5,7 +5,7 @@
   assign padding_bottom_mobile = section.settings.padding_bottom_mobile
   assign padding_top_desktop = section.settings.padding_top_desktop
   assign padding_bottom_desktop = section.settings.padding_bottom_desktop
-  assign image_position_mobile = section.settings.image_position_mobile
+  assign card_position_mobile = section.settings.card_position_mobile
 %}
 
 {% render 'offset',
@@ -22,8 +22,8 @@
       <div class="bg-police-blue p-4 lg:mx-0 -mx-4">
     {% endif %}
     <div class="grid lg:grid-cols-12 gap-6">
-      <div class="lg:col-span-6 self-end {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
-        <div class="{% if image_position_mobile == 'bottom' %}lg:block hidden{% else %}mb-6 lg:mb-0{% endif %}">
+      <div class="lg:col-span-6 self-end {% if section.settings.card_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
+        <div class="{% if card_position_mobile == 'bottom' %}lg:block hidden{% else %}mb-6 lg:mb-0{% endif %}">
           <div class="bg-bright-gray-20 px-10 py-10 rounded-3xl">
             <h3 class="text-3xl font-bold mb-6">Choose the problem you want to solve today.</h3>
             <div class="grid grid-cols-2 gap-6">
@@ -61,7 +61,7 @@
           </div>
         </div>
         </div>
-        <div class="lg:col-span-6 section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-20 xl:pr-0 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
+        <div class="lg:col-span-6 section-subtitle {% if section.settings.card_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-20 xl:pr-0 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
           <div class="">            
             <h2 class="2xl:text-64 lg:text-32 text-24 {% if section.settings.enable_bg %} text-white/50 {% else %} text-police-blue{% endif %} font-medium tracking-wide lg:mb-6 mb-3">
               {{ section.settings.title }}
@@ -69,7 +69,7 @@
             {% if section.settings.subtitle != blank %}
               <h3 class="lg:text-2xl text-xl text-police-accent lg:mb-6 mb-3 lg:max-w-sm" style="font-weight: bold;">{{ section.settings.subtitle }}</h3>
             {% endif %}
-            {% if image_position_mobile == 'bottom' %}
+            {% if card_position_mobile == 'bottom' %}
               <div class="lg:hidden block">
                 {% render 'picture',
                   image_mobile: section.settings.image,
