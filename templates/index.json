@@ -65,7 +65,7 @@
         "card_two_button_link": "shopify://pages/advanced-manufacturing",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 100,
+        "padding_top_desktop": 20,
         "padding_bottom_desktop": 0
       }
     },
