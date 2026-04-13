@@ -38,7 +38,7 @@
 <section id="section-{{ section_id }}">
   <div class="container">
     <div class="grid items-center lg:grid-cols-12 gap-6">
-        <div class="col-span-6 {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} p-4">
+        <div class="col-span-6 {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} p-4">
             <div class="">
                 {% render 'picture',
                     image_mobile: section.settings.image,
@@ -48,9 +48,9 @@
                 %}
             </div>
         </div>
-        <div class="col-span-6 section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left {% if section.settings.enable_bg %}  text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %} p-4">
+        <div class="col-span-6 section-subtitle {% if section.settings.image_position == 'image_right' %} order-1{% else %} order-2{% endif %} text-left  p-4">
           <div class="">            
-            <h2 class="2xl:text-64 lg:text-32 text-24 {% if section.settings.enable_bg %} text-white/50 {% else %} text-police-blue{% endif %} font-medium tracking-wide lg:mb-6 mb-3">
+            <h2 class="2xl:text-64 text-32 font-medium tracking-wide lg:mb-6 mb-3">
               {{ section.settings.title }}
             </h2>
             {% if section.settings.subtitle != blank %}
