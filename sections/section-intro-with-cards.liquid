@@ -23,7 +23,7 @@
     {% endif %}
     <div class="grid lg:grid-cols-12 gap-6">
       <div class="lg:col-span-6 self-end {% if section.settings.card_position == 'card_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
-        <div class="{% if card_position_mobile == 'bottom' %}lg:block hidden{% else %}mb-6 lg:mb-0{% endif %}">
+        <div class="mb-6 lg:mb-0">
           <div class="bg-bright-gray-20 px-10 py-10 rounded-3xl">
             <h3 class="text-3xl font-bold mb-6">Choose the problem you want to solve today.</h3>
             <div class="grid grid-cols-2 gap-6">
@@ -155,22 +155,6 @@
           }
         ],
         "default": "card_right"
-      },
-      {
-        "type": "select",
-        "id": "card_position_mobile",
-        "label": "Card position mobile",
-        "options": [
-          {
-            "value": "top",
-            "label": "Top"
-          },
-          {
-            "value": "bottom",
-            "label": "Bottom"
-          }
-        ],
-        "default": "bottom"
       },
       {
         "type": "image_picker",
