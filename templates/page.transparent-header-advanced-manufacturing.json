@@ -408,7 +408,7 @@
           "type": "step",
           "settings": {
             "step_title": "Requirements",
-            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Automation evaluation</li><li>Stakeholder alignment</li></ul>"
           }
         },
         "step_Y8x9Re": {
