@@ -62,13 +62,13 @@
               <div class="swiper-slide slide group px-3">
                 {% if slide_link != blank %}
                   <a
-                    class="group/image relative flex w-full {% if no_paddings_desktop == false %} border border-police-blue-20 {% else %} border border-police-blue-20 {% endif %} rounded-xl"
+                    class="group/image relative flex w-full {% if no_paddings_desktop == false %} border border-police-blue-20 {% else %} border border-police-blue-20 {% endif %} rounded-3xl"
                     href="{{ slide_link }}"
                   >
                     <div class="w-full overflow-hidden xl:aspect-auto {% if no_paddings_desktop == true %} {% else %} xl:p-6 {% endif %}">
                       {% render 'picture',
                         image_mobile: slide_image,
-                        class: 'w-full object-cover aspect-[230/182]  xl:aspect-[303/240] group-hover/image:scale-110 duration-500 rounded-xl'
+                        class: 'w-full object-cover aspect-[230/182]  xl:aspect-[303/240] group-hover/image:scale-110 duration-500 rounded-3xl'
                       %}
                     </div>
                     {% unless no_paddings_desktop == true %}
@@ -79,12 +79,12 @@
                   </a>
                 {% else %}
                   <div
-                    class="group/image relative flex w-full {% if no_paddings_desktop == false %} border border-police-blue-20 xl:group-last:border-r-transparent xl:border-b-0 xl:border-l-0 xl:border-r xl:border-t-0 {% else %} border border-police-blue-20 {% endif %} rounded-xl"
+                    class="group/image relative flex w-full {% if no_paddings_desktop == false %} border border-police-blue-20 xl:group-last:border-r-transparent xl:border-b-0 xl:border-l-0 xl:border-r xl:border-t-0 {% else %} border border-police-blue-20 {% endif %} rounded-3xl"
                   >
                     <div class="w-full overflow-hidden xl:aspect-auto {% if no_paddings_desktop == true %} {% else %} xl:p-6 {% endif %}">
                       {% render 'picture',
                         image_mobile: slide_image,
-                        class: 'w-full object-cover aspect-[230/182] xl:aspect-[303/240] rounded-xl'
+                        class: 'w-full object-cover aspect-[230/182] xl:aspect-[303/240] rounded-3xl'
                       %}
                     </div>
                     {% unless no_paddings_desktop == true %}

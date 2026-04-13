@@ -32,7 +32,7 @@
 
 {% if image_desktop and image_mobile %}
   <section id="section-{{ section_id }}">
-    <div class="relative mx-auto max-w-480 rounded-xl mt-4 mr-4 ml-4">
+    <div class="relative mx-auto max-w-480 rounded-3xl mt-4 mr-4 ml-4">
       <div class="image-wrapper">
         <div
           style="background: none;"
@@ -43,7 +43,7 @@
             image_mobile: image_mobile,
             image_desktop: image_desktop,
             is_full_size: true,
-            class: 'banner-image object-cover rounded-xl'
+            class: 'banner-image object-cover rounded-3xl'
           %}
           {% if enable_overlay %}
             <div

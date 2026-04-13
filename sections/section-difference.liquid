@@ -90,7 +90,7 @@
       </div>
     </div>
   </div>
-  <div class="mt-15 hidden xl:block px-10 rounded-xl">
+  <div class="mt-15 hidden xl:block px-10 rounded-3xl">
     <div
       class="mx-480 relative mx-auto w-full"
       @mouseenter="setState($event)"
@@ -140,7 +140,7 @@
         image_mobile: image_before,
         image_desktop: image_before,
         is_full_size: true,
-        class: 'w-full h-full object-cover rounded-xl'
+        class: 'w-full h-full object-cover rounded-3xl'
       %}
       <div
         :style="
@@ -157,7 +157,7 @@
           image_mobile: image_after,
           image_desktop: image_after,
           is_full_size: true,
-          class: 'w-full h-full object-cover rounded-xl'
+          class: 'w-full h-full object-cover rounded-3xl'
         %}
       </div>
       <div
@@ -217,7 +217,7 @@
                 </div>
                 {% if button_link_after != blank %}
                   <a
-                    class="mx-auto mt-6 flex max-w-max items-center justify-center gap-2 bg-police-accent px-10 py-4 text-center text-sm font-bold text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 rounded-xl"
+                    class="mx-auto mt-6 flex max-w-max items-center justify-center gap-2 bg-police-accent px-10 py-4 text-center text-sm font-bold text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 rounded-3xl"
                     href="{{ button_link_after }}"
                   >
                     {{- button_label_after -}}
