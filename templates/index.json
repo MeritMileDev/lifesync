@@ -9,24 +9,6 @@
  */
 {
   "sections": {
-    "section_hero_banner_with_icon_wKzLyV": {
-      "type": "section-hero-banner--with-icon",
-      "name": "Hero Banner with Icon",
-      "settings": {
-        "image_mobile": "shopify://shop_images/home-hero-bg.webp",
-        "image_desktop": "shopify://shop_images/home-hero-bg.webp",
-        "horizontal_alignment": "left",
-        "title": "<p><strong>Standardized Patient <br/>Monitoring</strong>, Made Simple</p>",
-        "title_tag": "h1",
-        "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
-        "button_label": "",
-        "button_link": "",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
-      }
-    },
     "page_main_banner_Kd4DAV": {
       "type": "page-main-banner",
       "disabled": true,
@@ -36,6 +18,24 @@
         "subtitle": "ECG, SpO₂, neuro, and custom medical interconnects at scale.",
         "bg_mobile": "shopify://shop_images/home-hero-bg.webp",
         "bg_desktop": "shopify://shop_images/home-hero-bg.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_hero_banner_with_icon_eN4EP7": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "image_mobile": "shopify://shop_images/home-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/home-hero-bg.webp",
+        "horizontal_alignment": "left",
+        "title": "<p><strong>Standardized Patient Monitoring</strong>, <br/>Made Simple</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
+        "button_label": "",
+        "button_link": "",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
@@ -280,8 +280,8 @@
     }
   },
   "order": [
-    "section_hero_banner_with_icon_wKzLyV",
     "page_main_banner_Kd4DAV",
+    "section_hero_banner_with_icon_eN4EP7",
     "section_intro_with_cards_VizgQG",
     "section_video_banner_with_image_P7WAn3",
     "section_multicolumn_rQ4XbU",
