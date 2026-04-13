@@ -13,24 +13,22 @@
       "type": "main-page",
       "settings": {}
     },
-    "section_hero_banner_LY3Ukw": {
-      "type": "section-hero-banner",
-      "name": "Hero Banner",
+    "section_hero_banner_with_icon_9MUUTL": {
+      "type": "section-hero-banner--with-icon",
+      "name": "Hero Banner with Icon",
       "settings": {
-        "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/innovations-hero-bg.webp",
         "image_desktop": "shopify://shop_images/innovations-hero-bg.webp",
-        "enable_overlay": false,
+        "horizontal_alignment": "left",
         "title": "<p><strong>Innovation That Strengthens</strong> <br/>Every Connection</p>",
         "title_tag": "h1",
         "subtitle": "<p>Moving patient monitoring forward</p>",
-        "subtitle_full_width": false,
         "button_label": "",
         "button_link": "",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 400,
-        "padding_bottom_desktop": 40
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "section_simple_text_7betLy": {
@@ -164,7 +162,7 @@
   },
   "order": [
     "main",
-    "section_hero_banner_LY3Ukw",
+    "section_hero_banner_with_icon_9MUUTL",
     "section_simple_text_7betLy",
     "section_innovations_6VQnUc",
     "section_intro_quads_pa7VLa",
