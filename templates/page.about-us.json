@@ -9,9 +9,9 @@
  */
 {
   "sections": {
-    "section_hero_banner_bTAAFL": {
-      "type": "section-hero-banner",
-      "name": "Hero Banner",
+    "section_hero_with_icon_caption_rjxbNa": {
+      "type": "section-hero-with-icon-caption",
+      "name": "Hero Banner with Caption",
       "settings": {
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/about-hero-bg.webp",
@@ -25,8 +25,8 @@
         "button_link": "",
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "padding_top_desktop": 500,
-        "padding_bottom_desktop": 40
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "section_simple_text_zq3tF3": {
@@ -400,7 +400,7 @@
     }
   },
   "order": [
-    "section_hero_banner_bTAAFL",
+    "section_hero_with_icon_caption_rjxbNa",
     "section_simple_text_zq3tF3",
     "section_multicolumn_4tweFV",
     "section_image_with_text_NWTrqJ",
