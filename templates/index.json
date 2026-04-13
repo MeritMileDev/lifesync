@@ -9,24 +9,22 @@
  */
 {
   "sections": {
-    "section_hero_banner_MWDHA8": {
-      "type": "section-hero-banner",
+    "section_hero_banner_with_icon_wKzLyV": {
+      "type": "section-hero-banner--with-icon",
+      "name": "Hero Banner with Icon",
       "settings": {
-        "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/home-hero-bg.webp",
         "image_desktop": "shopify://shop_images/home-hero-bg.webp",
-        "enable_overlay": true,
-        "title": "<p>S<strong>tandardized Patient Monitoring,</strong> Made Simple</p>",
+        "horizontal_alignment": "left",
+        "title": "<p><strong>Standardized Patient <br/>Monitoring</strong>, Made Simple</p>",
         "title_tag": "h1",
-        "title_max_width_desktop": 800,
         "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
-        "subtitle_full_width": false,
-        "button_label": "Discover LifeSync Patient Connections",
+        "button_label": "",
         "button_link": "",
-        "padding_top_mobile": 200,
-        "padding_bottom_mobile": 64,
-        "padding_top_desktop": 660,
-        "padding_bottom_desktop": 40
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "page_main_banner_Kd4DAV": {
@@ -282,7 +280,7 @@
     }
   },
   "order": [
-    "section_hero_banner_MWDHA8",
+    "section_hero_banner_with_icon_wKzLyV",
     "page_main_banner_Kd4DAV",
     "section_intro_with_cards_VizgQG",
     "section_video_banner_with_image_P7WAn3",
