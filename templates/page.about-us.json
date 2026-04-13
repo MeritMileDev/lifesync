@@ -16,7 +16,7 @@
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/about-hero-bg.webp",
         "image_desktop": "shopify://shop_images/about-hero-bg.webp",
-        "enable_overlay": true,
+        "enable_overlay": false,
         "title": "<p><strong>LifeSync</strong>, an Amphenol Company</p>",
         "title_tag": "h1",
         "subtitle": "<p>Global leader in patient monitoring connections.</p>",
