@@ -220,7 +220,7 @@
           "type": "step",
           "settings": {
             "step_title": "Inventory & parameter agreement",
-            "step_content": "<p>Our team discusses equipment changes and upgrades with each affected department, and then set priorities.</p>",
+            "step_content": "<p>Our team discusses equipment changes and upgrades with each affected department.</p>",
             "content_max-width_desktop": 390
           }
         },
@@ -228,23 +228,23 @@
           "type": "step",
           "settings": {
             "step_title": "Leadwire Fulfillment",
-            "step_content": "<p>LifeSync expertly manufactures the standardized solutions the teams have agreed on.</p>",
+            "step_content": "<p>LifeSync manufactures and tests the exact leadwires required for your deployment.</p>",
             "content_max-width_desktop": 370
           }
         },
         "step_cMHNy6": {
           "type": "step",
           "settings": {
-            "step_title": "Training and Readiness",
-            "step_content": "<p>Ten days before the transition date, our team walks through the transition to new equipment with the affected departments.</p>",
+            "step_title": "Training and conversion",
+            "step_content": "<p>Ten days before the transition date, our team trains clinical staff through the transition to the new leadwires and equipment use.<br/><br/></p>",
             "content_max-width_desktop": 415
           }
         },
         "step_gDtpUt": {
           "type": "step",
           "settings": {
-            "step_title": "Go live",
-            "step_content": "<p>We swap inventory, replacing old equipment with new equipment, ensuring all connections are operational.</p>",
+            "step_title": "Go-live implementation",
+            "step_content": "<p>New leadwire inventories are stocked and configurations validated before replacing old configurations.</p>",
             "content_max-width_desktop": 440
           }
         },
@@ -252,7 +252,7 @@
           "type": "step",
           "settings": {
             "step_title": "Ongoing standardization protocols",
-            "step_content": "<p>Our team updates the protocol to keep it current.</p>"
+            "step_content": "<p>Our team updates the hospital’s device and leadwire requirements and ensures changing inventory or equipment needs are met.</p>"
           }
         }
       },
