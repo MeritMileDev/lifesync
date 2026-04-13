@@ -107,7 +107,7 @@
       "name": "Grid Info Boxes",
       "settings": {
         "title": "<p>The Manufacturing Leader in SpO2, ECG, and Custom Medical Interconnects</p>",
-        "title_max_width": 600,
+        "title_max_width": 900,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 80,
         "padding_top_desktop": 0,
