@@ -13,6 +13,8 @@
       "type": "section-hero-banner--with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
+        "image_mobile": "shopify://shop_images/about-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/about-hero-bg.webp",
         "horizontal_alignment": "left",
         "title": "<p><strong>LifeSync</strong>, an Amphenol Company</p>",
         "title_tag": "h1",
