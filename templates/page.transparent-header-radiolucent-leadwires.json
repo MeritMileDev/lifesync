@@ -9,25 +9,22 @@
  */
 {
   "sections": {
-    "section_hero_banner_YCkLmt": {
-      "type": "section-hero-banner",
+    "section_hero_banner_with_icon_Gd3bqy": {
+      "type": "section-hero-banner--with-icon",
+      "name": "Hero Banner with Icon",
       "settings": {
-        "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/radiolucency-hero-bg.webp",
         "image_desktop": "shopify://shop_images/radiolucency-hero-bg.webp",
-        "enable_overlay": true,
+        "horizontal_alignment": "left",
         "title": "<p><strong>Radiolucent ECG Leadwires</strong> <br/>for Clearer Imaging</p>",
         "title_tag": "h1",
-        "title_max_width_mobile": 200,
-        "title_max_width_desktop": 800,
         "subtitle": "<p>Unobstructed views during fluoroscopy with continuous patient monitoring.</p>",
-        "subtitle_full_width": false,
         "button_label": "",
         "button_link": "",
-        "padding_top_mobile": 440,
-        "padding_bottom_mobile": 56,
-        "padding_top_desktop": 450,
-        "padding_bottom_desktop": 75
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "section_difference_JP34TL": {
@@ -325,7 +322,7 @@
     }
   },
   "order": [
-    "section_hero_banner_YCkLmt",
+    "section_hero_banner_with_icon_Gd3bqy",
     "section_difference_JP34TL",
     "section_simple_text_VF6N6F",
     "comprehensive_options_E9U3J9",
