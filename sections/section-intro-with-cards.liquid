@@ -16,45 +16,8 @@
   padding_bottom_desktop: padding_bottom_desktop
 %}
 
-<style>
-  {% if section.settings.title_max_width > 0 %}
-    #section-{{ section_id }} .block-title {
-      max-width: {{ section.settings.title_max_width }}px;
-    }
-  {% endif %}
-  {% if section.settings.description_max_width > 0 %}
-    #section-{{ section_id }} .block-description {
-      max-width: {{ section.settings.description_max_width }}px;
-    }
-  {% endif %}
-  {% if section.settings.description_max_width_desktop > 0 %}
-      @media screen and (min-width: 768px) {
-        #section-{{ section_id }} .block-description {
-          max-width: {{ section.settings.description_max_width_desktop }}px;
-        }
-      }
-    {% endif %}
-</style>
-
 <section id="section-{{ section_id }}">
   <div class="container">
-    <div class="text-center">
-      {% if section.settings.section_subtitle != blank %}
-        <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide lg:mb-8 mb-6">
-          {{ section.settings.section_subtitle }}
-        </p>
-      {% endif %}
-      {% if section.settings.section_title != blank %}
-        <h2 class="lg:text-5xl text-32 font-medium mb-16 max-w-2xl mx-auto lg:leading-14 leading-10 lg:px-0 px-7.5">
-          {{ section.settings.section_title }}
-        </h2>
-      {% endif %}
-      {% if section.settings.section_description != blank %}
-        <p class="max-w-xl mx-auto">
-          {{ section.settings.section_description }}
-        </p>
-      {% endif %}
-    </div>
     {% if section.settings.enable_bg %}
       <div class="bg-police-blue p-4 lg:mx-0 -mx-4">
     {% endif %}
@@ -144,21 +107,6 @@
   {
     "name": "Intro with Cards",
     "settings": [
-      {
-        "type": "text",
-        "id": "section_subtitle",
-        "label": "Section Subtitle"
-      },
-      {
-        "type": "text",
-        "id": "section_title",
-        "label": "Section Title"
-      },
-      {
-        "type": "textarea",
-        "id": "section_description",
-        "label": "Section Description"
-      },
       {
         "type": "richtext",
         "id": "title",
