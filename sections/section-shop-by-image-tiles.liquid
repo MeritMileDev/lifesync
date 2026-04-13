@@ -63,7 +63,7 @@
             {% endif %}
             <div class="flex lg:flex-row flex-col justify-between text-left px-5 py-5 {% if light_background %} bg-police-accent {% else %} bg-police-blue {% endif %} rounded-b-xl">
               {% if text != blank %}
-                <div class="card-text-{{ block.id }} text-white max-w-md text-sm lg:text-left text-center lg:mb-0 mb-4 mx-auto">{{ text }}</div>
+                <div class="card-text-{{ block.id }} text-white max-w-md text-sm lg:text-left text-center lg:mb-0 mb-4 lg:mx-0 mx-auto">{{ text }}</div>
               {% endif %}
               {% if button_text != blank and card_link != blank %}
                 <a
