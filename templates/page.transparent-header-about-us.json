@@ -1,0 +1,413 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_banner_with_icon_Engxbd": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "image_mobile": "shopify://shop_images/about-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/about-hero-bg.webp",
+        "horizontal_alignment": "left",
+        "title": "<p><strong>LifeSync</strong>, an Amphenol Company</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>Global leader in patient monitoring connections.</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_simple_text_zq3tF3": {
+      "type": "section-simple-text",
+      "custom_css": [],
+      "settings": {
+        "subtitle": "",
+        "title": "Focused on What Connects Patients to Care",
+        "is_h1_tag": true,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 600,
+        "text": "<p>LifeSync, an Amphenol company, is a global, vertically integrated manufacturer focused exclusively on patient monitoring connections. LifeSync serves healthcare organizations and medical device OEMs by designing and manufacturing ECG, SpO₂, neuro and custom medical interconnects designed to support standardization, operational simplicity, and reliable performance at scale. </p><p>Through disciplined engineering, advanced automation, ISO-certified manufacturing, and FDA 510(k)-cleared ECG reprocessing, LifeSync delivers consistent quality, dependable availability, and more sustainable lifecycle management across clinical and OEM environments.<br/><br/></p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 290,
+        "text_max_width_desktop": 600,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 85,
+        "padding_top_desktop": 105,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_multicolumn_4tweFV": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_wkL7gh": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/lifesync-patient-connections-logo-positive.webp",
+            "title": "",
+            "description": "Cardiac and neuro monitoring connections",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/patient-connections",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        },
+        "column_EGY7Dj": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/lifesync-advanced-manufcturing-logo.webp",
+            "title": "",
+            "description": "Custom SpO₂ and ECG medical interconnects at scale",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/advanced-manufacturing",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        },
+        "column_AUB3wb": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/lifesync-relife-logo.webp",
+            "title": "",
+            "description": "FDA 510(k)-cleared reprocessed leadwires",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/relife",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": true
+          }
+        }
+      },
+      "block_order": [
+        "column_wkL7gh",
+        "column_EGY7Dj",
+        "column_AUB3wb"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "",
+        "section_title": "",
+        "section_title_max_width": 0,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "3",
+        "enable_slider": false,
+        "style": "background",
+        "enable_bottom_border": false,
+        "column_title_size": "medium",
+        "column_title_size_mobile": "small",
+        "column_image_height": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "section_image_with_text_NWTrqJ": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "",
+        "title_max_width": 0,
+        "description": "With deep expertise across both provider and OEM environments, LifeSync brings a unique perspective: we manufacture our own patient monitoring connections while partnering directly with medical device OEMs to develop theirs. This dual role strengthens our design discipline, regulatory rigor, and operational execution across everything we build.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/about-deep-expertise.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 20
+      }
+    },
+    "section_simple_text_7NXWXH": {
+      "type": "section-simple-text",
+      "custom_css": [],
+      "settings": {
+        "subtitle": "",
+        "title": "Our Mission",
+        "is_h1_tag": true,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 600,
+        "text": "<p>We are committed to delivering reliable connections and simplifying healthcare workflows. From hospitals to specialized practices, our solutions ensure that medical professionals can focus on what matters most—providing exceptional care.</p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 290,
+        "text_max_width_desktop": 600,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 85,
+        "padding_top_desktop": 105,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_video_banner_with_image_eb4aWC": {
+      "type": "section-video-banner-with-image",
+      "custom_css": [
+        "section {margin-bottom: 80px;}",
+        "section h2,section a,section button {color: #0d0d63;}"
+      ],
+      "name": "Video Banner With Image",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/standardizaton-video-bg.webp",
+        "image_desktop": "shopify://shop_images/standardizaton-video-bg.webp",
+        "icon": "shopify://shop_images/icon-pulse-dark-blue.svg",
+        "title": "How LifeSync Earns <br>Your Trust",
+        "title_max_width": 0,
+        "image_featured": "shopify://shop_images/home-video-featured-image.webp",
+        "title_tag": "h2",
+        "subtitle": "",
+        "youtube_id": "3423vtrwa",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "section_text_image_bg_wgzGTq": {
+      "type": "section-text-image-bg",
+      "name": "Text with Image Bg",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "image_bg": "shopify://shop_images/about-world-map.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80,
+        "cta_text": "",
+        "cta_url": ""
+      }
+    },
+    "section_core_values_j6GTwC": {
+      "type": "section-core-values",
+      "blocks": {
+        "grid_item_gJV4iX": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Put Customers First",
+            "description": "<p>We know customers will choose us over our competitors if we give them what they need. We commit to being adaptable, resourceful, useful and versatile in the ways we serve them.</p>"
+          }
+        },
+        "grid_item_QpK9x4": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Collaborate With a Positive Attitude",
+            "description": "<p>We commit to work together cooperatively and positively to realize the company’s full potential. With a positive attitude, we look for the good in every situation, and we motivate others with our energy, enthusiasm, optimism and gratitude.</p>"
+          }
+        },
+        "grid_item_zRRFPt": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Naturally Find Solutions",
+            "description": "<p>The word “naturally” in this value statement refers to problem solving being part of the essence of our company-part of our DNA.  Finding solutions is integrated in everything we do.</p>"
+          }
+        },
+        "grid_item_hJU3Qn": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Be Consistently Reliable",
+            "description": "<p>This means doing what we say we will do all the time, internally and externally. By saying “consistently reliable” we aspire to be steadfast and unfailing in this effort.</p>"
+          }
+        },
+        "grid_item_QkzU6w": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Resolutely Do The Right Things",
+            "description": "<p>The word “resolutely” means we are stubborn, tenacious, and persistent about doing the right thing. Doing the right thing pushes us towards the greater good and protects the company.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_gJV4iX",
+        "grid_item_QpK9x4",
+        "grid_item_zRRFPt",
+        "grid_item_hJU3Qn",
+        "grid_item_QkzU6w"
+      ],
+      "custom_css": [],
+      "name": "Core Values",
+      "settings": {
+        "title": "Our Core Values",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "<p>At LifeSync, our values guide everything we do—from how we innovate to how we partner with our customers. We believe in building meaningful connections, not just through our products but also through our commitment to excellence, integrity, and collaboration.</p>",
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 500,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "section_team_74kAL4": {
+      "type": "section-team",
+      "blocks": {
+        "member_neLPyR": {
+          "type": "member",
+          "settings": {
+            "block_image": "shopify://shop_images/bob-buehler.webp",
+            "popup_image": "shopify://shop_images/bob-buehler-p.webp",
+            "name": "Bob Buehler",
+            "job_title": "Chief Executive Officer",
+            "description": "<p>Bob Buehler is the Chief Executive Officer. Bob previously held senior executive positions at two high-growth private equity-backed companies and was actively involved in a number of liquidity events.</p><p>For over twenty-five years, he held senior operating and international business roles at global healthcare companies including RespirTech/Philips Healthcare, 3M Healthcare, and Arizant Healthcare. Bob is also a board member of Somnetics, a private company specializing in treatments for sleep apnea.</p><p>At LifeSync, Bob drives the strategic direction of the company and works throughout the organization to support the company’s values and goal of making superior connections with patients.</p>"
+          }
+        },
+        "member_KXnjqK": {
+          "type": "member",
+          "settings": {
+            "block_image": "shopify://shop_images/ian-west.webp",
+            "popup_image": "shopify://shop_images/ian-west-p.webp",
+            "name": "Ian West, PhD",
+            "job_title": "VP of R&D, Quality, & Regulatory Affairs",
+            "description": "<p>Ian West is the Vice President of R&D, Quality, and Regulatory Affairs, overseeing LifeSync product innovation, design and compliance.</p><p>Over the last twenty-five years, Ian held leadership positions developing patient monitoring and therapeutic devices at global companies including Johnson & Johnson, GE Healthcare and Philips Healthcare.</p><p>At LifeSync, Ian is focused on creating innovative product solutions that exceed customer’s expectations for quality  and reliability.</p>"
+          }
+        },
+        "member_zzFHgA": {
+          "type": "member",
+          "settings": {
+            "block_image": "shopify://shop_images/josh-stapleton.webp",
+            "popup_image": "shopify://shop_images/josh-stapleton-p.webp",
+            "name": "Josh Stapleton",
+            "job_title": "VP of Operations",
+            "description": "<p>Josh Stapleton is the Vice President of Operations and  Supply Chain. He joins LifeSync from ZimVie, a spinoff of Zimmer Biomet.</p><p>He brings over 20 years of experience in the medical device space, focusing on lean manufacturing within orthopedics, spine, dental implants, and wound healing with global organizations such as Smith & Nephew, Biomet 3i, Zimmer Biomet, and ZimVie.</p><p>At LifeSync, Josh is responsible for ensuring our team members focus on safety, quality, delivery, and cost to ensure our customers have the right products, at the right place,  and at the right time.</p>"
+          }
+        },
+        "member_xfJnw8": {
+          "type": "member",
+          "settings": {
+            "block_image": "shopify://shop_images/bob-zinsmaster.webp",
+            "popup_image": "shopify://shop_images/bob-zinsmaster.avif",
+            "name": "Bob Zinsmaster",
+            "job_title": "VP of Sales & Customer Service",
+            "description": "<p>Bob Zinsmaster is the Vice President of Sales and Customer Service, leading direct, contract manufacturing and key account sales as well as overseeing customer relations.</p><p>Since 2000, Bob has held sales and executive leadership roles in medical device companies including Sheridan Catheter, Arizant Healthcare and 3M Healthcare.</p><p>At LifeSync, Bob is focused on revenue growth through new business development opportunities and providing greater value and care to LifeSync customers.</p>"
+          }
+        },
+        "member_T4nQia": {
+          "type": "member",
+          "settings": {
+            "block_image": "shopify://shop_images/pedro-tejeda.webp",
+            "popup_image": "shopify://shop_images/pedro-tejeda-p.avif",
+            "name": "Pedro Tejeda",
+            "job_title": "VP of Marketing & Product Management",
+            "description": "<p>Pedro Tejeda is the VP of Marketing, leading product management, corporate marketing, LOB communications, Digital channels and branding.</p><p>For over 20 years, Pedro has brought his global marketing expertise to medical monitoring companies like Draeger Medical, Natus and Hill-Rom. </p><p>At LifeSync, Pedro is focused on strategic segment growth and customer satisfaction for the organization, as well as targeting specific market segments, e-commerce, and geographic locations for business expansion.</p><p>Pedro brings the voice of the customer and market trends and needs to the product development process and strategic OEM partnerships. Pedro's excellent strategic skills in business transformation guided LifeSync through its rebranding goal seamlessly.​</p>"
+          }
+        },
+        "member_yGVkHK": {
+          "type": "member",
+          "settings": {
+            "block_image": "shopify://shop_images/yullia-varabel.webp",
+            "popup_image": "shopify://shop_images/yulia-varabel-p.avif",
+            "name": "Yuliya Varabei",
+            "job_title": "Chief Financial Officer",
+            "description": "<p>Yuliya Varabei is the Chief Financial Officer, overseeing Finance, IT, and administrative functions.</p><p>Yuliya holds 20 years of experience in public and private sectors including audit, accounting, financial planning and analysis, treasury, operations, supply chain, and procurement, IT, HR, legal, contracts and risk management, lender and investor relations, and mergers & acquisitions.</p><p>Yuliya’s CFO and executive finance roles span from Ernst & Young LLC audit engagements for Citrix Systems and Spirit Airlines to executive finance roles with private equity owned businesses such as Volvo Aero Services, ACR Electronics, manufacturer of life safety and tracking devices, and SA Company, an e-commerce start-up retailer of outdoor apparel and gear.</p>"
+          }
+        },
+        "member_cAFmpa": {
+          "type": "member",
+          "settings": {
+            "block_image": "shopify://shop_images/natalie-salmon.webp",
+            "popup_image": "shopify://shop_images/natalie-salmon.png",
+            "name": "Natalie Salmon",
+            "job_title": "Global Director of Human Resources",
+            "description": "<p>Natalie Salmon is the Global Director of Human Resources at LifeSync Corporation, where she oversees all aspects of the global HR function. With more than 18 years of progressive HR leadership experience, Natalie partners with executive teams to shape organizational strategy, strengthen company culture, and drive transformation, talent, engagement, and performance initiatives. </p><p>Prior to joining LifeSync, Natalie held senior HR leadership roles at Bridgestone Americas, Porsche Cars North America, and Colgate-Palmolive, where she led large-scale organizational transformations, talent strategies, and leadership development initiatives across global, matrixed organizations. She holds a Master of Arts in Social-Organizational Psychology from Columbia University and a Bachelor of Arts in Communication from the University of South Florida<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "member_neLPyR",
+        "member_KXnjqK",
+        "member_zzFHgA",
+        "member_xfJnw8",
+        "member_T4nQia",
+        "member_yGVkHK",
+        "member_cAFmpa"
+      ],
+      "custom_css": [
+        "section .modal-content picture img {border-radius: 50%; border: 2px solid #0b8adc;}"
+      ],
+      "name": "Team",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "Leadership",
+        "section_description": "LifeSync’s leadership team brings deep experience across medical device manufacturing, engineering, quality systems, and global operations. Their focus is clear: strengthen our medical-only expertise, advance automation and innovation, and ensure disciplined execution that enables our customers to deliver reliable patient care at scale.",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "section_cta_q7FQHQ": {
+      "type": "section-cta",
+      "name": "CTA",
+      "settings": {
+        "cta_position": "cta_center",
+        "section_subtitle": "Careers",
+        "section_title": "Build the future of patient monitoring connections.",
+        "section_description": "",
+        "image_bg": "shopify://shop_images/cta-bg.webp",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80,
+        "cta_text": "Explore Openings",
+        "cta_url": "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=188c9041-7568-4cb3-b16f-815eccc10736&ccId=19000101_000001&lang=en_US"
+      }
+    }
+  },
+  "order": [
+    "section_hero_banner_with_icon_Engxbd",
+    "section_simple_text_zq3tF3",
+    "section_multicolumn_4tweFV",
+    "section_image_with_text_NWTrqJ",
+    "section_simple_text_7NXWXH",
+    "section_video_banner_with_image_eb4aWC",
+    "section_text_image_bg_wgzGTq",
+    "section_core_values_j6GTwC",
+    "section_team_74kAL4",
+    "section_cta_q7FQHQ"
+  ]
+}
