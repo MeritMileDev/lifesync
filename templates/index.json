@@ -54,7 +54,7 @@
         "description": "LifeSync, an Amphenol company, is a global, vertically integrated designer and manufacturer focused exclusively on patient monitoring connections—helping healthcare organizations and OEMs standardize and simplify ECG, SpO₂, neuro, and custom medical interconnects.<br><br>\nAs part of Amphenol, the world’s largest provider of high-tech interconnect, sensor, and antenna solutions, LifeSync delivers the scale, engineering expertise, and supply chain resiliency that healthcare requires.",
         "description_max_width": 0,
         "description_max_width_desktop": 0,
-        "card_position": "card_left",
+        "card_position": "card_right",
         "card_position_mobile": "bottom",
         "image_card_one": "shopify://shop_images/lifesync-patient-connections-logo.webp",
         "card_one_button_label": "Discover LifeSync Patient Connections",
