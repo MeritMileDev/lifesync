@@ -1,6 +1,11 @@
 {% liquid
   assign section_id = section.id
 
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
   assign image_mobile = section.settings.image_mobile
   assign image_desktop = section.settings.image_desktop
   assign banner_icon = section.settings.banner_icon
