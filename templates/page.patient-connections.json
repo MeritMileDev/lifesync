@@ -13,6 +13,24 @@
       "type": "main-page",
       "settings": {}
     },
+    "section_hero_banner_with_icon_jUh6Px": {
+      "type": "section-hero-banner--with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "image_mobile": "shopify://shop_images/patient-connections-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/patient-connections-hero-bg.webp",
+        "horizontal_alignment": "left",
+        "title": "<p><strong>Simplify and Standardized </strong><br/>Cardiac and Neuro Monitoring Connections</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>Superior quality, less clinical variation, and easier workflows across departments and care settings.</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_hero_banner_wRfDjk": {
       "type": "section-hero-banner",
       "name": "Hero Banner",
@@ -95,6 +113,7 @@
       "name": "Grid Info Boxes",
       "settings": {
         "title": "",
+        "title_max_width": 0,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 80,
         "padding_top_desktop": 0,
@@ -243,6 +262,7 @@
   },
   "order": [
     "main",
+    "section_hero_banner_with_icon_jUh6Px",
     "section_hero_banner_wRfDjk",
     "section_intro_with_images_DP7qHA",
     "section_grid_info_boxes_TjLxdW",
