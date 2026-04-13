@@ -21,7 +21,7 @@
         "image_mobile": "shopify://shop_images/relife-hero-m.jpg",
         "image_desktop": "shopify://shop_images/relife-hero.webp",
         "enable_overlay": false,
-        "title": "The Power and Confidence of One",
+        "title": "<p>The Power and Confidence of One</p>",
         "title_tag": "h1",
         "title_max_width_desktop": 500,
         "subtitle": "<p>Only LifeSync designs and manufactures a leadwire system <br/>that combines new and reprocessed leadwires into one offering.</p>",
@@ -32,6 +32,24 @@
         "padding_bottom_mobile": 64,
         "padding_top_desktop": 336,
         "padding_bottom_desktop": 80
+      }
+    },
+    "section_hero_banner_with_icon_VabdfG": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "image_mobile": "shopify://shop_images/relife-hero.webp",
+        "image_desktop": "shopify://shop_images/relife-hero.webp",
+        "horizontal_alignment": "left",
+        "title": "<p>The Power and Confidence of One</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>Only LifeSync designs and manufactures a leadwire system that combines new and reprocessed leadwires into one offering.</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "section_text_video_blocks_hqmrXD": {
@@ -478,6 +496,7 @@
   "order": [
     "main",
     "section_hero_banner_xkAXNC",
+    "section_hero_banner_with_icon_VabdfG",
     "section_text_video_blocks_hqmrXD",
     "section_image_with_text_b4qNze",
     "section_multicolumn_relife_j9wtwF",
