@@ -61,7 +61,7 @@
                   {% render 'picture',
                     image_desktop: image_featured,
                     is_full_size: false,
-                    class: 'max-w-9/10'
+                    class: 'max-w-9/10 featured-image'
                   %}
                 </div>
               </div>
@@ -71,6 +71,9 @@
     </div>
   </section>
   <style>
+    .featured-image {
+      max-width: 90%;
+    }
     #section-{{ section.id }} .image-wrapper {
       padding-top: {{ padding_top_desktop }}px;
       padding-bottom: {{ padding_bottom_desktop }}px;
