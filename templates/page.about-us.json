@@ -195,6 +195,7 @@
         "image_desktop": "shopify://shop_images/standardizaton-video-bg.webp",
         "icon": "shopify://shop_images/icon-pulse-dark-blue.svg",
         "title": "How LifeSync Earns <br>Your Trust",
+        "title_max_width": 0,
         "image_featured": "shopify://shop_images/home-video-featured-image.webp",
         "title_tag": "h2",
         "subtitle": "",
@@ -351,7 +352,7 @@
             "block_image": "shopify://shop_images/natalie-salmon.webp",
             "name": "Natalie Salmon",
             "job_title": "Global Director of Human Resources",
-            "description": ""
+            "description": "<p>Natalie Salmon is the Global Director of Human Resources at LifeSync Corporation, where she oversees all aspects of the global HR function. With more than 18 years of progressive HR leadership experience, Natalie partners with executive teams to shape organizational strategy, strengthen company culture, and drive transformation, talent, engagement, and performance initiatives. </p><p>Prior to joining LifeSync, Natalie held senior HR leadership roles at Bridgestone Americas, Porsche Cars North America, and Colgate-Palmolive, where she led large-scale organizational transformations, talent strategies, and leadership development initiatives across global, matrixed organizations. She holds a Master of Arts in Social-Organizational Psychology from Columbia University and a Bachelor of Arts in Communication from the University of South Florida<br/><br/></p>"
           }
         }
       },
@@ -386,7 +387,7 @@
       "settings": {
         "cta_position": "cta_center",
         "section_subtitle": "Careers",
-        "section_title": "Build the future of patient <br>monitoring connections.",
+        "section_title": "Build the future of patient monitoring connections.",
         "section_description": "",
         "image_bg": "shopify://shop_images/cta-bg.webp",
         "padding_top_mobile": 0,
