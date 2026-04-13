@@ -275,7 +275,7 @@
         "enable_bg": false,
         "narrow_section": false,
         "padding_top_mobile": 20,
-        "padding_bottom_mobile": 20,
+        "padding_bottom_mobile": 80,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 100
       }
