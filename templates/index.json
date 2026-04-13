@@ -83,8 +83,8 @@
         "title_tag": "h2",
         "subtitle": "",
         "youtube_id": "ursb7u2MQos",
-        "padding_top_mobile": 150,
-        "padding_bottom_mobile": 150,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
         "padding_top_desktop": 120,
         "padding_bottom_desktop": 120
       }
