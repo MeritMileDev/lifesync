@@ -1,5 +1,8 @@
 {% liquid
   assign section_id = section.id
+  assign title = section.settings.title
+  assign title_tag = section.settings.title_tag
+  assign subtitle = section.settings.subtitle
 %}
 
 <section id="section-{{ section_id }}" class="w-full px-4 py-8">
@@ -21,7 +24,7 @@
         
         <!-- Heading -->
         <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-          {{- title -}}
+          {{ title }}
         </h1>
         
         <!-- Subheading -->
