@@ -9,8 +9,8 @@
  */
 {
   "sections": {
-    "section_hero_banner_with_icon_Gd3bqy": {
-      "type": "section-hero-banner--with-icon",
+    "section_hero_banner_with_icon_Y9DgKB": {
+      "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
         "image_mobile": "shopify://shop_images/radiolucency-hero-bg.webp",
@@ -322,7 +322,7 @@
     }
   },
   "order": [
-    "section_hero_banner_with_icon_Gd3bqy",
+    "section_hero_banner_with_icon_Y9DgKB",
     "section_difference_JP34TL",
     "section_simple_text_VF6N6F",
     "comprehensive_options_E9U3J9",
