@@ -416,35 +416,35 @@
           "type": "step",
           "settings": {
             "step_title": "Technical / Design",
-            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
+            "step_content": "<ul><li>Verify technical specifications</li><li>Establish functional specifications</li><li>Design for assembly (DFA)</li><li>Design for automation</li><li>Prototypes</li><li>Accelerate adoption</li></ul>"
           }
         },
         "step_9DVAYL": {
           "type": "step",
           "settings": {
             "step_title": "Design verification",
-            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
+            "step_content": "<ul><li>Protocol</li><li>In-house testing</li><li>Third-party verification</li><li>Customer approval</li></ul>"
           }
         },
         "step_CAtdeX": {
           "type": "step",
           "settings": {
             "step_title": "Process qualification",
-            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
+            "step_content": "<ul><li>Process flow</li><li>Process failure mode effects analysis (PFMEA)</li><li>Control plan</li><li>Installation qualification (IQ)</li><li>Operational qualification (OQ)</li><li>Performance qualification (PQ)</li><li>100% functional test</li></ul>"
           }
         },
         "step_WGxG4a": {
           "type": "step",
           "settings": {
             "step_title": "Production",
-            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
+            "step_content": "<ul><li>First article inspection (FAI)</li><li>Schedule production</li><li>Vendor-managed inventory (VMI)</li><li>Simplified supply chain</li></ul>"
           }
         },
         "step_TLEj7w": {
           "type": "step",
           "settings": {
             "step_title": "Customer devotion",
-            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
+            "step_content": "<ul><li>Personalized account management</li><li>Customized solutions</li><li>Satisfaction assurance</li></ul>"
           }
         }
       },
