@@ -9,26 +9,6 @@
  */
 {
   "sections": {
-    "section_hero_banner_mfLeGL": {
-      "type": "section-hero-banner",
-      "name": "Hero Banner",
-      "settings": {
-        "horizontal_alignment": "left",
-        "image_mobile": "shopify://shop_images/about-hero-bg.webp",
-        "image_desktop": "shopify://shop_images/about-hero-bg.webp",
-        "enable_overlay": true,
-        "title": "<p><strong>LifeSync</strong>, an Amphenol Company</p>",
-        "title_tag": "h1",
-        "subtitle": "<p>Global leader in patient monitoring connections.<br/><br/></p>",
-        "subtitle_full_width": false,
-        "button_label": "",
-        "button_link": "",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
-      }
-    },
     "section_hero_banner_with_icon_fCbPTy": {
       "type": "section-hero-banner--with-icon",
       "name": "Hero Banner with Icon",
@@ -417,7 +397,6 @@
     }
   },
   "order": [
-    "section_hero_banner_mfLeGL",
     "section_hero_banner_with_icon_fCbPTy",
     "section_simple_text_zq3tF3",
     "section_multicolumn_4tweFV",
