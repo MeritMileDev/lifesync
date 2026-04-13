@@ -29,6 +29,22 @@
         "padding_bottom_desktop": 0
       }
     },
+    "section_hero_banner_with_icon_fCbPTy": {
+      "type": "section-hero-banner--with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "horizontal_alignment": "left",
+        "title": "<p>Innovative Solutions for the Future</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>Empowering your business with cutting-edge technology and unparalleled support.</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
     "section_simple_text_zq3tF3": {
       "type": "section-simple-text",
       "custom_css": [],
@@ -402,6 +418,7 @@
   },
   "order": [
     "section_hero_banner_mfLeGL",
+    "section_hero_banner_with_icon_fCbPTy",
     "section_simple_text_zq3tF3",
     "section_multicolumn_4tweFV",
     "section_image_with_text_NWTrqJ",
