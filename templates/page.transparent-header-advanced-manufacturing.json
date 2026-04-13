@@ -14,17 +14,17 @@
       "disabled": true,
       "settings": {}
     },
-    "section_hero_banner_with_icon_7agTxm": {
-      "type": "section-hero-banner--with-icon",
+    "section_hero_banner_with_icon_NUkqwH": {
+      "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
         "image_mobile": "shopify://shop_images/advanced-manufacturing-hero-bg.webp",
         "image_desktop": "shopify://shop_images/advanced-manufacturing-hero-bg.webp",
         "horizontal_alignment": "left",
         "banner_icon": "shopify://shop_images/lifesync-advanced-manufacturing-logo.webp",
-        "title": "<p><strong>Leader in Cost-Efficient Manufacturing <br/>Automation</strong> for SpO2 and ECG Connections</p>",
+        "title": "<p><strong>Leader in Cost-Efficient Manufacturing</strong> <br/>Automation for SpO2 and ECG Connections</p>",
         "title_tag": "h1",
-        "subtitle": "<p>The premier medical partner for affordable OEM-grade patient monitoring interconnects. </p>",
+        "subtitle": "<p>The premier medical partner for affordable OEM-grade patient monitoring interconnects.  </p>",
         "button_label": "",
         "button_link": "",
         "padding_top_mobile": 0,
@@ -492,7 +492,7 @@
   },
   "order": [
     "main",
-    "section_hero_banner_with_icon_7agTxm",
+    "section_hero_banner_with_icon_NUkqwH",
     "section_intro_with_stats_pJtF6j",
     "section_grid_info_boxes_wCCtV7",
     "section_image_with_text_rounded_CWWBKz",
