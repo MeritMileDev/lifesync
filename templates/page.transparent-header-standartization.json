@@ -9,25 +9,22 @@
  */
 {
   "sections": {
-    "section_hero_banner_wdiBDa": {
-      "type": "section-hero-banner",
-      "custom_css": [],
+    "section_hero_banner_with_icon_L9fYKR": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
       "settings": {
-        "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/standardization-hero-bg.webp",
         "image_desktop": "shopify://shop_images/standardization-hero-bg.webp",
-        "enable_overlay": false,
+        "horizontal_alignment": "left",
         "title": "<p><strong>Standardize ECG Leadwires</strong> <br/>Across the Entire Patient Stay</p>",
         "title_tag": "h1",
-        "title_max_width_mobile": 500,
         "subtitle": "<p>1 Patient = 1 Leadwire = 1 Time Placement</p>",
-        "subtitle_full_width": true,
         "button_label": "",
         "button_link": "",
-        "padding_top_mobile": 417,
-        "padding_bottom_mobile": 55,
-        "padding_top_desktop": 450,
-        "padding_bottom_desktop": 40
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "section_simple_text_WLCcYq": {
@@ -305,7 +302,7 @@
     }
   },
   "order": [
-    "section_hero_banner_wdiBDa",
+    "section_hero_banner_with_icon_L9fYKR",
     "section_simple_text_WLCcYq",
     "section_innovations_yLnXAa",
     "section_video_banner_with_image_NQ6EMx",
