@@ -246,14 +246,14 @@
       "settings": {
         "cta_position": "cta_center",
         "section_subtitle": "",
-        "section_title": "",
+        "section_title": "Talk to a LifeSync Patient Connections Expert",
         "section_description": "",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 80,
-        "cta_text": "",
-        "cta_url": ""
+        "cta_text": "Contact Us",
+        "cta_url": "shopify://pages/contact"
       }
     }
   },
