@@ -118,7 +118,7 @@
       "custom_css": [
         "section {margin-bottom: 80px;}",
         "section h2 {max-width: 600px; margin-bottom: 2rem;}",
-        "section p,section button {max-width: 400px;}"
+        "section button {max-width: 400px;}"
       ],
       "name": "Video Banner With Image",
       "settings": {
