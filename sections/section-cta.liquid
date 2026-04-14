@@ -22,7 +22,7 @@
 <section id="section-{{ section_id }}">
   <div class="container">
     <div class="relative">
-      <div class="relative w-full max-w-7xl h-[40vh] overflow-hidden rounded-3xl bg-gray-900 shadow-xl mx-10 pt-10 pb-10">
+      <div class="cta-wrapper relative w-full max-w-7xl h-[40vh] overflow-hidden rounded-3xl bg-gray-900 shadow-xl">
         <img 
           src="https://lifesync.com/cdn/shop/files/cta-bg-ls-sales.webp" 
           alt="Background" 
@@ -43,7 +43,12 @@
     </div>
   </div>  
 </section>
-
+<style>
+  .cta-wrapper {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
 {% schema %}
   {
     "name": "CTA",
