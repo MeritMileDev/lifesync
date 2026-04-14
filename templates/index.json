@@ -168,8 +168,8 @@
         "column_title_size": "small",
         "column_title_size_mobile": "small",
         "column_image_height": 0,
-        "padding_top_mobile": 64,
-        "padding_bottom_mobile": 64,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
         "padding_top_desktop": 120,
         "padding_bottom_desktop": 120
       }
@@ -194,7 +194,7 @@
         "image_position_mobile": "top",
         "enable_bg": false,
         "narrow_section": false,
-        "padding_top_mobile": 20,
+        "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 20
@@ -220,7 +220,7 @@
         "image_position_mobile": "top",
         "enable_bg": false,
         "narrow_section": false,
-        "padding_top_mobile": 20,
+        "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 20
@@ -246,7 +246,7 @@
         "image_position_mobile": "top",
         "enable_bg": false,
         "narrow_section": false,
-        "padding_top_mobile": 20,
+        "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 20
@@ -272,7 +272,7 @@
         "image_position_mobile": "top",
         "enable_bg": false,
         "narrow_section": false,
-        "padding_top_mobile": 20,
+        "padding_top_mobile": 40,
         "padding_bottom_mobile": 80,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 100
