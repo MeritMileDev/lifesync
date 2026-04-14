@@ -7,6 +7,7 @@
   assign padding_bottom_desktop = section.settings.padding_bottom_desktop
   assign cta_text = section.settings.cta_text
   assign cta_url = section.settings.cta_url
+  assign image_bg = section.settings.image_bg
   
   assign cta_position = section.settings.cta_position
 %}
@@ -24,7 +25,7 @@
     <div class="relative">
       <div class="cta-wrapper relative w-full max-w-7xl h-[40vh] overflow-hidden rounded-3xl bg-gray-900 shadow-xl">
         <img 
-          src="https://lifesync.com/cdn/shop/files/cta-bg-ls-sales.webp" 
+          src="{{ image_bg }}" 
           alt="Background" 
           class="absolute inset-0 w-full h-full object-cover opacity-60"
         />
@@ -33,7 +34,7 @@
         <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
           {% if section.settings.section_title != blank %}
             <h2
-              class="section-title text-white 3xl:text-48 lg:text-42 text-32 font-medium mb-2 xl:leading-14 leading-10 max-w-72">
+              class="section-title text-white 3xl:text-48 lg:text-42 text-32 font-medium mb-2 xl:leading-14 leading-10">
               {{ section.settings.section_title }}
             </h2>
             {% endif %}
