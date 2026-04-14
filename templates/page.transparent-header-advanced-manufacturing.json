@@ -59,7 +59,7 @@
         "stat_five_description": "On-time delivery",
         "stat_six_title": "46%",
         "stat_six_description": "Automated production",
-        "padding_top_mobile": 0,
+        "padding_top_mobile": 40,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 60
