@@ -55,7 +55,7 @@
               %}
             {% endif %}
             {% if title != blank %}
-              <div class="text-left text-white px-10 text-3xl font-bold lg:mb-4 mb-2" style="margin-top: -50px;">{{ title }}</div>
+              <div class="negative-heading text-left text-white px-10 text-3xl font-bold lg:mb-4 mb-2">{{ title }}</div>
             {% endif %}
             <div class="flex flex-col justify-between text-lg text-left px-10 py-5 min-h-56">
               {% if heading != blank %}
@@ -82,7 +82,14 @@
     </div>
   </div>
 </section>
-
+<style>
+  .negative-heading {
+    margin-top: -60px;
+    @media screen and (min-width: 768px) {
+      margin-top: -50px;
+    }
+  }
+</style>
 {% schema %}
   {
     "name": "Innovations",
