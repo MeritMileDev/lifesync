@@ -281,13 +281,11 @@
         "padding_bottom_desktop": 0
       }
     },
-    "section_text_image_bg_xYKytE": {
-      "type": "section-text-image-bg",
-      "custom_css": [
-        "a {background: white; border-radius: 24px;}"
-      ],
-      "name": "Text with Image Bg",
+    "section_cta_ANNjaL": {
+      "type": "section-cta",
+      "name": "CTA",
       "settings": {
+        "cta_position": "cta_center",
         "section_subtitle": "",
         "section_title": "Ready to Simplify ECG Leadwire Management?",
         "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
@@ -295,7 +293,7 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 100,
+        "padding_bottom_desktop": 80,
         "cta_text": "Talk to a LifeSync Standardization Expert",
         "cta_url": "shopify://pages/contact"
       }
@@ -309,6 +307,6 @@
     "section_video_banner_with_image_LtHpmt",
     "section_shop_by_jXVKgU",
     "section_steps_text_CHd6xT",
-    "section_text_image_bg_xYKytE"
+    "section_cta_ANNjaL"
   ]
 }
