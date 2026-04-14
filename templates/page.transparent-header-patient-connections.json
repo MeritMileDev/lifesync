@@ -208,7 +208,7 @@
         "description_max_width": 0,
         "description_max_width_desktop": 0,
         "button_label": "Discover the Reprocessing Advantage",
-        "button_link": "shopify://pages/standardization",
+        "button_link": "shopify://pages/relife",
         "image": "shopify://shop_images/pc-ecg-leadwire-reprocessing.webp",
         "image_position": "image_left",
         "image_position_mobile": "top",
