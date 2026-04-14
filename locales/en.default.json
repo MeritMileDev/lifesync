@@ -140,7 +140,8 @@
         "fax_label": "Fax",
         "address_label": "Address",
         "hours_label": "LifeSync Hours of Operation",
-        "volume": "Esitmated annual volume"
+        "volume": "Esitmated annual volume",
+        "devstage": "Development stage"
       }
     }
   },
