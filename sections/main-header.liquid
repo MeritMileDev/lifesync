@@ -395,7 +395,7 @@
                 </div>
               </div>
               <a href="/pages/contact" title="{{ 'general.contact_button_label' | t }}"
-                class="w-full flex justify-center border border-police-blue bg-white px-10 py-4 text-sm font-medium uppercase tracking-wide text-police-accent xl:hidden"
+                class="w-full flex justify-center border border-police-blue bg-white px-10 py-4 text-sm font-medium uppercase tracking-wide text-police-blue xl:hidden"
               >
                 {{ 'general.contact_button_label' | t }}
               </a>
@@ -412,27 +412,27 @@
         <div class="flex items-center justify-end space-x-4 xl:space-x-6">
           <a
             @click.prevent="openQuickSearch; $nextTick(() => { $refs.searchInput.focus() })"
-            class="flex items-center space-x-2 self-stretch  text-police-accent transition-colors hover:text-police-accent/70 group-[.bg-white.header-transparent]:text-police-accent group-[.bg-white]:text-police-accent group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 group-[.desktop-header-opaque]:xl:text-police-accent"
+            class="flex items-center space-x-2 self-stretch  text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white.header-transparent]:text-police-blue group-[.bg-white]:text-police-accent group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 group-[.desktop-header-opaque]:xl:text-police-accent"
             area-label="{{ 'general.search' | t }}"
-            :class="{'!text-police-accent': sticky, 'xl:!text-police-accent': sticky || selected}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
             title="{{ 'general.search' | t }}"
             href="#"
           >
             {% render 'icon', icon: 'search', class: 'size-6', fill: 'currentColor' %}
           </a>
           <a
-            class="hidden items-center space-x-2 self-stretch text-police-accent transition-colors hover:text-police-accent/70 group-[.bg-white]:text-police-accent group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-accent"
+            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-accent"
             area-label="{{ 'wishlist.wishlist_fallback' | t }}"
-            :class="{'!text-police-accent': sticky, 'xl:!text-police-accent': sticky || selected}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
             title="{{ 'wishlist.wishlist_fallback' | t }}"
             href="#swym-wishlist"
           >
             {% render 'icon', icon: 'heart', class: 'size-6', fill: 'currentColor' %}
           </a>
           <a
-            class="hidden items-center space-x-2 self-stretch text-police-accent transition-colors hover:text-police-accent/70 group-[.bg-white]:text-police-accent group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-accent"
+            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-accent"
             area-label="{{ 'customer.account_fallback' | t }}"
-            :class="{'!text-police-accent': sticky, 'xl:!text-police-accent': sticky || selected}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
             title="{{ 'customer.account_fallback' | t }}"
             href="/account"
           >
