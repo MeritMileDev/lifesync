@@ -301,13 +301,11 @@
         "padding_bottom_desktop": 100
       }
     },
-    "section_text_image_bg_3m3aYh": {
-      "type": "section-text-image-bg",
-      "custom_css": [
-        "a {background: white; border-radius: 24px;}"
-      ],
-      "name": "Text with Image Bg",
+    "section_cta_4gY6H3": {
+      "type": "section-cta",
+      "name": "CTA",
       "settings": {
+        "cta_position": "cta_center",
         "section_subtitle": "",
         "section_title": "Start Seeing the Radiolucent Difference",
         "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
@@ -315,7 +313,7 @@
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 60,
+        "padding_bottom_desktop": 80,
         "cta_text": "Talk to a LifeSync Expert",
         "cta_url": "shopify://pages/contact"
       }
@@ -331,6 +329,6 @@
     "section_image_with_text_secondary_qLQgrW",
     "section_slider_pmVRDH",
     "section_image_with_text_QLjGpN",
-    "section_text_image_bg_3m3aYh"
+    "section_cta_4gY6H3"
   ]
 }
