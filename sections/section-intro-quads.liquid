@@ -38,27 +38,7 @@
 
 <section id="section-{{ section_id }}">
   <div class="container">
-    <div class="text-center">
-      {% if section.settings.section_subtitle != blank %}
-        <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide lg:mb-8 mb-6">
-          {{ section.settings.section_subtitle }}
-        </p>
-      {% endif %}
-      {% if section.settings.section_title != blank %}
-        <h2 class="lg:text-5xl text-32 font-medium mb-16 max-w-2xl mx-auto lg:leading-14 leading-10 lg:px-0 px-7.5">
-          {{ section.settings.section_title }}
-        </h2>
-      {% endif %}
-      {% if section.settings.section_description != blank %}
-        <p class="max-w-xl mx-auto">
-          {{ section.settings.section_description }}
-        </p>
-      {% endif %}
-    </div>
-    {% if section.settings.enable_bg %}
-      <div class="bg-police-blue p-4 lg:mx-0 -mx-4">
-    {% endif %}
-    <div class="grid {% if section.settings.narrow_section == true %}lg:grid-cols-12 {% else %}grid-cols-12 {% endif %} gap-6 items-center">
+    <div class="grid lg:grid-cols-12 gap-6 items-center">
       <div class="col-span-7 {% if section.settings.image_position == 'image_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} border-l border-bright-gray">
         <div class="{% if image_position_mobile == 'bottom' %}lg:block hidden{% else %}mb-6 lg:mb-0{% endif %}">
           <div class="px-10">
@@ -115,9 +95,6 @@
           </div>
         </div>
       </div>
-    {% if section.settings.enable_bg %}
-      </div>
-    {% endif %}
   </div>
 </section>
 
@@ -131,21 +108,6 @@
   {
     "name": "Intro with quads",
     "settings": [
-      {
-        "type": "text",
-        "id": "section_subtitle",
-        "label": "Section Subtitle"
-      },
-      {
-        "type": "text",
-        "id": "section_title",
-        "label": "Section Title"
-      },
-      {
-        "type": "textarea",
-        "id": "section_description",
-        "label": "Section Description"
-      },
       {
         "type": "richtext",
         "id": "title",
