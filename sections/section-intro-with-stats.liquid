@@ -30,18 +30,18 @@
 
 <style>
   {% if section.settings.title_max_width > 0 %}
-    #section-{{ section_id }} .block-title {
+    #section-{{ section_id }} .section-title {
       max-width: {{ section.settings.title_max_width }}px;
     }
   {% endif %}
   {% if section.settings.description_max_width > 0 %}
-    #section-{{ section_id }} .block-description {
+    #section-{{ section_id }} .section-description {
       max-width: {{ section.settings.description_max_width }}px;
     }
   {% endif %}
   {% if section.settings.description_max_width_desktop > 0 %}
       @media screen and (min-width: 768px) {
-        #section-{{ section_id }} .block-description {
+        #section-{{ section_id }} .section-description {
           max-width: {{ section.settings.description_max_width_desktop }}px;
         }
       }
@@ -57,7 +57,7 @@
         </p>
       {% endif %}
       {% if section.settings.section_title != blank %}
-        <h2 class="lg:text-5xl text-32 font-medium mb-16 max-w-2xl mx-auto lg:leading-14 leading-10 lg:px-0 px-7.5">
+        <h2 class="section-title lg:text-5xl text-32 font-medium mb-16 max-w-2xl mx-auto lg:leading-14 leading-10 lg:px-0 px-7.5">
           {{ section.settings.section_title }}
         </h2>
       {% endif %}
