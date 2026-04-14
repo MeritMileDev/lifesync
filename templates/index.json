@@ -61,7 +61,7 @@
         "card_two_description": "Design and manufacture your custom OEM-grade medical interconnects at scale.",
         "card_two_button_label": "Learn About LifeSync Advanced Manufacturing",
         "card_two_button_link": "shopify://pages/advanced-manufacturing",
-        "padding_top_mobile": 0,
+        "padding_top_mobile": 40,
         "padding_bottom_mobile": 80,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 0
