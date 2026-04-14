@@ -233,7 +233,7 @@
         "section_description": "",
         "image_bg": "shopify://shop_images/cta-bg-ls-sales.webp",
         "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_bottom_mobile": 40,
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 80,
         "cta_text": "Contact Us",
