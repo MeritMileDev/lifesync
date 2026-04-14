@@ -116,7 +116,8 @@
                     {% for link in links %}
                       <li class="xl:py-4.5">
                         {% if link.levels > 0 %}
-                          <div>
+                          
+                          <div class="lg:block hidden" @click.prevent="toggleSelected(event, 'main_{{ forloop.index }}')">
                             <a
                               @mouseenter="debounce((event) =>  selected !== 'main_{{ forloop.index }}' ? toggleSelected(event, 'main_{{ forloop.index }}') : '', selected ? 0 : 300, event)"
                               class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white"
@@ -132,6 +133,24 @@
                               </span>
                             </a>
                           </div>
+
+                          <div class="lg:hidden block">
+                            <a
+                              @mouseenter="debounce((event) =>  selected !== 'main_{{ forloop.index }}' ? toggleSelected(event, 'main_{{ forloop.index }}') : '', selected ? 0 : 300, event)"
+                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white"
+                              href="{{ link.url }}"
+                              title="{{ link.title | strip_html }}"
+                            >
+                              <span class="underline-offset-2" :class="{'underline text-persian-blue': selected === 'main_{{ forloop.index }}'}">{{ link.title }}</span>
+                              <span
+                                :class="{'!rotate-0': selected === 'main_{{ forloop.index }}'}"
+                                class="rotate-180"
+                              >
+                                {% render 'icon', icon: 'chevron-up', class: 'size-4', fill: 'currentColor' %}
+                              </span>
+                            </a>
+                          </div>
+
                           <div
                             x-ref="content_{{ forloop.index }}"
                             class="grid max-h-0 gap-4.5 overflow-hidden pl-2 text-sm transition-[max-height] duration-700 xl:absolute xl:left-0 xl:top-full xl:z-50 xl:-mt-px xl:hidden xl:!max-h-[initial] xl:w-full xl:border-t xl:border-police-blue/20 xl:bg-white xl:pl-0 xl:shadow-shadow-bottom"
