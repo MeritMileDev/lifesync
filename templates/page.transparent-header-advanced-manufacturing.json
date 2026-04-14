@@ -478,9 +478,9 @@
         "button_label": "",
         "button_link": "",
         "padding_top_mobile": 80,
-        "padding_bottom_mobile": 0,
+        "padding_bottom_mobile": 80,
         "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
+        "padding_bottom_desktop": 80
       }
     },
     "section_contact_form_R6QqNA": {
