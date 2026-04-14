@@ -20,6 +20,29 @@
 %}
 
 <section id="section-{{ section_id }}">
+  <div class="relative w-full max-w-7xl mx-auto h-[400px] overflow-hidden rounded-2xl bg-gray-900 shadow-xl">
+    <!-- Background Image -->
+    <img 
+      src="https://unsplash.com" 
+      alt="Background" 
+      class="absolute inset-0 w-full h-full object-cover opacity-60"
+    />
+    
+    <!-- Content Overlay -->
+    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        Ready to transform your workflow?
+      </h2>
+      
+      <p class="text-lg text-gray-200 mb-8 max-w-2xl">
+        Join over 10,000 teams using our platform to build faster and scale effortlessly.
+      </p>
+
+      <button class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-200">
+        Get Started Now
+      </button>
+    </div>
+  </div>
   <div class="container">
     <div class="relative">
       <div class="xl:block hidden">
