@@ -209,11 +209,11 @@
             "title": "Pulse Oximetry",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_8cC3Qt": {
@@ -223,11 +223,11 @@
             "title": "ECG/EKG",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_MWt9pX": {
@@ -237,11 +237,11 @@
             "title": "MRI Cables",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_mPfUgk": {
@@ -251,11 +251,11 @@
             "title": "Electrosurgery",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_Qn6Rzz": {
@@ -265,11 +265,11 @@
             "title": "Laparoscopic",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         }
       },
@@ -312,11 +312,11 @@
             "title": "Cable and Connector Design",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_LyLN84": {
@@ -326,11 +326,11 @@
             "title": "PCBA and Embedded Electronics",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_rHBX4W": {
@@ -340,11 +340,11 @@
             "title": "Laser Marking",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_HVDxcc": {
@@ -354,11 +354,11 @@
             "title": "Programmable Glue Potting",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         },
         "column_GHCRXV": {
@@ -368,11 +368,11 @@
             "title": "Ultrasonic Welding",
             "description": "",
             "description_max_width_mob": 0,
-            "button_label": "Learn More",
+            "button_label": "",
             "button_link": "",
             "open_in_new_tab": false,
             "show_button": false,
-            "full_block_button_link": true
+            "full_block_button_link": false
           }
         }
       },
