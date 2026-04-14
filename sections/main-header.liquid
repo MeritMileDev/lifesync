@@ -71,7 +71,7 @@
         </a>
         <div class="ml-auto mr-4 xl:ml-0 xl:mr-0">
           <button
-            class="flex items-center text-police-accent hover:text-police-accent/70 group-[.bg-white]:text-police-accent group-[.header-transparent.bg-white]:text-police-accent group-[.header-transparent]:text-white xl:hidden"
+            class="flex items-center text-police-blue hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent.bg-white]:text-police-blue group-[.header-transparent]:text-white xl:hidden"
             aria-label=""
             @click="$store.stickyHeader.forceSticky = $store.stickyHeader.active; $store.menuState.isMenuOpened = true; removeScroll();"
           >
@@ -84,7 +84,7 @@
             @click="$store.menuState.isMenuOpened = false; returnScroll();"
           ></div>
           <div
-            class="fixed inset-0 z-50 flex w-80 -translate-x-full flex-col bg-police-blue font-medium uppercase text-white shadow-shadow-right xl:static xl:w-auto xl:translate-x-[initial] xl:flex-row xl:bg-transparent xl:text-police-accent xl:shadow-none transition-transform duration-300 ease-in-out xl:transtiton-none"
+            class="fixed inset-0 z-50 flex w-80 -translate-x-full flex-col bg-police-blue font-medium uppercase text-white shadow-shadow-right xl:static xl:w-auto xl:translate-x-[initial] xl:flex-row xl:bg-transparent xl:text-police-blue xl:shadow-none transition-transform duration-300 ease-in-out xl:transtiton-none"
             :class="{'!translate-x-0': $store.menuState.isMenuOpened === true}"
             x-bind="trigger"
           >
@@ -120,7 +120,7 @@
                           <div class="lg:block hidden">
                             <a
                               @mouseenter="debounce((event) =>  selected !== 'main_{{ forloop.index }}' ? toggleSelected(event, 'main_{{ forloop.index }}') : '', selected ? 0 : 300, event)"
-                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-accent/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-accent group-[.header-transparent]:xl:text-white"
+                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white"
                               href="{{ link.url }}"
                               title="{{ link.title | strip_html }}"
                             >
@@ -134,10 +134,10 @@
                             </a>
                           </div>
 
-                          <div class="lg:hidden block" @click.prevent="toggleSelected(event, 'main_{{ forloop.index }}')">
+                          <div class="lg:hidden block"@click.prevent="toggleSelected(event, 'main_{{ forloop.index }}')">
                             <a
                               @mouseenter="debounce((event) =>  selected !== 'main_{{ forloop.index }}' ? toggleSelected(event, 'main_{{ forloop.index }}') : '', selected ? 0 : 300, event)"
-                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-accent/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-accent group-[.header-transparent]:xl:text-white"
+                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white"
                               href="{{ link.url }}"
                               title="{{ link.title | strip_html }}"
                             >
@@ -183,7 +183,7 @@
                                       {% endif %}
                                     {% endfor %}
                                     <a
-                                      class="xl:flex xl:items-center xl:space-x-2 hover:text-police-accent-70 transition-colors"
+                                      class="xl:flex xl:items-center xl:space-x-2 hover:text-police-blue-70 transition-colors"
                                       href="{{ child_link.url }}"
                                       title="{{ child_link.title | strip_html }}"
                                     >
@@ -200,7 +200,7 @@
                         {% else %}
                           <a
                             @mouseover="toggleSelected(event, '')"
-                            class="transition-colors hover:xl:text-police-accent/70 group-[.header-transparent.desktop-header-opaque]:xl:text-police-accent group-[.header-transparent]:xl:text-white group-[.header-transparent.desktop-header-opaque]:hover:xl:text-police-accent/70 group-[.header-transparent]:hover:xl:text-white/70"
+                            class="transition-colors hover:xl:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:text-police-blue group-[.header-transparent]:xl:text-white group-[.header-transparent.desktop-header-opaque]:hover:xl:text-police-blue/70 group-[.header-transparent]:hover:xl:text-white/70"
                             href="{{ link.url }}"
                             title="{{ link.title | strip_html }}"
                           >
@@ -230,8 +230,8 @@
                     >
                       <span class="leading-none underline-offset-2" :class="{'underline': selected == 'shop_menu'}">Shop</span>
                       <span
-                        :class="{'!rotate-0': selected == 'shop_menu', 'xl:!text-police-accent': sticky || selected}"
-                        class="rotate-180 text-bright-gray/50 group-[.header-transparent]:text-white xl:text-police-accent group-[.header-transparent]:xl:text-white"
+                        :class="{'!rotate-0': selected == 'shop_menu', 'xl:!text-police-blue': sticky || selected}"
+                        class="rotate-180 text-bright-gray/50 group-[.header-transparent]:text-white xl:text-police-blue group-[.header-transparent]:xl:text-white"
                       >
                         {% render 'icon', icon: 'chevron-up', class: 'size-4', fill: 'currentColor' %}
                       </span>
@@ -313,7 +313,7 @@
                                         {% endif %}
                                         <div class="flex flex-col">
                                           <a
-                                            class="text-lg hover:text-police-accent-70 transition-colors"
+                                            class="text-lg hover:text-police-blue-70 transition-colors"
                                             href="{{ level_2_link.url }}"
                                             title="{{ level_2_link.title | strip_html }}"
                                           >
@@ -412,7 +412,7 @@
         <div class="flex items-center justify-end space-x-4 xl:space-x-6">
           <a
             @click.prevent="openQuickSearch; $nextTick(() => { $refs.searchInput.focus() })"
-            class="flex items-center space-x-2 self-stretch  text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white.header-transparent]:text-police-blue group-[.bg-white]:text-police-accent group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 group-[.desktop-header-opaque]:xl:text-police-accent"
+            class="flex items-center space-x-2 self-stretch  text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white.header-transparent]:text-police-blue group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-blue/70 group-[.bg-white]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 group-[.desktop-header-opaque]:xl:text-police-blue"
             area-label="{{ 'general.search' | t }}"
             :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
             title="{{ 'general.search' | t }}"
@@ -421,7 +421,7 @@
             {% render 'icon', icon: 'search', class: 'size-6', fill: 'currentColor' %}
           </a>
           <a
-            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-accent"
+            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-blue/70 group-[.bg-white]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-blue"
             area-label="{{ 'wishlist.wishlist_fallback' | t }}"
             :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
             title="{{ 'wishlist.wishlist_fallback' | t }}"
@@ -430,7 +430,7 @@
             {% render 'icon', icon: 'heart', class: 'size-6', fill: 'currentColor' %}
           </a>
           <a
-            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-accent/70 group-[.bg-white]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-accent"
+            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-blue/70 group-[.bg-white]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-blue"
             area-label="{{ 'customer.account_fallback' | t }}"
             :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
             title="{{ 'customer.account_fallback' | t }}"
@@ -439,9 +439,9 @@
             {% render 'icon', icon: 'user', class: 'size-6', fill: 'currentColor' %}
           </a>
           <a
-            class="flex items-center space-x-2 uppercase text-police-accent transition-colors hover:text-police-accent/70 group-[.header-opaque]:text-police-accent group-[.header-transparent]:text-white group-[.header-opaque.header-transparent]:hover:text-police-accent/70 group-[.header-opaque]:hover:text-police-accent/70 group-[.header-transparent]:hover:text-white/70 xl:self-stretch group-[.desktop-header-opaque]:xl:text-police-accent group-[.desktop-header-opaque]:hover:xl:text-police-accent/70"
+            class="flex items-center space-x-2 uppercase text-police-blue transition-colors hover:text-police-blue/70 group-[.header-opaque]:text-police-blue group-[.header-transparent]:text-white group-[.header-opaque.header-transparent]:hover:text-police-blue/70 group-[.header-opaque]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 xl:self-stretch group-[.desktop-header-opaque]:xl:text-police-blue group-[.desktop-header-opaque]:hover:xl:text-police-blue/70"
             area-label="{{ 'general.cart.cart_fallback' | t }}"
-            :class="{'!text-police-accent': sticky, 'xl:!text-police-accent': sticky || selected}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
             href="/cart"
             x-data="miniCart"
           >
@@ -466,14 +466,14 @@
         <div class="border-b border divide-police-blue-20 relative z-20 bg-white">
           <div class="container">
             <form class="flex items-center py-3 lg:py-10" action="{{ routes.search_url }}" method="get" role="search">
-              <label for="search" class="mr-4 hidden items-center justify-center text-police-accent-70 lg:flex hover:text-police-accent transition-colors cursor-pointer">
+              <label for="search" class="mr-4 hidden items-center justify-center text-police-blue-70 lg:flex hover:text-police-blue transition-colors cursor-pointer">
                 {% render 'icon', icon: 'search', class: 'size-6', fill: 'currentColor' %}
                 <span class="sr-only">
                   {{ 'general.search' | t }}
                 </span>
               </label>
               <input
-                class="grow py-2 text-xl font-medium leading-none text-police-accent -ml-2 pl-2 lg:text-2xl lg:leading-none"
+                class="grow py-2 text-xl font-medium leading-none text-police-blue -ml-2 pl-2 lg:text-2xl lg:leading-none"
                 type="text"
                 id="search"
                 placeholder="{{ 'general.search' | t }}"
@@ -487,7 +487,7 @@
               <button
                 type="button"
                 @click.prevent="closeQuickSearch"
-                class="ml-4 flex items-center justify-center text-police-accent-70 hover:text-police-accent"
+                class="ml-4 flex items-center justify-center text-police-blue-70 hover:text-police-blue"
                 aria-label="{{ 'general.close' | t }}"
               >
                 {% render 'icon', icon: 'close', class: 'size-6' %}
@@ -496,7 +496,7 @@
                 type="submit"
                 class="
                   ml-4 flex items-center justify-center
-                  lg:ml-8 lg:gap-2 lg:border lg:border-police-blue lg:px-10 lg:py-4 lg:text-center lg:text-sm lg:uppercase lg:tracking-wide lg:text-police-accent hover:lg:scale-102 active:lg:scale-100 disabled:lg:opacity-30
+                  lg:ml-8 lg:gap-2 lg:border lg:border-police-blue lg:px-10 lg:py-4 lg:text-center lg:text-sm lg:uppercase lg:tracking-wide lg:text-police-blue hover:lg:scale-102 active:lg:scale-100 disabled:lg:opacity-30
                 "
                 aria-label="{{ 'general.search' | t }}"
               >
