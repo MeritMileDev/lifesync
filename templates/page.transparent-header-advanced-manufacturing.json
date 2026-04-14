@@ -116,7 +116,7 @@
         "title": "<p>The Manufacturing Leader in SpO2, ECG, and Custom Medical Interconnects</p>",
         "title_max_width": 900,
         "padding_top_mobile": 0,
-        "padding_bottom_mobile": 160,
+        "padding_bottom_mobile": 80,
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 100
       }
@@ -477,7 +477,7 @@
         "bottom_title": "",
         "button_label": "",
         "button_link": "",
-        "padding_top_mobile": 0,
+        "padding_top_mobile": 80,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 0
