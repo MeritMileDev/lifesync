@@ -1,0 +1,110 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="lg:container">
+    <div class="{% if section.settings.enable_bg %}bg-bright-gray-20{% endif %} mb-20 rounded-3xl">
+      <div class="lg:grid grid-cols-12 gap-6">
+        <div class="col-span-6 xl:p-20 lg:p-10">
+          {% if section.settings.section_title != blank %}
+            <h2 class="lg:text-48 text-md font-medium lg:mb-6 mb-4 mx-auto lg:text-left text-center lg:py-0 py-10">
+              {{ section.settings.section_title }}
+            </h2>
+          {% endif %}
+        </div>
+        <div class="col-span-6 flex flex-col justify-center xl:p-20 px-6 lg:pb-10 pb-16 lg:p-10 p-0">
+          <div class="text-center max-w-165 mx-auto">
+            {% if section.settings.section_description != blank %}
+            <p class="">
+              {{ section.settings.section_description }}
+            </p>
+            {% endif %}
+          </div>
+          <div class="">
+            {% render 'contact-form' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  section {
+    margin-bottom: 40px
+  }
+</style>
+{% schema %}
+  {
+    "name": "AM Form Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_bg",
+        "label": "Enable section background",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "AM Form Section"
+      }
+    ]
+  }
+{% endschema %}
