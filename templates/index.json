@@ -61,8 +61,8 @@
         "card_two_description": "Design and manufacture your custom OEM-grade medical interconnects at scale.",
         "card_two_button_label": "Learn About LifeSync Advanced Manufacturing",
         "card_two_button_link": "shopify://pages/advanced-manufacturing",
-        "padding_top_mobile": 80,
-        "padding_bottom_mobile": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 80,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 0
       }
@@ -189,7 +189,7 @@
         "description_max_width_desktop": 0,
         "button_label": "Simplify Leadwire Management ",
         "button_link": "shopify://pages/standardization",
-        "image": "shopify://shop_images/home-standardization_27398cd6-5ab5-4647-9870-56c88f8ab812.webp",
+        "image": "shopify://shop_images/home-standardization.webp",
         "image_position": "image_left",
         "image_position_mobile": "top",
         "enable_bg": false,
