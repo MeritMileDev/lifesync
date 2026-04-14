@@ -47,8 +47,8 @@
         "button_link": "",
         "image": "shopify://shop_images/patient-connections-intro.webp",
         "image_position": "image_right",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 40
       }
