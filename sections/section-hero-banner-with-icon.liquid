@@ -40,12 +40,12 @@
         {% endif %}
         
         <!-- Heading -->
-        <{{ title_tag }} class="section-title text-white mx-auto mb-2 text-40 font-medium md:mb-3 xl:text-64 {% unless title_max_width_mobile > 0 or title_max_width_desktop > 0 %} max-w-165 {% endunless %}">
+        <{{ title_tag }} class="section-title text-white mx-auto mb-2 text-32 md:text-40 font-medium md:mb-3 xl:text-64 {% unless title_max_width_mobile > 0 or title_max_width_desktop > 0 %} max-w-165 {% endunless %}">
           {{- title -}}
         </{{ title_tag }}>
         
         <!-- Subheading -->
-        <div class="section-subtitle text-white {% if button_link != blank %}lg:mb-8 mb-6{% endif %} {% if section.settings.subtitle_full_width == false %} max-w-56{% endif %} md:max-w-max text-left lg:text-3xl text-lg">
+        <div class="section-subtitle text-white {% if button_link != blank %}lg:mb-8 mb-6{% endif %} {% if section.settings.subtitle_full_width == false %} max-w-56{% endif %} md:max-w-max text-left lg:text-3xl md:text-lg text-md">
           {{- subtitle -}}
         </div>
         
