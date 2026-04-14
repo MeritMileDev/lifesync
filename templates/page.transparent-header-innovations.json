@@ -138,8 +138,8 @@
         "quad_three_description": "Disciplined engineering and rigorous quality assurance support reliable signal transmission and dependable clinical performance.",
         "quad_four_title": "Supply Chain Control and Availability",
         "quad_four_description": "Global ISO-certified facilities and diversified sourcing improve resilience, reduce single-source risk, and ensure dependable product availability",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
         "padding_top_desktop": 40,
         "padding_bottom_desktop": 100
       }
