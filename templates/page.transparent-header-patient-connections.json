@@ -220,26 +220,6 @@
         "padding_bottom_desktop": 80
       }
     },
-    "section_text_image_bg_PLjymf": {
-      "type": "section-text-image-bg",
-      "custom_css": [
-        ".section-title {max-width: 500px;}",
-        "a {background: white; border-radius: 24px;}"
-      ],
-      "name": "Text with Image Bg",
-      "settings": {
-        "section_subtitle": "",
-        "section_title": "Talk to a LifeSync Patient Connections Expert",
-        "section_description": "",
-        "image_bg": "shopify://shop_images/cta-bg-ls-sales.webp",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 40,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 80,
-        "cta_text": "Contact Us",
-        "cta_url": "shopify://pages/contact"
-      }
-    },
     "section_cta_Yrrpce": {
       "type": "section-cta",
       "name": "CTA",
@@ -267,7 +247,6 @@
     "section_image_with_text_WKmTfN",
     "section_image_with_text_cKTdT8",
     "section_image_with_text_xmYXJd",
-    "section_text_image_bg_PLjymf",
     "section_cta_Yrrpce"
   ]
 }
