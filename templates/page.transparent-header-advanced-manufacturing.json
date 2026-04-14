@@ -296,7 +296,7 @@
         "column_title_size": "small",
         "column_title_size_mobile": "small",
         "column_image_height": 150,
-        "padding_top_mobile": 0,
+        "padding_top_mobile": 80,
         "padding_bottom_mobile": 0,
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 0
