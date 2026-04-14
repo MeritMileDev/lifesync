@@ -31,9 +31,18 @@
         
         <!-- Content Overlay -->
         <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-          <h2 class="section-title text-white 3xl:text-48 lg:text-42 text-32 font-medium mb-3.25 mx-auto xl:leading-14 leading-10 max-w-md">
-            Talk to a LifeSync Patient Connections Expert
-          </h2>
+          {% if section.settings.section_title != blank %}
+            <h2
+              class="section-title text-police-blue 3xl:text-48 lg:text-42 text-32 font-medium mb-2 xl:leading-14 leading-10 max-w-72">
+              {{ section.settings.section_title }}
+            </h2>
+            {% endif %}
+
+          {% if section.settings.section_description != blank %}
+          <div class="section-description text-white max-w-xl rte xl:px-0 px-7.5 xl:mb-0 mb-6 lg:mt-0 mt-3">
+            {{ section.settings.section_description }}
+          </div>
+          {% endif %}
 
           {% if cta_text != blank and cta_url != blank %}
             <a class="relative z-10 flex items-center justify-center gap-2 px-10 py-4 mt-4 bg-white text-center text-sm font-bold text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max rounded-3xl" href="{{cta_url}}">{{ cta_text }}</a>
