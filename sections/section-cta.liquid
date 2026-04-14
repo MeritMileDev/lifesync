@@ -31,13 +31,13 @@
         
         <!-- Content Overlay -->
         <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-          <h2 class="section-title text-white 3xl:text-48 lg:text-42 text-32 font-medium mb-3.25 mx-auto xl:leading-14 leading-10">
+          <h2 class="section-title text-white 3xl:text-48 lg:text-42 text-32 font-medium mb-3.25 mx-auto xl:leading-14 leading-10 max-w-md">
             Talk to a LifeSync Patient Connections Expert
           </h2>
 
-          <button class="mx-auto relative z-10 flex items-center justify-center gap-2 px-10 py-4 bg-white text-center text-sm font-bold text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max lg:mt-10 rounded-3xl">
-            Contact Us
-          </button>
+          {% if cta_text != blank and cta_url != blank %}
+            <a class="relative z-10 flex items-center justify-center gap-2 px-10 py-4 mt-4 bg-police-accent text-center text-sm font-bold text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max rounded-3xl" href="{{cta_url}}">{{ cta_text }}</a>
+          {% endif %}
         </div>
       </div>
     </div>
