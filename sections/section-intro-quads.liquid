@@ -6,6 +6,14 @@
   assign padding_top_desktop = section.settings.padding_top_desktop
   assign padding_bottom_desktop = section.settings.padding_bottom_desktop
   assign image_position_mobile = section.settings.image_position_mobile
+  assign quad_one_title = section.settings.quad_one_title
+  assign quad_one_description = section.settings.quad_one_description
+  assign quad_two_title = section.settings.quad_two_title
+  assign quad_two_description = section.settings.quad_two_description
+  assign quad_three_title = section.settings.quad_three_title
+  assign quad_three_description = section.settings.quad_three_description
+  assign quad_four_title = section.settings.quad_four_title
+  assign quad_four_description = section.settings.quad_four_description
 %}
 
 {% render 'offset',
@@ -44,7 +52,7 @@
           <div class="px-10">
             <div class="grid grid-cols-2 items-center mb-10">
               <div class="col-span-1 text-left border-r border-white py-5 px-10">
-                <p class="text-police-accent text-22 font-bold m-0 p-0 mb-3">Advanced Automation</p>
+                <p class="text-police-accent text-22 font-bold m-0 p-0 mb-3">{{ quad_one_title }}</p>
                 <p class="text-police-blue text-18 m-0 p-0">Scalable, modular automation drives repeatability, yield consistency, and cost efficiency across production volumes.</p>
               </div>
               <div class="col-span-1 text-left border-r border-white py-5 px-10">
@@ -185,7 +193,7 @@
       },
       {
         "type": "text",
-        "id": "stat_one_title",
+        "id": "quad_one_title",
         "label": "Quad 1 Title"
       },
       {
