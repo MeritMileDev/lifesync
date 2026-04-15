@@ -57,7 +57,7 @@
           {% else %}
             <div>
               <select
-                class="w-full !line-clamp-1 text-ellipsis focus-visible:outline-none focus:outline-none cursor-pointer appearance-none border border-police-blue-70 bg-select-arrow bg-right-2 bg-no-repeat px-5 py-3.5 pr-10 text-base placeholder:text-police-blue-70 hover:border-police-blue disabled:opacity-30"
+                class="w-full !line-clamp-1 text-ellipsis focus-visible:outline-none focus:outline-none cursor-pointer appearance-none border border-police-blue-70 bg-select-arrow bg-right-2 bg-no-repeat px-5 py-3.5 pr-10 text-base placeholder:text-police-blue-70 hover:border-police-blue disabled:opacity-30 rounded-3xl"
                 :class="{ 'border-red': !isValid }"
                 id="Option-{{ section.id }}-{{ forloop.index0 }}"
                 name="options[{{ option.name | escape }}]"
