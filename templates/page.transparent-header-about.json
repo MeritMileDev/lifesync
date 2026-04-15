@@ -199,7 +199,7 @@
         "subtitle": "",
         "youtube_id": "ursb7u2MQos",
         "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_bottom_mobile": 40,
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 80
       }
@@ -213,7 +213,7 @@
         "section_description": "",
         "image_bg": "shopify://shop_images/about-world-map.webp",
         "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_bottom_mobile": 40,
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 80,
         "cta_text": "",
