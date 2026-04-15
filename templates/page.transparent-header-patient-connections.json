@@ -231,12 +231,15 @@
         "section_description": "",
         "text_color": "white",
         "image_bg": "shopify://shop_images/cta-bg-ls-sales.webp",
+        "padding_top_cta": 100,
+        "padding_bottom_cta": 100,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 80,
         "padding_bottom_desktop": 80,
         "cta_text": "Contact Us",
-        "cta_url": "shopify://pages/contact"
+        "cta_url": "shopify://pages/contact",
+        "cta_target": "self"
       }
     }
   },
