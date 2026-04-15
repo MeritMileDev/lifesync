@@ -445,7 +445,7 @@
           "type": "faq",
           "settings": {
             "question": "Will reprocessing disrupt my supply chain?",
-            "answer": "<p>No. Our <strong>Product Optimization (RPO)</strong> model ensures seamless ordering and consistent availability.</p>"
+            "answer": "<p>No. Our <strong>Reprocessing Product Optimization (RPO)</strong> model ensures seamless ordering and consistent availability.</p>"
           }
         }
       },
