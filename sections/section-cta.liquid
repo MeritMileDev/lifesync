@@ -31,7 +31,7 @@
         />
         
         <!-- Content Overlay -->
-        <div class="relative h-full flex flex-col {% if section.settings.cta_position == 'cta_left' %}items-start{% elsif section.settings.cta_position == 'cta_center' %}items-center{% elsif section.settings.cta_position == 'cta_right' %} items-end{% endif %} justify-center px-6">
+        <div class="relative h-full flex flex-col {% if section.settings.cta_position == 'cta_left' %}items-start{% elsif section.settings.cta_position == 'cta_center' %}items-center{% elsif section.settings.cta_position == 'cta_right' %}justify-end{% endif %} justify-center px-6">
           {% if section.settings.section_title != blank %}
             <h2
               class="section-title {% if section.settings.text_color == 'blue' %}text-police-blue{% else %}text-white{% endif %} 3xl:text-48 lg:text-42 text-32 font-medium mb-2 xl:leading-14 leading-10">
