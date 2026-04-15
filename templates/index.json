@@ -107,7 +107,6 @@
         "column_g4fGVJ": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/home-spo2-leadwire-automation.webp",
             "title": "Sp02 Leadwire Automation",
             "description": "",
             "description_max_width_mob": 0,
@@ -135,7 +134,6 @@
         "column_rh8ekY": {
           "type": "column",
           "settings": {
-            "icon": "shopify://shop_images/home-ecg-gold-disposabe-electrodes.webp",
             "title": "EEG Gold Disposable Electrodes",
             "description": "",
             "description_max_width_mob": 0,
