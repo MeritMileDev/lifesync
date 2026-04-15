@@ -134,14 +134,15 @@
         "company": "Company name",
         "comment": "How can we help you?",
         "send": "Send message",
-        "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "post_success": "Thank you for contacting us. A LifeSync team member will contact you within 1-2 business days. ",
         "toll_free_label": "Toll free (US)",
         "phone_label": "Phone",
         "fax_label": "Fax",
         "address_label": "Address",
         "hours_label": "LifeSync Hours of Operation",
         "volume": "Esitmated annual volume",
-        "development_stage": "Development stage"
+        "development_stage": "Development stage",
+        "talk": "Talk to a LifeSync Engineering Expert"
       }
     }
   },
