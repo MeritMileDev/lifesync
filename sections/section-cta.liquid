@@ -29,8 +29,6 @@
           alt="Background" 
           class="absolute inset-0 w-full h-full object-cover opacity-60 rounded-3xl"
         />
-        
-        <!-- Content Overlay -->
         <div class="relative h-full flex flex-col {% if section.settings.cta_position == 'cta_left' %}text-left items-start{% elsif section.settings.cta_position == 'cta_center' %}text-center items-center justify-center{% elsif section.settings.cta_position == 'cta_right' %}text-right items-end justify-end{% endif %} px-6">
           {% if section.settings.section_title != blank %}
             <h2
