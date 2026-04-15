@@ -67,12 +67,12 @@
   x-init="allImages = initialImages; nonVariantImages = nonVariantImagesArray;"
 >
   {% if images_count == 0 %}
-    <img class="h-full w-full object-contain" src="{{ 'placeholder.jpeg' | asset_url }}" alt="">
+    <img class="h-full w-full object-contain rounded-3xl" src="{{ 'placeholder.jpeg' | asset_url }}" alt="">
   {% else %}
     <div x-show="!initialized" class="flex flex-col xl:flex-row xl:gap-2">
       <div class="w-full bg-gray-100 xl:order-2 p-2">
         <img
-          class="aspect-square h-full w-full object-contain mix-blend-darken"
+          class="aspect-square h-full w-full object-contain mix-blend-darken rounded-3xl"
           src="{{ product.media[0] | image_url: width: 720 }}"
           alt=""
         >
