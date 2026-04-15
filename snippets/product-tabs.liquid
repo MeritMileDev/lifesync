@@ -21,7 +21,7 @@
     {% if product.metafields.custom.specifications %}
       <div
         :class="{'bg-police-blue text-white': isOpen === 3}"
-        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none rounded-3xl"
         @click="isOpen = isOpen === 3 ? 0 : 3"
       >
         {{- 'products.product.tabs.specifications' | t -}}
@@ -30,7 +30,7 @@
     {% if product.metafields.custom.instructions %}
       <div
         :class="{'bg-police-blue text-white': isOpen === 4}"
-        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none rounded-3xl"
         @click="isOpen = isOpen === 4 ? 0 : 4"
       >
         {{- 'products.product.tabs.instructions' | t -}}
@@ -38,7 +38,7 @@
     {% endif %}
     <div
       :class="{'bg-police-blue text-white': isOpen === 5}"
-      class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+      class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none rounded-3xl"
       @click="isOpen = isOpen === 5 ? 0 : 5"
     >
       <div>
