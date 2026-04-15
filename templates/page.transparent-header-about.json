@@ -391,6 +391,8 @@
         "section_description": "",
         "text_color": "white",
         "image_bg": "shopify://shop_images/about-our-patients-cta-bg.webp",
+        "padding_top_cta": 150,
+        "padding_bottom_cta": 150,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 0,
