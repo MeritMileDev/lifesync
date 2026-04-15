@@ -226,8 +226,10 @@
       "settings": {
         "cta_position": "cta_center",
         "section_subtitle": "",
-        "section_title": "Talk to a LifeSync Patient<br>Connections Expert",
+        "section_title": "Talk to a LifeSync Patient Connections Expert",
+        "title_max_width": 400,
         "section_description": "",
+        "text_color": "white",
         "image_bg": "shopify://shop_images/cta-bg-ls-sales.webp",
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
