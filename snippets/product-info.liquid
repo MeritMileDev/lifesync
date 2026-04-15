@@ -111,7 +111,7 @@
                 @click.prevent
               >
               <button
-                class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors"
+                class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
                 @click.prevent="formData.quantity++"
                 aria-label="Increase quantity"
               >
@@ -136,7 +136,7 @@
             <div class="xl:flex xl:gap-6 w-full" x-cloak>
               <div class="flex border border-police-blue-70">
                 <button
-                  class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors"
+                  class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
                   :class="{'text-police-blue-20 hover:text-police-blue-20': formData.quantity < 2}"
                   @click.prevent="formData.quantity -= (formData.quantity > 1)"
                   :disabled="formData.quantity < 2"
@@ -155,7 +155,7 @@
                   @click.prevent
                 >
                 <button
-                  class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors"
+                  class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
                   @click.prevent="formData.quantity++"
                   aria-label="Increase quantity"
                 >
