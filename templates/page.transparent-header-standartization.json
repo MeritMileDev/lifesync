@@ -292,6 +292,8 @@
         "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
         "text_color": "white",
         "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
+        "padding_top_cta": 100,
+        "padding_bottom_cta": 100,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "padding_top_desktop": 0,
