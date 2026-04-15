@@ -107,7 +107,7 @@
             >
               <template x-if="image">
                 <img
-                  class="h-full w-full object-contain mix-blend-darken transition-all"
+                  class="h-full w-full object-contain mix-blend-darken transition-all rounded-3xl"
                   :src="image.replace('width=200', `width=${window.innerWidth > 1279 ? 913 * window.devicePixelRatio : window.innerWidth * window.devicePixelRatio}`)"
                   alt="{{ product.title }}"
                   width="720"
@@ -129,7 +129,7 @@
             >
               <template x-if="image">
                 <img
-                  class="h-full w-full object-contain mix-blend-darken transition-all"
+                  class="h-full w-full object-contain mix-blend-darken transition-all rounded-3xl"
                   :src="image"
                   alt="{{ product.title }}"
                 >
