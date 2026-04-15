@@ -3,7 +3,7 @@
     {% if product.description != blank %}
       <div
         :class="{'bg-police-blue text-white': isOpen === 1}"
-        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none rounded-3xl"
         @click="isOpen = isOpen === 1 ? 0 : 1"
       >
         {{- 'products.product.tabs.description' | t -}}
@@ -12,7 +12,7 @@
     {% if product.metafields.custom.features %}
       <div
         :class="{'bg-police-blue text-white': isOpen === 2}"
-        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none"
+        class="flex flex-1 cursor-pointer items-center justify-center border-r border-police-blue-70 py-4.25 text-sm font-medium uppercase leading-none tracking-wide last:border-none rounded-3xl"
         @click="isOpen = isOpen === 2 ? 0 : 2"
       >
         {{- 'products.product.tabs.features' | t -}}
