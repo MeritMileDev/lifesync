@@ -10,6 +10,9 @@
   assign image_bg = section.settings.image_bg
   
   assign cta_position = section.settings.cta_position
+
+  assign padding_top_cta = section.settings.padding_top_cta
+  assign padding_bottom_cta = section.settings.padding_bottom_cta
 %}
 
 {% render 'offset',
@@ -55,8 +58,8 @@
 </section>
 <style>
   .cta-wrapper {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: {{ padding_top_cta }};
+    padding-bottom: {{ padding_bottom_cta }};
   }
   {% if section.settings.title_max_width > 0 %}
     #section-{{ section_id }} .section-title {
