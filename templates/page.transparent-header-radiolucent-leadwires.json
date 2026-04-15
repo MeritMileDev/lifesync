@@ -185,7 +185,7 @@
         "title_size_mobile": "medium",
         "title_max_width_mobile": 330,
         "title_max_width_desktop": 616,
-        "text": "<p>LifeSync LeadWeare® is a radiolucent single-patient-use leadwire that travels with the patient outside of procedural areas. The innovative 360° connector encases the electrode, minimizing noise and reducing nuisance alarms. LifeSync LeadWear provide excellent visibility, grab, conductivity, and signal for fast, accurate results across Cath and EP labs.</p>",
+        "text": "<p>LifeSync LeadWear® is a radiolucent single-patient-use leadwire that travels with the patient outside of procedural areas. The innovative 360° connector encases the electrode, minimizing noise and reducing nuisance alarms. LifeSync LeadWear provide excellent visibility, grab, conductivity, and signal for fast, accurate results across Cath and EP labs.</p>",
         "text_full_width": true,
         "text_max_width_mobile": 0,
         "text_max_width_desktop": 0,
@@ -317,7 +317,8 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 80,
         "cta_text": "Talk to a LifeSync Expert",
-        "cta_url": "shopify://pages/contact"
+        "cta_url": "shopify://pages/contact",
+        "cta_target": "self"
       }
     }
   },
