@@ -1,5 +1,5 @@
-<div class="my-16 xl:my-26" x-data="{ isOpen: 1 }" @reviews.window="isOpen = 5; $el.scrollIntoView({ behavior: 'smooth', block: 'start'})">
-  <div class="mb-12 hidden xl:flex xl:border xl:border-police-blue-70">
+<div class="my-16 xl:my-26 rounded-3xl" x-data="{ isOpen: 1 }" @reviews.window="isOpen = 5; $el.scrollIntoView({ behavior: 'smooth', block: 'start'})">
+  <div class="mb-12 hidden xl:flex xl:border xl:border-police-blue-70 rounded-3xl">
     {% if product.description != blank %}
       <div
         :class="{'bg-police-blue text-white': isOpen === 1}"
