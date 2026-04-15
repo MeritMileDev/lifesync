@@ -31,7 +31,7 @@
         />
         
         <!-- Content Overlay -->
-        <div class="relative h-full flex flex-col {% if section.settings.cta_position == 'cta_left' %}items-start{% elsif section.settings.cta_position == 'cta_center' %}items-center{% elsif section.settings.cta_position == 'cta_right' %}justify-end{% endif %} justify-center px-6">
+        <div class="relative h-full flex flex-col {% if section.settings.cta_position == 'cta_left' %}text-left items-start{% elsif section.settings.cta_position == 'cta_center' %}text-center items-center justify-center{% elsif section.settings.cta_position == 'cta_right' %}text-right items-end justify-end{% endif %} px-6">
           {% if section.settings.section_title != blank %}
             <h2
               class="section-title {% if section.settings.text_color == 'blue' %}text-police-blue{% else %}text-white{% endif %} 3xl:text-48 lg:text-42 text-32 font-medium mb-2 xl:leading-14 leading-10">
@@ -58,6 +58,23 @@
     padding-top: 150px;
     padding-bottom: 150px;
   }
+  {% if section.settings.title_max_width > 0 %}
+    #section-{{ section_id }} .block-title {
+      max-width: {{ section.settings.title_max_width }}px;
+    }
+  {% endif %}
+  {% if section.settings.description_max_width > 0 %}
+    #section-{{ section_id }} .block-description {
+      max-width: {{ section.settings.description_max_width }}px;
+    }
+  {% endif %}
+  {% if section.settings.description_max_width_desktop > 0 %}
+      @media screen and (min-width: 768px) {
+        #section-{{ section_id }} .block-description {
+          max-width: {{ section.settings.description_max_width_desktop }}px;
+        }
+      }
+    {% endif %}
 </style>
 {% schema %}
   {
@@ -92,6 +109,12 @@
         "type": "text",
         "id": "section_title",
         "label": "Section Title"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width",
+        "label": "Block Title Max Width",
+        "default": 0
       },
       {
         "type": "textarea",
