@@ -46,7 +46,7 @@
                   :class="
                     {
                       'bg-police-blue text-white': isSelected('{{ product.id }}', '{{ option.position }}', '{{ option_item | replace: '"', '&quot;' }}', '{{ option_name }}'),
-                      '!text-police-blue-20 !border-police-blue-20 cursor-default': isDisabled('{{ option_item }}')
+                      '!text-police-blue-20 !border-police-blue-20 cursor-default': isDisabled('{{ option_item }} rounded-3xl')
                     }
                   "
                 >
