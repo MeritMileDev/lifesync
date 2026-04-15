@@ -134,7 +134,7 @@
         {% else %}
           <template x-if="!currentVariant.id || currentVariant.available">
             <div class="xl:flex xl:gap-6 w-full" x-cloak>
-              <div class="flex border border-police-blue-70">
+              <div class="flex border border-police-blue-70 rounded-3xl">
                 <button
                   class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
                   :class="{'text-police-blue-20 hover:text-police-blue-20': formData.quantity < 2}"
