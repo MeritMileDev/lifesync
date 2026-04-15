@@ -59,18 +59,18 @@
     padding-bottom: 150px;
   }
   {% if section.settings.title_max_width > 0 %}
-    #section-{{ section_id }} .block-title {
+    #section-{{ section_id }} .section-title {
       max-width: {{ section.settings.title_max_width }}px;
     }
   {% endif %}
   {% if section.settings.description_max_width > 0 %}
-    #section-{{ section_id }} .block-description {
+    #section-{{ section_id }} .section-description {
       max-width: {{ section.settings.description_max_width }}px;
     }
   {% endif %}
   {% if section.settings.description_max_width_desktop > 0 %}
       @media screen and (min-width: 768px) {
-        #section-{{ section_id }} .block-description {
+        #section-{{ section_id }} .section-description {
           max-width: {{ section.settings.description_max_width_desktop }}px;
         }
       }
