@@ -158,9 +158,9 @@
                             :style="selected === 'main_{{ forloop.index }}' ? 'max-height: ' + $el.scrollHeight + 'px' : ''"
                           >
                             <div class="container">
-                              <ul class="nav-top-level grid gap-4.5 xl:grid-cols-[300px_300px_300px] xl:justify-center xl:gap-10 xl:py-20">
+                              <ul class="grid gap-4.5 xl:grid-cols-[300px_300px_300px] xl:justify-center xl:gap-10 xl:py-20">
                                 {% for child_link in link.links %}
-                                  <li class="first:pt-8 xl:first:pt-0" title="{{ link.title }}">
+                                  <li class="first:pt-8 xl:first:pt-0">
                                     {% for block in blocks %}
                                       {% if block.type == 'submenu_image' %}
                                         {% if block.settings.link_text == child_link.title %}
@@ -522,17 +522,7 @@
     </div>
   </div>
 </header>
-{% style %}
-  .nav-top-level > li[title*="value"] {
-      display: block;
-    }
-  }
-  @media (max-width: 767px) {
-    .nav-top-level > li[title*="LifeSync Innovations"] {
-      display: none;
-    }
-  }
-{% endstyle %}
+
 {% schema %}
   {
     "name": "t:sections.header.name",
