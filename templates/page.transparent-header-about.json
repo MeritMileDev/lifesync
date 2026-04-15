@@ -48,9 +48,9 @@
         "section_max_width": 0,
         "background_image_max_width_mobile": 0,
         "background_image_max_width_desktop": 0,
-        "padding_top_mobile": 58,
-        "padding_bottom_mobile": 85,
-        "padding_top_desktop": 105,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 100,
         "padding_bottom_desktop": 0
       }
     },
