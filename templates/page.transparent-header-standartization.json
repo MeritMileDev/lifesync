@@ -276,9 +276,9 @@
         "button_label": "",
         "button_link": "",
         "padding_top_mobile": 80,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40
       }
     },
     "section_cta_ANNjaL": {
