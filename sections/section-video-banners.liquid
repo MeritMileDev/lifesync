@@ -56,11 +56,7 @@
                 </div>
                 <span class="text-sm font-medium uppercase leading-none tracking-wide">{{ button_text }}</span>
               </a>
-              <div class="absolute right-4 top-4 sizes-4 text-white">
-                    <button @click.prevent="closePopup()">
-                      {% render 'icon', icon: 'close' %}
-                    </button>
-                  </div>
+              
               <div
                 x-cloak
                 x-show="isPopupOpen('{{ block.id }}')"
@@ -94,6 +90,11 @@
                     class="my-20 inline-block w-full transform overflow-hidden bg-white transition-all md:my-2.5 xl:max-w-7xl"
                     @click.outside="stop()"
                   >
+                    <div class="absolute right-4 top-4 sizes-4 text-white">
+                      <button @click.prevent="closePopup()">
+                        {% render 'icon', icon: 'close' %}
+                      </button>
+                    </div>
                     <div class="flex aspect-video items-center justify-center" :class="{ 'hidden': isPlaying }">
                       <img
                         loading="lazy"
