@@ -522,7 +522,11 @@
     </div>
   </div>
 </header>
-
+{% style %}
+  .child-link[href*="LifeSync"] {
+    display: none;
+  }
+{% endstyle %}
 {% schema %}
   {
     "name": "t:sections.header.name",
