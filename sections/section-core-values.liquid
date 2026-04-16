@@ -41,7 +41,7 @@
 <section id="section-{{ section_id }}">
   <div class="container overflow-hidden">
     {% if title != blank %}
-      <div class="section-title mt-8 mx-auto mb-2 text-center text-32 font-medium lg:text-5xl lg:mb-3">{{ title }}</div>
+      <div class="section-title mx-auto mb-2 text-center text-32 font-medium lg:text-5xl lg:mb-3">{{ title }}</div>
     {% endif %}
     {% if text != blank %}
       <div class="section-text text-center mx-auto mb-8">{{- text -}}</div>
@@ -70,7 +70,7 @@
             }
           </style>
           <div class="pb-8 pt-8 lg:px-2 lg:pt-2 lg:flex lg:flex-col lg:mb-0 mb-8 rounded-3xl core-value">
-            <div class="grid-item-title-{{block.id}} mx-auto mb-6 text-white text-center font-bold text-xl max-w-md px-10">
+            <div class="grid-item-title-{{block.id}} mt-8 mx-auto mb-6 text-white text-center font-bold text-xl max-w-md px-10">
               {{- title -}}
             </div>
             {% if block.settings.image_desktop != blank %}
