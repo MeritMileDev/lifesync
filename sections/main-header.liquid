@@ -525,6 +525,9 @@
 {% style %}
   .container ul li:has(> a[href*="innovations"]) {
     display: none;
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
   }
 {% endstyle %}
 {% schema %}
