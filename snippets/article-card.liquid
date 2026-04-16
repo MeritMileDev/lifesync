@@ -5,7 +5,7 @@
 %}
 
 <div class="{{ class }}{% if view_mode == 'list' %} flex gap-6{% endif %}">
-  <a href="{{ article.url }}" class="block{% if view_mode == 'list' %} basis-[140px] min-w-[140px]{% else %} mb-6 overflow-hidden{% endif %}">
+  <a href="{{ article.url }}" class="block{% if view_mode == 'list' %} basis-[140px] min-w-[140px]{% else %} mb-6 overflow-hidden{% endif %} rounded-3xl">
     {% if article.image %}
       <img
         loading="lazy"
