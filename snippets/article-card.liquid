@@ -9,7 +9,7 @@
     {% if article.image %}
       <img
         loading="lazy"
-        class="object-cover w-full transition duration-300 hover:scale-110{% if view_mode == 'list' %} aspect-[35/26]{% else %} aspect-[4/3]{% endif %}"
+        class="object-cover w-full transition duration-300 hover:scale-110{% if view_mode == 'list' %} aspect-[35/26]{% else %} aspect-[4/3]{% endif %} rounded-3xl"
         src="{{ article.image | image_url: width: 410 }}"
         srcset="{{ article.image | image_url: width: 410 }} 1x, {{ article.image | image_url: width: 820 }} 2x"
         alt="{{ link.title }}"
@@ -19,7 +19,7 @@
     {% else %}
     <img
       loading="lazy"
-      class="object-cover w-full transition duration-300 hover:scale-110{% if view_mode == 'list' %} aspect-[35/26]{% else %} aspect-[4/3]{% endif %}"
+      class="object-cover w-full transition duration-300 hover:scale-110{% if view_mode == 'list' %} aspect-[35/26]{% else %} aspect-[4/3]{% endif %} rounded-3xl"
       src="{{ blog.metafields.custom.article_featured_thumbnail.value | image_url: width: 410 }}"
       alt="{{ link.title }}"
       width="410"
