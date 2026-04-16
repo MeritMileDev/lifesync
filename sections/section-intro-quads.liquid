@@ -25,11 +25,9 @@
 %}
 
 <style>
-  #section-{{ section_id }} .block-title {
-    font-weight: bold;
-  }
   {% if section.settings.title_max_width > 0 %}
     #section-{{ section_id }} .block-title {
+      font-weight: bold;
       max-width: {{ section.settings.title_max_width }}px;
     }
   {% endif %}
