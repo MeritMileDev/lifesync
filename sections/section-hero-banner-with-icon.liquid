@@ -62,13 +62,15 @@
   </section>
 {% endif %}
 {% if page.handle == 'standardization' %}
-  .image-wrapper {
+  <style>
+    .image-wrapper {
       background-image: url("https://lifesync.com/cdn/shop/{{ image_mobile }}");
       background-position: center center;
       @media screen and (min-width: 768px) {
         background-image: url("https://lifesync.com/cdn/shop/{{ image_desktop }}");
       }
     }
+  </style>
 {% endif %}
 {% style %}
       #section-{{ section.id }} .image-wrapper {
