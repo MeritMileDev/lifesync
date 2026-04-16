@@ -13,7 +13,7 @@
       "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
-        "image_mobile": "shopify://shop_images/standardization-hero-bg.webp",
+        "image_mobile": "shopify://shop_images/standardization-mobiile.webp",
         "image_desktop": "shopify://shop_images/standardization-hero-bg.webp",
         "horizontal_alignment": "left",
         "title": "<p><strong>Standardize ECG Leadwires</strong> <br/>Across the Entire Patient Stay</p>",
