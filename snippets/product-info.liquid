@@ -193,7 +193,7 @@
           class="
             cursor-pointer flex items-start gap-x-3 before:shrink-0 before:size-5 before:border
             before:border-police-blue-70 before:bg-contain before:bg-center before:bg-no-repeat
-            before:content-[''] peer-checked:before:border-police-blue
+            before:content-[''] peer-checked:before:border-police-blue rounded-checkbox
             peer-checked:before:bg-police-blue peer-checked:before:bg-checkmark peer-disabled:opacity-30 leading-6 md:items-start
           "
           for="pdp-agreements"
@@ -263,6 +263,9 @@
 </div>
 
 {% style %}
+.rounded-checkbox {
+  border-radius: 2rem;
+}
   .qty-input[type=number]::-webkit-inner-spin-button,
   .qty-input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
