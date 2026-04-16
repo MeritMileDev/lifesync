@@ -183,7 +183,7 @@
                                       {% endif %}
                                     {% endfor %}
                                     <a
-                                      class="xl:flex xl:items-center xl:space-x-2 hover:text-police-accent-70 transition-colors"
+                                      class="xl:flex xl:items-center xl:space-x-2 hover:text-police-accent-70 transition-colors child-link"
                                       href="{{ child_link.url }}"
                                       title="{{ child_link.title | strip_html }}"
                                     >
@@ -200,7 +200,7 @@
                         {% else %}
                           <a
                             @mouseover="toggleSelected(event, '')"
-                            class="transition-colors hover:xl:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:text-police-blue group-[.header-transparent]:xl:text-white group-[.header-transparent.desktop-header-opaque]:hover:xl:text-police-blue/70 group-[.header-transparent]:hover:xl:text-white/70"
+                            class="transition-colors hover:xl:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:text-police-blue group-[.header-transparent]:xl:text-white group-[.header-transparent.desktop-header-opaque]:hover:xl:text-police-blue/70 group-[.header-transparent]:hover:xl:text-white/70  child-link"
                             href="{{ link.url }}"
                             title="{{ link.title | strip_html }}"
                           >
