@@ -26,12 +26,12 @@
         {%- for part in paginate.parts -%}
           <li>
             {%- if part.is_link -%}
-              <a href="{{ part.url }}" class="size-10 flex items-center justify-center border-2 border-transparent transition duration-300 hover:border-police-blue" aria-label="Page {{ part.title }}">
+              <a href="{{ part.url }}" class="size-10 flex items-center justify-center border-2 border-transparent transition duration-300 hover:border-police-blue rounded-3xl" aria-label="Page {{ part.title }}">
                 {{- part.title -}}
               </a>
             {%- else -%}
               {%- if part.title == paginate.current_page -%}
-                <span class="size-10 flex items-center justify-center border-2 border-police-blue" aria-current="page" aria-label="Page {{ part.title }}">
+                <span class="size-10 flex items-center justify-center border-2 border-police-blue rounded-3xl" aria-current="page" aria-label="Page {{ part.title }}">
                   {{- part.title -}}
                 </span>
               {%- else -%}
