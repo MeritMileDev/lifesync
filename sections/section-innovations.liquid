@@ -94,18 +94,6 @@
       max-width: {{ section.settings.title_max_width }}px;
     }
   {% endif %}
-  {% if section.settings.description_max_width > 0 %}
-    #section-{{ section_id }} .section-description {
-      max-width: {{ section.settings.description_max_width }}px;
-    }
-  {% endif %}
-  {% if section.settings.description_max_width_desktop > 0 %}
-      @media screen and (min-width: 768px) {
-        #section-{{ section_id }} .section-description {
-          max-width: {{ section.settings.description_max_width_desktop }}px;
-        }
-      }
-    {% endif %}
 </style>
 
 {% schema %}
