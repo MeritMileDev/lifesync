@@ -27,7 +27,7 @@
       <div class="hidden absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
       
       <!-- Left-Bottom Aligned Caption Content -->
-      <div class="absolute bottom-0 left-0 p-8 md:pb-8 md:pt-16 md:pr-16 md:pl-16 text-white max-w-5xl">
+      <div class="absolute bottom-0 left-0 p-8 md:pb-8 md:pt-16 md:pr-16 md:pb-16 text-white max-w-5xl">
         <!-- Icon -->
         {% if banner_icon != blank %}
           {% render 'picture',
@@ -60,17 +60,6 @@
       </div>
     </div>
   </section>
-{% endif %}
-{% if page.handle == 'standardization' %}
-  <style>
-    section > .image-wrapper:first-child {
-      background-image: url("https://lifesync.com/cdn/shop/{{ image_mobile }}");
-      background-position: center center;
-      @media screen and (min-width: 768px) {
-        background-image: url("https://lifesync.com/cdn/shop/{{ image_desktop }}");
-      }
-    }
-  </style>
 {% endif %}
 {% style %}
       #section-{{ section.id }} .image-wrapper {
