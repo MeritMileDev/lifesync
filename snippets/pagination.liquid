@@ -42,7 +42,7 @@
         {%- endfor -%}
         {%- if paginate.next -%}
           <li class="lg:static absolute right-0">
-            <a href="{{ paginate.next.url }}" class="size-10 lg:pl-4 lg:pr-2.5 lg:ml-6 lg:w-auto flex gap-1 items-center justify-center border-2 border-transparent transition duration-300 hover:border-police-blue">
+            <a href="{{ paginate.next.url }}" class="size-10 lg:pl-4 lg:pr-2.5 lg:ml-6 lg:w-auto flex gap-1 items-center justify-center border-2 border-transparent transition duration-300 hover:border-police-blue rounded-3xl">
               <span class="lg:block hidden uppercase">Next</span>
               {% render 'icon', icon: 'chevron-right' %}
             </a>
