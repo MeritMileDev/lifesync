@@ -34,7 +34,11 @@
         display: none;
       }
     }
-
+    {% if section.settings.title_max_width > 0 %}
+      #section-{{ section_id }} .section-title {
+        max-width: {{ section.settings.title_max_width }}px;
+      }
+    {% endif %}
     {% if section.settings.section_description_max_width > 0 %}
     #section-{{ section_id }} .section-description {
       max-width: {{ section.settings.section_description_max_width }}px;
@@ -269,6 +273,12 @@
         "type": "richtext",
         "id": "section_title",
         "label": "Section Title"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width",
+        "label": "Block Title Max Width",
+        "default": 0
       },
       {
         "type": "richtext",
