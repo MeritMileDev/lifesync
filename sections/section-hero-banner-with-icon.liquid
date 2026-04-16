@@ -60,7 +60,8 @@
       </div>
     </div>
   </section>
-  <style>
+{% endif %}
+{% style %}
     .image-wrapper {
       background: ('url(https://lifesync.com/cdn/shop/{{ image_mobile }}');
     }
@@ -122,8 +123,7 @@
           }
         }
     }
-  </style>
-{% endif %}
+{% endstyle %}
 {% schema %}
   {
     "name": "Hero Banner with Icon",
