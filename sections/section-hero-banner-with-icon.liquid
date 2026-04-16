@@ -21,7 +21,7 @@
 {% if image_desktop and image_mobile %}
   <section id="section-{{ section_id }}" class="w-full px-4 py-4">
     <!-- Rounded Container for the whole banner -->
-    <div class="image-wrapper relative w-full h-[60vh] rounded-3xl overflow-hidden bg-cover bg-center">
+    <div class="image-wrapper relative w-full h-[60vh] rounded-3xl overflow-hidden bg-cover bg-center" >
       
       <!-- Gradient Overlay for Contrast -->
       <div class="hidden absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -60,6 +60,66 @@
       </div>
     </div>
   </section>
+  <style>
+      #section-{{ section.id }} .image-wrapper {
+        padding-top: {{ padding_top_desktop }}px;
+        padding-bottom: {{ padding_bottom_desktop }}px;
+      }
+      @media (max-width: 767px) {
+        #section-{{ section.id }} .image-wrapper {
+          padding-top: {{ padding_top_mobile }}px;
+          padding-bottom: {{ padding_bottom_mobile }}px;
+        }
+      }
+      #section-{{ section_id }} .section-title {
+      max-width: {% if title_max_width_mobile > 0 %} {{ title_max_width_mobile }}px {% else %} 100% {% endif %};
+
+      @media screen and (min-width: 768px) {
+        max-width: {% if title_max_width_desktop > 0 %} {{ title_max_width_desktop }}px {% else %} 100% {% endif %};
+          {% if title_max_width_desktop > 0 %}
+            margin-left: auto;
+            margin-right: auto;
+          {% endif %}
+      }
+      .image-wrapper {
+          padding-top: 460px;
+
+          @media (min-width: 560px) {
+            padding-top: 620px;
+          }
+
+          @media (min-width: 768px) {
+            padding-top: 140px;
+            padding-bottom: 40px;
+          }
+
+          @media (min-width: 1280px) {
+            padding-top: 270px;
+            padding-bottom: 50px;
+          }
+          @media (min-width: 1366px) {
+            padding-top: 280px;
+            padding-bottom: 40px;
+          }
+          @media (min-width: 1440px) {
+            padding-top: 280px;
+            padding-bottom: 60px;
+          }
+          @media (min-width: 1500px) {
+            padding-top: 350px;
+            padding-bottom: {{ padding_bottom_desktop }}px;
+          }
+          @media (min-width: 1600px) {
+            padding-top: 450px;
+            padding-bottom: {{ padding_bottom_desktop }}px;
+          }
+          @media (min-width: 1900px) {
+            padding-top: {{ padding_top_desktop }}px;
+            padding-bottom: {{ padding_bottom_desktop }}px;
+          }
+        }
+    }
+  </style>
 {% endif %}
 {% schema %}
   {
