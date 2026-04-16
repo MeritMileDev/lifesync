@@ -55,7 +55,7 @@
                 <p class="mb-8">{{ card_two_description }}</p>
                 <a href="{{  button_link_two }}" class="text-left text-white flex gap-2 items-center font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100 mb-4">
                   Learn About LifeSync Advanced Manufacturing 
-                  {% render 'icon', icon: 'blue-accent-arrow-right', class: 'size-32' %}
+                  {% render 'icon', icon: 'blue-accent-arrow-right' %}
                 </a>
               </div>
             </div>
@@ -74,7 +74,7 @@
             {% if section.settings.button_link != blank and section.settings.button_label != blank %}
               <a class="flex gap-2 items-center justify-center font-bold text-police-blue text-md hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100" href="{{ section.settings.button_link }}">
                 {{ section.settings.button_label }} 
-                {% render 'icon', icon: 'blue-accent-arrow-right', class: 'size-32' %}
+                {% render 'icon', icon: 'blue-accent-arrow-right' %}
               </a>
             {% endif %}
           </div>
