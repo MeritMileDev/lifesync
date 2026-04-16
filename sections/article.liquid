@@ -24,17 +24,17 @@
     <div class="container relative z-10 grow flex flex-col">
       <div class="grid-cols-12 lg:grid lg:gap-6 grow flex flex-col">
         <div class="xl:col-start-2 2xl:col-span-8 xl:col-span-10 col-span-12 2xl:col-start-3 relative grow flex flex-col lg:justify-center justify-end lg:pb-20 pb-30">
-          <h1 class="mb-6 text-center text-bright-gray lg:mb-9 lg:text-left">
+          <h1 class="mb-6 text-center text-white lg:mb-9 lg:text-left">
             {{ article.title }}
           </h1>
-          <p class="text-center text-sm text-bright-gray-50 lg:text-left">
+          <p class="text-center text-sm text-white lg:text-left">
             {{- article.published_at | date: '%B %e, %Y' -}}
           </p>
           <div class="mx-auto max-w-max lg:mx-0 2xl:mt-36 absolute bottom-0 lg:left-auto left-0 lg:right-auto right-0">
             {% render 'share',
               share_url: share_url,
-              text_color_class: 'text-bright-gray',
-              icon_color_class: 'text-bright-gray-50'
+              text_color_class: 'text-white',
+              icon_color_class: 'text-white'
             %}
           </div>
         </div>
