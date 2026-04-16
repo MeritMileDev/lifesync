@@ -154,6 +154,7 @@ module.exports = {
           'linear-gradient(180deg, #F1F7FB 0%, #FFF 40.17%)',
         'arrow-right-dark-blue': "url('/assets/arrow-right-dark-blue.svg')",
         'play-light-blue-round': "url('/assets/play-light-blue-round.svg')",
+        'blue-accent-arrow-right': "url('/assets/icon-police-accent-white-arrow-right.svg')",
       },
       colors: {
         yellow: '#FFD100',
