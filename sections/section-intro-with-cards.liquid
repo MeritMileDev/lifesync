@@ -55,10 +55,7 @@
                 <p class="mb-8">{{ card_two_description }}</p>
                 <a href="{{  button_link_two }}" class="text-left text-white flex gap-2 items-center font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100 mb-4">
                   Learn About LifeSync Advanced Manufacturing 
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="28" height="28" rx="18" fill="#C4CCE3" fill-opacity="0.5"/>
-                    <path d="M25.3172 18.4422L19.6922 24.0672C19.5749 24.1844 19.4159 24.2503 19.25 24.2503C19.0841 24.2503 18.9251 24.1844 18.8078 24.0672C18.6905 23.9499 18.6247 23.7908 18.6247 23.625C18.6247 23.4591 18.6905 23.3001 18.8078 23.1828L23.3664 18.625H11.125C10.9592 18.625 10.8003 18.5591 10.6831 18.4419C10.5658 18.3247 10.5 18.1657 10.5 18C10.5 17.8342 10.5658 17.6753 10.6831 17.558C10.8003 17.4408 10.9592 17.375 11.125 17.375H23.3664L18.8078 12.8172C18.6905 12.6999 18.6247 12.5408 18.6247 12.375C18.6247 12.2091 18.6905 12.0501 18.8078 11.9328C18.9251 11.8155 19.0841 11.7496 19.25 11.7496C19.4159 11.7496 19.5749 11.8155 19.6922 11.9328L25.3172 17.5578C25.3753 17.6158 25.4214 17.6848 25.4529 17.7606C25.4843 17.8365 25.5005 17.9178 25.5005 18C25.5005 18.0821 25.4843 18.1634 25.4529 18.2393C25.4214 18.3152 25.3753 18.3841 25.3172 18.4422Z" fill="white" stroke="white" stroke-width="0.5"/>
-                  </svg>
+                  {% render 'icon', icon: 'blue-accent-arrow-right', class: 'size-32' %}
                 </a>
               </div>
             </div>
@@ -77,10 +74,7 @@
             {% if section.settings.button_link != blank and section.settings.button_label != blank %}
               <a class="flex gap-2 items-center justify-center font-bold text-police-blue text-md hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100" href="{{ section.settings.button_link }}">
                 {{ section.settings.button_label }} 
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="28" height="28" rx="18" fill="#C4CCE3" fill-opacity="0.5"/>
-                  <path d="M25.3172 18.4422L19.6922 24.0672C19.5749 24.1844 19.4159 24.2503 19.25 24.2503C19.0841 24.2503 18.9251 24.1844 18.8078 24.0672C18.6905 23.9499 18.6247 23.7908 18.6247 23.625C18.6247 23.4591 18.6905 23.3001 18.8078 23.1828L23.3664 18.625H11.125C10.9592 18.625 10.8003 18.5591 10.6831 18.4419C10.5658 18.3247 10.5 18.1657 10.5 18C10.5 17.8342 10.5658 17.6753 10.6831 17.558C10.8003 17.4408 10.9592 17.375 11.125 17.375H23.3664L18.8078 12.8172C18.6905 12.6999 18.6247 12.5408 18.6247 12.375C18.6247 12.2091 18.6905 12.0501 18.8078 11.9328C18.9251 11.8155 19.0841 11.7496 19.25 11.7496C19.4159 11.7496 19.5749 11.8155 19.6922 11.9328L25.3172 17.5578C25.3753 17.6158 25.4214 17.6848 25.4529 17.7606C25.4843 17.8365 25.5005 17.9178 25.5005 18C25.5005 18.0821 25.4843 18.1634 25.4529 18.2393C25.4214 18.3152 25.3753 18.3841 25.3172 18.4422Z" fill="white" stroke="white" stroke-width="0.5"/>
-                </svg>
+                {% render 'icon', icon: 'blue-accent-arrow-right', class: 'size-32' %}
               </a>
             {% endif %}
           </div>
