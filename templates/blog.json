@@ -16,10 +16,10 @@
         "image_desktop": "shopify://shop_images/blog_e9076320-7056-4047-be10-8821e273f0c8.png",
         "title": "LifeSync Blog",
         "subtitle": "<p>Your trusted source for the latest insights and innovations in neurodiagnostic and electro-medical technologies</p>",
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 16,
+        "padding_top_desktop": 16,
+        "padding_bottom_desktop": 16
       }
     },
     "main": {
