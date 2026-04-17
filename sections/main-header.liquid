@@ -224,7 +224,7 @@
                         {% if transparent_template %}:class="{'bg-police-blue-20': sticky || selected}"{% endif %}
                     ></span>
                     <div
-                      class="flex cursor-pointer items-center space-x-2 xl:ml-8"
+                      class="flex cursor-pointer items-center space-x-2 xl:ml-8 lg:text-md text-sm"
                       @mouseenter="debounce((event) =>  selected !== 'shop_menu' ? toggleSelected(event, 'shop_menu') : '', selected ? 0 : 300, event)"
                       
                     >
