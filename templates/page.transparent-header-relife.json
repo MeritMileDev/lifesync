@@ -18,7 +18,7 @@
       "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
-        "image_mobile": "shopify://shop_images/relife-hero.webp",
+        "image_mobile": "shopify://shop_images/hero-mobile.jpg",
         "image_desktop": "shopify://shop_images/relife-hero.webp",
         "horizontal_alignment": "left",
         "title": "<p><strong>Closed-Loop ECG <br/></strong>Leadwire Reprocessing<strong> </strong></p>",
