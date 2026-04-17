@@ -48,33 +48,38 @@
             assign light_background = block.settings.light_background
           %}
           <div class="text-center lg:flex lg:flex-col">
-            {% if card_image_mobile or card_image_desktop %}
-              {% render 'picture',
-                image_mobile: card_image_mobile,
-                image_desktop: card_image_desktop,
-                class: 'w-full mb-4 lg:mb-0'
-              %}
-            {% endif %}
-            {% if heading != blank %}
-              <div class="text-left mb-2 text-sm font-bold tracking-wide text-white">{{ heading }}</div>
-            {% endif %}
-            {% if title != blank %}
-              <div class="text-left text-white px-5 text-3xl font-bold lg:mb-4 mb-2" style="margin-top: -60px;">{{ title }}</div>
-            {% endif %}
-            <div class="flex lg:flex-row flex-col justify-between text-left px-5 py-5 {% if light_background %} bg-police-accent {% else %} bg-police-blue {% endif %} rounded-b-xl">
-              {% if text != blank %}
-                <div class="card-text-{{ block.id }} text-white max-w-md 2xl:text-lg text-md lg:text-left text-center lg:mb-0 mb-4 lg:mx-0 mx-auto lg:max-w-sm">{{ text }}</div>
+            <a
+              href="{{ card_link }}"
+              class=""
+            >
+              {% if card_image_mobile or card_image_desktop %}
+                {% render 'picture',
+                  image_mobile: card_image_mobile,
+                  image_desktop: card_image_desktop,
+                  class: 'w-full mb-4 lg:mb-0'
+                %}
               {% endif %}
-              {% if button_text != blank and card_link != blank %}
-                <a
-                  href="{{ card_link }}"
-                  class="flex items-center justify-center gap-2 px-4 text-left lg:text-lg text-md font-medium tracking-wide text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20"
-                >
-                  {{- button_text -}}
-                  {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
-                </a>
+              {% if heading != blank %}
+                <div class="text-left mb-2 text-sm font-bold tracking-wide text-white">{{ heading }}</div>
               {% endif %}
-            </div>
+              {% if title != blank %}
+                <div class="text-left text-white px-5 text-3xl font-bold lg:mb-4 mb-2" style="margin-top: -60px;">{{ title }}</div>
+              {% endif %}
+              <div class="flex lg:flex-row flex-col justify-between text-left px-5 py-5 {% if light_background %} bg-police-accent {% else %} bg-police-blue {% endif %} rounded-b-xl">
+                {% if text != blank %}
+                  <div class="card-text-{{ block.id }} text-white max-w-md 2xl:text-lg text-md lg:text-left text-center lg:mb-0 mb-4 lg:mx-0 mx-auto lg:max-w-sm">{{ text }}</div>
+                {% endif %}
+                {% if button_text != blank and card_link != blank %}
+                  <a
+                    href="{{ card_link }}"
+                    class="flex items-center justify-center gap-2 px-4 text-left lg:text-lg text-md font-medium tracking-wide text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20"
+                  >
+                    {{- button_text -}}
+                    {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
+                  </a>
+                {% endif %}
+              </div>
+            </a>
           </div>
         {% endif %}
       {% endfor %}
