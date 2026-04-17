@@ -11,13 +11,42 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "custom_css": [
         ".pc--opt-out-form-button {border-radius: 24px;}"
       ],
       "settings": {}
+    },
+    "section_simple_text_arQVJK": {
+      "type": "section-simple-text",
+      "name": "Simple Text",
+      "settings": {
+        "subtitle": "LifeSync",
+        "title": "Sitemap",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "<ul><li>Home</li><li>Patient Connectons</li><li>Advanced Manufacturing</li><li>Innovations</li><li>Radiolucent ECG Leadwires</li><li>Standardization</li><li>ECG Leadwire Reprocessing</li><li>About</li><li>Shop</li></ul>",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "section_simple_text_arQVJK"
   ]
 }
