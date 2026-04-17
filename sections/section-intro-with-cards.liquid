@@ -38,7 +38,7 @@
                   class: 'w-full mt-2 mb-6'
                 %}
                 <p class="mb-8">{{ card_one_description }}</p>
-                <a href="{{ button_link }}" class="text-left text-white flex gap-2 items-center justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100 mb-4">
+                <a href="{{ button_link }}" class="text-left text-white flex gap-2 items-center justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mb-4">
                   Discover LifeSync Patient Connections
                   {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
                 </a>
@@ -51,7 +51,7 @@
                   class: 'w-full mt-2 mb-6'
                 %}
                 <p class="mb-8">{{ card_two_description }}</p>
-                <a href="{{  button_link_two }}" class="text-left text-white flex gap-2 items-center justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100 mb-4">
+                <a href="{{  button_link_two }}" class="text-left text-white flex gap-2 items-center justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mb-4">
                   Learn About LifeSync Advanced Manufacturing 
                   {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
                 </a>
@@ -70,7 +70,7 @@
             {% endif %}
             <p class="block-description text-lg max-w-xl lg:mb-8 mb-7 lg:mt-0 mt-7.5">{{ section.settings.description }}</p>
             {% if section.settings.button_link != blank and section.settings.button_label != blank %}
-              <a class="flex gap-2 items-center justify-center font-bold text-police-blue text-md hover:scale-102 active:scale-100 disabled:opacity-20 md:max-w-max transition duration-100" href="{{ section.settings.button_link }}">
+              <a class="flex gap-2 items-center justify-center font-bold text-police-blue text-md hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100" href="{{ section.settings.button_link }}">
                 {{ section.settings.button_label }} 
               </a>
             {% endif %}
