@@ -9,13 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
-    },
     "page_banner_6crmdB": {
       "type": "page-banner",
       "name": "Page Banner",
@@ -30,7 +23,6 @@
     }
   },
   "order": [
-    "main",
     "page_banner_6crmdB"
   ]
 }
