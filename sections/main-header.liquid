@@ -137,7 +137,7 @@
                           <div class="lg:hidden block" @click.prevent="toggleSelected(event, 'main_{{ forloop.index }}')">
                             <a
                               @mouseenter="debounce((event) =>  selected !== 'main_{{ forloop.index }}' ? toggleSelected(event, 'main_{{ forloop.index }}') : '', selected ? 0 : 300, event)"
-                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-accent/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white"
+                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-accent/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white font-bold"
                               href="{{ link.url }}"
                               title="{{ link.title | strip_html }}"
                             >
