@@ -11,10 +11,26 @@
   "sections": {
     "main": {
       "type": "hello-world",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "heading": ""
+      }
+    },
+    "page_banner_6crmdB": {
+      "type": "page-banner",
+      "name": "Page Banner",
+      "settings": {
+        "title": "{{ collection.title }}",
+        "subtitle": "<p>{{ collection.metafields.custom.collection_banner_text | metafield_tag }}</p>",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "page_banner_6crmdB"
   ]
 }
