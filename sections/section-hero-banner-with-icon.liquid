@@ -21,7 +21,7 @@
 {% if image_desktop and image_mobile %}
   <section id="section-{{ section_id }}" class="w-full px-4 py-4">
     <!-- Rounded Container for the whole banner -->
-    <div class="image-wrapper relative w-full h-[60vh] rounded-3xl overflow-hidden bg-cover bg-top">
+    <div class="image-wrapper relative w-full h-[60vh] rounded-3xl overflow-hidden bg-cover bg-top {% if section.settings.background_position == 'bottom' %}bg-bottom{% else if background_position == "top" %}bg-top{% else %}bg-center{% endif %}">
       
       <!-- Gradient Overlay for Contrast -->
       <div class="hidden absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -134,16 +134,6 @@
         "content": "Content Alignment"
       },
       {
-        "type": "image_picker",
-        "id": "image_mobile",
-        "label": "Mobile Image"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_desktop",
-        "label": "Desktop Image"
-      },
-      {
         "type": "select",
         "id": "horizontal_alignment",
         "label": "Horizontal alignment",
@@ -161,12 +151,42 @@
             "label": "Right"
           }
         ],
-        "default": "left"
+        "default": "center"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Desktop Image"
       },
       {
         "type": "image_picker",
         "id": "banner_icon",
         "label": "Icon"
+      },
+      {
+        "type": "select",
+        "id": "background_position",
+        "label": "Background position",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "center"
       },
       {
         "type": "richtext",
