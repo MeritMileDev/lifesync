@@ -74,7 +74,7 @@
                 </li>
               {%- endfor -%}
               {% if paginate.current_page == 1 %}
-                <div class="relative col-span-2 row-start-4 mb-16 xl:col-span-4 xl:row-start-3 xl:mb-20">
+                <div class="hidden col-span-2 row-start-4 mb-16 xl:col-span-4 xl:row-start-3 xl:mb-20">
                   <div class="md:absolute md:inset-0">
                     {% render 'picture',
                       image_mobile: collection_grid_banner_mobile,
