@@ -486,21 +486,8 @@
     },
     "section_am_form_miKWpw": {
       "type": "section-am-form",
-      "name": "AM Form Section",
-      "settings": {
-        "section_title": "Start Your Development Conversation",
-        "section_description": "",
-        "enable_bg": true,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
-      }
-    },
-    "1776703511f5368bde": {
-      "type": "apps",
       "blocks": {
-        "forms_inline_yBrcff": {
+        "forms_inline_KedbjN": {
           "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
           "settings": {
             "form_id": "960243",
@@ -519,9 +506,18 @@
         }
       },
       "block_order": [
-        "forms_inline_yBrcff"
+        "forms_inline_KedbjN"
       ],
-      "settings": {}
+      "name": "AM Form Section",
+      "settings": {
+        "section_title": "Start Your Development Conversation",
+        "section_description": "",
+        "enable_bg": true,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
     }
   },
   "order": [
@@ -535,7 +531,6 @@
     "section_multicolumn_7TfEj9",
     "section_multicolumn_kmJhma",
     "section_steps_T7y3Ja",
-    "section_am_form_miKWpw",
-    "1776703511f5368bde"
+    "section_am_form_miKWpw"
   ]
 }
