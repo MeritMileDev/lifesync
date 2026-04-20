@@ -492,7 +492,7 @@
           "settings": {
             "form_id": "960243",
             "text_color": "#202020",
-            "button_background_color": "#202020",
+            "button_background_color": "#0d0d63",
             "button_label_color": "#FFFFFF",
             "links_color": "#1878B9",
             "errors_color": "#E02229",
