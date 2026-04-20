@@ -97,6 +97,9 @@
                         md:w-auto rounded-3xl
                       "
                       title="{{- collection_grid_banner_button_text -}}"
+                      {% if section.settings.link_target == "new" %}
+                      target="_blank" 
+                      {% endif %}
                     >
                       {{- collection_grid_banner_button_text -}}
                     </a>
@@ -211,7 +214,7 @@
             "label": "New Tab"
           }
         ],
-        "default": "new"
+        "default": "self"
       }
     ]
   }
