@@ -20,7 +20,6 @@
       "settings": {
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/hero-mobile.jpg",
-        "image_desktop": "shopify://shop_images/relife-hero-desktop.webp",
         "background_position": "top",
         "title": "<p><strong>Closed-Loop ECG <br/></strong>Leadwire Reprocessing<strong> </strong></p>",
         "title_tag": "h1",
