@@ -26,12 +26,10 @@
       "settings": {
         "products_per_page": 20,
         "collection_links": "shop-menu",
-        "collection_grid_banner_mobile": "shopify://shop_images/collection-grid-banner.jpg",
-        "collection_grid_banner_desktop": "shopify://shop_images/collection-grid-banner-desktop.jpg",
-        "collection_grid_banner_title": "The standard in signal quality",
-        "collection_grid_banner_subtitle": "The reliability of any neuro test is only as good as the monitoring connection.",
-        "collection_grid_banner_button_text": "Learn more",
-        "collection_grid_banner_button_link": "https://cdn.shopify.com/s/files/1/0659/5235/0359/files/LifeSync_catalog_2025_Web1.pdf?v=1742910525",
+        "collection_grid_banner_title": "",
+        "collection_grid_banner_subtitle": "",
+        "collection_grid_banner_button_text": "",
+        "collection_grid_banner_button_link": "",
         "link_target": "new"
       }
     }
