@@ -28,9 +28,10 @@
       "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
+        "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/home-hero-bg.webp",
         "image_desktop": "shopify://shop_images/home-hero-bg.webp",
-        "horizontal_alignment": "left",
+        "background_position": "center",
         "title": "<p><strong>Standardized Patient Monitoring</strong>, <br/>Made Simple</p>",
         "title_tag": "h1",
         "subtitle": "<p>ECG, SpO₂, neuro, and custom <br/>medical interconnects at scale.</p>",
