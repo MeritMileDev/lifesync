@@ -16,12 +16,13 @@
   assign button_link = section.settings.button_link
   assign title_max_width_mobile = section.settings.title_max_width_mobile
   assign title_max_width_desktop = section.settings.title_max_width_desktop
+  assign background_position = section.settings.background_position
 
 %}
 {% if image_desktop and image_mobile %}
   <section id="section-{{ section_id }}" class="w-full px-4 py-4">
     <!-- Rounded Container for the whole banner -->
-    <div class="image-wrapper relative w-full h-[60vh] rounded-3xl overflow-hidden bg-cover bg-bottom">
+    <div class="image-wrapper relative w-full h-[60vh] rounded-3xl overflow-hidden bg-cover {% if background_position == 'bottom' %}bg-bottom{% else if background_position == "top" %}bg-top{% else %}bg-center{% endif %}">
       
       <!-- Gradient Overlay for Contrast -->
       <div class="hidden absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
