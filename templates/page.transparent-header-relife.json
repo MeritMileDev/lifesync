@@ -20,7 +20,7 @@
       "settings": {
         "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/hero-mobile.jpg",
-        "image_desktop": "shopify://shop_images/relife-hero.webp",
+        "image_desktop": "shopify://shop_images/relife-hero-desktop.webp",
         "background_position": "top",
         "title": "<p><strong>Closed-Loop ECG <br/></strong>Leadwire Reprocessing<strong> </strong></p>",
         "title_tag": "h1",
@@ -51,7 +51,6 @@
         "video_4ywiTW": {
           "type": "video",
           "settings": {
-            "image": "shopify://shop_images/relife-video-thumb.jpg",
             "description": "",
             "youtube_id": ""
           }
@@ -416,7 +415,6 @@
       "settings": {
         "subtitle": "",
         "image_mobile": "shopify://shop_images/relife-process-mobile.png",
-        "image_desktop": "shopify://shop_images/relife-rocess-graphic-with-product.png",
         "is_image_at_bottom_desktop": false,
         "title": "",
         "description": "",
