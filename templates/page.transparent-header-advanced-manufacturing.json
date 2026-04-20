@@ -508,6 +508,9 @@
       "block_order": [
         "forms_inline_KedbjN"
       ],
+      "custom_css": [
+        "_formSubmitButton_cit2d_96 {border-radius: 24px;}"
+      ],
       "name": "AM Form Section",
       "settings": {
         "section_title": "Start Your Development Conversation",
