@@ -108,7 +108,7 @@
           "type": "column",
           "settings": {
             "icon": "shopify://shop_images/home-spo2-leadwire-automation.avif",
-            "title": "Sp02 Leadwire Automation",
+            "title": "SpO<sub>2</sub> Leadwire Automation",
             "description": "",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
