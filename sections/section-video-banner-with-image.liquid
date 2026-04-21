@@ -12,6 +12,7 @@
   assign title = section.settings.title
   assign title_tag = section.settings.title_tag
   assign subtitle = section.settings.subtitle
+  assign featured_image_size = section.settings.featured_image_size
 
   assign horizontal_alignment = section.settings.horizontal_alignment
   case horizontal_alignment
@@ -69,7 +70,7 @@
                   {% render 'picture',
                     image_desktop: image_featured,
                     is_full_size: false,
-                    class: 'featured-image lg:mt-0 mt-8 mx-auto'
+                    class: 'featured-image lg:mt-0 mt-8 mx-auto {{ featured_image_size }}'
                   %}
                 </div>
               </div>
@@ -175,17 +176,17 @@
         "type": "select",
         "id": "featured_image_size",
         "label": "Featured Image Size",
-        "default": "medium",
+        "default": "max-w-2xl",
         "options": [
           {
-            "value": "small",
+            "value": "max-w-xl",
             "label": "Small"
           },{
-            "value": "medium",
+            "value": "max-w-2xl",
             "label": "Medium"
           },
           {
-            "value": "large",
+            "value": "max-w-3xl",
             "label": "Large"
           }
         ]
