@@ -39,7 +39,7 @@
                 %}
                 <p class="mb-8">{{ card_one_description }}</p>
                 <a href="{{ button_link }}" class="text-left text-white flex flex-row gap-2 items-stretch justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mb-4">
-                  Discover LifeSync Patient Connections
+                  {{ section.settings.card_one_button_label }}
                   {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
                 </a>
               </div>
@@ -52,7 +52,7 @@
                 %}
                 <p class="mb-8">{{ card_two_description }}</p>
                 <a href="{{  button_link_two }}" class="text-left text-white flex flex-row gap-2 items-stretch justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mb-4">
-                  Learn About LifeSync Advanced Manufacturing 
+                  {{ section.settings.card_two_button_label }}
                   {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
                 </a>
               </div>
