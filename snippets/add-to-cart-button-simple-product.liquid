@@ -18,7 +18,7 @@
   "
   :disabled="disabled || !productAgreement"
   type="submit"
-  class="flex gap-2 items-center justify-center text-center text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 w-full mt-6 tracking-wide font-medium xl:mt-0 {{ class }}"
+  class="flex gap-2 items-center justify-center text-center text-police-blue px-10 py-4.25 text-sm uppercase bg-police-blue hover:scale-102 active:scale-100 disabled:opacity-20 w-full mt-6 tracking-wide font-medium xl:mt-0 {{ class }} rounded-3xl"
 >
   <span x-cloak x-show="loading">{{ 'products.product.adding_to_cart' | t }}</span>
   <span x-cloak x-show="added">{{ 'products.product.added_to_cart' | t }}</span>
