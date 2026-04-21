@@ -26,7 +26,7 @@
         "title_tag": "h1",
         "title_max_width_mobile": 0,
         "title_max_width_desktop": 0,
-        "subtitle": "<p>The only leadwire that combines reprocessed and new in one.</p>",
+        "subtitle": "<p>Reprocessed and new leadwires. One partner. Guaranteed supply.​</p>",
         "button_label": "",
         "button_link": "",
         "padding_top_mobile": 0,
@@ -43,7 +43,7 @@
           "settings": {
             "subtitle": "",
             "title": "The Confident Way to Reprocess Leadwires",
-            "description": "ReLife is the only FDA 510(k) cleared reprocessed ECG leadwire in the market that helps hospitals reduce medical waste, control costs, and maintain quality through sustainable standardized leadwires.\n<br><br>\nDesigned for standardization, sustainability, cost savings, operational simplicity, and clinical quality, ReLife delivers FDA-regulated, in-house reprocessing by LifeSync experts, end-to-end lifecycle management, and consistent supply through a blended model—all from a trusted single-vendor partner.",
+            "description": "ReLife is the only reprocessed ECG leadwire on the market approved and manufactured by its original designer, helping hospitals reduce medical waste, control costs, and maintain quality through sustainable standardized leadwires.\n<br><br>\nDesigned for standardization, sustainability, cost savings, operational simplicity, and clinical quality, ReLife delivers FDA-regulated, in-house reprocessing by LifeSync experts, end-to-end lifecycle management, and consistent supply through a blended model—all from a trusted single-vendor partner.",
             "button_label": "",
             "button_link": ""
           }
@@ -130,8 +130,8 @@
           "type": "column",
           "settings": {
             "above_title": "“I can’t compromise on safety and quality”",
-            "title": "FDA 510(k)",
-            "description": "FDA cleared and in-house reprocessing",
+            "title": "1 Supplier",
+            "description": "Reprocessed by the original designer and manufacturer.",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "",
@@ -439,6 +439,7 @@
         },
         "faq_x6HUQj": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "question": "Is ReLife FDA cleared?",
             "answer": "<p>Yes, ReLife leadwires are fully FDA 510(k) cleared and manufacture certified to meet OEM quality.</p>"

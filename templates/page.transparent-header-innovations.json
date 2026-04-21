@@ -18,9 +18,10 @@
       "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
+        "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/innovations-hero-bg.webp",
         "image_desktop": "shopify://shop_images/innovations-hero-bg.webp",
-        "horizontal_alignment": "left",
+        "background_position": "center",
         "title": "<p><strong>Innovation That Strengthens</strong> <br/>Every Connection</p>",
         "title_tag": "h1",
         "subtitle": "<p>Moving patient monitoring forward</p>",
@@ -94,7 +95,7 @@
             "card_link": "shopify://pages/relife",
             "heading": "Sustainability without compromise.",
             "title": "ECG Leadwire Reprocessing",
-            "text": "<p>ReLife extends lifecycle control through FDA 510(k)-cleared ECG leadwire reprocessing within a closed-loop model. Hospitals can standardize with one leadwire for both new and reprocessed products—reducing medical waste, managing costs, and maintaining dependable supply without sacrificing quality.</p>",
+            "text": "<p>ReLife extends lifecycle control through FDA-compliant reprocessing within a closed-loop model. Hospitals can standardize with one leadwire for both new and reprocessed products—reducing medical waste, managing costs, and maintaining dependable supply without sacrificing quality.</p>",
             "button_text": "Discover ReLife"
           }
         }

@@ -18,10 +18,11 @@
       "type": "section-hero-banner-with-icon",
       "name": "Hero Banner with Icon",
       "settings": {
+        "horizontal_alignment": "left",
         "image_mobile": "shopify://shop_images/patient-connections-hero-bg.webp",
         "image_desktop": "shopify://shop_images/patient-connections-hero-bg.webp",
-        "horizontal_alignment": "left",
         "banner_icon": "shopify://shop_images/lifesync-patient-connections-logo.webp",
+        "background_position": "center",
         "title": "<p><strong>Simplify and Standardize</strong> <br/>Cardiac and Neuro Monitoring Connections</p>",
         "title_tag": "h1",
         "subtitle": "<p>Superior quality, less clinical variation, and easier workflows across departments and care settings.</p>",
@@ -204,7 +205,7 @@
         "subtitle": "ECG Leadwire Reprocessing",
         "title": "Sustainability without compromise.",
         "title_max_width": 450,
-        "description": "ReLife extends lifecycle control through FDA 510(k)-cleared reprocessing of ECG leadwires within a closed-loop system. Hospitals can standardize on a single leadwire for both new and reprocessed products—with one SKU, one supplier, and seamless connectivity to your existing equipment.<br>\n<br>\nReprocessing provides a measurable way to reduce medical waste, manage costs, and support sustainability goals while maintaining consistent quality and a dependable supply.",
+        "description": "ReLife extends lifecycle control through FDA-compliant reprocessing of ECG leadwires within a closed-loop system. Hospitals can standardize on a single leadwire for both new and reprocessed products—with one SKU, one supplier, and seamless connectivity to your existing equipment.<br>\n<br>\nReprocessing provides a measurable way to reduce medical waste, manage costs, and support sustainability goals while maintaining consistent quality and a dependable supply.",
         "description_max_width": 0,
         "description_max_width_desktop": 0,
         "button_label": "Discover the Reprocessing Advantage",
