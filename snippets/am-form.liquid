@@ -1,0 +1,199 @@
+{%- form 'contact', id: 'ContactForm' -%}
+  {%- if form.posted_successfully? -%}
+    <div class="mb-5 border-l border-persian-blue bg-persian-blue/5 p-6 flex items-start">
+      <div class="text-persian-blue mr-6 mt-1.5" x-init="setTimeout(() => $el.scrollIntoView({ behavior: 'smooth', block: 'center'}), 500)">
+        {% render 'icon', icon: 'success' %}
+      </div>
+      <div>
+        <div>
+          <h2 class="text-base font-medium" tabindex="-1">
+            {{ 'templates.contact.form.post_success' | t }}
+          </h2>
+        </div>
+      </div>
+    </div>
+  {%- elsif form.errors -%}
+    <div class="mb-5 border-l border-red bg-red/5 p-6 flex items-start">
+      <div class="text-red mr-6" x-init="$el.scrollIntoView({ behavior: 'smooth', block: 'center'})">
+        {% render 'icon', icon: 'error' %}
+      </div>
+      <div>
+        <div>
+          <h2 class="text-base font-medium leading-none mb-2" tabindex="-1" autofocus>
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+        </div>
+        <ul role="list" class="text-police-blue-70 leading-none">
+          <li>
+            <a href="#ContactForm-email">
+              {{ form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  {%- endif -%}
+  <div class="2xl:grid 2xl:grid-cols-2 2xl:gap-x-4">
+    <div class="mb-4">
+      <div class="relative">
+        <input
+          class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30 rounded-md"
+          autocomplete="name"
+          type="text"
+          required
+          id="ContactForm-name"
+          name="contact[name]"
+          value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+          placeholder="{{ 'templates.contact.form.name' | t }}"
+        >
+        <label
+          class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+          for="ContactForm-name"
+        >
+          {{- 'templates.contact.form.name' | t }} *
+        </label>
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="relative">
+        <input
+          type="text"
+          id="ContactForm-company"
+          class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30 rounded-md"
+          name="contact[company]"
+          placeholder="{{ 'templates.contact.form.company' | t }}"
+        >
+        <label
+          class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+          for="ContactForm-company"
+        >
+          {{- 'templates.contact.form.company' | t -}}
+        </label>
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="relative">
+        <input
+          autocomplete="email"
+          type="email"
+          id="ContactForm-email"
+          class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-1 focus:!outline-police-blue disabled:opacity-30 rounded-md"
+          name="contact[email]"
+          spellcheck="false"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          autocapitalize="off"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          aria-required="true"
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="ContactForm-email-error"
+          {% endif %}
+          placeholder="{{ 'templates.contact.form.email' | t }}"
+        >
+        <label
+          class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+          for="ContactForm-email"
+        >
+          {{- 'templates.contact.form.email' | t }} *
+        </label>
+      </div>
+      {%- if form.errors contains 'email' -%}
+        <small class="text-red" id="ContactForm-email-error">
+          <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+          <span class="form__message">
+            {{- form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email -}}
+          </span>
+        </small>
+      {%- endif -%}
+    </div>
+    <div class="mb-4">
+      <div class="relative">
+        <input
+          type="tel"
+          id="ContactForm-phone"
+          class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30 rounded-md"
+          autocomplete="tel"
+          name="contact[phone]"
+          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          placeholder="{{ 'templates.contact.form.phone' | t }}"
+        >
+        <label
+          class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+          for="ContactForm-phone"
+        >
+          {{- 'templates.contact.form.phone' | t -}}
+        </label>
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="relative">
+        <select 
+          id="ContactForm-development_stage" 
+          class="field__input peer w-full bg-white border border-police-blue-70 px-5 pb-5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30 rounded-md" 
+          name="contact[development_stage]">
+          <option value="" class="text-police-blue-70">Development stage</option>
+          <option value="Concept">Concept</option>
+          <option value="Prototype">Prototype</option>
+          <option value="Production">Production</option>
+          <option value="Scale">Scale</option>
+          <option value="Transfer">Transfer</option>
+        </select>
+        <label
+          class="hidden start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+          for="ContactForm-development_stage"
+        >
+          {{- 'templates.contact.form.development_stage' | t -}}
+        </label>
+      </div>
+    </div>
+    <div class="mb-4">
+      <div class="relative">
+        <input
+          type="text"
+          id="ContactForm-volume"
+          class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30 rounded-md"
+          name="contact[volume]"
+          placeholder="{{ 'templates.contact.form.volume' | t }}"
+        >
+        <label
+          class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+          for="ContactForm-volume"
+        >
+          {{- 'templates.contact.form.volume' | t -}}
+        </label>
+      </div>
+    </div>
+    <div class="2xl:col-span-2 leading-none mb-4">
+      <div class="relative">
+        <textarea
+          rows="4"
+          id="ContactForm-body"
+          class="resize-none block text-base text-area peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30 rounded-md"
+          name="contact[comment]"
+          required
+          placeholder="{{ 'templates.contact.form.comment' | t }}"
+        >
+          {{- form.body -}}
+        </textarea>
+        <label
+          class="form__label absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-7 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+          for="ContactForm-body"
+        >
+          {{- 'templates.contact.form.comment' | t -}}
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact__button">
+    <button
+      type="submit"
+      class="flex w-full items-center justify-center gap-2 bg-police-accent px-10 py-4.25 text-center text-sm tracking-wide text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 font-medium rounded-3xl"
+    >
+      {{ 'templates.contact.form.talk' | t }}
+    </button>
+  </div>
+{%- endform -%}

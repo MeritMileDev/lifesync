@@ -1,0 +1,101 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "image": "shopify://shop_images/image-404.png",
+        "section_title": "Page not found",
+        "section_text": "<p>The page you’re looking for could not be found.</p><p>Please make sure the web address is correct, or try the home page.</p>",
+        "button_label": "Go back",
+        "button_link": "/",
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_multicolumn_PngMQF": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_BpzKcU": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon7.svg",
+            "title": "Cardiac",
+            "description": "Simplify and standardize your cardiac<br> monitoring and connections.",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/cardiac",
+            "show_button": true,
+            "full_block_button_link": true
+          }
+        },
+        "column_jz3Fie": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon8.svg",
+            "title": "Source",
+            "description": "Custom design, manufacturing, and fulfillment<br> of medical cables and connections.",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/source",
+            "show_button": true,
+            "full_block_button_link": true
+          }
+        },
+        "column_m9wHRq": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon9.svg",
+            "title": "Neuro",
+            "description": "Unmatched quality, cost, and selection of neurodiagnostic<br> and neuromonitoring connections.",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/neuro",
+            "show_button": true,
+            "full_block_button_link": true
+          }
+        }
+      },
+      "block_order": [
+        "column_BpzKcU",
+        "column_jz3Fie",
+        "column_m9wHRq"
+      ],
+      "settings": {
+        "section_bg_image": "shopify://shop_images/section-404-bg.png",
+        "enable_gradient": true,
+        "solid_bg": false,
+        "section_subtitle": "Discover more",
+        "section_title": "Connecting performance & efficiency to quality care",
+        "section_title_max_width": 560,
+        "section_description": "LifeSync is the economical, single-source alternative to expensive OEM connections from multiple suppliers.",
+        "section_description_max_width": 430,
+        "column_count": "3",
+        "enable_slider": false,
+        "style": "borders",
+        "enable_bottom_border": false,
+        "column_title_size": "large",
+        "column_title_size_mobile": "small",
+        "column_image_height": 0,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_multicolumn_PngMQF"
+  ]
+}

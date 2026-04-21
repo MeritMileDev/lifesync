@@ -1,0 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header": {
+      "name": "Header"
+    },
+    "main-collection-product-grid": {
+      "settings": {
+        "products_per_page": {
+          "label": "Products per page"
+        },
+        "collection_list": {
+          "label": "Collection list",
+          "description": "Select a menu to display subcategories"
+        }
+      }
+    },
+    "contact-form": {
+      "name": "Contact form",
+      "presets": {
+        "name": "Contact form"
+      }
+    }
+  }
+}

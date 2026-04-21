@@ -1,0 +1,126 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="grid gap-6 md:grid-cols-2">
+      {% for block in section.blocks %}
+        {% if block.type == 'text_block' %}
+          {% liquid
+            assign subtitle = block.settings.subtitle
+            assign title = block.settings.title
+            assign description = block.settings.description
+          %}
+          <div class="bg-bright-gray px-8 py-7.5 md:flex md:flex-col large:p-12 2.5xl:px-25 2.5xl:py-22">
+            {% if subtitle != blank %}
+              <div class="mb-2 text-sm font-medium uppercase tracking-wide text-police-blue-70 large:mb-4.5">
+                {{- subtitle -}}
+              </div>
+            {% endif %}
+            {% if title != blank %}
+              <div class="mb-2 text-32 font-medium text-white large:mb-4 2.5xl:mb-14.5 2.5xl:pr-32 2.5xl:text-64">{{ title }}</div>
+            {% endif %}
+            {% if description != blank %}
+              <div class="description-block md:mt-auto text-white">{{ description }}</div>
+            {% endif %}
+          </div>
+          <style>
+            #section-{{ section_id }} .description-block ul {
+                list-style: disc;
+                padding-left: 1.25rem;
+
+                li{
+                  padding-left: .25rem;
+                  &::marker {
+                  font-size: .75rem !important;
+                }
+              }
+            }
+          </style>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Grid with Text",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Text Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Grid with Text"
+      }
+    ]
+  }
+{% endschema %}

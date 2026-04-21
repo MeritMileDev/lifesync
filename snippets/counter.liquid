@@ -1,0 +1,62 @@
+{% assign number_map = '0=>987654321,1=>098765432,2=>109876543,3=>210987654,4=>321098765,5=>432109876,6=>543210987,7=>654321098,8=>765432109,9=>876543210'
+  | split: ','
+%}
+
+{% assign text_arr = input_string | split: '' %}
+
+{% assign result = '' %}
+
+{% for char in text_arr %}
+  {% assign mapped_value = '' %}
+
+  {% for pair in number_map %}
+    {% assign key_value = pair | split: '=>' %}
+    {% if key_value[0] == char %}
+      {% assign mapped_value = key_value[1] %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign new_value = char | append: mapped_value | append: '0' %}
+  {% assign result = result | append: new_value | append: ' ' %}
+{% endfor %}
+
+{% assign new_array = result | split: ' ' %}
+
+<div class="flex items-start justify-center" x-data="counter" :class="{ 'counter-active': isActivated }">
+  {% for item in new_array %}
+    {% liquid
+      assign remainder = forloop.rindex | modulo: 3
+      assign revert_direction_indexes = '1,2,3' | split: ','
+      assign main_direction_indexes = '4,5,6' | split: ','
+      assign index_string = forloop.rindex | append: ''
+      assign is_reverted_direction = false
+      assign is_odd = forloop.rindex | modulo: 2
+
+      if is_odd == 0
+        assign is_reverted_direction = true
+      endif
+
+      if revert_direction_indexes contains index_string
+        assign is_reverted_direction = true
+      endif
+      if main_direction_indexes contains index_string
+        assign is_reverted_direction = false
+      endif
+    %}
+    {% if forloop.first != true and remainder == 0 and forloop.last != true %}
+      <span>,</span>
+    {% endif %}
+    <span class="counter-col {% if is_reverted_direction %}reversed{% endif %}">
+      {% assign items_array = item | split: '' %}
+      {% if is_reverted_direction %}
+        {% assign items_array = items_array | reverse %}
+      {% endif %}
+
+      {% for number in items_array %}
+        <div>
+          {{ number }}
+        </div>
+      {% endfor %}
+    </span>
+  {% endfor %}
+</div>

@@ -1,0 +1,1 @@
+const s=e=>{e.data("omnisend",i=>({formId:i.id,formSubmitted:!1,showTitle:!0,init(){window.addEventListener("omnisendForms",d=>{const t=d;t.detail.type==="submit"&&t.detail.form.id===this.formId&&(this.formSubmitted=!0),this.formSubmitted&&t.detail.name==="formSubscriberIdentified"&&(this.showTitle=!1,this.formSubmitted=!1)})}}))};export{s as default};

@@ -1,0 +1,253 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign image_mobile = section.settings.image_mobile
+  assign image_desktop = section.settings.image_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="overflow-hidden" x-data="{ block: window.location.hash ? window.location.hash : '#login' }">
+    <div class="container">
+      <div class="items-center xl:grid xl:grid-cols-12 xl:gap-6">
+        <div class="!mt-10 xl:col-span-5 xl:!mt-0 xl:py-24 xl:pr-14" :class="{'h-full': block === '#recover'}">
+          <div
+            x-cloak
+            x-show="block == '#recover'"
+            class="transition-transform duration-300"
+          >
+            <h2 class="mb-2 text-center text-32 font-medium leading-10 xl:mb-3 xl:text-5xl">
+              {{ 'customer.recover_password.title' | t }}
+            </h2>
+            <p class="mx-auto mb-9 max-w-69 text-center xl:mb-21 xl:max-w-full">
+              {{- 'customer.recover_password.subtext' | t -}}
+            </p>
+            {%- form 'recover_customer_password', class: 'w-full' -%}
+              {% assign recover_success = form.posted_successfully? %}
+              {%- if form.errors -%}
+                <div class="mb-5 bg-red/10 p-5 text-red">
+                  <p>Please adjust the following:</p>
+                  <p id="RecoverEmail-email-error">
+                    {{ form.errors.messages.form }}
+                  </p>
+                </div>
+              {%- endif -%}
+              <div class="relative mb-4">
+                <input
+                  class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30"
+                  type="email"
+                  value=""
+                  name="email"
+                  id="RecoverEmail"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  {% if form.errors %}
+                    aria-invalid="true"
+                    aria-describedby="RecoverEmail-email-error"
+                    autofocus
+                  {% endif %}
+                  placeholder="{{ 'customer.login_page.email' | t }}"
+                  required
+                >
+                <label
+                  for="RecoverEmail"
+                  class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                >
+                  <div>{{ 'customer.login_page.email' | t }}</div>
+                </label>
+              </div>
+              <button
+                type="submit"
+                class="mb-9 flex w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-20"
+              >
+                <span>
+                  {{- 'customer.reset_password.submit' | t -}}
+                </span>
+              </button>
+              <div class="text-center">
+                <span>{{ 'customer.reset_password.remember_password' | t }}</span>
+                <a
+                  class="text-base text-persian-blue underline hover:no-underline active:underline disabled:opacity-30"
+                  href="#login"
+                  @click="block = '#login'"
+                >
+                  <span>{{ 'customer.login_page.title' | t }}</span>
+                </a>
+              </div>
+            {%- endform -%}
+          </div>
+
+          <div x-cloak x-show="block == '#login'" class="transition-transform duration-300">
+            <h1 class="mb-8 text-center text-32 font-medium leading-10 xl:mb-19.5 xl:text-5xl">
+              {{- 'customer.log_in' | t -}}
+            </h1>
+            {%- form 'customer_login', novalidate: 'novalidate', class: 'w-full' -%}
+              {%- if form.errors -%}
+                <div class="mb-5 bg-red/10 p-5 text-red">
+                  <p>{{ 'customer.instructions' | t }}</p>
+                  <div>{{ form.errors | default_errors }}</div>
+                </div>
+              {%- endif -%}
+              {%- if recover_success == true -%}
+                {% render 'icon', icon: 'check-accent', class: 'min-w-4.5 !w-4.5 !h-4.5' %}
+                <p>{{ 'customer.recover_password.success' | t }}</p>
+              {%- endif -%}
+              <div class="mb-4">
+                <div class="relative mb-4">
+                  <input
+                    class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30{% if form.errors contains 'form' %} !border-red{% endif %}"
+                    type="email"
+                    required
+                    name="customer[email]"
+                    id="CustomerEmail"
+                    autocomplete="email"
+                    autocapitalize="off"
+                    {% if form.errors contains 'form' %}
+                      aria-invalid="true"
+                    {% endif %}
+                    placeholder="{{ 'customer.login_page.email' | t }}"
+                  >
+                  <label
+                    class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                    for="CustomerEmail"
+                  >
+                    <span>{{ 'customer.login_page.email' | t }}</span>
+                  </label>
+                </div>
+                {%- if form.password_needed -%}
+                  <div class="relative">
+                    <input
+                      class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-police-blue focus:!outline-1 disabled:opacity-30{% if form.errors contains 'form' %} border-red{% endif %}"
+                      type="password"
+                      value=""
+                      name="customer[password]"
+                      required
+                      id="CustomerPassword"
+                      autocomplete="current-password"
+                      {% if form.errors contains 'form' %}
+                        aria-invalid="true"
+                      {% endif %}
+                      placeholder="{{ 'customer.login_page.password' | t }}"
+                    >
+                    <label
+                      class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                      for="CustomerPassword"
+                    >
+                      <span>{{ 'customer.login_page.password' | t }}</span>
+                    </label>
+                  </div>
+                {%- endif -%}
+              </div>
+              <div class="mb-9">
+                <button
+                  class="flex w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-20"
+                  type="submit"
+                >
+                  <span>{{ 'customer.log_in' | t }}</span>
+                </button>
+              </div>
+              <div class="text-center">
+                <a
+                  href="#recover"
+                  class="text-base text-persian-blue underline hover:no-underline active:underline disabled:opacity-30"
+                  @click="block = '#recover'"
+                >
+                  {{- 'customer.login_page.forgot_password' | t -}}
+                </a>
+              </div>
+              <div class="mb-10 mt-6 flex items-center justify-center space-x-4">
+                <span class="h-px grow bg-police-blue-20"></span>
+                <span class="text-sm text-police-blue-70">{{ 'customer.login_page.or_fallback' | t }}</span>
+                <span class="h-px grow bg-police-blue-20"></span>
+              </div>
+            {%- endform -%}
+            <div class="mt-9 text-center">
+              {{- 'customer.login_page.create_account' | t }}
+              <a
+                href="/account/register"
+                class="text-base text-persian-blue underline hover:no-underline active:underline disabled:opacity-30"
+              >
+                <span>{{ 'customer.login_page.create_account_button' | t }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="-mx-4 mt-9 xl:relative xl:col-span-7 xl:mx-0 xl:mt-0 xl:h-full xl:min-h-[912px]">
+          <div class="aspect-square xl:absolute xl:left-0 xl:aspect-[1097/912] xl:h-full xl:w-[58vw] xl:max-w-275">
+            {% render 'picture',
+              image_desktop: image_desktop,
+              image_mobile: image_mobile,
+              lazy: 'lazy',
+              desktop_size: '60',
+              is_full_size: true,
+              class: 'object-cover w-full h-full'
+            %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Login",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ]
+  }
+{% endschema %}

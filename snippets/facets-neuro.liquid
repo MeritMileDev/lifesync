@@ -1,0 +1,302 @@
+{% liquid
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms
+  endif
+%}
+<div>
+  <div class="pt-4 lg:hidden">
+    <button
+      @click="openFacets"
+      class="flex w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-20"
+    >
+      {% render 'icon', icon: 'settings' %}
+      <span>{{ 'products.facets.filter_title' | t }}</span>
+    </button>
+  </div>
+  <div x-cloak x-show="isOpen" class="fixed inset-0 z-50 bg-black/50" @click="closeFacets"></div>
+  <div
+    id="Facets"
+    class="
+      l-fu fixed inset-0 left-full z-[60] flex w-80 translate-x-full flex-col bg-police-blue text-white
+      shadow-shadow-right lg:static lg:w-auto lg:translate-x-[initial] lg:flex-row lg:bg-transparent lg:text-police-blue
+      lg:shadow-none transition-transform duration-300 ease-in-out xl:transition-none
+    "
+    :class="{'!-translate-x-full': isOpen === true}"
+  >
+    <div x-cloak x-show="loading" class="absolute inset-0 z-20 flex items-center justify-center bg-black/10">
+      {% render 'icon', icon: 'loader' %}
+    </div>
+    <div class="flex h-full flex-col lg:w-full">
+      <div
+        class="flex items-center justify-between bg-bright-gray py-1 pl-4 font-medium uppercase tracking-wide text-police-blue lg:hidden"
+      >
+        <span>
+          {{ 'products.facets.filter_title' | t }}
+        </span>
+        <button @click="closeFacets" class="flex items-center justify-center px-4 py-3">
+          {% render 'icon', icon: 'close' %}
+        </button>
+      </div>
+      <div class="border-t border-police-blue-20 py-6 lg:border-b lg:border-t-0 lg:pt-0">
+        <div class="flex flex-col cursor-pointer items-start justify-end text-sm font-medium uppercase tracking-wide lg:leading-6">
+          Neuro
+          <ul class="mb-4 subnav-neuro">
+            <li><a href="https://lifesync.com/collections/eeg" class="inline-block text-persian-blue underline first:mt-4 font-medium underline">EEG</a></li>
+            <li><a href="https://lifesync.com/collections/emg" class="inline-block text-persian-blue underline first:mt-4 font-medium underline">EMG</a></li>
+            <li><a href="https://lifesync.com/collections/ionm" class="inline-block text-persian-blue underline first:mt-4 font-medium underline">IONM</a></li>
+            <li><a href="https://lifesync.com/collections/psg" class="inline-block text-persian-blue underline first:mt-4 font-medium underline">PSG</a></li>
+            <li><a href="https://lifesync.com/collections/ncs" class="inline-block text-persian-blue underline first:mt-4 font-medium underline">NCS</a></li>
+            <li><a href="https://lifesync.com/collections/ecg-leadwires-and-monitoring" class="inline-block text-persian-blue underline first:mt-4 font-medium underline">ECG</a></li>
+          </ul>
+        </div>
+      </div>
+      <form class="facet-form flex-1 overflow-y-auto bg-white px-4 text-police-blue lg:px-0" x-ref="form">
+        <div class="pb-4 pt-2.5 lg:hidden">
+          <div class="mb-2 text-sm text-police-blue-70">
+            {{ 'products.facets.sort_by_label' | t }}
+          </div>
+          <select
+            class="
+              w-full cursor-pointer appearance-none border border-police-blue-70 bg-select-arrow bg-right-2 bg-no-repeat
+              px-5 py-3.5 pr-10 text-base placeholder:text-police-blue-70 hover:border-police-blue disabled:opacity-30
+            "
+            x-ref="sortBy"
+            @change="updateFacets($event)"
+            name="sort_by"
+            id="SortBy"
+          >
+            {%- for option in results.sort_options -%}
+              <option
+                value="{{ option.value | escape }}"
+                {% if option.value == results.sort_by %}
+                  selected="selected"
+                {% endif %}
+              >
+                {{ option.name | escape }}
+              </option>
+            {%- endfor -%}
+          </select>
+        </div>
+        {% liquid
+          assign current_collection_handle = collection.handle
+          assign current_menu_item = null
+          for top_level_link in collection_links.links
+            if top_level_link.handle == current_collection_handle
+              assign current_menu_item = top_level_link
+            endif
+            if current_menu_item == null and top_level_link.links
+              for second_level_link in top_level_link.links
+                if second_level_link.handle == current_collection_handle
+                  assign current_menu_item = second_level_link
+                endif
+                if current_menu_item == null and second_level_link.links
+                  for third_level_link in second_level_link.links
+                    if third_level_link.handle == current_collection_handle
+                      assign current_menu_item = third_level_link
+                    endif
+                  endfor
+                endif
+              endfor
+            endif
+          endfor
+        %}
+        {% assign subcategories_count = 0 %}
+        {% if current_menu_item.levels > 0 %}
+          <div class="border-t border-police-blue-20 py-6 lg:border-b lg:border-t-0 lg:pt-0">
+            <div
+              @click="isSubcategoriesOpen = !isSubcategoriesOpen"
+              class="flex cursor-pointer items-center justify-between text-sm font-medium uppercase tracking-wide lg:leading-6"
+            >
+              {{ 'products.facets.category_label' | t }}
+              <span
+                :class="{'!rotate-0': isSubcategoriesOpen}"
+                class="rotate-180"
+              >
+                {% render 'icon', icon: 'chevron-down' %}
+              </span>
+            </div>
+            <div
+              x-data="{showAllSubcategories: false}"
+              x-ref="filterList_{{- forloop.index -}}"
+              class="max-h-auto overflow-hidden"
+              :class="{'!max-h-0': !isSubcategoriesOpen}"
+            >
+              {% for current_menu_top in current_menu_item.links %}
+                {% assign subcategories_count = subcategories_count | plus: 1 %}
+                <a
+                  x-cloak
+                  x-show="{{ subcategories_count }} <= 11 || showAllSubcategories"
+                  data-count="{{ subcategories_count }}"
+                  class="inline-block text-persian-blue underline first:mt-4 font-medium"
+                  href="{{ current_menu_top.url }}"
+                  title="{{ current_menu_top.title }}"
+                >
+                  {{- current_menu_top.title -}}
+                </a>
+                {% if current_menu_top.levels > 0 %}
+                  <div
+                    x-cloak
+                    x-show="{{ subcategories_count }} <= 11 || showAllSubcategories"
+                    class="mt-1 mb-2.5 flex flex-col pl-8"
+                  >
+                    {% for current_menu_second in current_menu_top.links %}
+                      {% assign subcategories_count = subcategories_count | plus: 1 %}
+                      <a
+                        x-cloak
+                        x-show="{{ subcategories_count }} <= 11 || showAllSubcategories"
+                        data-count="{{ subcategories_count }}"
+                        class="text-persian-blue underline"
+                        href="{{ current_menu_second.url }}"
+                        title="{{ current_menu_second.title }}"
+                      >
+                        {{- current_menu_second.title -}}
+                      </a>
+                      {% if current_menu_second.levels > 0 %}
+                        <div
+                          x-cloak
+                          x-show="{{ subcategories_count }} <= 11 || showAllSubcategories"
+                          class="mt-1 mb-2.5 flex flex-col pl-8"
+                        >
+                          {% for current_menu_third in current_menu_second.links %}
+                            <a
+                              x-cloak
+                              x-show="{{ subcategories_count }} <= 11 || showAllSubcategories"
+                              class="text-persian-blue underline"
+                              href="{{ current_menu_third.url }}"
+                              title="{{ current_menu_third.title }}"
+                            >
+                              {{- current_menu_third.title -}}
+                            </a>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+              <a
+                  x-cloak
+                  x-show="{{ subcategories_count }} > 11 && !showAllSubcategories"
+                  class="mt-3.5 flex items-center space-x-3 text-persian-blue underline"
+                  href="#"
+                  @click.prevent="showAllSubcategories = true"
+              >
+                        <span class="flex w-5 rotate-180 items-center justify-center text-police-blue">
+                          {% render 'icon', icon: 'chevron-up', class: 'w-2.5' %}
+                        </span>
+                <span>{{ 'products.facets.show_more' | t }}</span>
+              </a>
+            </div>
+          </div>
+        {% endif %}
+        <div>
+          {%- for filter in results.filters -%}
+            {% assign is_visible = false %}
+            {% for filter_value in filter.values %}
+              {% if filter_value.count > 0 %}
+                {% assign is_visible = true %}
+              {% endif %}
+            {% endfor %}
+            {% if is_visible %}
+              {% assign index = forloop.index %}
+              {% assign has_active_filters = false %}
+              {% if filter.active_values.size > 0 %}
+                {% assign has_active_filters = index %}
+              {% endif %}
+              {%- case filter.type -%}
+                {%- when 'list' -%}
+                  <div
+                    class="border-t border-police-blue-20 py-6 first:lg:border-t-0 {% unless current_menu_item.levels > 0 %} first:lg:pt-0 first:lg:leading-6 {% endunless %}"
+                    x-data="{filterExpanded: false, showTrigger: false}"
+                  >
+                    <div
+                      @click="openFilter = openFilter === '{{ forloop.index }}' ? null : openFilter = '{{ forloop.index }}'"
+                      class="flex cursor-pointer items-center justify-between text-sm font-medium uppercase tracking-wide"
+                    >
+                      {{- filter.label -}}
+                      <span
+                        :class="{'!rotate-0': openFilter == '{{ forloop.index }}'}"
+                        class="rotate-180"
+                      >
+                        {% render 'icon', icon: 'chevron-down' %}
+                      </span>
+                    </div>
+                    <ul
+                      class="grid max-h-0 gap-4 overflow-hidden"
+                      x-ref="filterList_{{- forloop.index -}}"
+                      :style="openFilter === '{{ forloop.index }}' ? 'max-height: none' : ''"
+                    >
+                      {%- for filter_value in filter.values -%}
+                        {% if filter_value.count != 0 %}
+                          <li
+                            class="list-none first:mt-5"
+                            x-show="'{{ forloop.index }}' < 5 || expandedFilter"
+                            x-init="showTrigger = '{{ forloop.index }}' >= 5"
+                          >
+                            <input
+                              @change="updateFacets($event)"
+                              class="peer sr-only"
+                              type="checkbox"
+                              name="{{ filter_value.param_name }}"
+                              value="{{ filter_value.value }}"
+                              id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                              {% if filter_value.active -%}
+                                checked
+                              {%- endif %}
+                              {% if filter_value.count == 0 and filter_value.active == false -%}
+                                disabled
+                              {%- endif %}
+                            >
+                            <label
+                              for="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                              class="
+                                flex items-center gap-x-3 leading-none before:shrink-0 before:size-5 before:border
+                                before:border-police-blue-70 before:bg-contain before:bg-center before:bg-no-repeat
+                                before:content-[''] peer-checked:before:border-police-blue
+                                peer-checked:before:bg-police-blue peer-checked:before:bg-checkmark peer-disabled:opacity-30
+                              "
+                            >
+                              <span class="line-clamp-1 lg:line-clamp-none">{{ filter_value.label }} ({{ filter_value.count }})</span>
+                            </label>
+                          </li>
+                        {% endif %}
+                      {%- endfor -%}
+                      <li x-show="showTrigger && expandedFilter !== {{ forloop.index }}">
+                        <a
+                          class="flex items-center space-x-3 text-persian-blue underline"
+                          href="#"
+                          x-show="!filterExpanded"
+                          @click.prevent="expandedFilter = {{ forloop.index }}; $refs.filterList_{{- forloop.index -}}.style.maxHeight = '100%'"
+                        >
+                          <span class="flex w-5 rotate-180 items-center justify-center text-police-blue">
+                            {% render 'icon', icon: 'chevron-up', class: 'w-2.5' %}
+                          </span>
+                          <span>{{ 'products.facets.show_more' | t }}</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+              {%- endcase -%}
+            {% endif %}
+          {%- endfor -%}
+        </div>
+      </form>
+      <div class="border-t border-police-blue-20 bg-white p-4 lg:hidden">
+        <button
+          class="w-full border border-police-blue-70 p-4 text-sm font-medium uppercase tracking-wide text-police-blue"
+          @click="() => {updateFacets(null, true); closeFacets();}"
+        >
+          {{ 'products.facets.apply_label' | t }}
+        </button>
+        <a href="{{ results_url }}"
+            class="flex justify-center w-full mt-3 border border-police-blue-70 p-4 text-sm font-medium uppercase tracking-wide text-police-blue"
+        >
+          {{ 'products.facets.clear_label' | t }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

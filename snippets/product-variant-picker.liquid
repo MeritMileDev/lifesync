@@ -1,0 +1,122 @@
+{% comment %}
+  Renders variants
+
+  Accepts:
+  - product_target: {Object} Product Liquid object
+  - prefix: {String} Needed for variants initialize
+  - variants_class: {String} (Optional)
+
+  Usage:
+  {% render 'product-variant-picker' %}
+{% endcomment %}
+
+{% unless product_target.has_only_default_variant %}
+  <div
+    id="variant-selects-{{ section.id }}"
+    {% if variants_class %}
+      class="{{ variants_class }}"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    {% for option in product_target.options_with_values %}
+      <div class="mb-6 xl:mb-7.5">
+        {% liquid
+          assign option_name = option.name
+          assign option_name_key = option_name | replace: ' ', '_'
+          assign missed_options = '' | split: ','
+          assign options = '' | split: ','
+
+          for option_value in option.values
+            assign tmp_option = option_value | split: ',  '
+            assign options = options | concat: tmp_option
+          endfor
+        %}
+
+        <div class="product-form__input product-form__input--dropdown">
+          <div class="mb-3 text-sm leading-none">
+            <span class="text-police-blue-70">{{ option.name }}:</span>
+            <span x-text="currentVariant.title"></span>
+          </div>
+          {% if option.name == 'Color' %}
+            <div class="no-scrollbar -mx-4 flex flex-wrap gap-2 overflow-scroll pl-4">
+              {% for option_item in options %}
+                <div
+                  class="cursor-pointer whitespace-nowrap border border-police-blue-70 px-10 py-3.5 last:mr-2"
+                  @click="onVariantChange('option{{ option.position }}', '{{- option_item -}}', '{{ option.name }}', '{{ option.values.size }}')"
+                  :class="
+                    {
+                      'bg-police-blue text-white': isSelected('{{ product.id }}', '{{ option.position }}', '{{ option_item | replace: '"', '&quot;' }}', '{{ option_name }}'),
+                      '!text-police-blue-20 !border-police-blue-20 cursor-default': isDisabled('{{ option_item }} rounded-3xl')
+                    }
+                  "
+                >
+                  {{- option_item -}}
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div>
+              <select
+                class="w-full !line-clamp-1 text-ellipsis focus-visible:outline-none focus:outline-none cursor-pointer appearance-none border border-police-blue-70 bg-select-arrow bg-right-2 bg-no-repeat px-5 py-3.5 pr-10 text-base placeholder:text-police-blue-70 hover:border-police-blue disabled:opacity-30 rounded-3xl"
+                :class="{ 'border-red': !isValid }"
+                id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                name="options[{{ option.name | escape }}]"
+                x-on:change="onVariantChange('option{{ option.position }}', $event.target.value, '{{ option.name }}', '{{ option.values.size }}')"
+              >
+                {% unless product_target.selected_variant %}
+                  <option x-show="!currentVariant.id" value="default_value" selected>Choose option</option>
+                {% endunless %}
+                {% for option_item in options %}
+                  <option
+                    value="{{ option_item | replace: '"', '&quot;' }}"
+                    :disabled="isDisabled('{{ option_item | replace: '"', '&quot;' }}')"
+                    :selected="isSelected('{{ product.id }}', '{{ option.position }}', '{{ option_item | replace: '"', '&quot;' }}', '{{ option_name }}')"
+                  >
+                    {{- option_item -}}
+                  </option>
+                {% endfor %}
+              </select>
+            </div>
+          {% endif %}
+        </div>
+        <template x-if="!isValid">
+          <div
+            x-effect="isValid = Object.values(options).length === optionsCount ? true : false"
+            class="mt-2.5 hidden text-xs text-red empty:mt-0"
+            :class="{ '!block': !options['option{{ option.position }}'] }"
+          >
+            <span>{{ 'products.product.required' | t }}</span>
+          </div>
+        </template>
+      </div>
+    {% endfor %}
+
+    <script type="application/json" x-ref="variants-data-{{ product_target.id }}">
+      {{ product_target.variants | json }}
+    </script>
+    <script type="application/json" x-ref="variants-images-{{ product_target.id }}">
+      [
+      {%- for variant in product_target.variants -%}
+      {
+        {%- if variant.featured_image or variant.metafields.custom.gallery -%}
+        {%- if variant.featured_image -%}
+            "featured_image": {
+              "{{ variant.option1 | replace: '"', '&quot;' }}{% if variant.option2 %} ,{{ variant.option2 | replace: '"', '&quot;' }} {%- endif -%} {%- if variant.option3 %} ,{{ variant.option3 | replace: '"', '&quot;' }}{%- endif -%}": "{{ variant.featured_image | image_url: width: 920 }}"
+            }
+          {%- endif -%}
+        {%- if variant.metafields.custom.gallery -%}
+          {%- if variant.featured_image -%},{%- endif -%}
+            "gallery": {
+              {%- for additional_image in variant.metafields.custom.gallery.value -%}
+          {% unless forloop.first %},{% endunless %}
+                "{{ variant.option1 | replace: '"', '&quot;' }},{{ variant.option2 | replace: '"', '&quot;' }},{{ variant.option3 | replace: '"', '&quot;' }},{{ forloop.index }}": "{{ additional_image | image_url: width: 920 }}"
+              {%- endfor -%}
+            }
+          {%- endif -%}
+      {%- endif -%}
+      }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+      ]
+    </script>
+  </div>
+{% endunless %}

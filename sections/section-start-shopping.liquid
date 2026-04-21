@@ -1,0 +1,112 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign image = section.settings.image
+  assign title_mobile = section.settings.title_mobile
+  assign title_desktop = section.settings.title_desktop
+  assign button_text = section.settings.button_text
+  assign button_url = section.settings.button_url
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div>
+      {% if image != blank %}
+        <img class="mx-auto mb-6.5 md:mb-10" src="{{ image |  image_url  }}" width="56" height="52" alt="{{ image_alt }}"/>
+      {% endif %}
+      {% if title_mobile != blank %}
+        <div class="text-32 font-medium text-center mb-5.5 xl:hidden">{{ title_mobile }}</div>
+      {% endif %}
+      {% if title_desktop != blank %}
+        <div class="hidden xl:block text-center text-64 md:mb-7.5">{{ title_desktop }}</div>
+      {% endif %}
+      {% if button_text != blank and button_url != blank %}
+        <a class="flex gap-2 items-center justify-center text-center font-medium text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mx-auto md:max-w-max tracking-[1px]" href="{{ button_url }}" >{{ button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Start Shopping",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "richtext",
+        "id": "title_mobile",
+        "label": "Title Mobile"
+      },
+      {
+        "type": "richtext",
+        "id": "title_desktop",
+        "label": "Title Desktop"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      },
+    
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Start Shopping"
+      }
+    ]
+  }
+{% endschema %}

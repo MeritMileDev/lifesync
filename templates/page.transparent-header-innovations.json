@@ -1,0 +1,179 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_hero_banner_with_icon_DapMU3": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/innovations-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/innovations-hero-bg.webp",
+        "background_position": "center",
+        "title": "<p><strong>Innovation That Strengthens</strong> <br/>Every Connection</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>Moving patient monitoring forward</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_simple_text_7betLy": {
+      "type": "section-simple-text",
+      "name": "Simple Text",
+      "settings": {
+        "subtitle": "",
+        "title": "Focused Advancements in Standardization, Radiolucency, and Sustainability",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 1000,
+        "text": "<p>LifeSync advances patient monitoring through purposeful innovation—focused on safer care, operational simplicity, and sustainable lifecycle management. Our innovation strategy is designed to improve clinical performance, reduce complexity, and lower costs across healthcare environments.<br/><br/></p>",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 650,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_innovations_6VQnUc": {
+      "type": "section-innovations",
+      "blocks": {
+        "card_FWaLzt": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/innovation-standardization.webp",
+            "card_image_desktop": "shopify://shop_images/innovation-standardization.webp",
+            "card_link": "shopify://pages/standardization",
+            "heading": "One patient. One leadwire. One system.",
+            "title": "Standardization",
+            "text": "<p>LifeSync standardizes ECG leadwires across departments and care settings—reducing variation, consolidating vendors and SKUs, and simplifying workflows from admission through discharge. A single leadwire compatible with your existing monitors delivers consistent performance without adapters or workarounds.</p>",
+            "button_text": "Explore Standardization"
+          }
+        },
+        "card_8U4Ahw": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/innovations-radiolucent.webp",
+            "card_image_desktop": "shopify://shop_images/innovations-radiolucent.webp",
+            "card_link": "shopify://pages/radiolucent-leadwires",
+            "heading": "Clear imaging. Continuous monitoring.",
+            "title": "Radiolucency",
+            "text": "<p>LifeSync radiolucent ECG leadwires are engineered to minimize imaging interference during fluoroscopy and other procedures. With more than 60 radiolucent configurations, LifeSync supports unobstructed imaging, reduced repositioning, and uninterrupted patient monitoring across care environments.</p><p> </p>",
+            "button_text": "See the Difference"
+          }
+        },
+        "card_YEnb8x": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/innovations-ecg-leadwire-reprocessing.webp",
+            "card_image_desktop": "shopify://shop_images/innovations-ecg-leadwire-reprocessing.webp",
+            "card_link": "shopify://pages/relife",
+            "heading": "Sustainability without compromise.",
+            "title": "ECG Leadwire Reprocessing",
+            "text": "<p>ReLife extends lifecycle control through FDA-compliant reprocessing within a closed-loop model. Hospitals can standardize with one leadwire for both new and reprocessed products—reducing medical waste, managing costs, and maintaining dependable supply without sacrificing quality.</p>",
+            "button_text": "Discover ReLife"
+          }
+        }
+      },
+      "block_order": [
+        "card_FWaLzt",
+        "card_8U4Ahw",
+        "card_YEnb8x"
+      ],
+      "custom_css": [
+        "section div div div {border-radius: 24px;}"
+      ],
+      "name": "Innovations",
+      "settings": {
+        "title": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "section_intro_quads_pa7VLa": {
+      "type": "section-intro-quads",
+      "name": "Intro with quads",
+      "settings": {
+        "title": "<p><strong>Innovation Powered by </strong>Manufacturing Discipline</p>",
+        "subtitle": "",
+        "title_max_width": 500,
+        "description": "Behind every LifeSync innovation is a vertically integrated, medical-only manufacturing model built for quality, scale, and reliability. Our operational foundation enables us to deliver innovation with consistency—not variability.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 500,
+        "button_label": "",
+        "button_link": "",
+        "image_position": "image_right",
+        "image_position_mobile": "bottom",
+        "quad_one_title": "Advanced Automation",
+        "quad_one_description": "Scalable, modular automation drives repeatability, yield consistency, and cost efficiency across production volumes.",
+        "quad_two_title": "Vertically Integrated Manufacturing",
+        "quad_two_description": "Scalable, modular automation drives repeatability, yield consistency, and cost efficiency across production volumes.",
+        "quad_three_title": "Superior Quality and Performance",
+        "quad_three_description": "Disciplined engineering and rigorous quality assurance support reliable signal transmission and dependable clinical performance.",
+        "quad_four_title": "Supply Chain Control and Availability",
+        "quad_four_description": "Global ISO-certified facilities and diversified sourcing improve resilience, reduce single-source risk, and ensure dependable product availability",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_cta_WbW9kM": {
+      "type": "section-cta",
+      "name": "CTA",
+      "settings": {
+        "cta_position": "cta_center",
+        "section_subtitle": "",
+        "section_title": "Setting the Standard in Patient Monitoring for Over 50 Years",
+        "title_max_width": 0,
+        "section_description": "Innovation at LifeSync is not a single product feature—it is a system-level approach built on standardization, automation, quality, and lifecycle responsibility.",
+        "text_color": "white",
+        "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
+        "padding_top_cta": 100,
+        "padding_bottom_cta": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 80,
+        "cta_text": "Talk to a LifeSync Specialist",
+        "cta_url": "shopify://pages/contact",
+        "cta_target": "self"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_banner_with_icon_DapMU3",
+    "section_simple_text_7betLy",
+    "section_innovations_6VQnUc",
+    "section_intro_quads_pa7VLa",
+    "section_cta_WbW9kM"
+  ]
+}

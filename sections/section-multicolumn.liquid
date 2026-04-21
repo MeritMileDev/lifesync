@@ -1,0 +1,420 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign section_style = section.settings.style
+  assign column_count = section.settings.column_count
+  assign column_title_size_desktop = section.settings.column_title_size
+  assign column_title_size_mobile = section.settings.column_title_size_mobile
+  assign column_grid_class = ''
+  assign column_title_class_desktop = ''
+  assign column_title_class_mobile = ''
+  case column_count
+    when '2'
+      assign column_grid_class = 'grid-cols-2'
+    when '3'
+      assign column_grid_class = 'grid-cols-3'
+    when '4'
+      assign column_grid_class = 'grid-cols-4'
+    when '5'
+      assign column_grid_class = 'grid-cols-5'
+    when '6'
+      assign column_grid_class = 'grid-cols-6'
+  endcase
+  case column_title_size_desktop
+    when 'small'
+      assign column_title_class_desktop = 'text-22 font-bold'
+    when 'medium'
+      assign column_title_class_desktop = 'xl:text-4xl lg:text-32 font-bold'
+    when 'large'
+      assign column_title_class_desktop = 'xl:text-64 lg:text-5xl font-bold'
+  endcase
+  case column_title_size_mobile
+    when 'small'
+      assign column_title_class_mobile = 'text-2xl'
+    when 'medium'
+      assign column_title_class_mobile = 'text-40'
+  endcase
+  assign enable_slider = section.settings.enable_slider
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<style>
+  {% if section.settings.section_title_max_width > 0 %}
+  #section-{{ section_id }} .section-title {
+    max-width: {{ section.settings.section_title_max_width }}px;
+  }
+  {% endif %}
+  {% if section.settings.section_description_max_width > 0 %}
+  #section-{{ section_id }} .section-description {
+    max-width: {{ section.settings.section_description_max_width }}px;
+  }
+  {% endif %}
+  {% if section.settings.column_image_height > 0 %}
+  #section-{{ section_id }} .column-image {
+    min-height: {{ section.settings.column_image_height }}px;
+  }
+  {% endif %}
+</style>
+
+<section
+  class="relative mx-auto max-w-480 mb-0"
+  id="section-{{ section_id }}"
+>
+  {% if section.settings.section_bg_image != blank %}
+    <div class="pointer-events-none absolute inset-0 h-full w-full">
+      {% render 'picture',
+        image_mobile: section.settings.section_bg_image,
+        image_desktop: section.settings.section_bg_image,
+        is_full_size: true,
+        class: 'w-full lg:min-h-0 min-h-[1000px] max-h-full object-cover'
+      %}
+    </div>
+  {% endif %}
+  <div class="container relative">
+    <div class="text-center">
+      {% if section.settings.section_subtitle != blank %}
+        <p class="mx-auto mb-6 text-sm font-medium uppercase tracking-wide text-police-blue-70 lg:mb-8">
+          {{ section.settings.section_subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.section_title != blank %}
+        <h2 class="section-title lg:leading-14 mx-auto mb-6 px-7.5 text-32 font-medium leading-10 lg:mb-8 lg:px-0 lg:text-5xl">
+          {{ section.settings.section_title }}
+        </h2>
+      {% endif %}
+      {% if section.settings.section_description != blank %}
+        <p class="section-description mx-auto max-w-xl">
+          {{ section.settings.section_description }}
+        </p>
+      {% endif %}
+    </div>
+    {% if section.blocks.size > 0 %}
+      {% if enable_slider %}
+        <div
+          class="swiper mt-16 w-full"
+          x-data="
+              swiper({
+                loop: false,
+                slidesPerView: 1.4,
+                spaceBetween: 16,
+                scrollbar: {
+                  el: '#section-{{ section_id }} .swiper-scrollbar'
+                },
+                breakpoints: {
+                  768: {
+                    slidesPerView: 3,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                  },
+                  1280: {
+                    slidesPerView: {{ column_count }},
+                    spaceBetween: 24,
+                  }
+                }
+            })
+          "
+        >
+          <div class="swiper-wrapper">
+      {% else %}
+        <div
+          class="mt-13 lg:grid {{ column_grid_class }} gap-6"
+        >
+      {% endif %}
+      {% for block in section.blocks %}
+        <div
+          class="{% if enable_slider %}swiper-slide xl:h-auto slide {% endif %}text-center{% if section_style == 'background' %} bg-bright-gray-20 lg:px-8 lg:pt-12 lg:pb-14 px-6 pt-8 pb-10{% else %} xl:py-17.5 lg:py-16 py-10 2xl:px-12 lg:px-5 lg:border lg:border-transparent border-t border-police-blue-20 first:border-t-0 first:lg:border-t transition duration-300 {% if block.settings.button_link != blank %} hover:border-black hover:after:hidden {% endif %} relative after:absolute after:hidden after:lg:block after:content-[''] after:w-px after:h-[calc(100%-96px)] after:right-0 after:top-1/2 after:-translate-y-1/2 after:bg-police-blue-20 last:after:hidden lg:-ml-0.5 first:lg:ml-0{% endif %}{% if block.settings.full_block_button_link and block.settings.button_link != blank %} cursor-pointer{% endif %} lg:mb-0 mb-4 rounded-3xl"
+            {% if block.settings.full_block_button_link and block.settings.button_link != blank %}
+            onclick="event.preventDefault(); window.open('{{ block.settings.button_link }}', {% if block.settings.open_in_new_tab %} '_blank' {% else %} '_self'{% endif %})"
+          {% endif %}
+        >
+          {% render 'picture',
+            image_mobile: block.settings.icon,
+            image_desktop: block.settings.icon,
+            is_full_size: false,
+            class: 'column-image lg:mb-8 mb-6 mx-auto object-center object-contain'
+          %}
+          <h3 class="{{ column_title_class_desktop }} {{ column_title_class_mobile }}">{{ block.settings.title }}</h3>
+          <p class="block-description-{{ block.id }} mx-auto">{{ block.settings.description }}</p>
+          {% if block.settings.button_link != blank and block.settings.show_button %}
+            <a
+            {% if block.settings.open_in_new_tab %}target="_blank"{% endif %}
+              class="mx-auto mt-2.5 block max-w-max text-sm font-medium uppercase tracking-wide text-persian-blue underline hover:no-underline active:underline disabled:opacity-30 lg:mt-10 lg:text-base"
+              href="{{ block.settings.button_link }}"
+            >
+              {{- block.settings.button_label -}}
+            </a>
+          {% endif %}
+          <style>
+            {% if block.settings.description_max_width_mob > 0 %}
+              @media (max-width: 767px) {
+                #section-{{ section_id }} .block-description-{{ block.id }} {
+                  max-width: {{ block.settings.description_max_width_mob }}px;
+                }
+              }
+            {% endif %}
+          </style>
+        </div>
+      {% endfor %}
+      {% if enable_slider %}
+        </div>
+        <div class="swiper-scrollbar mt-4 xl:hidden"></div>
+        </div>
+      {% else %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Multicolumn",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "section_bg_image",
+        "label": "Section Background Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gradient",
+        "label": "Enable Gradient Background"
+      },
+      {
+        "type": "checkbox",
+        "id": "solid_bg",
+        "label": "Solid Background"
+      },
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "number",
+        "id": "section_title_max_width",
+        "label": "Section Title Max Width",
+        "default": 0
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "number",
+        "id": "section_description_max_width",
+        "label": "Section Description Max Width",
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "column_count",
+        "label": "Number of columns on desktop",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          }
+        ],
+        "default": "5"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_slider",
+        "label": "Enable slider"
+      },
+      {
+        "type": "select",
+        "id": "style",
+        "label": "Columns Style",
+        "options": [
+          {
+            "value": "background",
+            "label": "Background"
+          },
+          {
+            "value": "borders",
+            "label": "Borders"
+          }
+        ],
+        "default": "borders"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_bottom_border",
+        "label": "Enable Bottom Border"
+      },
+      {
+        "type": "select",
+        "id": "column_title_size",
+        "label": "Column Title Size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small (32px)"
+          },
+          {
+            "value": "medium",
+            "label": "Medium (48px)"
+          },
+          {
+            "value": "large",
+            "label": "Large (64px)"
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "type": "select",
+        "id": "column_title_size_mobile",
+        "label": "Column Title Size (Mobile)",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small (24px)"
+          },
+          {
+            "value": "medium",
+            "label": "Medium (40px)"
+          }
+        ],
+        "default": "small"
+      },
+      {
+        "type": "number",
+        "id": "column_image_height",
+        "label": "Column Image Height",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "number",
+            "id": "description_max_width_mob",
+            "label": "Description Max Width Mobile (px)",
+            "default": 0
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Learn More"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          },
+          {
+            "type": "checkbox",
+            "id": "open_in_new_tab",
+            "label": "Open Link in New Tab",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "show_button",
+            "label": "Show Button",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "full_block_button_link",
+            "label": "Full block link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Multicolumn"
+      }
+    ]
+  }
+{% endschema %}

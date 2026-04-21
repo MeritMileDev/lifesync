@@ -1,0 +1,586 @@
+{% liquid
+  assign blocks = section.blocks
+  assign transparent_template = false
+  if template.suffix contains 'transparent-header-new' or template == 'page.radiolucent-leadwirestwo'
+    assign transparent_template = true
+  endif
+%}
+<header
+  x-data="menu()"
+  class="relative"
+  {% if transparent_template == false %}
+    :style="sticky ? `padding-top: ${$el.scrollHeight}px`: ''"
+  {% endif %}
+>
+  <div
+    x-data="quickSearch"
+    x-ref="stickyHeader"
+    class="group left-0 right-0 top-0 z-20 {% if transparent_template == false %} bg-white static border-b border-police-blue/20 {% else %} header-transparent absolute {% endif %}"
+    :class="{'xl:bg-white desktop-header-opaque' : sticky || selected, '!fixed {% if transparent_template == true %} border-b border-police-blue/20 bg-white header-opaque {% endif %}': sticky }"
+  >
+    <div class="container">
+      <div
+        class="font-Proxima-Nova flex items-center py-4 font-medium tracking-wide xl:grid xl:grid-cols-[200px_1fr_200px] xl:py-0"
+      >
+        <a href="{{ routes.root_url }}">
+          {%- if settings.logo != blank -%}
+            <div
+              class="w-37.5 xl:w-auto"
+              {% if transparent_template %}
+                x-show="sticky || selected" x-cloak
+              {% endif %}
+            >
+              {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+              {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+              {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+              {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+              {{
+                settings.logo
+                | image_url: width: 600
+                | image_tag:
+                  widths: widths,
+                  height: logo_height,
+                  width: settings.logo_width,
+                  alt: logo_alt,
+                  sizes: sizes,
+                  preload: true
+              }}
+            </div>
+            {% if transparent_template %}
+              <div class="w-37.5 xl:w-auto" x-show="!(sticky || selected)">
+                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {{
+                  settings.logo_secondary
+                  | image_url: width: 600
+                  | image_tag:
+                    widths: widths,
+                    height: logo_height,
+                    width: settings.logo_width,
+                    alt: logo_alt,
+                    sizes: sizes,
+                    preload: true
+                }}
+              </div>
+            {% endif %}
+          {%- else -%}
+            <span>{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+        <div class="ml-auto mr-4 xl:ml-0 xl:mr-0">
+          <button
+            class="flex items-center text-police-blue hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent.bg-white]:text-police-blue group-[.header-transparent]:text-white xl:hidden"
+            aria-label=""
+            @click="$store.stickyHeader.forceSticky = $store.stickyHeader.active; $store.menuState.isMenuOpened = true; removeScroll();"
+          >
+            {% render 'icon', icon: 'burger', class: 'w-5 h-6', fill: 'currentColor' %}
+          </button>
+          <div
+            x-cloak
+            class="fixed left-0 top-0 z-40 hidden h-dvh w-full bg-black bg-opacity-50 xl:!hidden"
+            :class="{'!block xl:!hidden': $store.menuState.isMenuOpened === true}"
+            @click="$store.menuState.isMenuOpened = false; returnScroll();"
+          ></div>
+          <div
+            class="fixed inset-0 z-50 flex w-80 -translate-x-full flex-col bg-police-blue font-medium uppercase text-white shadow-shadow-right xl:static xl:w-auto xl:translate-x-[initial] xl:flex-row xl:bg-transparent xl:text-police-blue xl:shadow-none transition-transform duration-300 ease-in-out xl:transtiton-none"
+            :class="{'!translate-x-0': $store.menuState.isMenuOpened === true}"
+            x-bind="trigger"
+          >
+            <div class="flex shrink-0 leading-none text-bright-gray/50 xl:hidden">
+              <button class="ml-auto p-4" @click="$store.menuState.isMenuOpened = false; returnScroll();">
+                {% render 'icon', icon: 'close', class: 'size-4', fill: 'currentColor' %}
+              </button>
+            </div>
+            <div
+              class="grow overflow-y-auto px-8 xl:flex xl:justify-center xl:overflow-y-auto xl:p-0"
+              @mouseleave="debounce((event) =>  menuOut(event), 0, event)"
+            >
+              {% liquid
+                for block in blocks
+                  case block.type
+                    when 'main_menu'
+                      assign main_menu = block.settings.navigation.links
+                    when 'shop_menu'
+                      assign shop_menu = block.settings.navigation.links
+                    else
+
+                  endcase
+                endfor
+              %}
+              {% if main_menu.size > 0 %}
+                {% assign links = main_menu %}
+                {% if links.size > 1 %}
+                  <ul class="grid gap-8 pb-9 pt-1 xl:flex xl:p-0">
+                    {% for link in links %}
+                      <li class="xl:py-4.5 lg:text-md text-sm">
+                        {% if link.levels > 0 %}
+                          
+                          <div class="lg:block hidden">
+                            <a
+                              @mouseenter="debounce((event) =>  selected !== 'main_{{ forloop.index }}' ? toggleSelected(event, 'main_{{ forloop.index }}') : '', selected ? 0 : 300, event)"
+                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white font-bold"
+                              href="{{ link.url }}"
+                              title="{{ link.title | strip_html }}"
+                            >
+                              <span class="underline-offset-2" :class="{'underline text-persian-blue': selected === 'main_{{ forloop.index }}'}">{{ link.title }}</span>
+                              <span
+                                :class="{'!rotate-0': selected === 'main_{{ forloop.index }}'}"
+                                class="rotate-180"
+                              >
+                                {% render 'icon', icon: 'chevron-up', class: 'size-4', fill: 'currentColor' %}
+                              </span>
+                            </a>
+                          </div>
+
+                          <div class="lg:hidden block" @click.prevent="toggleSelected(event, 'main_{{ forloop.index }}')">
+                            <a
+                              @mouseenter="debounce((event) =>  selected !== 'main_{{ forloop.index }}' ? toggleSelected(event, 'main_{{ forloop.index }}') : '', selected ? 0 : 300, event)"
+                              class="flex items-center space-x-2 transition-colors group-[.header-transparent]:text-white xl:hover:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:!text-police-blue group-[.header-transparent]:xl:text-white"
+                              href="{{ link.url }}"
+                              title="{{ link.title | strip_html }}"
+                            >
+                              <span class="underline-offset-2" :class="{'underline text-persian-blue': selected === 'main_{{ forloop.index }}'}">{{ link.title }}</span>
+                              <span
+                                :class="{'!rotate-0': selected === 'main_{{ forloop.index }}'}"
+                                class="rotate-180"
+                              >
+                                {% render 'icon', icon: 'chevron-up', class: 'size-4', fill: 'currentColor' %}
+                              </span>
+                            </a>
+                          </div>
+
+                          <div
+                            x-ref="content_{{ forloop.index }}"
+                            class="grid max-h-0 gap-4.5 overflow-hidden pl-2 text-sm transition-[max-height] duration-700 xl:absolute xl:left-0 xl:top-full xl:z-50 xl:-mt-px xl:hidden xl:!max-h-[initial] xl:w-full xl:border-t xl:border-police-blue/20 xl:bg-white xl:pl-0 xl:shadow-shadow-bottom"
+                            :class="{'xl:!block': selected === 'main_{{ forloop.index }}'}"
+                            :style="selected === 'main_{{ forloop.index }}' ? 'max-height: ' + $el.scrollHeight + 'px' : ''"
+                          >
+                            <div class="container">
+                              <ul class="grid gap-4.5 xl:grid-cols-[300px_300px_300px] xl:justify-center xl:gap-10 xl:py-20">
+                                {% for child_link in link.links %}
+                                  <li class="first:pt-8 xl:first:pt-0">
+                                    {% for block in blocks %}
+                                      {% if block.type == 'submenu_image' %}
+                                        {% if block.settings.link_text == child_link.title %}
+                                          <a
+                                            class="group/image mb-4.5 hidden overflow-hidden xl:flex rounded-3xl child-link"
+                                            href="{{ child_link.url }}"
+                                            title="{{ child_link.title | strip_html }}"
+                                          >
+                                            <img
+                                              class="aspect-[400/300] object-cover duration-500 group-hover/image:scale-110"
+                                              src="{{ block.settings.image | image_url: width: 400 }}"
+                                              srcset="{{ block.settings.image | image_url: width: 400 }} 1x, {{ block.settings.image | image_url: width: 800 }} 2x"
+                                              alt="{{ block.settings.image.alt }}"
+                                              width="400"
+                                              height="300"
+                                              loading="lazy"
+                                            >
+                                          </a>
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    <a
+                                      class="xl:flex xl:items-center xl:space-x-2 hover:text-police-accent-70 transition-colors child-link"
+                                      href="{{ child_link.url }}"
+                                      title="{{ child_link.title | strip_html }}"
+                                    >
+                                      <span>{{- child_link.title -}}</span>
+                                      <span class="hidden xl:block">
+                                        {% render 'icon', icon: 'arrow-right', fill: 'currentColor' %}
+                                      </span>
+                                    </a>
+                                  </li>
+                                {% endfor %}
+                              </ul>
+                            </div>
+                          </div>
+                        {% else %}
+                          <a
+                            @mouseover="toggleSelected(event, '')"
+                            class="transition-colors hover:xl:text-police-blue/70 group-[.header-transparent.desktop-header-opaque]:xl:text-police-blue group-[.header-transparent]:xl:text-white group-[.header-transparent.desktop-header-opaque]:hover:xl:text-police-blue/70 group-[.header-transparent]:hover:xl:text-white/70 font-bold  child-link"
+                            href="{{ link.url }}"
+                            title="{{ link.title | strip_html }}"
+                          >
+                            {{- link.title -}}
+                          </a>
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endif %}
+              {% if shop_menu.size > 0 %}
+                {% assign links = shop_menu %}
+                <div class="border-t border-bright-gray/20 pt-9 xl:border-t-0 xl:pl-8 xl:pt-0">
+                  <div
+                    class="xl:relative xl:py-5.5"
+                    @click.prevent="selected = selected == 'shop_menu' ? null : 'shop_menu'"
+                  >
+                    <span 
+                        class="absolute left-0 hidden h-4 w-px {% if transparent_template %}bg-bright-gray-20 {% else %}bg-police-blue-20 {% endif %} xl:inline-block"
+                        {% if transparent_template %}:class="{'bg-police-blue-20': sticky || selected}"{% endif %}
+                    ></span>
+                    <div
+                      class="flex cursor-pointer items-center space-x-2 xl:ml-8 lg:text-md text-sm"
+                      @mouseenter="debounce((event) =>  selected !== 'shop_menu' ? toggleSelected(event, 'shop_menu') : '', selected ? 0 : 300, event)"
+                      
+                    >
+                      <span class="leading-none underline-offset-2 font-bold" :class="{'underline': selected == 'shop_menu'}">Shop</span>
+                      <span
+                        :class="{'!rotate-0': selected == 'shop_menu', 'xl:!text-police-blue': sticky || selected}"
+                        class="rotate-180 text-bright-gray/50 group-[.header-transparent]:text-white xl:text-police-blue group-[.header-transparent]:xl:text-white"
+                      >
+                        {% render 'icon', icon: 'chevron-up', class: 'size-4', fill: 'currentColor' %}
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="max-h-0 overflow-hidden pl-2 text-sm transition-[max-height] duration-700 xl:absolute xl:left-0 xl:top-full xl:z-50 xl:-mt-px xl:hidden xl:!max-h-[initial] xl:w-full xl:border-t xl:border-police-blue/20 xl:bg-bright-gray xl:pl-0 xl:shadow-shadow-bottom xl:transition-none"
+                    :class="{'xl:!block': selected === 'shop_menu'}"
+                    :style="selected === 'shop_menu' ? 'max-height: ' + $el.scrollHeight + 'px' : ''"
+                  >
+                    <div class="absolute right-0 hidden h-full w-1/2 bg-white xl:block"></div>
+                    <div class="xl:!max-h-[calc(100vh-190px)] xl:overflow-y-scroll">
+                      <div class="container">
+                        <div
+                          class="z-10 grid-cols-[422px_1fr] items-start xl:relative xl:grid"
+                        >
+                          <ul
+                            class="grid gap-4.5 xl:gap-0 xl:py-8 2xl:py-14.5"
+                          >
+                            {% for link in links %}
+                              <li
+                                class="transition duration-300 first:pt-8 last:pb-8 xl:border-b-2 xl:border-white xl:first:pt-0 xl:last:border-b-0 xl:last:pb-0"
+                                :class="{'xl:bg-white xl:text-persian-blue': activeSubcategory === {{ forloop.index }}}"
+                                @mouseover="activeSubcategory = {{ forloop.index }}"
+                              >
+                                <a
+                                  class="xl:flex xl:items-center xl:justify-between xl:py-3 2xl:py-4.5 xl:pl-8"
+                                  class="text-base"
+                                  href="{{ link.url }}"
+                                  title="{{ link.title | strip_html }}"
+                                >
+                                  <span>{{- link.title -}}</span>
+                                  <span
+                                    class="mr-6 hidden xl:block"
+                                    x-cloak
+                                    x-show="activeSubcategory === {{ forloop.index }}"
+                                  >
+                                    {% render 'icon', icon: 'arrow-right', fill: 'currentColor' %}
+                                  </span>
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                          <div class="hidden h-full bg-white  pb-20 pt-14 tracking-normal xl:block">
+                            {% for link in links %}
+                              {% liquid
+                                assign collection_image = null
+                                if link.type == 'collection_link'
+                                  assign collection = link.object
+                                  assign collection_image = collection.metafields.custom.menu_banner
+                                endif
+                              %}
+
+                              <div
+                                x-show="activeSubcategory === {{ forloop.index }}"
+                                x-ref="category-content"
+                              >
+                                <div class="pl-16 ">
+                                  <div class="flex items-center space-x-2 pb-5 2xl:pb-14">
+                                    <a
+                                      class="text-xl leading-none text-persian-blue underline hover:no-underline"
+                                      href="{{ link.url }}"
+                                      title="{{ link.title | strip_html }}"
+                                    >
+                                      {{- link.title -}}
+                                    </a>
+                                    <span>
+                                      {% render 'icon', icon: 'chevron-right', fill: 'currentColor', class: 'size-4' %}
+                                    </span>
+                                  </div>
+                                  <div class="grid gap-16 xl:grid-cols-[1fr_120px] 2xl:grid-cols-[1fr_273px]">
+                                    <div class="grid grid-cols-3 gap-x-6 normal-case">
+                                      <div class="col-span-3 mb-3.5 2xl:mb-13 h-px bg-police-blue/20"></div>
+                                      {% for level_2_link in link.links %}
+                                        {% assign index = forloop.index %}
+                                        {% assign modulo_check = index | minus: 1 | modulo: 3 %}
+                                        {% if index > 1 and modulo_check == 0 %}
+                                          <div class="col-span-3 my-5 2xl:my-13 h-px bg-police-blue/20"></div>
+                                        {% endif %}
+                                        <div class="flex flex-col">
+                                          <a
+                                            class="text-lg hover:text-police-accent-70 transition-colors"
+                                            href="{{ level_2_link.url }}"
+                                            title="{{ level_2_link.title | strip_html }}"
+                                          >
+                                            {{- level_2_link.title -}}
+                                          </a>
+
+                                          <ul class="mt-4 flex grow flex-col text-base">
+                                            {% for level_3_link in level_2_link.links %}
+                                              <li class="leading-5 {% if forloop.last %} mb-4 {% endif %}">
+                                                <a
+                                                  href="{{ level_3_link.url }}"
+                                                  title="{{ level_3_link.title | strip_html }}"
+                                                >
+                                                  {{- level_3_link.title -}}
+                                                </a>
+                                              </li>
+                                            {% endfor %}
+                                            <li class="mt-auto text-sm">
+                                              <a
+                                                class="uppercase tracking-wide text-persian-blue underline hover:no-underline"
+                                                href="{{ level_2_link.url }}"
+                                                title="{{ level_2_link.title | strip_html }}"
+                                              >
+                                                View All
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      {% endfor %}
+                                    </div>
+                                    <div>
+                                      {% if collection_image %}
+                                        <img
+                                          loading="lazy"
+                                          class="w-full"
+                                          src="{{ collection_image | image_url: width: 273 }}"
+                                          srcset="{{ collection_image | image_url: width: 273 }} 1x, {{ collection_image | image_url: width: 546 }} 2x"
+                                          alt="{{ link.title }}"
+                                          width="273"
+                                          height="428"
+                                        >
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="shrink-0 border-t border-bright-gray/20 px-4 xl:hidden">
+              <div class="grid grid-cols-2 items-center justify-between py-6">
+                <div class="border-r border-bright-gray/20 pr-6">
+                  <a
+                    class="flex items-center justify-center space-x-2 text-sm uppercase leading-none tracking-wide"
+                    href="#swym-wishlist"
+                  >
+                    <span class="text-bright-gray/50">
+                      {% render 'icon', icon: 'heart', fill: 'currentColor' %}
+                    </span>
+                    <span>{{ 'wishlist.wishlist_fallback' | t }}</span>
+                  </a>
+                </div>
+                <div class="pl-6">
+                  <a
+                    class="flex items-center justify-center space-x-2 text-sm uppercase leading-none tracking-wide"
+                    href="/account"
+                  >
+                    <span class="text-bright-gray/50">
+                      {% render 'icon', icon: 'user', fill: 'currentColor' %}
+                    </span>
+                    <span>{{ 'customer.account_fallback' | t }}</span>
+                  </a>
+                </div>
+              </div>
+              <a href="/pages/contact" title="{{ 'general.contact_button_label' | t }}"
+                class="w-full flex justify-center border border-police-blue bg-white px-10 py-4 text-sm font-medium uppercase tracking-wide text-police-blue xl:hidden"
+              >
+                {{ 'general.contact_button_label' | t }}
+              </a>
+              <a
+                class="flex justify-center py-6 text-sm leading-none tracking-wide text-white xl:hidden"
+                href="tel:{{ settings.store_phone_number }}"
+                title="{{ 'general.phone_number' | t }}"
+              >
+                {{- settings.store_phone_number -}}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-end space-x-4 xl:space-x-6">
+          <a
+            @click.prevent="openQuickSearch; $nextTick(() => { $refs.searchInput.focus() })"
+            class="flex items-center space-x-2 self-stretch  text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white.header-transparent]:text-police-blue group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-blue/70 group-[.bg-white]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 group-[.desktop-header-opaque]:xl:text-police-blue"
+            area-label="{{ 'general.search' | t }}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
+            title="{{ 'general.search' | t }}"
+            href="#"
+          >
+            {% render 'icon', icon: 'search', class: 'size-6', fill: 'currentColor' %}
+          </a>
+          <a
+            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-blue/70 group-[.bg-white]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-blue"
+            area-label="{{ 'wishlist.wishlist_fallback' | t }}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
+            title="{{ 'wishlist.wishlist_fallback' | t }}"
+            href="#swym-wishlist"
+          >
+            {% render 'icon', icon: 'heart', class: 'size-6', fill: 'currentColor' %}
+          </a>
+          <a
+            class="hidden items-center space-x-2 self-stretch text-police-blue transition-colors hover:text-police-blue/70 group-[.bg-white]:text-police-blue group-[.header-transparent]:text-white group-[.bg-white.header-transparent]:hover:text-police-blue/70 group-[.bg-white]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 xl:flex group-[.desktop-header-opaque]:xl:text-police-blue"
+            area-label="{{ 'customer.account_fallback' | t }}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
+            title="{{ 'customer.account_fallback' | t }}"
+            href="/account"
+          >
+            {% render 'icon', icon: 'user', class: 'size-6', fill: 'currentColor' %}
+          </a>
+          <a
+            class="flex items-center space-x-2 uppercase text-police-blue transition-colors hover:text-police-blue/70 group-[.header-opaque]:text-police-blue group-[.header-transparent]:text-white group-[.header-opaque.header-transparent]:hover:text-police-blue/70 group-[.header-opaque]:hover:text-police-blue/70 group-[.header-transparent]:hover:text-white/70 xl:self-stretch group-[.desktop-header-opaque]:xl:text-police-blue group-[.desktop-header-opaque]:hover:xl:text-police-blue/70"
+            area-label="{{ 'general.cart.cart_fallback' | t }}"
+            :class="{'!text-police-blue': sticky, 'xl:!text-police-blue': sticky || selected}"
+            href="/cart"
+            x-data="miniCart"
+          >
+            {% render 'icon', icon: 'bag', class: 'size-6', fill: 'currentColor' %}
+            <span x-cloak x-show="itemsCount > 0" class="text-sm leading-none" x-text="itemsCount"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fixed inset-0 z-40"
+      x-cloak
+      x-show="isQuickSearchOpen"
+      :style="`padding-top: ${quickSearchPaddingTop}`"
+    >
+      <div class="relative flex flex-col max-h-full shadow-shadow-bottom">
+        <div
+          @click="closeQuickSearch"
+          class="absolute left-0 top-0 z-10 hidden h-dvh w-full bg-black bg-opacity-50"
+          :class="{'!block': isQuickSearchOpen}"
+        ></div>
+        <div class="border-b border divide-police-blue-20 relative z-20 bg-white">
+          <div class="container">
+            <form class="flex items-center py-3 lg:py-10" action="{{ routes.search_url }}" method="get" role="search">
+              <label for="search" class="mr-4 hidden items-center justify-center text-police-blue-70 lg:flex hover:text-police-blue transition-colors cursor-pointer">
+                {% render 'icon', icon: 'search', class: 'size-6', fill: 'currentColor' %}
+                <span class="sr-only">
+                  {{ 'general.search' | t }}
+                </span>
+              </label>
+              <input
+                class="grow py-2 text-xl font-medium leading-none text-police-blue -ml-2 pl-2 lg:text-2xl lg:leading-none"
+                type="text"
+                id="search"
+                placeholder="{{ 'general.search' | t }}"
+                tabindex="0"
+                @input.debounce.400ms="searchProducts"
+                x-model="searchText"
+                name="q"
+                value="{{ search.terms | escape }}"
+                x-ref="searchInput"
+              >
+              <button
+                type="button"
+                @click.prevent="closeQuickSearch"
+                class="ml-4 flex items-center justify-center text-police-blue-70 hover:text-police-blue"
+                aria-label="{{ 'general.close' | t }}"
+              >
+                {% render 'icon', icon: 'close', class: 'size-6' %}
+              </button>
+              <button
+                type="submit"
+                class="
+                  ml-4 flex items-center justify-center
+                  lg:ml-8 lg:gap-2 lg:border lg:border-police-blue lg:px-10 lg:py-4 lg:text-center lg:text-sm lg:uppercase lg:tracking-wide lg:text-police-blue hover:lg:scale-102 active:lg:scale-100 disabled:lg:opacity-30
+                "
+                aria-label="{{ 'general.search' | t }}"
+              >
+                <span class="flex lg:hidden">
+                  {% render 'icon', icon: 'search', class: 'size-6' %}
+                </span>
+                <span class="hidden lg:block">
+                  {{ 'general.search' | t }}
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="relative z-10 bg-white max-h-full overflow-auto">
+          <div class="absolute inset-0 bg-black/20 z-50 flex items-center justify-center" x-show="isLoading">
+            {% render 'icon', icon: 'loader' %}
+          </div>
+            <div class="max-h-full overflow-auto">
+              <div x-html="result"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% style %}
+  .container ul li:has(> a[href*="innovations"]) {
+    display: block;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+{% endstyle %}
+{% schema %}
+  {
+    "name": "t:sections.header.name",
+    "class": "section-header",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "shop_menu",
+        "name": "Shop menu",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "navigation",
+            "label": "Shop Menu",
+            "info": "Select menu for the Shop navigation"
+          }
+        ]
+      },
+      {
+        "type": "main_menu",
+        "name": "Main menu",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "navigation",
+            "label": "Main Menu",
+            "info": "Select menu for the Main navigation"
+          }
+        ]
+      },
+      {
+        "type": "submenu_image",
+        "name": "Main Submenu Banner",
+        "settings": [
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Link Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Banner Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

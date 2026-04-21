@@ -1,0 +1,539 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_hero_banner_with_icon_NUkqwH": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/advanced-manufacturing-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/advanced-manufacturing-hero-bg.webp",
+        "banner_icon": "shopify://shop_images/lifesync-advanced-manufacturing-logo.webp",
+        "background_position": "center",
+        "title": "<p><strong>Leader in Cost-Efficient Manufacturing</strong> <br/>Automation for SpO2 and ECG Connections</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>The premier medical partner for affordable OEM-grade patient monitoring interconnects.  </p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_intro_with_stats_pJtF6j": {
+      "type": "section-intro-with-stats",
+      "name": "Intro with stats",
+      "settings": {
+        "title": "<p><strong>Medical Interconnects Built</strong> by an OEM, for OEMs</p>",
+        "subtitle": "",
+        "title_max_width": 550,
+        "description": "LifeSync Advanced Manufacturing is a global leader in SpO₂ and ECG value-added medical interconnect manufacturing. Guided by an OEM-first heritage and a 100% medical focus, LifeSync embeds early into customer development programs while applying advanced, modular automation and ISO-certified, integrated operations to deliver cost-efficient scale, consistent quality, and dependable supply.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image_position": "image_right",
+        "image_position_mobile": "top",
+        "stat_one_title": "50+ Years",
+        "stat_one_description": "Medical interconnect experience",
+        "stat_two_title": "15 Years",
+        "stat_two_description": "ISO certified operations",
+        "stat_three_title": "4 Months",
+        "stat_three_description": "Average prototype to production",
+        "stat_four_title": "74.9M",
+        "stat_four_description": "Medical assemblies per year",
+        "stat_five_title": "96%",
+        "stat_five_description": "On-time delivery",
+        "stat_six_title": "46%",
+        "stat_six_description": "Automated production",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "section_grid_info_boxes_wCCtV7": {
+      "type": "section-grid-info-boxes",
+      "blocks": {
+        "grid_item_FXBJQr": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Built for Medical Device OEMs",
+            "title_max_width_desktop": 235,
+            "description": "<p>LifeSync Advanced Manufacturing is purpose-built for the precision, scale, and regulatory discipline medical device OEMs demand. Our model combines embedded engineering collaboration with modular automation and integrated operations to deliver predictable outcomes from prototype through production. </p><p></p><p> </p>",
+            "description_max_width_desktop": 0
+          }
+        },
+        "grid_item_EK6UkM": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Your Team Extended with Embedded Engineering ",
+            "title_max_width_desktop": 0,
+            "description": "<p>One team. One goal. Your success. LifeSync integrates early into your engineering and R&D processes—partnering as an extension of your team, not a downstream assembler. From requirements definition and prototyping through regulatory approval and full production, LifeSync reduces development risk, shortens time to market, and improves production readiness. Quality isn't an inspection step at the end; it’s engineered from the start. </p>",
+            "description_max_width_mobile": 0
+          }
+        },
+        "grid_item_QWkPKD": {
+          "type": "grid_item",
+          "settings": {
+            "title": "Automation Designed for Scale",
+            "title_max_width_desktop": 235,
+            "description": "<p>LifeSync is the industry proven leader in automated SpO2 & ECG manufacturing. Our global, ISO-certified operations leverage modular, scalable automation to deliver cost efficiency and consistent quality, optimized for complex, high mix-low volume environments. Our automation expertise is engineered into the design process from the outset, enabling rapid transition from prototype to production and high First Pass Yield (FPY) with excellence in predictable supply, yield, and cost control.</p>",
+            "description_max_width_desktop": 0
+          }
+        },
+        "grid_item_yGnAE4": {
+          "type": "grid_item",
+          "settings": {
+            "title": "100% Focused on Medical Interconnects",
+            "title_max_width_desktop": 250,
+            "description": "<p>Unlike multi-industry contract manufacturers, LifeSync focuses exclusively on medical interconnects and is a leader in pulse oximetry, ECG, and complex diagnostic and monitoring applications. We bring the same design-cycle discipline, regulatory expertise, and manufacturing rigor used to develop LifeSync cardiac and neuro connections directly to OEM partnerships. We speak your language because medical devices are all we do. 100% medical, 100% committed.</p>",
+            "description_max_width_desktop": 0
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_FXBJQr",
+        "grid_item_EK6UkM",
+        "grid_item_QWkPKD",
+        "grid_item_yGnAE4"
+      ],
+      "name": "Grid Info Boxes",
+      "settings": {
+        "title": "<p>The Manufacturing Leader in SpO2, ECG, and Custom Medical Interconnects</p>",
+        "title_max_width": 900,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 80,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_image_with_text_rounded_CWWBKz": {
+      "type": "section-image-with-text-rounded",
+      "name": "Image with text rounded",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "Research & Development and Engineering Teams",
+        "title_max_width": 300,
+        "description": "Everything we design and manufacture is done in our own ISO certified facilities that meet EN ISO 13485 requirements and follow FDA cGMP guidelines.<br>\n<br>\nOur proven 6-step collaborative design process ensures we work as one team, from technical requirements and prototyping to validation and production.  ",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/am-research-and-development.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "top",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_image_with_text_rounded_BKhwMn": {
+      "type": "section-image-with-text-rounded",
+      "name": "Image with text rounded",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "Quality Assurance and Compliance Teams",
+        "title_max_width": 300,
+        "description": "All medical cables manufactured by LifeSync are rigorously validated for QA by our in-house medical experts. We test for mechanical, electrical, sterilization, environmental, and chemical analysis attributes to ensure the highest quality, reliability, and performance. <br>\n<br>\nLifeSync quality controls are structured to support compliance with ISO 10993 biocompatibility standards and IEC 60601 electrical safety requirements. We work closely with our OEM customers to ensure materials, processes, and documentation align with their applicable ANSI/AAMI, IEC, UL, and DIN standards. ",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/am-quaity-assurance.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "top",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_image_with_text_rounded_fTLpWF": {
+      "type": "section-image-with-text-rounded",
+      "name": "Image with text rounded",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "Procurement and Supply Chain Teams",
+        "title_max_width": 300,
+        "description": "LifeSync gives you unparalleled global Supply chain resilience with our wholly owned in-house manufacturing operations in the U.S., Costa Rica, and China.<br>\n<br>\nOur diversified sourcing and manufacturing strategy reduces risk, ensures consistent supply, and country-of-origin flexibility while removing single-source dependencies.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/am-procurement.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "top",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_multicolumn_7TfEj9": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_zD4mQq": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-pulse-oximetry.svg",
+            "title": "Pulse Oximetry",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_8cC3Qt": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-ecg-ekg.svg",
+            "title": "ECG/EKG",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_MWt9pX": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-mri-cables.svg",
+            "title": "MRI Cables",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_mPfUgk": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-electrosurgery.svg",
+            "title": "Electrosurgery",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_Qn6Rzz": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-laparoscopic.svg",
+            "title": "Laparoscopic",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_zD4mQq",
+        "column_8cC3Qt",
+        "column_MWt9pX",
+        "column_mPfUgk",
+        "column_Qn6Rzz"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "",
+        "section_title": "Proven Medical Interconnect Expertise",
+        "section_title_max_width": 500,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "5",
+        "enable_slider": false,
+        "style": "background",
+        "enable_bottom_border": false,
+        "column_title_size": "small",
+        "column_title_size_mobile": "small",
+        "column_image_height": 150,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_multicolumn_kmJhma": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_tre8gN": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-cable-connector-design.svg",
+            "title": "Cable and Connector Design",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_LyLN84": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-pcba-embedded-electronics.svg",
+            "title": "PCBA and Embedded Electronics",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_rHBX4W": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-laser-marking.svg",
+            "title": "Laser Marking",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_HVDxcc": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-programmable-glue-plotting.svg",
+            "title": "Programmable Glue Potting",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_GHCRXV": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-ultrasonic-welding.svg",
+            "title": "Ultrasonic Welding",
+            "description": "",
+            "description_max_width_mob": 0,
+            "button_label": "",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_tre8gN",
+        "column_LyLN84",
+        "column_rHBX4W",
+        "column_HVDxcc",
+        "column_GHCRXV"
+      ],
+      "custom_css": [
+        "section {margin-top: -30px;}"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "",
+        "section_title": "",
+        "section_title_max_width": 500,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "5",
+        "enable_slider": false,
+        "style": "background",
+        "enable_bottom_border": false,
+        "column_title_size": "small",
+        "column_title_size_mobile": "small",
+        "column_image_height": 150,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_steps_T7y3Ja": {
+      "type": "section-steps",
+      "blocks": {
+        "step_ecim6U": {
+          "type": "step",
+          "settings": {
+            "step_title": "Requirements",
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Automation evaluation</li><li>Stakeholder alignment</li></ul>"
+          }
+        },
+        "step_Y8x9Re": {
+          "type": "step",
+          "settings": {
+            "step_title": "Technical / Design",
+            "step_content": "<ul><li>Verify technical specifications</li><li>Establish functional specifications</li><li>Design for assembly (DFA)</li><li>Design for automation</li><li>Prototypes</li><li>Accelerate adoption</li></ul>"
+          }
+        },
+        "step_9DVAYL": {
+          "type": "step",
+          "settings": {
+            "step_title": "Design verification",
+            "step_content": "<ul><li>Protocol</li><li>In-house testing</li><li>Third-party verification</li><li>Customer approval</li></ul>"
+          }
+        },
+        "step_CAtdeX": {
+          "type": "step",
+          "settings": {
+            "step_title": "Process qualification",
+            "step_content": "<ul><li>Process flow</li><li>Process failure mode effects analysis (PFMEA)</li><li>Control plan</li><li>Installation qualification (IQ)</li><li>Operational qualification (OQ)</li><li>Performance qualification (PQ)</li><li>100% functional test</li></ul>"
+          }
+        },
+        "step_WGxG4a": {
+          "type": "step",
+          "settings": {
+            "step_title": "Production",
+            "step_content": "<ul><li>First article inspection (FAI)</li><li>Schedule production</li><li>Vendor-managed inventory (VMI)</li><li>Simplified supply chain</li></ul>"
+          }
+        },
+        "step_TLEj7w": {
+          "type": "step",
+          "settings": {
+            "step_title": "Customer devotion",
+            "step_content": "<ul><li>Personalized account management</li><li>Customized solutions</li><li>Satisfaction assurance</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "step_ecim6U",
+        "step_Y8x9Re",
+        "step_9DVAYL",
+        "step_CAtdeX",
+        "step_WGxG4a",
+        "step_TLEj7w"
+      ],
+      "name": "Steps",
+      "settings": {
+        "enable_bg": false,
+        "enable_bg_desktop": false,
+        "is_static_steps": true,
+        "static_image": "shopify://shop_images/steps-graphic.webp",
+        "section_subtitle": "A Proven Approach to Design and Scale ",
+        "section_intro": "From Concept to Production",
+        "section_title": "<p>Our Proven 6-Step Design and Manufacturing Process</p>",
+        "section_description": "<p>Our collaborative, embedded engineering model functions as an extension of your team, guided by a proven six-step design-to-production process. We integrate early to reduce development risk, accelerate timelines, and strengthen production readiness.</p><p>This structured approach supports regulatory validation, automation integration, and scalable production—ensuring predictable performance from prototype through full-scale manufacturing.</p>",
+        "section_description_max_width": 0,
+        "section_description_max_width_mobile": 0,
+        "bottom_title": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "section_am_form_miKWpw": {
+      "type": "section-am-form",
+      "blocks": {
+        "forms_inline_KedbjN": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "960243",
+            "text_color": "#202020",
+            "button_background_color": "#0d0d63",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_KedbjN"
+      ],
+      "custom_css": [
+        "._formSubmitButton_cit2d_96 {border-radius: 24px;}"
+      ],
+      "name": "AM Form Section",
+      "settings": {
+        "section_title": "Start Your Development Conversation",
+        "section_description": "",
+        "enable_bg": true,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_banner_with_icon_NUkqwH",
+    "section_intro_with_stats_pJtF6j",
+    "section_grid_info_boxes_wCCtV7",
+    "section_image_with_text_rounded_CWWBKz",
+    "section_image_with_text_rounded_BKhwMn",
+    "section_image_with_text_rounded_fTLpWF",
+    "section_multicolumn_7TfEj9",
+    "section_multicolumn_kmJhma",
+    "section_steps_T7y3Ja",
+    "section_am_form_miKWpw"
+  ]
+}

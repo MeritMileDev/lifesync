@@ -1,0 +1,313 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_hero_banner_xkAXNC": {
+      "type": "section-hero-banner",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/source-banner-mob.png",
+        "image_desktop": "shopify://shop_images/source-banner.png",
+        "enable_overlay": false,
+        "banner_icon": "shopify://shop_images/icon-half-gear.svg",
+        "title": "Your end-to-end solution <br class=\"lg:block hidden\"> for custom medical cable manufacturing",
+        "subtitle": "<p>Custom design, manufacturing, and fulfillment <br/>of medical cables and connections.</p>",
+        "subtitle_full_width": true,
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 240,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 336,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "section_text_video_blocks_hqmrXD": {
+      "type": "section-text-video-blocks",
+      "blocks": {
+        "text_jzyjMF": {
+          "type": "text",
+          "settings": {
+            "subtitle": "End-to-end solutions",
+            "title": "From concept &  design to production  & supply chain",
+            "description": "LifeSync Source is a start-to-finish, sole-source provider of custom manufactured surgical, patient monitoring, and diagnostic imaging medical cable assemblies. Our custom, in-house design and manufacturing teams allow your business to focus on product innovations, instead of cables and interconnect development challenges.",
+            "button_label": "Learn More",
+            "button_link": ""
+          }
+        },
+        "video_4ywiTW": {
+          "type": "video",
+          "settings": {
+            "image": "shopify://shop_images/source-video-thumbnail.jpg",
+            "description": "We guarantee reliability, durability, and signal quality through our certified manufacturing facilities and quality assurance processes.",
+            "youtube_id": "ursb7u2MQos"
+          }
+        }
+      },
+      "block_order": [
+        "text_jzyjMF",
+        "video_4ywiTW"
+      ],
+      "settings": {
+        "is_one_column": false,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_steps_QrYnVT": {
+      "type": "section-steps",
+      "blocks": {
+        "step_FceK3y": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/source-step-1.jpg",
+            "step_title": "Requirements",
+            "step_content": "<ul><li>Needs analysis</li><li>Solution expectations</li><li>Requirements gathering</li><li>Stakeholder alignment</li></ul>"
+          }
+        },
+        "step_HG8nJF": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/source-step-2.jpg",
+            "step_title": "Technical / Design",
+            "step_content": "<ul><li>Verify technical specifications</li><li>Establish functional specifications</li><li>Prototypes</li><li>Accelerate adoption</li></ul>"
+          }
+        },
+        "step_kAERfe": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/source-step-3.jpg",
+            "step_title": "Design verification",
+            "step_content": "<ul><li>Protocol </li><li>In-house testing</li><li>Third-party verification</li><li>Customer approval</li></ul>"
+          }
+        },
+        "step_P7HQk6": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/source-step-4.jpg",
+            "step_title": "Process qualification",
+            "step_content": "<ul><li>Process flow</li><li>Process failure mode effects analysis (PFMEA)</li><li>Control plan</li><li>Installation qualification (IQ)</li><li>Operational qualification (OQ)</li><li>Performance qualification (PQ)</li><li>100% functional test</li></ul>"
+          }
+        },
+        "step_YAjbdH": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/source-step-5.jpg",
+            "step_title": "Production",
+            "step_content": "<ul><li>First article inspection (FAI)</li><li>Schedule production</li><li>Vendor-managed inventory (VMI)</li><li>Simplified supply chain</li></ul>"
+          }
+        },
+        "step_t3QJDV": {
+          "type": "step",
+          "settings": {
+            "image": "shopify://shop_images/source-step-6.jpg",
+            "step_title": "Customer devotion",
+            "step_content": "<ul><li>Personalized account management</li><li>Customized solutions</li><li>Satisfaction assurance</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "step_FceK3y",
+        "step_HG8nJF",
+        "step_kAERfe",
+        "step_P7HQk6",
+        "step_YAjbdH",
+        "step_t3QJDV"
+      ],
+      "settings": {
+        "enable_bg": false,
+        "enable_bg_desktop": false,
+        "is_static_steps": false,
+        "section_subtitle": "Collaborative innovation",
+        "section_title": "<p>Let's Create Together</p>",
+        "section_description": "<p>Our collaborative process involves six phases of personalized interactions because we think <br/>more connection around your idea is better than less. </p><p>LifeSync partners rely on our medical R&D capacities, our manufacturing prowess, and design capabilities to meet your custom interconnect needs. Our collaborative process sets the stage for targeted production, and our global manufacturing capacity allows for production efficiencies, while you own the design on completion. </p><p>Our best solutions come from sharing expertise and experience, whether across town or across the globe.</p>",
+        "section_description_max_width": 730,
+        "section_description_max_width_mobile": 0,
+        "bottom_title": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_tabs_yN7FX6": {
+      "type": "section-tabs",
+      "blocks": {
+        "tab_C4hcpb": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/image-tab-1.jpg",
+            "tab_name": "Partnership advantages",
+            "title": "Benefits of partnering with LifeSync",
+            "description": "<p>LifeSync Source (formerly American BioSurgical) is the leading custom medical cable and interconnect manufacturer that can meet your technology to patient connection requirements. For over ten years we've helped our partners all the way from concept and design, through assembly to supply chain fulfillment.</p>",
+            "description_max_width": 580,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "tab_JwwX3H": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/image-tab-2.jpg",
+            "tab_name": "Expert collaboration",
+            "title": "Design and engineering support",
+            "description": "<p>Our dedicated team of product development specialists works directly with your product management and engineering teams from concept to reality. With teams located at major medical hubs across the country, you have easy access to LifeSync Source during the planning and product development process.</p>",
+            "description_max_width": 610,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "tab_XGp9dT": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/image-tab-3.jpg",
+            "tab_name": "In-house manufacturing",
+            "title": "Production & assembly",
+            "description": "<p>LifeSync Source owns and operates its own manufacturing facilities to ensure the highest control of product design, production, and quality assurance. LifeSync acts as your global purchasing agent and manufacturer for every component of your custom cable projects. In-house test laboratories ensure a 100% inspection and quality assurance process for your products.</p>",
+            "description_max_width": 660,
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "tab_3gRyWL": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/image-tab-4.jpg",
+            "tab_name": "Certified compliance",
+            "title": "Quality assurance",
+            "description": "<p>LifeSync Source manufactures our products in certified facilities that meet EN ISO 13485 <br/>and ISO 9001 requirements and follow FDA cGMP guidelines. Our products conform to the industry standards of ANSI/AAMI EC-53, ANSI/AAMI HF-18, IEC 60601, UL, and DIN 42-802. </p><p>Our Quality Assurance team rigorously tests for mechanical, electrical, sterilization, environmental, <br/>and chemical analysis attributes. Your custom cable and monitoring products will be verified <br/>against ISO 10993-5 and ISO 10993-10 standards.</p>",
+            "description_max_width": 650,
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_C4hcpb",
+        "tab_JwwX3H",
+        "tab_XGp9dT",
+        "tab_3gRyWL"
+      ],
+      "settings": {
+        "tab_logic": "mouseenter",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 74,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_multicolumn_UwtJLT": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_H39JVM": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-patient-monitoring.svg",
+            "title": "Patient monitoring",
+            "description": "Custom-designed disposable or reusable monitoring cables and connections, including <br class=\"2.5xl:block md:hidden\">neuro, cardiac, EKG/ECG, SpO<sub>2</sub>, NMT, temperature, NIBP, and more.",
+            "description_max_width_mob": 340,
+            "button_label": "Learn More",
+            "button_link": "",
+            "full_block_button_link": false
+          }
+        },
+        "column_TQEnMf": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-surgical-cables.svg",
+            "title": "Surgical cables",
+            "description": "From bipolar electrosurgery and laparoscopic to ophthalmic and cardiac, LifeSync <br class=\"2.5xl:block md:hidden\">can design and manufacture a full range <br class=\"md:hidden\"> of surgical cable assemblies.",
+            "description_max_width_mob": 310,
+            "button_label": "Learn More",
+            "button_link": "",
+            "full_block_button_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_H39JVM",
+        "column_TQEnMf"
+      ],
+      "settings": {
+        "section_bg_image": "shopify://shop_images/section-404-bg.png",
+        "enable_gradient": false,
+        "solid_bg": true,
+        "section_subtitle": "",
+        "section_title": "Customize by ",
+        "section_title_max_width": 0,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "2",
+        "enable_slider": false,
+        "style": "borders",
+        "enable_bottom_border": false,
+        "column_title_size": "large",
+        "column_title_size_mobile": "medium",
+        "column_image_height": 80,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 104,
+        "padding_bottom_desktop": 64
+      }
+    },
+    "section_talk_to_expert_rxHBh9": {
+      "type": "section-talk-to-expert",
+      "blocks": {
+        "expert_Hw6tjk": {
+          "type": "expert",
+          "settings": {
+            "image": "shopify://shop_images/image-expert-1.jpg",
+            "name": "Amanda Magers",
+            "job_title": "Director of Business Development"
+          }
+        },
+        "expert_DAbyyn": {
+          "type": "expert",
+          "settings": {
+            "image": "shopify://shop_images/image-expert-2.jpg",
+            "name": "Sherman Glavan",
+            "job_title": "Business Development Manager"
+          }
+        }
+      },
+      "block_order": [
+        "expert_Hw6tjk",
+        "expert_DAbyyn"
+      ],
+      "settings": {
+        "icon": "shopify://shop_images/icon-source-heart.svg",
+        "title": "Build your custom medical cables and connections",
+        "button_label": "Talk to a LifeSync expert",
+        "button_link": "shopify://pages/contact",
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_banner_xkAXNC",
+    "section_text_video_blocks_hqmrXD",
+    "section_steps_QrYnVT",
+    "section_tabs_yN7FX6",
+    "section_multicolumn_UwtJLT",
+    "section_talk_to_expert_rxHBh9"
+  ]
+}

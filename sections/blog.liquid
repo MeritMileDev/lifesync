@@ -1,0 +1,35 @@
+<div class="container lg:mb-20 mb-16">
+  <h4 class="lg:mb-20 mb-8 lg:text-32 text-2xl lg:text-left text-center">{{ section.settings.title }}</h4>
+  {% paginate blog.articles by section.settings.posts_per_page %}
+    <div class="lg:grid flex flex-col grid-cols-12 lg:gap-y-20 gap-y-16 gap-x-10 lg:mb-20 mb-16">
+      {% for article in blog.articles %}
+        {% render 'article-card', article: article, class: 'col-span-3' %}
+      {% endfor %}
+    </div>
+    {% render 'pagination', paginate: paginate %}
+  {% endpaginate %}
+</div>
+{% schema %}
+  {
+    "name": "Blog",
+    "tag": "section",
+    "class": "lg:mt-20 mt-8",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "All posts"
+      },
+      {
+        "type": "range",
+        "id": "posts_per_page",
+        "label": "Number of blog posts",
+        "default": 16,
+        "min": 12,
+        "max": 24,
+        "step": 4
+      }
+    ]
+  }
+{% endschema %}

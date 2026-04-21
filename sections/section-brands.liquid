@@ -1,0 +1,162 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section style="background: url({{ section.settings.section_bg_image | img_url: 'master' }}), linear-gradient(180deg, #F1F7FB 0%, #FFF 40.17%);
+" id="section-{{ section_id }}">
+  <div>
+    <div class="container">
+      <div class="text-center">
+        {% if section.settings.section_subtitle != blank %}
+          <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide lg:mb-8 mb-6">
+            {{ section.settings.section_subtitle }}
+          </p>
+        {% endif %}
+        {% if section.settings.section_title != blank %}
+          <h2 class="lg:text-5xl text-32 font-medium mb-16 max-w-[800px] mx-auto lg:leading-14 leading-10">
+            {{ section.settings.section_title }}
+          </h2>
+        {% endif %}
+      </div>
+      {% if section.blocks.size > 0 %}
+        <div 
+          class="swiper w-full"
+          x-data="
+            swiper({
+              loop: false,
+              slidesPerView: 1.4,
+              spaceBetween: 16,
+              scrollbar: {
+                el: '#section-{{ section_id }} .swiper-scrollbar'
+              },
+              breakpoints: {
+                768: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 24,
+                },
+                1280: {
+                  slidesPerView: 4,
+                  spaceBetween: 24,
+                }
+              }
+          })
+        ">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+                <div class="swiper-slide slide bg-bright-gray">
+                  {% if block.settings.link != blank %}
+                    <a href="{{ block.settings.link }}">
+                  {% endif %}
+                  {% render 'picture',
+                    image_mobile: block.settings.logo,
+                    image_desktop: block.settings.logo,
+                    is_full_size: false,
+                    class: ''
+                  %}
+                  {% if block.settings.link != blank %}
+                    </a>
+                  {% endif %}
+                </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-scrollbar mt-4 xl:hidden"></div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Brands",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "section_bg_image",
+        "label": "Section Background Image"
+      },
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Brands"
+      }
+    ]
+  }
+{% endschema %}

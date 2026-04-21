@@ -1,0 +1,336 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_hero_slider_cmbew3": {
+      "type": "section-hero-slider",
+      "blocks": {
+        "block_hero_slide_9w4xgV": {
+          "type": "block-hero-slide",
+          "settings": {
+            "background_mobile": "shopify://shop_images/neuro-slide-2-mob.jpg",
+            "background_desktop": "shopify://shop_images/neuro-slide-2-d.jpg",
+            "icon": "shopify://shop_images/icon.svg",
+            "title": "<p>Precision.<br/>Performance.<br/>Reliability.</p>",
+            "is_title_h1": false,
+            "description": "<p>Discover LifeSync's Premium EMG Needles!</p>",
+            "button_label": "",
+            "button_link": "shopify://collections/emg-needles"
+          }
+        },
+        "block_hero_slide_yrxFWx": {
+          "type": "block-hero-slide",
+          "settings": {
+            "background_mobile": "shopify://shop_images/neuro-slide-1-mob.png",
+            "background_desktop": "shopify://shop_images/neuro-slide-1_1.png",
+            "icon": "shopify://shop_images/icon.svg",
+            "title": "<p>Performance<br/>Meets Convenience</p>",
+            "is_title_h1": true,
+            "description": "<p>Disposable EEG Electrodes with Gold Cups for Superior Signal Quality!</p>",
+            "button_label": "",
+            "button_link": "shopify://products/goldselect-disposable-gold-disc-cup-electrode-4-ft-5-ft-6-ft-10-ft-wires"
+          }
+        }
+      },
+      "block_order": [
+        "block_hero_slide_9w4xgV",
+        "block_hero_slide_yrxFWx"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_simple_text_7bLVU4": {
+      "type": "section-simple-text",
+      "name": "Simple Text",
+      "settings": {
+        "subtitle": "",
+        "title": "Shop by product category",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_category_grid_AM77Qy": {
+      "type": "section-category-grid",
+      "blocks": {
+        "category_hcCchF": {
+          "type": "category",
+          "settings": {
+            "icon": "shopify://shop_images/EEG.svg",
+            "title": "<p>EEG</p>",
+            "url": "shopify://collections/eeg"
+          }
+        },
+        "category_kcqrcm": {
+          "type": "category",
+          "settings": {
+            "icon": "shopify://shop_images/EMG.svg",
+            "title": "<p>EMG</p>",
+            "url": "shopify://collections/emg"
+          }
+        },
+        "category_EHUbmD": {
+          "type": "category",
+          "settings": {
+            "icon": "shopify://shop_images/IONM.svg",
+            "title": "<p>IONM</p>",
+            "url": "shopify://collections/ionm"
+          }
+        },
+        "category_McKNWt": {
+          "type": "category",
+          "settings": {
+            "icon": "shopify://shop_images/PSG.svg",
+            "title": "<p>PSG</p>",
+            "url": "shopify://collections/psg"
+          }
+        },
+        "category_eBPKyC": {
+          "type": "category",
+          "settings": {
+            "icon": "shopify://shop_images/NCS.svg",
+            "title": "<p>NCS</p>",
+            "url": "shopify://collections/ncs"
+          }
+        },
+        "category_enwn8d": {
+          "type": "category",
+          "settings": {
+            "icon": "shopify://shop_images/ecg_eaa39d44-66cf-4d79-bc1c-802878a49e9d.svg",
+            "title": "<p>ECG</p>",
+            "url": "shopify://collections/ecg-leadwires-and-monitoring"
+          }
+        }
+      },
+      "block_order": [
+        "category_hcCchF",
+        "category_kcqrcm",
+        "category_EHUbmD",
+        "category_McKNWt",
+        "category_eBPKyC",
+        "category_enwn8d"
+      ],
+      "settings": {
+        "background_color": "#f4f9fc",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_border_mEjBdF": {
+      "type": "section-border",
+      "settings": {
+        "border_mobile": true,
+        "border_desktop": true,
+        "border_color": "#3c4c5f33",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 110
+      }
+    },
+    "rebuy_slider_widget_Gceb3C": {
+      "type": "rebuy-slider-widget",
+      "custom_css": [
+        "@media (width >= 1366px) {.product-slider-nav {display: none !important; } .products-slider__heading {font-size: 48px; margin-inline: auto; margin-bottom: 16px; }}"
+      ],
+      "settings": {
+        "id": "205082",
+        "lazy_images": true,
+        "slides_qty_for_desktop": 5,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_border_D63L6B": {
+      "type": "section-border",
+      "settings": {
+        "border_mobile": false,
+        "border_desktop": true,
+        "border_color": "#3c4c5f33",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 140,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_advantages_WRc43k": {
+      "type": "section-advantages",
+      "blocks": {
+        "advantage_kczHyg": {
+          "type": "advantage",
+          "settings": {
+            "image": "shopify://shop_images/Upfront-Homest-Pricing.jpg",
+            "title": "<p>Upfront.<br/>Honest Pricing</p>",
+            "description": "<p>Cost-Effective Quality Solutions<br/>to maximize your budget.</p>"
+          }
+        },
+        "advantage_Kxgbpj": {
+          "type": "advantage",
+          "settings": {
+            "image": "shopify://shop_images/Wide-Product-Selection.jpg",
+            "title": "<p>Wide Product<br/>Selection</p>",
+            "description": "<p>Complete range of electrodes, needles, and<br/>accessories for EEG, EMG, IOM, and PSG.</p>"
+          }
+        },
+        "advantage_rcDN4q": {
+          "type": "advantage",
+          "settings": {
+            "image": "shopify://shop_images/Fast-Shipping.jpg",
+            "title": "<p>Fast<br/>Shipping</p>",
+            "description": "<p>Same-day shipping before 2 PM EST,<br/>plus 1-2 day express options.</p>"
+          }
+        },
+        "advantage_wmNdhY": {
+          "type": "advantage",
+          "settings": {
+            "image": "shopify://shop_images/Trusted-by-Top-Providers.jpg",
+            "title": "<p>Trusted by<br/>Top Providers</p>",
+            "description": "<p>Used by leading hospitals<br/>and manufacturers worldwide.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "advantage_kczHyg",
+        "advantage_Kxgbpj",
+        "advantage_rcDN4q",
+        "advantage_wmNdhY"
+      ],
+      "settings": {
+        "background_color": "#f4f9fc",
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 115
+      }
+    },
+    "section_simple_text_97hTca": {
+      "type": "section-simple-text",
+      "custom_css": [
+        ".button {letter-spacing: 1px;}"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "A legacy rooted in neurological quality and customer support",
+        "is_h1_tag": false,
+        "title_size": "large",
+        "title_size_mobile": "small",
+        "title_max_width_mobile": 360,
+        "title_max_width_desktop": 820,
+        "text": "<p>Building on the Rochester Electro-Medical history of innovation, such as Gold Cup Electrodes, LifeSync Neuro is your single-source for reusable and disposable neurodiagnostic and neuromonitoring connections.</p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 320,
+        "text_max_width_desktop": 600,
+        "button_label": "Start shopping",
+        "button_link": "shopify://collections/all",
+        "button_style": "button",
+        "section_max_width": 0,
+        "section_background_image_mobile": "shopify://shop_images/bg-mob.png",
+        "section_background_image_desktop": "shopify://shop_images/bg.png",
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 74,
+        "padding_bottom_mobile": 80,
+        "padding_top_desktop": 126,
+        "padding_bottom_desktop": 140
+      }
+    },
+    "section_start_shopping_CTDJfd": {
+      "type": "section-start-shopping",
+      "settings": {
+        "image": "shopify://shop_images/logo_1a458787-14d1-4ec4-90ed-0aca8e95e307.svg",
+        "title_mobile": "<p>Get fast shipping<br/>for all of your neuro<br/>supply needs</p>",
+        "title_desktop": "<p>Get fast shipping for<br/>all of your neuro supply needs</p>",
+        "button_text": "",
+        "button_url": "/",
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_links_two_columns_h6t7kd": {
+      "type": "section-links-two-columns",
+      "blocks": {
+        "column_LPkE3k": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/catalog.jpg",
+            "title": "Browse the LifeSync<br>Neuro Catalog",
+            "button_type": "file",
+            "button_text": "Download",
+            "button_url": "https://cdn.shopify.com/s/files/1/0659/5235/0359/files/LifeSync_catalog_2025_Web1.pdf?v=1742910525"
+          }
+        },
+        "column_Nzwr34": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/expert.jpg",
+            "title": "Speak with a LifeSync<br>Neuro Expert",
+            "button_type": "link",
+            "button_text": "Connect me",
+            "button_url": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "column_LPkE3k",
+        "column_Nzwr34"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 120
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_slider_cmbew3",
+    "section_simple_text_7bLVU4",
+    "section_category_grid_AM77Qy",
+    "section_border_mEjBdF",
+    "rebuy_slider_widget_Gceb3C",
+    "section_border_D63L6B",
+    "section_advantages_WRc43k",
+    "section_simple_text_97hTca",
+    "section_start_shopping_CTDJfd",
+    "section_links_two_columns_h6t7kd"
+  ]
+}

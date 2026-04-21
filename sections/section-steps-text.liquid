@@ -1,0 +1,382 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  assign is_static_steps = section.settings.is_static_steps
+  assign static_image = section.settings.static_image
+  assign enable_bg_desktop = section.settings.enable_bg_desktop 
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+{% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+    {% assign firstImage = block.settings.image | img_url: 'master' %}
+    {% break %}
+  {% endfor %}
+
+  <style>
+    @media (min-width: 768px) and (max-width: 1807px) {
+      #section-{{ section_id }} .section-title br {
+        display: none;
+      }
+    }
+    @media (max-width: 1807px) {
+      #section-{{ section_id }} .section-description br {
+        display: none;
+      }
+    }
+    {% if section.settings.title_max_width > 0 %}
+      #section-{{ section_id }} .section-title {
+        max-width: {{ section.settings.title_max_width }}px;
+      }
+    {% endif %}
+    {% if section.settings.section_description_max_width > 0 %}
+    #section-{{ section_id }} .section-description {
+      max-width: {{ section.settings.section_description_max_width }}px;
+    }
+    {% endif %}
+    {% if section.settings.section_description_max_width_mobile > 0 %}
+      @media (max-width: 767px) {
+        #section-{{ section_id }} .section-description {
+          max-width: {{ section.settings.section_description_max_width_mobile }}px;
+        }
+      }
+    {% endif %}
+  </style>
+
+  <section
+    class="{% if section.settings.enable_bg %}bg-bright-gray{% endif %} {% if enable_bg_desktop %}lg:bg-bright-gray{% endif %} mb-0 lg:mb-20"
+    id="section-{{ section_id }}"
+  >
+    <div class="container">
+      <div
+        x-data="
+          {
+            currentStep: 1,
+            currentImageUrl: '{{firstImage}}',
+            isLoading: false,
+
+            setStep(index, image) {
+              this.currentStep = index;
+              {%  if is_static_steps %}
+              this.isLoading = false;
+              {%  else %}
+              if( this.currentImageUrl === image ){
+                return;
+              }
+              this.isLoading = true;
+              const img = new Image();
+              img.src = image;
+              img.onload = () => {
+                this.currentImageUrl = image;
+                this.isLoading = false;
+              };
+              {% endif %}
+            }
+          }
+        "
+        class="grid grid-cols-2 gap-4 lg:grid-cols-12 lg:gap-10 xl:gap-20"
+      >
+        <div class="col-span-2 lg:col-span-6 lg:block">
+          {% if section.settings.section_title != blank %}
+              {% if section.settings.section_intro != blank %}
+                <p class="mx-auto mb-3 text-md uppercase font-medium tracking-wide text-police-blue">
+                    {{ section.settings.section_intro }}
+                </p>
+                {% endif %}
+              <h2
+                class="section-title xl:leading-14 lg:mx-0 mx-auto mb-2 text-32 font-medium leading-10 lg:text-40 xl:mb-3.25 xl:text-48"
+              >
+                {{ section.settings.section_title }}
+              </h2>
+              {% if static_image %}
+                {% render 'picture', image_mobile: static_image, class: 'lg:hidden mt-6.5 mb-7.5' %}
+              {% endif %}
+            {% endif %}
+            {% if section.settings.section_subtitle != blank %}
+              <p class="mx-auto mb-3 text-2xl font-medium tracking-wide">
+                {{ section.settings.section_subtitle }}
+              </p>
+            {% endif %}
+            {% if section.settings.section_description != blank %}
+              <div class="section-description rte mx-auto mb-6 max-w-[670px] md:mx-0 xl:mb-0">
+                {{ section.settings.section_description }}
+              </div>
+            {% endif %}
+        </div>
+        <div class="col-span-2 lg:col-span-6 lg:pl-8">
+          {% for block in section.blocks %}
+            {% liquid
+              assign step_image = block.settings.image | img_url: 'master'
+              assign content_max_width_desktop = block.settings['content_max-width_desktop']
+            %}
+
+            <div class="relative flex gap-10 border-t border-police-accent last:border-b lg:border-0 last:lg:border-b-0">
+              <div class="mb-0.5 hidden w-2 flex-col items-center lg:flex">
+                <div
+                  :class="currentStep >= {{ forloop.index }} && '!bg-police-accent'"
+                  class="mb-0.5 h-2 w-2 rounded-full bg-police-accent {% if is_static_steps-%}!bg-police-accent{%- endif -%}"
+                ></div>
+                {% unless forloop.last %}
+                  <div
+                    :class="currentStep >= {{ forloop.index }} + 1 && '!bg-police-accent'"
+                    class="w-0.5 grow bg-police-accent {% if is_static_steps %}lg:!bg-police-accent{% endif %}"
+                  ></div>
+                {% endunless %}
+              </div>
+              <div
+                @mouseenter="window.innerWidth > 992 && setStep({{ forloop.index }}, `{{ step_image }}`)"
+                class="relative grow overflow-hidden lg:-mt-2 lg:pb-8"
+              >
+                <span
+                  @click="
+                    setStep({{ forloop.index }}, `{{ step_image }}`),
+                    window.innerWidth <= 991 && setTimeout(() => {
+                    const rect = $el.getBoundingClientRect();
+                    const scrollPosition = window.scrollY || window.pageYOffset;
+                    const elementPosition = rect.top + scrollPosition - 136;
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                    });
+                    }, 500)
+                  "
+                  class="relative block py-5 text-sm font-bold tracking-wide text-police-accent lg:py-0"
+                  >Step {{ forloop.index }}:
+                  <span class="lg:hidden">
+                    {{ block.settings.step_title }}
+                  </span>
+                  <span
+                    :class="currentStep === {{ forloop.index }} && 'rotate-180'"
+                    class="sizes-4 absolute right-0 top-1/2 block flex -translate-y-1/2 items-center justify-center text-police-blue-70 transition duration-500 lg:hidden"
+                  >
+                    {% render 'icon', icon: 'chevron-down' %}
+                  </span>
+                </span>
+                <div
+                  :style="currentStep === {{ forloop.index }} ? 'max-height: ' + $el.scrollHeight + 'px' : 'max-height: 0'"
+                  class="{% unless forloop.first %}max-h-0{% endunless %} overflow-hidden transition-all duration-500 lg:!max-h-none"
+                >
+                  {% unless is_static_steps %}
+                    {% render 'picture',
+                      image_mobile: block.settings.image,
+                      image_desktop: block.settings.image,
+                      is_full_size: true,
+                      class: 'lg:hidden block'
+                    %}
+                  {% endunless %}
+                  <p
+                    :class="currentStep >= {{ forloop.index }} && '!text-police-blue'"
+                    class="mb-2.5 {% if is_static_steps %}mt-2.5{% else %}mt-6.5{% endif %} cursor-default text-32 font-medium tracking-tight text-police-blue-70 transition duration-300 lg:mb-0 lg:mt-0 lg:text-40 {% if is_static_steps %}!text-police-blue{% endif %}"
+                  >
+                    {{ block.settings.step_title }}
+                  </p>
+                  <div
+                    x-ref="content_{{ forloop.index }}"
+                    x-bind:style=" window.innerWidth >= 1024 ? currentStep === {{ forloop.index }} ? 'max-height: ' + $refs.content_{{ forloop.index }}.scrollHeight + 'px' : '': ''"
+                    class="step-content-{{ block.id }} rte mb-7.5 mt-2 max-lg:!block lg:mb-0 {% if is_static_steps %}lg:!block{% endif %} lg:max-h-0 lg:overflow-hidden transition-[max-height] duration-300"
+                  >
+                    {{ block.settings.step_content }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% if content_max_width_desktop > 0 %}
+              <style>
+                @media (min-width: 1024px) {
+                  .step-content-{{ block.id }} {
+                    max-width: {{ content_max_width_desktop }}px;
+                  }
+                }
+              </style>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% if section.settings.bottom_title != blank %}
+        <div class="mt-16 border-police-blue-20 lg:mt-30 lg:border-t lg:pt-30">
+          <p class="mx-auto mb-8 max-w-[328px] text-center text-32 lg:max-w-[700px] lg:text-5xl">
+            {{ section.settings.bottom_title }}
+          </p>
+          {% if section.settings.button_link != blank %}
+            <a
+              class="mx-auto flex max-w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max"
+              href="{{ section.settings.button_link }}"
+            >
+              {{- section.settings.button_label -}}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{%  style  %}
+@keyframes imageChange {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+  .image-animation {
+    animation: imageChange 800ms ease-in-out;
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Steps with text",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_bg",
+        "label": "Enable section background",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_bg_desktop",
+        "label": "Enable section background (Desktop only)",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "is_static_steps",
+        "label": "Is static steps",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "static_image",
+        "label": "Static Image"
+      },
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_intro",
+        "label": "Section Intro"
+      },
+      {
+        "type": "richtext",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width",
+        "label": "Block Title Max Width",
+        "default": 0
+      },
+      {
+        "type": "richtext",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "number",
+        "id": "section_description_max_width",
+        "label": "Section Description Max Width (px)",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "section_description_max_width_mobile",
+        "label": "Section Description Max Width Mobile (px)",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "bottom_title",
+        "label": "Bottom Title"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "step",
+        "name": "Step",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "step_title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "step_content",
+            "label": "Content"
+          },
+          {
+            "type": "number",
+            "id": "content_max-width_desktop",
+            "label": "Content Max Width Desktop (px)"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Steps with text"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_banner_6crmdB": {
+      "type": "page-banner",
+      "name": "Page Banner",
+      "settings": {
+        "title": "{{ collection.title }}",
+        "subtitle": "<p>{{ collection.metafields.custom.collection_banner_text | metafield_tag }}</p>",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 20,
+        "collection_links": "shop-menu",
+        "collection_grid_banner_title": "",
+        "collection_grid_banner_subtitle": "",
+        "collection_grid_banner_button_text": "",
+        "collection_grid_banner_button_link": "",
+        "link_target": "new"
+      }
+    }
+  },
+  "order": [
+    "page_banner_6crmdB",
+    "main"
+  ]
+}

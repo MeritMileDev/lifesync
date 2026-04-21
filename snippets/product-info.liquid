@@ -1,0 +1,274 @@
+{% comment %}
+  Accepts:
+  - product: {Object} Product liquid object
+
+  Usage:
+  {% render 'product-info', %}
+{% endcomment %}
+
+{% liquid
+  assign contact_title = section.settings.title
+  assign contact_subtitle = section.settings.subtitle
+  assign contact_icon = section.settings.icon
+  assign contact_button_text = section.settings.button_text
+
+  if product.variants.size >= 1
+    assign use_variant = true
+  else
+    assign use_variant = false
+  endif
+%}
+
+<div class="product-info pt-4.5" id="main-product-info">
+  <div class="relative">
+    <h1 class="pr-12 text-2xl font-semibold">{{ product.title }}</h1>
+    <button
+      data-with-epi="true"
+      data-swaction="addToWishlist"
+      data-product-id="{{ product.id }}"
+      data-variant-id="{{ product.variants[0].id }}"
+      data-product-url="{{ shop.url }}{{ product.url }}"
+      class="group absolute -right-3 -top-3 flex items-center justify-center p-3 text-police-blue-70 transition-colors hover:text-police-blue xl:-top-2 xl:right-0"
+    >
+      <span class="flex group-[.swym-added]:hidden">
+        {% render 'icon', icon: 'heart', class: 'size-6' %}
+      </span>
+      <span class="hidden group-[.swym-added]:flex">
+        {% render 'icon', icon: 'heart-filled', class: 'size-6' %}
+      </span>
+    </button>
+  </div>
+
+  <div class="my-2">
+    {% render 'yotpo-rating-pdp', product_id: product.id, show_count: false %}
+  </div>
+
+  {% unless product.has_only_default_variant and product.price == 0 %}
+    <div class="mb-2 lg:mb-3">
+      {% render 'product-price',
+        product: product,
+        use_variant: use_variant,
+        price_class: 'main-price',
+        inside_pdp: true
+      %}
+    </div>
+  {% endunless %}
+
+  {% if product.has_only_default_variant %}
+    <div class="mb-2.5 mt-1.5 text-sm leading-none text-police-blue xl:mb-6 xl:mt-5.5">
+      <span class="text-police-blue-70">{{ 'products.product.sku_label' | t }}</span>
+      <span>{{ product.selected_or_first_available_variant.sku }}</span>
+    </div>
+  {% else %}
+    <div x-show="currentVariant.sku" class="mb-2.5 mt-1.5 text-sm leading-none text-police-blue xl:mb-6 xl:mt-5.5">
+      <span class="text-police-blue-70">{{ 'products.product.sku_label' | t }}</span>
+      <span x-text="currentVariant.sku">{{ product.selected_or_first_available_variant.sku }}</span>
+    </div>
+  {% endif %}
+
+  <div class="mb-4 text-sm text-police-blue xl:mb-5.5">
+    <span class="font-medium">Note:</span>
+    <span>
+      Images are for representation only. Needles lengths are not exactly as shown in the picture. Please see product
+      description for details.
+    </span>
+  </div>
+
+  {% if product.available %}
+    {% render 'product-variant-picker', product_target: product, prefix: 'main' %}
+    <div x-data="cart({{ product.variants[0].id }})">
+      <script
+        type="application/json"
+        x-ref="product-data-{{ product.variants[0].id }}"
+      >
+        {{ product.variants[0] | json }}
+      </script>
+      <div
+        class="xl:flex xl:gap-6"
+        {% if use_variant %}
+          x-effect="if (currentVariant) formData.productId = currentVariant.id"
+        {% endif %}
+      >
+        {% if product.has_only_default_variant %}
+          {% if product.selected_or_first_available_variant.available %}
+            <div class="flex border border-police-blue-70">
+              <button
+                class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
+                @click.prevent="formData.quantity -= (formData.quantity > 1)"
+                :disabled="formData.quantity < 2"
+                aria-label="Decrease quantity"
+              >
+                {% render 'icon', icon: 'minus', class: 'size-6' %}
+              </button>
+              <input
+                class="qty-input h-13.5 grow text-center xl:w-17"
+                type="number"
+                min="1"
+                value="1"
+                :change="formData.quantity == 0 ? formData.quantity = 1 : formData.quantity"
+                x-model="formData.quantity"
+                aria-label="Quantity"
+                @click.prevent
+              >
+              <button
+                class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
+                @click.prevent="formData.quantity++"
+                aria-label="Increase quantity"
+              >
+                {% render 'icon', icon: 'plus', class: 'size-6' %}
+              </button>
+            </div>
+
+            {% if product.variants.size > 1 %}
+              {% render 'add-to-cart-button' %}
+            {% elsif product.selected_or_first_available_variant.available != false and product.first_available_variant.price > 0 %}
+              {% render 'add-to-cart-button-simple-product', product, class: 'grow' %}
+            {% endif %}
+          {% else %}
+            <div class="flex">
+              <span>
+                {{- 'products.product.out_of_stock' | t -}}
+              </span>
+            </div>
+          {% endif %}
+        {% else %}
+          <template x-if="!currentVariant.id || currentVariant.available">
+            <div class="xl:flex xl:gap-6 w-full" x-cloak>
+              <div class="flex border border-police-blue-70 rounded-3xl">
+                <button
+                  class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
+                  :class="{'text-police-blue-20 hover:text-police-blue-20': formData.quantity < 2}"
+                  @click.prevent="formData.quantity -= (formData.quantity > 1)"
+                  :disabled="formData.quantity < 2"
+                  aria-label="Decrease quantity"
+                >
+                  {% render 'icon', icon: 'minus', class: 'size-6' %}
+                </button>
+                <input
+                  class="qty-input h-13.5 grow text-center xl:w-17"
+                  type="number"
+                  min="1"
+                  value="1"
+                  :change="formData.quantity == 0 ? formData.quantity = 1 : formData.quantity"
+                  x-model="formData.quantity"
+                  aria-label="Quantity"
+                  @click.prevent
+                >
+                <button
+                  class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
+                  @click.prevent="formData.quantity++"
+                  aria-label="Increase quantity"
+                >
+                  {% render 'icon', icon: 'plus', class: 'size-6' %}
+                </button>
+              </div>
+
+              {% if product.variants.size >= 1 %}
+                {% render 'add-to-cart-button', class: 'grow' %}
+              {% elsif product.selected_or_first_available_variant.available != false
+                and product.first_available_variant.price > 0
+                and product.selected_or_first_available_variant.inventory_quantity > 0
+              %}
+                {% render 'add-to-cart-button-simple-product', product, class: 'grow' %}
+              {% endif %}
+            </div>
+          </template>
+          <template x-if="currentVariant.id && !currentVariant.available">
+            <div class="flex">
+              <span>
+                {{- 'products.product.out_of_stock' | t -}}
+              </span>
+            </div>
+          </template>
+        {% endif %}
+      </div>
+      <div class="pt-6 xl:pt-8">
+        <input
+          class="peer sr-only"
+          type="checkbox"
+          x-model="productAgreement"
+          id="pdp-agreements"
+        >
+        <label
+          class="
+            cursor-pointer flex items-start gap-x-3 before:shrink-0 before:size-5 before:border
+            before:border-police-blue-70 before:bg-contain before:bg-center before:bg-no-repeat
+            before:content-[''] peer-checked:before:border-police-blue rounded-checkbox
+            peer-checked:before:bg-police-blue peer-checked:before:bg-checkmark peer-disabled:opacity-30 leading-6 md:items-start
+          "
+          for="pdp-agreements"
+        >
+          <span>
+            {{- section.settings.terms_label_text }}
+            <a
+              class="text-persian-blue underline hover:no-underline underline-offset-2"
+              href="{{ section.settings.link_url }}"
+            >
+              {{- section.settings.terms_link_text -}}
+            </a></span
+          >
+        </label>
+      </div>
+    </div>
+  {% else %}
+    <div class="inline-flex gap-2 items-center justify-center text-center text-police-blue bg-white px-10 py-4.25 text-sm uppercase border border-police-blue w-full">
+      <span>
+        {{- 'products.product.out_of_stock' | t -}}
+      </span>
+    </div>
+  {% endif %}
+
+  {% if product.metafields.custom.badges != blank %}
+    <div class="mt-8 hidden grid-cols-3 gap-2.5 lg:grid">
+      {% for badge in product.metafields.custom.badges.value %}
+        <div class="flex flex-col items-center gap-3">
+          <div>
+            {% render 'picture',
+              image_desktop: badge.image,
+              image_mobile: badge.image,
+              lazy: 'lazy',
+              class: 'w-10 h-10 object-contain'
+            %}
+          </div>
+          <div class="max-w-25 text-center font-semibold leading-5">{{ badge.title }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="mt-16 flex flex-col items-center bg-bright-gray-20 p-6 xl:mt-8 xl:flex-row xl:gap-x-6 rounded-3xl">
+    <img class="size-8 mb-6 xl:mb-0 2xl:size-12" src="{{ contact_icon | image_url }}" alt="{{ contact_title }}">
+    <div class="text-center xl:mr-auto xl:text-left">
+      <div class="mb-1.5 text-xl font-medium leading-none">{{ contact_title }}</div>
+      <div class="mb-5.5 leading-none text-police-blue-70 xl:mb-0">{{ contact_subtitle }}</div>
+    </div>
+    <a
+      href="/pages/contact"
+      class="font-medium flex w-full items-center justify-center gap-2 border border-police-blue bg-white hover:bg-police-accent px-10 py-1 text-center text-sm uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-30 xl:w-auto xl:px-4 rounded-3xl"
+      title="{{ contact_button_text }}"
+    >
+      {{- contact_button_text -}}
+    </a>
+  </div>
+  <template x-if="currentVariant.price == 0">
+    {% render 'site-messages', message_text: 'The selected product combination is currently not available.' %}
+  </template>
+
+  {% assign product_advantages = product.metafields.custom.product_advantages.value %}
+  {% if product_advantages != blank %}
+    <div class="my-16 xl:my-12">
+      {% render 'product-advantages', product_advantages: product_advantages %}
+    </div>
+  {% endif %}
+</div>
+
+{% style %}
+  .rounded-checkbox:before {
+    border-radius: 2rem;
+  }
+  .qty-input[type=number]::-webkit-inner-spin-button,
+  .qty-input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }]
+{% endstyle %}

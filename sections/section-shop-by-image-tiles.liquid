@@ -1,0 +1,193 @@
+{% liquid
+  assign section_id = section.id
+
+  assign title = section.settings.title
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    {% if title != blank %}
+      <div class="mb-4 text-center text-32 font-medium xl:text-5xl xl:mb-12.5">{{ title }}</div>
+    {% endif %}
+    <div class="grid gap-6 lg:grid-cols-2">
+      {% for block in section.blocks %}
+        {% if block.type == 'card' %}
+          {% if block.settings['text_max-width'] > 0 %}
+            <style>
+              .card-text-{{ block.id }} {
+                max-width: {{ block.settings.text_max-width }}px;
+                margin-inline: auto;
+                @media screen and (min-width: 768px) {
+                  max-width: 100%;
+                }
+              }
+            </style>
+          {% endif %}
+          {% liquid
+            assign card_image_mobile = block.settings.card_image_mobile
+            assign card_image_desktop = block.settings.card_image_desktop
+            assign heading = block.settings.heading
+            assign title = block.settings.title
+            assign text = block.settings.text
+            assign button_text = block.settings.button_text
+            assign card_link = block.settings.card_link
+            assign light_background = block.settings.light_background
+          %}
+          <div class="text-center lg:flex lg:flex-col">
+            <a
+              href="{{ card_link }}"
+              class=""
+            >
+              {% if card_image_mobile or card_image_desktop %}
+                {% render 'picture',
+                  image_mobile: card_image_mobile,
+                  image_desktop: card_image_desktop,
+                  class: 'w-full mb-4 lg:mb-0'
+                %}
+              {% endif %}
+              {% if heading != blank %}
+                <div class="text-left mb-2 text-sm font-bold tracking-wide text-white">{{ heading }}</div>
+              {% endif %}
+              {% if title != blank %}
+                <div class="text-left text-white px-5 text-3xl font-bold lg:mb-4 mb-2" style="margin-top: -60px;">{{ title }}</div>
+              {% endif %}
+              <div class="flex lg:flex-row flex-col justify-between text-left px-5 py-5 {% if light_background %} bg-police-accent {% else %} bg-police-blue {% endif %} rounded-b-xl">
+                {% if text != blank %}
+                  <div class="card-text-{{ block.id }} text-white max-w-md 2xl:text-lg text-md lg:text-left text-center lg:mb-0 mb-4 lg:mx-0 mx-auto lg:max-w-sm">{{ text }}</div>
+                {% endif %}
+                {% if button_text != blank and card_link != blank %}
+                  <a
+                    href="{{ card_link }}"
+                    class="flex items-center justify-center gap-2 px-4 text-left lg:text-lg text-md font-medium tracking-wide text-white transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20"
+                  >
+                    {{- button_text -}}
+                    {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
+                  </a>
+                {% endif %}
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Shop by image tiles",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "card_image_mobile",
+            "label": "Card Image Mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "card_image_desktop",
+            "label": "Card Image Desktop"
+          },
+          {
+            "type": "url",
+            "id": "card_link",
+            "label": "Card Link"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "number",
+            "id": "text_max-width",
+            "label": "Text Max Width",
+            "info": "Max width of the text in pixels for mobile. Leave blank for full width."
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          },
+          {
+            "type": "checkbox",
+            "id": "light_background",
+            "label": "Light Background",
+            "default": false
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop by image tiles"
+      }
+    ]
+  }
+{% endschema %}

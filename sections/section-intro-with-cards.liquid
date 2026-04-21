@@ -1,0 +1,227 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  assign card_one_description = section.settings.card_one_description
+  assign card_two_description = section.settings.card_two_description
+  assign button_link = section.settings.button_link
+  assign button_link_two = section.settings.card_two_button_link
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    {% if section.settings.enable_bg %}
+      <div class="bg-police-blue p-4 lg:mx-0 -mx-4">
+    {% endif %}
+    <div class="grid lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-6 self-end {% if section.settings.card_position == 'card_right' %} order-2{% else %} order-1{% endif %} {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-3{% endif %} xl:p-20 xl:pl-0 lg:p-8">
+        <div class="mb-6 lg:mb-0">
+          <div class="bg-bright-gray-20 px-10 py-10 rounded-3xl">
+            <h3 class="xl:text-xl lg:text-md text-sm !font-bold mb-6">Choose the problem you want to solve today.</h3>
+            <div class="grid xl:grid-cols-2 gap-6">
+              <div class="bg-police-accent text-white p-5 rounded-3xl">
+                {% render 'picture',
+                  image_mobile: section.settings.image_card_one,
+                  image_desktop: section.settings.image_card_one,
+                  is_full_size: false,
+                  class: 'w-full mt-2 mb-6'
+                %}
+                <p class="mb-8">{{ card_one_description }}</p>
+                <a href="{{ button_link }}" class="text-left text-white flex gap-2 items-center justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mb-4">
+                  Discover LifeSync Patient Connections
+                  {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
+                </a>
+              </div>
+              <div class="bg-police-blue text-white p-5 rounded-3xl">
+                {% render 'picture',
+                  image_mobile: section.settings.image_card_two,
+                  image_desktop: section.settings.image_card_two,
+                  is_full_size: false,
+                  class: 'w-full mt-2 mb-6'
+                %}
+                <p class="mb-8">{{ card_two_description }}</p>
+                <a href="{{  button_link_two }}" class="text-left text-white flex gap-2 items-center justify-between font-bold text-xs hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 mb-4">
+                  Learn About LifeSync Advanced Manufacturing 
+                  {% render 'icon', icon: 'blue-accent-rounded-vp', class: 'size-12 rounded-3xl' %}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="lg:col-span-6 section-subtitle {% if section.settings.card_position == 'card_right' %} order-1{% else %} order-2{% endif %} text-left xl:p-20 xl:pr-0 lg:p-8 {% if section.settings.enable_bg %} p-4 text-bright-gray{% endif %}  {% if section.settings.narrow_section == true %}lg:col-span-4 lg:col-start-7{% endif %}">
+          <div class="">            
+            <h2 class="lg:text-5xl text-32 {% if section.settings.enable_bg %} text-white/50 {% else %} text-police-blue{% endif %} font-medium tracking-wide lg:mb-6 mb-3">
+              {{ section.settings.title }}
+            </h2>
+            {% if section.settings.subtitle != blank %}
+              <h3 class="lg:text-2xl text-xl text-police-accent lg:mb-6 mb-3 lg:max-w-sm" style="font-weight: bold;">{{ section.settings.subtitle }}</h3>
+            {% endif %}
+            <p class="block-description text-lg max-w-xl lg:mb-8 mb-7 lg:mt-0 mt-7.5">{{ section.settings.description }}</p>
+            {% if section.settings.button_link != blank and section.settings.button_label != blank %}
+              <a class="flex gap-2 items-center justify-center font-bold text-police-blue text-md hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100" href="{{ section.settings.button_link }}">
+                {{ section.settings.button_label }} 
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% if section.settings.enable_bg %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #section-{{ section_id }} .block-title {
+    font-weight: bold;
+  }
+  #section-{{ section_id }} img.block {
+    max-width: 300px;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Intro with Cards",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width",
+        "label": "Block Title Max Width",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "number",
+        "id": "description_max_width",
+        "label": "Block Description Max Width Mobile",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "description_max_width_desktop",
+        "label": "Block Description Max Width Desktop",
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "card_position",
+        "label": "Card position",
+        "options": [
+          {
+            "value": "card_left",
+            "label": "Card Left"
+          },
+          {
+            "value": "card_right",
+            "label": "Card Right"
+          }
+        ],
+        "default": "card_right"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_card_one",
+        "label": "Card 1 Image" 
+      },
+      {
+        "type": "text",
+        "id": "card_one_description",
+        "label": "Card one description"
+      },
+      {
+        "type": "text",
+        "id": "card_one_button_label",
+        "label": "Card 1 Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_card_two",
+        "label": "Car 2 Image" 
+      },
+      {
+        "type": "text",
+        "id": "card_two_description",
+        "label": "Card Two description"
+      },
+      {
+        "type": "text",
+        "id": "card_two_button_label",
+        "label": "Card 2 Button Label"
+      },
+      {
+        "type": "url",
+        "id": "card_two_button_link",
+        "label": "Card 2 Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Intro with Cards"
+      }
+    ]
+  }
+{% endschema %}

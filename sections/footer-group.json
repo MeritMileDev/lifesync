@@ -1,0 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "footer_logo": "shopify://shop_images/lifesync-logo-white.svg",
+        "newsletter_title_1": "Sign up for our newsletter",
+        "newsletter_title_2": "Sign up for our news<br>and special offers.",
+        "footer_column_title_1": "Info",
+        "footer_menu_1": "info-new",
+        "footer_column_title_2": "Get in touch",
+        "footer_menu_2": "footer-extra-menu",
+        "footer_menu_3": "footer-contacts",
+        "description": "LifeSync is the only vertically-integrated company completely focused on patient connections, and is your single-source provider of cardiac cables, leadwires and neuromonitoring connections, as well as contract manufacturing. You’ll find the perfect mix of high-quality connections and cost-effective prices, ideal for the needs of patient care professionals, procurement departments, and device manufacturers."
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
