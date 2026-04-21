@@ -27,7 +27,7 @@
         "title_size_mobile": "medium",
         "title_max_width_mobile": 0,
         "title_max_width_desktop": 0,
-        "text": "<p>Home</p><p>Patient Connectons</p><p>Advanced Manufacturing</p><p>Innovations</p><p>Radiolucent ECG Leadwires</p><p>Standardization</p><p>ECG Leadwire Reprocessing</p><p>About</p><p>Shop</p>",
+        "text": "<p><a href=\"/\" title=\"/\">Home</a></p><p><a href=\"/pages/patient-connections\" title=\"Patient Connections\">Patient Connectons</a></p><p><a href=\"/pages/advanced-manufacturing\" title=\"Advanced Manufacturing\">Advanced Manufacturing</a></p><p><a href=\"/pages/innovations\" title=\"Innovations\">Innovations</a></p><p><a href=\"/pages/radiolucent-leadwires\" title=\"Radiolucent Leadwires\">Radiolucent ECG Leadwires</a></p><p><a href=\"/pages/standardization\" title=\"Standardization\">Standardization</a></p><p><a href=\"/pages/relife\" title=\"ReLife\">ECG Leadwire Reprocessing</a></p><p><a href=\"/pages/about-new\" title=\"About New\">About</a></p><p><a href=\"/collections/all\" title=\"All products\">Shop</a></p><p><a href=\"/pages/contact\" title=\"Contact\">Contact</a></p>",
         "text_full_width": false,
         "text_max_width_mobile": 0,
         "text_max_width_desktop": 0,
