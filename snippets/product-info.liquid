@@ -91,7 +91,7 @@
       >
         {% if product.has_only_default_variant %}
           {% if product.selected_or_first_available_variant.available %}
-            <div class="flex border border-police-blue-70">
+            <div class="flex border border-police-blue-70 rounded-3xl">
               <button
                 class="flex items-center px-4 text-police-blue hover:text-police-blue-70 transition-colors rounded-3xl"
                 @click.prevent="formData.quantity -= (formData.quantity > 1)"
