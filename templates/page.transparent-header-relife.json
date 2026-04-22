@@ -415,7 +415,6 @@
       "name": "Section Banner with Text",
       "settings": {
         "subtitle": "",
-        "image_mobile": "shopify://shop_images/relife-process-mobile.png",
         "image_desktop": "shopify://shop_images/relife-process-graphic-with-product.webp",
         "is_image_at_bottom_desktop": false,
         "title": "",
