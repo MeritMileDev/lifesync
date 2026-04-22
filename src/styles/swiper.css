@@ -1,0 +1,42 @@
+.swiper-scrollbar {
+  @apply h-1 overflow-hidden bg-police-blue-20;
+}
+
+.swiper-scrollbar-drag {
+  @apply h-3 bg-police-blue relative;
+
+  &:after {
+    @apply content-[''] absolute w-0.5 bg-white left-full h-full ;
+  }
+
+  &:before {
+    @apply content-[''] absolute w-0.5 bg-white right-full h-full ;
+  }
+}
+
+.products-swiper:not(.swiper-initialized) {
+  .swiper-scrollbar {
+    @apply hidden;
+  }
+}
+
+.swiper-grid > .swiper-wrapper {
+  @apply flex-wrap;
+}
+
+.swiper-grid-column > .swiper-wrapper {
+  @apply flex-col flex-wrap;
+}
+
+.products-swiper-widget {
+  @apply -mx-4 px-4 md:mx-0 md:!w-full md:px-0;
+  width: calc(100% + 32px);
+}
+
+.swiper-button-nav {
+  @apply text-police-blue-70;
+}
+
+.swiper-button-nav.swiper-button-disabled {
+  @apply text-police-blue-20;
+}

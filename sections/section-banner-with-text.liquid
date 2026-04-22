@@ -1,0 +1,144 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign subtitle = section.settings.subtitle
+  assign image_mobile = section.settings.image_mobile
+  assign image_desktop = section.settings.image_desktop
+  assign title = section.settings.title
+  assign description = section.settings.description
+  assign description_max_width_desktop = section.settings.description_max_width_desktop
+  assign is_image_at_bottom_desktop = section.settings.is_image_at_bottom_desktop
+  assign border_bottom_mobile = section.settings.border_bottom_mobile
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="flex flex-col {% if border_bottom_mobile %} border-police-blue-20 border-b pb-15 md:border-none md:pb-0{% endif %}">
+      {% if subtitle != blank %}
+        <div class="mb-2 text-center text-sm font-medium uppercase tracking-wide text-police-blue-70 xl:mb-3.5">
+          {{- subtitle -}}
+        </div>
+      {% endif %}
+      {% if title != blank %}
+        <div class="mb-6.5 text-center text-32 font-medium xl:mb-3 xl:text-5xl">{{ title }}</div>
+      {% endif %}
+      {% if image_mobile %}
+        <div class="{% if is_image_at_bottom_desktop %} xl:order-1 {% endif %}">
+          {% render 'picture', image_mobile: image_mobile, image_desktop: image_desktop, class: 'w-full' %}
+        </div>
+      {% endif %}
+      {% if description != blank %}
+        <div class="block-text mx-auto mt-7.5 text-center xl:mb-14 xl:mt-0">{{ description }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #section-{{ section_id }} .block-text {
+    max-width: 100%;
+    @media screen and (min-width: 768px) {
+      max-width: {{ description_max_width_desktop }}px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Section Banner with Text",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image Desktop"
+      },
+      {
+        "type": "checkbox",
+        "id": "is_image_at_bottom_desktop",
+        "label": "Is Image at Bottom (Desktop)",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "number",
+        "id": "description_max_width_desktop",
+        "label": "Description Max Width Desktop (px)"
+      },
+      {
+        "type": "checkbox",
+        "id": "border_bottom_mobile",
+        "label": "Border Bottom Mobile",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Banner with Text"
+      }
+    ]
+  }
+{% endschema %}

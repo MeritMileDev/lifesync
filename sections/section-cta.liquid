@@ -1,0 +1,222 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  assign cta_text = section.settings.cta_text
+  assign cta_url = section.settings.cta_url
+  assign image_bg = section.settings.image_bg
+  
+  assign cta_position = section.settings.cta_position
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="relative">
+      <div class="cta-wrapper relative w-full max-w-full  h-[40vh] overflow-hidden rounded-3xl bg-gray-900 shadow-xl">
+        <img 
+          src="https://lifesync.com/cdn/shop/{{ image_bg }}" 
+          alt="Background" 
+          class="absolute inset-0 w-full h-full object-cover opacity-60 rounded-3xl"
+        />
+        <div class="relative h-full flex flex-col {% if section.settings.cta_position == 'cta_left' %}text-left items-start{% elsif section.settings.cta_position == 'cta_center' %}text-center items-center justify-center{% elsif section.settings.cta_position == 'cta_right' %}text-right items-end justify-end{% endif %} px-6">
+          {% if section.settings.section_title != blank %}
+            <h2
+              class="section-title {% if section.settings.text_color == 'blue' %}text-police-blue{% else %}text-white{% endif %} 3xl:text-48 lg:text-42 text-32 font-medium mb-2 xl:leading-14 leading-10">
+              {{ section.settings.section_title }}
+            </h2>
+            {% endif %}
+
+          {% if section.settings.section_description != blank %}
+          <div class="section-description {% if section.settings.text_color == 'blue' %}text-police-blue{% else %}text-white{% endif %} max-w-xl rte xl:px-0 px-7.5 mb-6 lg:mt-0 mt-3">
+            {{ section.settings.section_description }}
+          </div>
+          {% endif %}
+
+          {% if cta_text != blank and cta_url != blank %}
+            <a class="relative z-10 flex items-center justify-center gap-2 px-10 py-4 mt-4 bg-white text-center text-sm font-bold text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20 lg:max-w-max rounded-3xl" href="{{cta_url}}" {% if section.settings.cta_target == 'blank' %}target="_blank"{% endif %}>{{ cta_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>
+<style>
+  .cta-wrapper {
+    padding-top: {{ section.settings.padding_top_cta }}px;
+    padding-bottom: {{ section.settings.padding_bottom_cta }}px;
+  }
+  {% if section.settings.title_max_width > 0 %}
+    #section-{{ section_id }} .section-title {
+      max-width: {{ section.settings.title_max_width }}px;
+    }
+  {% endif %}
+  {% if section.settings.description_max_width > 0 %}
+    #section-{{ section_id }} .section-description {
+      max-width: {{ section.settings.description_max_width }}px;
+    }
+  {% endif %}
+  {% if section.settings.description_max_width_desktop > 0 %}
+      @media screen and (min-width: 768px) {
+        #section-{{ section_id }} .section-description {
+          max-width: {{ section.settings.description_max_width_desktop }}px;
+        }
+      }
+    {% endif %}
+</style>
+{% schema %}
+  {
+    "name": "CTA",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cta_position",
+        "label": "CTA position",
+        "options": [
+          {
+            "value": "cta_left",
+            "label": "Left"
+          },
+          {
+            "value": "cta_center",
+            "label": "Center"
+          },
+          {
+            "value": "cta_right",
+            "label": "Right"
+          }
+        ],
+        "default": "cta_center"
+      },
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width",
+        "label": "Block Title Max Width",
+        "default": 0
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text Color",
+        "options": [
+          {
+            "value": "blue",
+            "label": "Blue"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ],
+        "default": "white"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_bg",
+        "label": "Image Background"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_cta",
+        "label": "CTA Padding Top (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_cta",
+        "label": "CTA Bottom Top (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Button Text"
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA Button URL"
+      },
+      {
+        "type": "select",
+        "id": "cta_target",
+        "label": "Open link in",
+        "options": [
+          {
+            "value": "self",
+            "label": "Same Page"
+          },
+          {
+            "value": "blank",
+            "label": "New Tab"
+          }
+        ],
+        "default": "self"
+      }
+    ],
+    "presets": [
+      {
+        "name": "CTA"
+      }
+    ]
+  }
+{% endschema %}

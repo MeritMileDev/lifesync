@@ -1,0 +1,163 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign image_mobile = section.settings.image_mobile
+  assign image_desktop = section.settings.image_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="overflow-hidden" x-data="{ block: window.location.hash ? window.location.hash : '#login' }">
+    <div class="container">
+      <div class="items-center xl:grid xl:grid-cols-12 xl:gap-6">
+        <div class="!mt-10 h-full xl:col-span-5 xl:!mt-0 xl:py-24 xl:pr-14 xl:flex xl:flex-col xl:justify-center">
+          <h1 class="mb-8 text-center text-32 font-medium leading-10 xl:mb-19.5 xl:text-5xl">
+            {{- 'customer.activate_account.title' | t -}}
+          </h1>
+          {% form 'activate_customer_password' %}
+            {%- if form.errors -%}
+              <div class="mb-5 bg-red/10 p-5 text-red">
+                <p>{{ 'customer.activate_account.instructions' | t }}</p>
+              </div>
+            {%- endif -%}
+
+            <div class="relative mb-4">
+              <input
+                class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-1 focus:!outline-police-blue disabled:opacity-30{% if form.errors contains 'password' %} border-red{% endif %}"
+                type="password"
+                id="password"
+                {% if form.errors contains 'password' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder="{{ 'customer.activate_account.password' | t }}"
+                name="customer[password]"
+              >
+              <label
+                class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                for="password"
+              >
+                <span>{{ 'customer.activate_account.password' | t }}</span></label
+              >
+            </div>
+
+            <div class="relative mb-4">
+              <input
+                class="peer w-full border border-police-blue-70 px-5 pb-2.5 pt-5 placeholder:text-police-blue-70 placeholder:opacity-0 hover:border-police-blue focus:!outline focus:!outline-1 focus:!outline-police-blue disabled:opacity-30{% if form.errors contains 'password_confirmation' %} border-red{% endif %}"
+                type="password"
+                id="password_confirmation"
+                {% if form.errors contains 'password_confirmation' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder="{{ 'customer.activate_account.password_confirmation' | t }}"
+                name="customer[password_confirmation]"
+              >
+              <label
+                class="absolute start-0 top-2 z-10 -translate-y-1.5 transform cursor-text pl-5 text-sm text-police-blue-70 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:-translate-y-1.5 peer-focus:text-sm"
+                for="password_confirmation"
+              >
+                {{- 'customer.activate_account.password_confirmation' | t -}}
+              </label>
+            </div>
+
+            <div>
+              <div class="mb-9">
+                <button
+                  class="flex w-full items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-20"
+                  type="submit"
+                >
+                  {{- 'customer.activate_account.submit' | t -}}
+                </button>
+              </div>
+              <div class="mb-10 mt-6 flex items-center justify-center space-x-4">
+                <span class="h-px grow bg-police-blue-20"></span>
+                <span class="text-sm text-police-blue-70">or</span>
+                <span class="h-px grow bg-police-blue-20"></span>
+              </div>
+              <button
+                class="flex w-full items-center justify-center gap-2 border border-police-blue bg-white px-10 py-4.25 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-20"
+                type="submit"
+                name="decline"
+              >
+                {{- 'customer.activate_account.cancel' | t -}}
+              </button>
+            </div>
+          {% endform %}
+        </div>
+        <div class="-mx-4 mt-9 xl:relative xl:col-span-7 xl:mx-0 xl:mt-0 xl:h-full xl:min-h-[912px]">
+          <div class="aspect-square xl:absolute xl:left-0 xl:aspect-[1097/912] xl:h-full xl:w-[58vw] xl:max-w-275">
+            {% render 'picture',
+              image_desktop: image_desktop,
+              image_mobile: image_mobile,
+              lazy: 'lazy',
+              desktop_size: '60',
+              is_full_size: true,
+              class: 'object-cover w-full h-full'
+            %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Activate Account",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ]
+  }
+{% endschema %}

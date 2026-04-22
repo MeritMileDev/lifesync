@@ -1,0 +1,124 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+{% assign count = 0 %}
+{% for block in section.blocks %}
+  {% if block.type == 'advantage' %}
+    {% assign count = count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="md:grid gap-x-10 md:grid-cols-2 {% if count >= 4 %} large:grid-cols-4{% else %}md:grid-cols-{{count}}{% endif %}">
+
+      {% for block in section.blocks %}
+        {% if block.type == 'advantage' %}
+          {% liquid
+            assign image = block.settings.image
+            assign title = block.settings.title
+            assign description = block.settings.description
+          %}
+          <div class="mb-14.5 md:mb-6 large:mb-0">
+            {% if image != blank %}
+              {% render 'picture', image_mobile: image, image_desktop: image, class: 'w-full' %}
+            {% endif %}
+            {% if title != blank %}
+              <div class="text-32 text-center mt-7.5 font-medium mb-1.5 large:text-40 md:mb-4.5">{{ title }}</div>
+            {% endif %}
+            {% if description != blank %}
+              <div class="text-center">{{ description }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Advantages",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#F4F9FC"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "advantage",
+        "name": "Advantage",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Advantages"
+      }
+    ]
+  }
+{% endschema %}

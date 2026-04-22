@@ -1,0 +1,264 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section x-data="modalPopup()" id="section-{{ section_id }}">
+  <div class="lg:container">
+    <div class="py-16 lg:px-16 px-4">
+      <div class="lg:grid lg:grid-cols-12 xl:gap-16 lg:gap-6">
+        <div class="col-span-4 relative">
+          {% if section.settings.section_bg_image != blank %}
+            <div class="absolute lg:bottom-0 bottom-auto lg:top-auto top-0 left-0 right-0 lg:max-w-max lg:max-h-max lg:-m-16 -m-4">
+              {% render 'picture',
+                image_mobile: section.settings.section_bg_image,
+                image_desktop: section.settings.section_bg_image,
+                is_full_size: false,
+                class: 'w-full'
+              %}
+            </div>
+          {% endif %}
+          <div class="lg:text-left text-center lg:mb-0 mb-16 relative">
+            {% if section.settings.section_subtitle != blank %}
+              <p class="text-sm uppercase text-police-blue-70 font-medium tracking-wide lg:mb-8 mb-6">
+                {{ section.settings.section_subtitle }}
+              </p>
+            {% endif %}
+            {% if section.settings.section_title != blank %}
+              <h2 class="xl:text-5xl lg:text-3xl text-32 font-medium lg:mb-8 mb-6 max-w-2xl mx-auto lg:leading-14 leading-10">
+                {{ section.settings.section_title }}
+              </h2>
+            {% endif %}
+            {% if section.settings.section_description != blank %}
+              <p class="max-w-xl mx-auto lg:mb-8 lg:mx-0 lg:max-w-sm">
+                {{ section.settings.section_description }}
+              </p>
+            {% endif %}
+            {% if section.settings.button_link != blank %}
+              <a class="lg:flex hidden gap-2 items-center justify-center text-center text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 lg:max-w-max" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-span-8">
+          {% if section.blocks.size > 0 %}
+            <div 
+              class="swiper w-full lg:mb-0 mb-16"
+              x-data="
+                swiper({
+                  loop: false,
+                  slidesPerView: 1.4,
+                  spaceBetween: 16,
+                  scrollbar: {
+                    el: '#section-{{ section_id }} .swiper-scrollbar'
+                  },
+                  breakpoints: {
+                    768: {
+                      slidesPerView: 3,
+                      grid: {
+                        rows: 3,
+                        fill: 'rows',
+                      },
+                    },
+                    1024: {
+                      slidesPerView: 3,
+                      spaceBetween: 24,
+                      grid: {
+                        rows: 3,
+                        fill: 'rows',
+                      },
+                    },
+                    1280: {
+                      slidesPerView: 3,
+                      spaceBetween: 24,
+                      grid: {
+                        rows: 3,
+                        fill: 'rows',
+                      },
+                    }
+                  }
+              })
+              ">
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  {% assign popup_id = section_id | append: '_' | append: block.id %}
+                  <div @click="openPopup('{{ popup_id }}')" class="swiper-slide slide cursor-pointer relative group mb-4">
+                    <div class="absolute top-4 right-4 text-bright-gray-50 z-50 opacity-0 transition duration-100 group-hover:opacity-100">
+                      {% render 'icon', icon: 'info' %}
+                    </div>
+                    {% render 'picture',
+                      image_mobile: block.settings.block_image,
+                      image_desktop: block.settings.block_image,
+                      is_full_size: false,
+                      class: 'w-full mb-4'
+                    %}
+                    <h4 class="text-center mb-1">{{ block.settings.name }}</h4>
+                    <p class="text-center text-sm text-police-blue-70">{{ block.settings.job_title }}</p>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="swiper-scrollbar mt-4 xl:hidden"></div>
+            </div>
+          {% endif %}
+          {% if section.settings.button_link != blank %}
+            <a class="lg:hidden flex gap-2 items-center justify-center text-center font-medium text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 lg:max-w-max" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% for block in section.blocks %}
+    {% assign popup_id = section_id | append: '_' | append: block.id %}
+    {% capture popup_content %}
+    <div class="max-w-[500px] mx-auto shadow-bottom">
+      <div class="bg-police-blue text-bright-gray lg:px-10 px-4 pt-4 relative rounded-t" style="border-radius: 24px 24px 0 0;">
+        <div class="absolute right-4 top-4 sizes-4 text-bright-gray-50">
+          <button @click.prevent="closePopup()">
+            {% render 'icon', icon: 'close' %}
+          </button>
+        </div>
+        <div class="flex gap-6 items-center">
+          <div class="">
+            {% render 'picture',
+            image_mobile: block.settings.popup_image,
+            image_desktop: block.settings.popup_image,
+            is_full_size: false,
+            lazy: 'eager',
+            class: 'w-full', 
+            style="border-radius: 50%"
+            %}
+          </div>
+          <div class="">
+            <h4>{{ block.settings.name }}</h4>
+            <p class="text-sm text-bright-gray-50">{{ block.settings.job_title }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="rte bg-police-blue text-white lg:p-10 p-4 popup-description tracking-wide" style="border-radius: 0 0 24px 24px">
+        {{ block.settings.description }}
+      </div>
+    </div>
+    {% endcapture %}
+    {% render 'modal-popup', id: popup_id, content: popup_content %}
+  {% endfor %}
+</section>
+
+{% schema %}
+  {
+    "name": "Team",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "section_bg_image",
+        "label": "Section BG Image"
+      },
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Section Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "member",
+        "name": "Member",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "block_image",
+            "label": "Block Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "popup_image",
+            "label": "Popup Image"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "job_title",
+            "label": "Job Title"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Team"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,21 @@
+{% liquid
+  assign product_advantages = product_advantages
+%}
+
+<div class="xl:flex xl:justify-between xl:gap-6">
+  {% for advantage in product_advantages %}
+    <div class="mb-6 flex flex-col items-center border-b border-police-blue-20 pb-6 last:mb-0 last:border-b-0 last:pb-0 xl:mb-0 xl:flex-1 xl:border-b-0 xl:pb-0">
+      <img class="mb-2 xl:mb-2.5" src="{{ advantage.icon | img_url }}" alt="">
+      <div class="mb-1 font-medium xl:mb-2">{{ advantage.title }}</div>
+      <div class="mb-1 max-w-[186px] text-center text-sm">{{ advantage.subtitle }}</div>
+      {% if advantage.link.value.url %}
+        <a
+          class="mt-auto text-sm font-medium uppercase tracking-wide text-persian-blue underline hover:no-underline"
+          href="{{ advantage.link.value.url }}"
+        >
+          {{- 'products.product.advantages.link_text' | t -}}
+        </a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

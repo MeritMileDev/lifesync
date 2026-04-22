@@ -1,0 +1,86 @@
+{% if customer %}
+  <div class="mb-7 border-b border-police-blue-20 pb-10 lg:pb-24 xl:mb-17.5">
+    <div class="container">
+      <h1 class="mb-2.5 mt-4 text-center text-40 font-medium tracking-tight lg:mb-4 lg:mt-5.5 lg:text-64">
+        {{- 'customer.account.title' | t: first_name: customer.first_name -}}
+      </h1>
+      <div class="flex justify-center">
+        <a
+          class="inline-flex items-center justify-center border border-police-blue px-4 py-1 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-30"
+          href="{{ routes.account_url }}"
+          title="{{ 'customer.log_out' | t }}"
+        >
+          <span class="flex">{% render 'icon', icon: 'chevron-left', class: 'size-4' %}</span>
+          <span>{{- 'customer.account.return' | t -}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="container" x-data="wishlist">
+  <div class="relative pb-16 xl:pb-35">
+    <h2 class="mb-1 text-center text-32 xl:text-40 xl:mb-1.5">
+      {{ 'wishlist.page_title' | t }}
+    </h2>
+    <h3 class="mb-8 text-center text-base text-police-blue-70 xl:mb-18">
+      <template x-if="wishListData.length == 1">
+        <span>{{ 'wishlist.count.one' | t }}</span>
+      </template>
+      <template x-if="wishListData.length > 1">
+        <span x-text="`${wishListData.length} {{ 'wishlist.count.other' | t }}`"> </span>
+      </template>
+    </h3>
+    <div x-cloak x-show="isEmpty" class="text-center">{{ 'wishlist.empty_list' | t }}</div>
+    <ul class="grid grid-cols-2 gap-x-4 gap-y-16 md:grid-cols-3 lg:grid-cols-4 xl:gap-x-6 xl:gap-y-20 xl:grid-cols-5">
+      <template x-for="product in products">
+        <li>
+          <div class="relative mb-2.5 bg-gray-100 block overflow-hidden">
+            <a :href="product.du" :title="product.dt" class="relative aspect-square w-full overflow-hidden">
+              <img class="aspect-square w-full object-contain mix-blend-darken hover:scale-110 transition duration-300" :src="product.iu || '{{ 'placeholder.jpeg' | asset_url }}'" alt="">
+            </a>
+            <button
+                @click="handleRemoveFromWishlist(product)"
+                class="absolute right-1 top-1 flex size-8 items-center justify-center bg-white text-police-blue-70 hover:text-police-blue transition-colors"
+            >
+              {% render 'icon', icon: 'trash', class: 'size-5' %}
+            </button>
+          </div>
+          <a class="mb-1.5 line-clamp-2 min-h-12 xl:min-h-0 xl:line-clamp-1 hover:text-police-blue-70 transition-colors" :title="product.dt" :href="product.du" x-text="product.dt"></a>
+          <div class="mb-3">
+            <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
+            <span class="text-xl" :class="{'text-red': getCompareAtPrice(product)}" x-text="getPrice(product)"></span>
+
+            <span x-show="getCompareAtPrice(product)">
+              <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+              <span class="ml-2 text-base text-police-blue-70 line-through" x-text="getCompareAtPrice(product)"> </span>
+            </span>
+          </div>
+          <button
+            @click="handleAddToCart(product)"
+            class="flex w-full items-center justify-center gap-2 bg-police-blue px-1 py-4.25 text-center text-sm uppercase tracking-wide text-white hover:scale-102 active:scale-100 disabled:opacity-30"
+          >
+            <span x-show="addingToCart !== product.epi">
+              {{- 'products.product.add_to_cart' | t -}}
+            </span>
+            <span x-cloak x-show="addingToCart == product.epi">{{ 'products.product.adding_to_cart' | t }}</span>
+          </button>
+        </li>
+      </template>
+    </ul>
+    <div x-ref="wishlistPagination"></div>
+    <div class="flex items-center justify-center" x-show="isLoading">
+      {% render 'icon', icon: 'loader' %}  
+    </div>
+    <div x-cloak class="absolute bg-black/30 inset-0 flex items-center justify-center" x-show="isLoadingPage">
+      {% render 'icon', icon: 'loader' %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Wishlist",
+  "settings": []
+}
+{% endschema %}

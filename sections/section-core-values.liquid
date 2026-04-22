@@ -1,0 +1,213 @@
+{% liquid
+  assign section_id = section.id
+  assign title = section.settings.title
+  assign title_max_width_mobile = section.settings.title_max_width_mobile
+  assign title_max_width_desktop = section.settings.title_max_width_desktop
+  assign text = section.settings.text
+  assign text_max_width_mobile = section.settings.text_max_width_mobile
+  assign text_max_width_desktop = section.settings.text_max_width_desktop
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+{% style %}
+  #section-{{ section_id }} .section-title {
+    max-width: {% if title_max_width_mobile > 0 %} {{ title_max_width_mobile }}px {% else %} 100% {% endif %};
+
+    @media screen and (min-width: 768px) {
+      max-width: {% if title_max_width_desktop > 0 %} {{ title_max_width_desktop }}px {% else %} 100% {% endif %};
+    }
+  }
+
+  #section-{{ section_id }} .section-text {
+    max-width: {% if text_max_width_mobile > 0 %} {{ text_max_width_mobile }}px {% else %} 100% {% endif %};
+
+    @media screen and (min-width: 768px) {
+      max-width: {% if text_max_width_desktop > 0 %} {{ text_max_width_desktop }}px {% else %} 100% {% endif %};
+    }
+  }
+{% endstyle %}
+<section id="section-{{ section_id }}">
+  <div class="container overflow-hidden">
+    {% if title != blank %}
+      <div class="section-title mx-auto mb-2 text-center text-32 font-medium lg:text-5xl lg:mb-3">{{ title }}</div>
+    {% endif %}
+    {% if text != blank %}
+      <div class="section-text text-center mx-auto mb-8">{{- text -}}</div>
+    {% endif %}
+    <div class="hidden lg:block mt-14"></div>
+    <div class="lg:grid lg:grid-cols-3 gap-6 lg:gap-y-6 2xl:grid-cols-5 lg:-mx-6 lg:px-10 core-values">
+      {% for block in section.blocks %}
+        {% if block.type == 'grid_item' %}
+          {% liquid
+            assign image = block.settings.image
+            assign title = block.settings.title
+            assign description = block.settings.description
+          %}
+          <style>
+            .grid-item-title-{{block.id}} {
+              max-width: {% if block.settings.title_max_width_mobile > 0 %} {{ block.settings.title_max_width_mobile }}px {% else %} 100% {% endif %};
+              @media screen and (min-width: 768px) {
+                max-width: {% if block.settings.title_max_width_desktop > 0 %} {{ block.settings.title_max_width_desktop }}px {% else %} 100% {% endif %};
+              }
+            }
+            .grid-item-text-{{block.id}} {
+              max-width: {% if block.settings.description_max_width_mobile > 0 %} {{ block.settings.description_max_width_mobile }}px {% else %} 100% {% endif %};
+              @media screen and (min-width: 768px) {
+                max-width: {% if block.settings.description_max_width_desktop > 0 %} {{ block.settings.description_max_width_desktop }}px {% else %} 100% {% endif %};
+              }
+            }
+          </style>
+          <div class="pb-8 pt-8 lg:px-2 lg:pt-2 lg:flex lg:flex-col lg:mb-0 mb-8 rounded-3xl core-value">
+            <div class="grid-item-title-{{block.id}} mt-8 mx-auto mb-6 text-white text-center font-bold text-xl max-w-md px-10">
+              {{- title -}}
+            </div>
+            {% if block.settings.image_desktop != blank %}
+              {% render 'picture', image_mobile: image, image_desktop: image %}
+            {% endif %}
+            <div class="grid-item-text-{{block.id}} mx-auto lg:mb-0 mb-8 px-4 text-white text-center text-sm lg:flex-grow lg:flex lg:items-center">{{- description -}}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .core-values .core-value:nth-child(2) { background-color: #20225A; }
+  .core-values .core-value:nth-child(4) { background-color: #50ACD9; }
+  .core-values .core-value:nth-child(6) { background-color: #4985C5; }
+  .core-values .core-value:nth-child(8) { background-color: #51AA6D; }
+  .core-values .core-value:nth-child(10) { background-color: #7DBE92; }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Core Values",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title"
+      },
+      {
+        "type": "number",
+        "id": "title_max_width_mobile",
+        "label": "Title Max Width Mobile",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "title_max_width_desktop",
+        "label": "Title Max Width Desktop",
+        "default": 0
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_mobile",
+        "label": "Text Max Width Mobile"
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_desktop",
+        "label": "Text Max Width Desktop"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "grid_item",
+        "name": "Grid Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "number",
+            "id": "title_max_width_mobile",
+            "label": "Title Max Width Mobile"
+          },
+          {
+            "type": "number",
+            "id": "title_max_width_desktop",
+            "label": "Title Max Width Desktop"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "number",
+            "id": "description_max_width_mobile",
+            "label": "Description Max Width Mobile"
+          },
+          {
+            "type": "number",
+            "id": "description_max_width_desktop",
+            "label": "Description Max Width Desktop"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Core Values"
+      }
+    ]
+  }
+{% endschema %}

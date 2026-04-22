@@ -1,0 +1,259 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign banner_blocks = section.blocks | where: 'type', 'video_banner'
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="grid gap-y-4 md:grid-cols-2 md:gap-x-6 md:gap-y-0">
+      {% for block in banner_blocks %}
+        {% liquid
+          assign image_mobile = block.settings.image_mobile
+          assign image_desktop = block.settings.image_desktop
+          assign description = block.settings.description
+          assign button_text = block.settings.button_text
+          assign youtube_id = block.settings.youtube_id
+          assign description_max_width_mobile = block.settings.description_max_width_mobile
+          assign description_max_width_desktop = block.settings.description_max_width_desktop
+        %}
+        <div
+          class="bg-bright-gray pb-8 md:flex md:flex-col xl:grid xl:grid-cols-[1fr_auto] xl:grid-rows-[max-content] xl:pb-0"
+          x-data="modalPopup()"
+        >
+          {% if image_mobile and image_desktop %}
+            <div class="xl:col-span-2">
+              {% render 'picture', image_mobile: image_mobile, image_desktop: image_desktop %}
+            </div>
+          {% endif %}
+          {% if description != blank %}
+            <div class="video-banner-description-{{ block.id }} mx-auto mb-6 mt-7.5 px-4 text-center text-xl font-medium md:text-left xl:my-12 xl:self-center xl:pl-15 xl:pr-0 2xl:mx-0">
+              {{- description -}}
+            </div>
+          {% endif %}
+          {% if youtube_id != blank %}
+            <div class="xl:self-center mt-auto xl:mt-0" x-data="videoInitialization('{{ youtube_id }}', 'video-{{ block.id }}')">
+              <a
+                @click.prevent="openPopup('{{ block.id }}'), play()"
+                href="https://www.youtube.com/watch?v={{ youtube_id }}"
+                class="flex items-center justify-center gap-x-2 md:mt-auto xl:mt-0 xl:px-10"
+              >
+                <div class="size-10">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_352_141294)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1.02438 11.7073C1.02438 5.64564 5.93835 0.731689 12 0.731689C18.0616 0.731689 22.9756 5.64564 22.9756 11.7073C22.9756 17.7689 18.0616 22.6829 12 22.6829C5.93835 22.6829 1.02438 17.7689 1.02438 11.7073ZM9.60608 6.96455C9.84403 6.83723 10.1327 6.85116 10.3572 7.00084L16.5036 11.0984C16.7072 11.2341 16.8294 11.4626 16.8294 11.7072C16.8294 11.9519 16.7072 12.1803 16.5036 12.316L10.3572 16.4136C10.1327 16.5633 9.84403 16.5772 9.60608 16.4499C9.36819 16.3226 9.21962 16.0747 9.21962 15.8048V7.60968C9.21962 7.33983 9.36819 7.09187 9.60608 6.96455Z" fill="#0BADDC"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_352_141294">
+                      <rect width="24" height="23.4146" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium uppercase leading-none tracking-wide">{{ button_text }}</span>
+              </a>
+              
+              <div
+                x-cloak
+                x-show="isPopupOpen('{{ block.id }}')"
+                class="fixed inset-0 z-[110] overflow-y-auto bg-police-blue bg-opacity-80"
+                id="{{ block.id }}"
+              >
+                <div class="flex min-h-[100dvh] items-start justify-center px-4 py-4 md:min-h-screen md:items-center md:px-8">
+                  <div
+                    x-cloak
+                    @click="closePopup(), stop()"
+                    x-show="isPopupOpen('{{ block.id }}')"
+                    x-transition:enter="transition ease-out transform"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition ease-in duration-200 transform"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="fixed inset-0 bg-police-blue bg-opacity-80 transition-opacity"
+                    aria-hidden="true"
+                  ></div>
+
+                  <div class="absolute right-4 top-4 sizes-4 text-white">
+                    <button @click.prevent="closePopup()">
+                      {% render 'icon', icon: 'close' %}
+                    </button>
+                  </div>
+
+                  <div
+                    x-cloak
+                    x-show="isPopupOpen('{{ block.id }}')"
+                    x-transition:enter="transition ease-out transform"
+                    x-transition:enter-start="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 md:scale-100"
+                    x-transition:leave="transition ease-in duration-200 transform"
+                    x-transition:leave-start="opacity-100 translate-y-0 md:scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
+                    class="my-20 inline-block w-full transform overflow-hidden bg-white transition-all md:my-2.5 xl:max-w-7xl"
+                    @click.outside="stop()"
+                  >
+                    <div class="flex aspect-video items-center justify-center" :class="{ 'hidden': isPlaying }">
+                      <img
+                        loading="lazy"
+                        src="https://img.youtube.com/vi/{{ youtube_id }}/maxresdefault.jpg"
+                        alt="placeholder image"
+                        class="aspect-video h-full w-full object-cover rounded-3xl"
+                      >
+                      <div class="absolute">
+                        <button
+                          class="rounded-4.5 bg-primary text-green_accent flex h-14 w-22 transform items-center justify-center rounded-3xl shadow transition-transform hover:scale-110"
+                          @click="play()"
+                        >                          
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_352_141294)">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.02438 11.7073C1.02438 5.64564 5.93835 0.731689 12 0.731689C18.0616 0.731689 22.9756 5.64564 22.9756 11.7073C22.9756 17.7689 18.0616 22.6829 12 22.6829C5.93835 22.6829 1.02438 17.7689 1.02438 11.7073ZM9.60608 6.96455C9.84403 6.83723 10.1327 6.85116 10.3572 7.00084L16.5036 11.0984C16.7072 11.2341 16.8294 11.4626 16.8294 11.7072C16.8294 11.9519 16.7072 12.1803 16.5036 12.316L10.3572 16.4136C10.1327 16.5633 9.84403 16.5772 9.60608 16.4499C9.36819 16.3226 9.21962 16.0747 9.21962 15.8048V7.60968C9.21962 7.33983 9.36819 7.09187 9.60608 6.96455Z" fill="#0BADDC"/>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_352_141294">
+                              <rect width="24" height="23.4146" fill="white"/>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="aspect-video" x-show.transition.in.opacity.duration.500ms="isPlaying" x-cloak>
+                      <iframe
+                        x-ref="videoElement"
+                        src=""
+                        class="aspect-video w-full"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        <style>
+          {% if description_max_width_mobile > 0 %}
+            @media screen and (max-width: 767px) {
+              .video-banner-description-{{ block.id }} {
+              max-width: {{ description_max_width_mobile }}px;
+            }
+          }
+          {% endif %}
+          {% if description_max_width_desktop > 0 %}
+            @media screen and (min-width: 1500px) {
+              .video-banner-description-{{ block.id }} {
+              max-width: {{ description_max_width_desktop }}px;
+            }
+          }
+          {% endif %}
+        </style>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Video Banners",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "video_banner",
+        "name": "Video Banner",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image Mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Image Desktop"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "number",
+            "id": "description_max_width_mobile",
+            "label": "Description Max Width Mobile (px)"
+          },
+          {
+            "type": "number",
+            "id": "description_max_width_desktop",
+            "label": "Description Max Width Desktop (px)"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Watch video"
+          },
+          {
+            "type": "text",
+            "id": "youtube_id",
+            "label": "Youtube ID"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Video Banners Grid"
+      }
+    ]
+  }
+{% endschema %}

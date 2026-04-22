@@ -1,0 +1,178 @@
+@import 'swiper/css';
+@import '../styles/swiper.css';
+@import '../styles/rebuy.css';
+@import '../styles/newsletter.css';
+@import '../styles/yotpo.css';
+@import '../styles/discountly.css';
+@import '../styles/counter.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Raleway';
+    src:
+      url('/assets/Raleway-Medium.woff2') format('woff2'),
+      url('/assets/Raleway-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Raleway';
+    src:
+      url('/assets/Raleway-Regular.woff2') format('woff2'),
+      url('/assets/Raleway-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Raleway';
+    src:
+      url('/assets/Raleway-Bold.woff2') format('woff2'),
+      url('/assets/Raleway-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Raleway';
+    src:
+      url('/assets/Raleway-SemiBold.woff2') format('woff2'),
+      url('/assets/Raleway-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Raleway';
+    src:
+      url('/assets/Raleway-Light.woff2') format('woff2'),
+      url('/assets/Raleway-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    @apply h-full font-body text-base text-police-blue antialiased;
+  }
+
+  h1 {
+    @apply text-40 lg:text-5xl xl:text-64;
+  }
+
+  h2 {
+    @apply text-2xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg lg:text-xl;
+  }
+
+  h6 {
+    @apply text-base lg:text-lg;
+  }
+
+  sub {
+    @apply text-[67%];
+  }
+
+  #social_login_frame {
+    height: 184px !important;
+  }
+
+  .rte p,
+  .rte ul,
+  .rte ol {
+    margin-bottom: 24px;
+  }
+
+  .rte p:last-child,
+  .rte ul:last-child,
+  .rte ol:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+[x-cloak] {
+  @apply !hidden;
+}
+
+.swym-button-bar {
+  @apply !hidden;
+}
+
+input,
+textarea,
+select {
+  @apply rounded-none;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.shopify-challenge__button {
+  @apply flex cursor-pointer items-center justify-center gap-2 bg-yellow px-10 py-4.25 text-center text-sm uppercase text-police-blue transition duration-100 hover:scale-102 active:scale-100 disabled:opacity-20;
+}
+
+.shopify-challenge__container {
+  @apply py-20;
+}
+
+select {
+  @apply text-base leading-none focus-visible:outline-none;
+  background: url('/assets/select-arrows.svg') no-repeat 100% 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.page-content a,
+.rte a {
+  @apply text-persian-blue underline hover:no-underline active:underline disabled:opacity-30;
+}
+
+.rte ol {
+  @apply list-decimal pl-6;
+}
+
+.rte ul {
+  @apply list-disc pl-6;
+}
+
+.rounded-3xl {
+  border-radius: 24px;
+}

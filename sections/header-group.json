@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "top-header": {
+      "type": "top-header",
+      "settings": {
+        "message": "Manufacturer Direct Medical Supplies • Order by 2PM for Same-Day Shipping • Transparent Pricing",
+        "bg-color": "#0d0d63",
+        "text-color": "#f4f9fc"
+      }
+    },
+    "main-header": {
+      "type": "main-header",
+      "blocks": {
+        "shop_menu_mKUBCD": {
+          "type": "shop_menu",
+          "settings": {
+            "navigation": "shop-menu"
+          }
+        },
+        "main_menu_cHYUTd": {
+          "type": "main_menu",
+          "settings": {
+            "navigation": "main-menu-new"
+          }
+        },
+        "submenu_image_LfQMDP": {
+          "type": "submenu_image",
+          "settings": {
+            "link_text": "Radiolucent ECG leads",
+            "image": "shopify://shop_images/nav-radiolucent-ecg-leads.webp"
+          }
+        },
+        "submenu_image_Azq3h8": {
+          "type": "submenu_image",
+          "settings": {
+            "link_text": "Standardization",
+            "image": "shopify://shop_images/nav-standardization.webp"
+          }
+        },
+        "submenu_image_jMEQGY": {
+          "type": "submenu_image",
+          "settings": {
+            "link_text": "ECG Leadwire Reprocessing",
+            "image": "shopify://shop_images/nav-ecg-leadwire-reprocessing.webp"
+          }
+        }
+      },
+      "block_order": [
+        "shop_menu_mKUBCD",
+        "main_menu_cHYUTd",
+        "submenu_image_LfQMDP",
+        "submenu_image_Azq3h8",
+        "submenu_image_jMEQGY"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "top-header",
+    "main-header"
+  ]
+}

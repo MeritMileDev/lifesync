@@ -1,0 +1,33 @@
+{% comment %}
+  Renders popup.
+
+  Accepts:
+  - id: {String} Popup id
+  - content: {String} Popup content
+  - popupClass: {String} Popup class
+
+  Usage:
+  {% render 'modal-popup',
+    id: 'popup-id',
+    content: 'modalContent',
+    popupClass: 'p-5'
+  %}
+{% endcomment %}
+
+<div
+  x-data
+  x-cloak
+  x-show="isPopupOpen('{{ id }}')"
+  class="fixed inset-0 z-[110] overflow-y-auto bg-police-blue bg-opacity-80"
+  id="{{ id }}">
+  <div class="flex items-start justify-center min-h-[100dvh] md:min-h-screen px-4 md:items-center md:px-8 py-4">
+    <div
+      @click.outside="closePopup()"
+      class="h-[calc(100dvh-138px)] md:w-full md:h-min max-w-max {{ popupClass }}"
+    >
+      <div class="h-full w-full modal-content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>

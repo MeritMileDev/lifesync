@@ -1,0 +1,217 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div
+    class="swiper group relative w-full"
+    x-data="
+      swiper({
+          loop: false,
+          slidesPerView: 1,
+          pagination: {
+            el: '#section-{{ section_id }} .swiper-pagination',
+            type: 'bullets',
+          },
+          navigation: {
+            nextEl: '#section-{{ section_id }} .swiper-button-next',
+            prevEl: '#section-{{ section_id }} .swiper-button-prev',
+          },
+      })
+    "
+  >
+    <div class="swiper-wrapper">
+      {% assign hero_slide_count = 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'block-hero-slide' %}
+          {% assign hero_slide_count = hero_slide_count | plus: 1 %}
+          {% assign background_mobile = block.settings.background_mobile %}
+          {% assign background_desktop = block.settings.background_desktop %}
+          {% assign icon = block.settings.icon %}
+          {% assign title = block.settings.title %}
+          {% assign is_title_h1 = block.settings.is_title_h1 %}
+          {% assign description = block.settings.description %}
+          <div class="swiper-slide slide">
+            <div class="relative aspect-[360/550] md:aspect-[3/2] lg:aspect-[1920/800]">
+              <div class="absolute inset-0">
+                {% render 'picture',
+                  image_desktop: background_desktop,
+                  image_mobile: background_mobile,
+                  class: 'w-full h-full object-cover',
+                  lazy: 'eager'
+                %}
+              </div>
+              <div class="relative z-10 flex h-full flex-col justify-end">
+                <div class="container">
+                  <div class="pb-14.5 text-center text-white md:text-left large:pb-18">
+                    {% if block.settings.button_link %}
+                      <a href="{{ block.settings.button_link }}">
+                    {% endif %}
+
+                    {% if icon != blank %}
+                      <img
+                        class="mx-auto mb-3.5 md:mx-0"
+                        src="{{ icon | image_url }}"
+                        width="{{image.width}}"
+                        height="{{ image.height }}"
+                        alt="{{ image.alt }}"
+                      >
+                    {% endif %}
+                    {% if title != blank %}
+                      {% if is_title_h1 %}
+                        <h1 class="mb-1.5 text-40 font-medium tracking-tight large:text-64">{{ title | replace: '<p>', '' | replace: '</p>', '' }}</h1>
+                      {% else %}
+                        <div class="mb-1.5  text-40 font-medium tracking-tight large:text-64">{{ title }}</div>
+                      {% endif %}
+                    {% endif %}
+                    {% if description != blank %}
+                      <div>{{ description }}</div>
+                    {% endif %}
+
+                    {% if block.settings.button_link %}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% if hero_slide_count > 1 %}
+      <div class="absolute bottom-4 left-0 z-10 hidden w-full items-center justify-center space-x-2 group-[.swiper-initialized]:flex">
+        <button class="swiper-button-prev p-2 text-[#F4F9FC] disabled:text-[#F4F9FC]/20">
+          {% render 'icon', icon: 'chevron-left', class: 'w-6 h-6 flex' %}
+        </button>
+
+        <div class="swiper-pagination"></div>
+        <button class="swiper-button-next p-2 text-[#F4F9FC] disabled:text-[#F4F9FC]/20">
+          {% render 'icon', icon: 'chevron-right', class: 'w-6 h-6 flex' %}
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .swiper-pagination {
+    display: flex;
+    gap: 2px;
+  }
+  .swiper-pagination-bullet {
+    width: 32px;
+    height: 4px;
+    background-color: rgba(244, 249, 252, 0.20);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #F4F9FC;
+</style>
+
+{% schema %}
+  {
+    "name": "Section Hero Slider",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block-hero-slide",
+        "name": "Hero Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "background_mobile",
+            "label": "Background Mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "background_desktop",
+            "label": "Background Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "checkbox",
+            "id": "is_title_h1",
+            "label": "Is Title H1?",
+            "default": false
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Hero Slider"
+      }
+    ]
+  }
+{% endschema %}

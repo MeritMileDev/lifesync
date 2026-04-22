@@ -1,0 +1,46 @@
+@keyframes counter {
+    0% {
+        transform: translateY(calc(-100% + 68px));
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes counter-reversed {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(calc(-100% + 68px));
+    }
+}
+
+.counter-col {
+    text-align: center;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    transform: translateY(calc(-100% + 68px));
+    letter-spacing: -4px;
+    line-height: 68px;
+
+    &.reversed {
+        transform: translateY(0);
+        
+    }
+}
+
+.counter-active {
+    .counter-col {
+        animation-name: counter;
+
+        &.reversed {
+            animation-name: counter-reversed;
+        }
+    }
+}

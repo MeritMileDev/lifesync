@@ -1,0 +1,39 @@
+{% comment %}
+  Renders a list of product's price (regular, sale)
+
+  Accepts:
+  - product: {object} Product Liquid object (optional)
+  - use_variant: {boolean} Renders selected or first variant price instead of overall product pricing (optional)
+
+  Usage:
+    {% render 'price', product: product %}
+{% endcomment %}
+
+{% liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+%}
+<div class="text-xl flex items-center font-normal">
+  {% if target.price_min == target.price_max %}
+    {% if target.compare_at_price_max > target.price %}
+      <span class="sr-only">{{ 'products.product.price.sale_price' | t }}</span>
+      <span class="text-red">{{ target.price | money }}</span>
+      
+      {% if target.compare_at_price_max > 0 %}
+        <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+        <span class="line-through text-base text-police-blue-70 ml-2">
+          {{- target.compare_at_price_max | money -}}
+        </span>
+      {% endif %}
+    {% else %}
+      <span class="sr-only">{{ 'products.product.price.regular_price' | t }}</span>
+      <span>{{ target.price | money }}</span>
+    {% endif %}
+  {% else %}
+  {% assign min_price = target.price_min | money %}
+    <span>{{ 'products.product.price.from_price_html' | t: min_price: min_price }}</span>
+  {% endif %}
+</div>

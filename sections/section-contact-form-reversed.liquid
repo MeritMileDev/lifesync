@@ -1,0 +1,123 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="lg:container">
+    <div class="{% if section.settings.enable_bg %}bg-bright-gray-20{% endif %} mb-8 rounded-3xl">
+      <div class="lg:grid grid-cols-12 gap-6">
+        <div class="col-span-6 flex flex-col justify-center xl:p-20 px-6 lg:pb-10 pb-16 lg:p-10 pt-10 p-0">
+          <div class="text-center max-w-165 mx-auto">
+            {% if section.settings.section_title != blank %}
+            <h2 class="xl:text-64 lg:text-5xl text-32 font-medium lg:mb-6 mb-4 px-10">
+              {{ section.settings.section_title }}
+            </h2>
+            {% endif %}
+            {% if section.settings.section_description != blank %}
+            <p class="">
+              {{ section.settings.section_description }}
+            </p>
+            {% endif %}
+          </div>
+          <div class="xl:mt-16 lg:!mt-12 !mt-10">
+            {% render 'contact-form' %}
+          </div>
+        </div>
+        <div class="col-span-6">
+          {% render 'picture',
+          image_mobile: section.settings.image_mobile,
+          image_desktop: section.settings.image_desktop,
+          is_full_size: false,
+          class: 'w-full h-full object-cover lg:mb-0 mb-10'
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Contact Form Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image Mobile"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Section Description"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_bg",
+        "label": "Enable section background",
+        "default": false
+      },
+
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Contact Form Section Reversed"
+      }
+    ]
+  }
+{% endschema %}

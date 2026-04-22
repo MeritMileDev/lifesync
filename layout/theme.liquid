@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <script>
+  (function(w,d,t,r,u)
+  {
+    var f,n,i;
+    w[u]=w[u]||[],f=function()
+    {
+      var o={ti:"187213406", enableAutoSpaTracking: true};
+      o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")
+    },
+    n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function()
+    {
+      var s=this.readyState;
+      s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)
+    },
+    i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)
+  })
+  (window,document,"script","//bat.bing.com/bat.js","uetq");
+</script>
+<script>
+   // Add this script right after your base UET tag code
+   window.uetq = window.uetq || [];
+   window.uetq.push('set', { 'pid': { 
+      'em': 'contoso@example.com', // Replace with the variable that holds the user's email address. 
+      'ph': '+14250000000', // Replace with the variable that holds the user's phone number. 
+   } });
+</script>
+<script>window.uetq = window.uetq || [];window.uetq.push('event', '', {"revenue_value":Replace_with_Variable_Revenue_Function(),"currency":"USD"});</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="adastra">
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {% if settings.favicon != blank %}
+      <link fetchpriority="low" rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" sizes="32x32">
+    {% endif %}
+
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_description | default: shop.description | escape }}">
+
+    {% comment %} We preconnect to commonly used third-parties to initiate TCP/TLS handshake {% endcomment %}
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
+    {% unless settings.type_heading.system? and settings.type_body.system? %}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {% endunless %}
+
+    {% liquid
+      render 'colors'
+      render 'typography'
+    %}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      window.addEventListener('load', () => document.documentElement.classList.add('ready'));
+    </script>
+
+    <script>
+      window.template = '{{ template }}';
+    </script>
+
+    {% if template contains 'customers' %}
+      {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+      {{ 'customer_area.js' | shopify_asset_url | script_tag }}
+    {% endif %}
+
+    <!-- shopify/apps -->
+    {{ content_for_header }}
+
+    {%- render 'adastra' with 'base.css' -%}
+    <meta name="google-site-verification" content="Ov4NIgMOVBneMQ7DBzmpaevf5L3ogQlZZlBnHTHy-_o" />
+ <meta name="google-site-verification" content="60-3X7zRTh5i53BUi5FnXWGbxXka23wQEXhsRtnf_fI" />
+  </head>
+  <body>
+    <div x-data="stickyHeader" @scroll.window="detectScroll(window.scrollY)">
+      {% sections 'header-group' %}
+    </div>
+
+    <main
+      id="MainContent"
+      tabindex="-1"
+    >
+      {% render 'breadcrumbs' %}
+      {{ content_for_layout }}
+    </main>
+    {% comment %} {% section 'footer' %} {% endcomment %}
+    {% sections 'footer-group' %}
+
+    <script>
+      window.shopUrl = '{{ request.origin }}';
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}',
+        product_recommendations_url: '{{ routes.product_recommendations_url }}',
+      };
+    </script>
+
+    {% render 'rebuy-templates' %}
+
+    {%- render 'adastra' with 'index.ts' -%}
+  </body>
+</html>

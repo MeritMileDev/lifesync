@@ -1,0 +1,495 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_hero_banner_with_icon_VabdfG": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/hero-mobile.jpg",
+        "image_desktop": "shopify://shop_images/relife-hero-d.webp",
+        "background_position": "top",
+        "title": "<p><strong>Closed-Loop ECG <br/></strong>Leadwire Reprocessing<strong> </strong></p>",
+        "title_tag": "h1",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "subtitle": "<p>Reprocessed and new leadwires. One partner. Guaranteed supply.​</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_text_video_blocks_hqmrXD": {
+      "type": "section-text-video-blocks",
+      "blocks": {
+        "text_jzyjMF": {
+          "type": "text",
+          "settings": {
+            "subtitle": "",
+            "title": "The Confident Way to Reprocess Leadwires",
+            "description": "ReLife is the only reprocessed ECG leadwire on the market approved and manufactured by its original designer, helping hospitals reduce medical waste, control costs, and maintain quality through sustainable standardized leadwires.\n<br><br>\nDesigned for standardization, sustainability, cost savings, operational simplicity, and clinical quality, ReLife delivers FDA-regulated, in-house reprocessing by LifeSync experts, end-to-end lifecycle management, and consistent supply through a blended model—all from a trusted single-vendor partner.",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "video_4ywiTW": {
+          "type": "video",
+          "settings": {
+            "image": "shopify://shop_images/relife-video-tmb.webp",
+            "description": "",
+            "youtube_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_jzyjMF",
+        "video_4ywiTW"
+      ],
+      "settings": {
+        "is_one_column": false,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 120,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_image_with_text_b4qNze": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "The ReLife Advantage",
+        "title": "",
+        "title_max_width": 0,
+        "description": "Backed by LifeSync—the industry’s only vertically integrated manufacturer and reprocessor—ReLife gives hospitals a smarter, single-vendor solution for leadwire standardization. By combining new and reprocessed leadwires under one product SKU, LifeSync delivers measurable cost savings, significant waste reduction, and the confidence of consistent quality and supply.",
+        "description_max_width": 501,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/2-the-relife-advantage-FIN.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "top",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_multicolumn_relife_j9wtwF": {
+      "type": "section-multicolumn-relife",
+      "blocks": {
+        "column_h9d8dg": {
+          "type": "column",
+          "settings": {
+            "above_title": "“I want to hit sustainability goals”",
+            "title": "67%",
+            "description": "Less waste than the competition",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_hBwnaq": {
+          "type": "column",
+          "settings": {
+            "above_title": "“I need to cut costs and protect margins”",
+            "title": "30%",
+            "description": "Lower costs than new leadwires",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_MiFcmi": {
+          "type": "column",
+          "settings": {
+            "above_title": "“I can’t compromise on safety and quality”",
+            "title": "1 Supplier",
+            "description": "Reprocessed by the original designer and manufacturer.",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_h9d8dg",
+        "column_hBwnaq",
+        "column_MiFcmi"
+      ],
+      "custom_css": [
+        "svg {display: none;}"
+      ],
+      "name": "Multicolumn ReLife",
+      "settings": {
+        "section_bg_image": "shopify://shop_images/section-404-bg.png",
+        "enable_gradient": false,
+        "solid_bg": true,
+        "section_subtitle": "",
+        "section_title": "The No Compromise Way to Reduce Waste and Save Money",
+        "section_title_max_width": 800,
+        "section_description": "",
+        "section_description_max_width": 285,
+        "column_count": "3",
+        "enable_slider": false,
+        "style": "borders",
+        "enable_bottom_border": false,
+        "column_title_size": "medium",
+        "column_title_size_mobile": "medium",
+        "column_image_height": 80,
+        "padding_top_mobile": 64,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 104,
+        "padding_bottom_desktop": 64
+      }
+    },
+    "section_multicolumn_TaRqkk": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_BWcHAV": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-cost-control.svg",
+            "title": "Cost Control",
+            "description": "Lower spend by 30% with predictable cost savings that simplify budgeting",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "#",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_7wWCG4": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-supply.svg",
+            "title": "Supply",
+            "description": "Stable leadwire inventories, even when reclamation volumes fluctuate",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "#",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_mPma6g": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-standardization.svg",
+            "title": "Standardization",
+            "description": "One product SKU, one supplier, seamless  equipment compatibility",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "#",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_BWcHAV",
+        "column_7wWCG4",
+        "column_mPma6g"
+      ],
+      "custom_css": [
+        ".picture-- img {height: 100px;}"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "",
+        "section_title": "The Confidence to Deliver Measurable Results",
+        "section_title_max_width": 700,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "3",
+        "enable_slider": true,
+        "style": "background",
+        "enable_bottom_border": false,
+        "column_title_size": "small",
+        "column_title_size_mobile": "small",
+        "column_image_height": 100,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_multicolumn_3HKEbW": {
+      "type": "section-multicolumn",
+      "blocks": {
+        "column_NrtK3Q": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-simplicity.svg",
+            "title": "Simplicity",
+            "description": "Streamlines procurement and support from one trusted partner",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "#",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_hTKEkh": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-quality.svg",
+            "title": "Quality",
+            "description": "FDA 510(k)-cleared reprocessing with a traceable chain of custody",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "#",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        },
+        "column_ywdph9": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/icon-sustainability.svg",
+            "title": "Sustainability",
+            "description": "Use 67% less material while maintaining clinical performance",
+            "description_max_width_mob": 0,
+            "button_label": "Learn More",
+            "button_link": "#",
+            "open_in_new_tab": false,
+            "show_button": false,
+            "full_block_button_link": false
+          }
+        }
+      },
+      "block_order": [
+        "column_NrtK3Q",
+        "column_hTKEkh",
+        "column_ywdph9"
+      ],
+      "custom_css": [
+        ".picture-- img {height: 100px;}"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "enable_gradient": false,
+        "solid_bg": false,
+        "section_subtitle": "",
+        "section_title": "",
+        "section_title_max_width": 0,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "column_count": "3",
+        "enable_slider": true,
+        "style": "background",
+        "enable_bottom_border": false,
+        "column_title_size": "small",
+        "column_title_size_mobile": "small",
+        "column_image_height": 100,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 64
+      }
+    },
+    "section_image_with_text_V4pTzt": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "One SKU. Zero Hassle.",
+        "title": "",
+        "title_max_width": 575,
+        "description": "With ReLife <b>Reprocessed Product Optimization</b> (RPO) model, new and reprocessed leadwires are seamlessly combined under a single product SKU. Procurement teams only need to order one leadwire and clinical staff don’t need to ask which product is new or reprocessed—every leadwire delivers the same manufacture certified OEM quality and performance, making it simple to grab, connect, and go.",
+        "description_max_width": 501,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/3-relife-RPO-FIN.webp",
+        "image_position": "image_right",
+        "image_position_mobile": "top",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_image_with_text_Fz4ECt": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "Why ReLife Outperforms the Competition",
+        "title": "",
+        "title_max_width": 500,
+        "description": "Unlike other reprocessors, ReLife is purpose-built for ECG leadwires. LifeSync is the only vertically integrated manufacturer and reprocessor—offering unmatched standardization, lifecycle control, and personalized account support.",
+        "description_max_width": 501,
+        "description_max_width_desktop": 0,
+        "button_label": "Get ReLife Leadwires",
+        "button_link": "#shopify-section-template--19960062115991__section_contact_form_reversed_PNbBbA",
+        "image": "shopify://shop_images/bin-drop.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "top",
+        "enable_bg": false,
+        "narrow_section": false,
+        "padding_top_mobile": 58,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 120
+      }
+    },
+    "section_simple_text_gpEKYg": {
+      "type": "section-simple-text",
+      "custom_css": [
+        "section {background: #000000;}",
+        ".section-title,p {color: #3d972b;}"
+      ],
+      "name": "Simple Text",
+      "settings": {
+        "subtitle": "",
+        "title": "Reprocessing Simplified",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "<p>The ReLife process is simple, streamlined, and FDA-regulated, performed by ReLife experts and conducted in LifeSync’s Florida headquarters with a closed-loop, traceable chain of custody.</p>",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 700,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_banner_with_text_KgwCmi": {
+      "type": "section-banner-with-text",
+      "custom_css": [
+        "section {background-color: #000000;}"
+      ],
+      "name": "Section Banner with Text",
+      "settings": {
+        "subtitle": "",
+        "image_mobile": "shopify://shop_images/relife-process-mobile.png",
+        "image_desktop": "shopify://shop_images/relife-rocess-graphic-with-product.png",
+        "is_image_at_bottom_desktop": false,
+        "title": "",
+        "description": "",
+        "border_bottom_mobile": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_faq_p8iRTW": {
+      "type": "section-faq",
+      "blocks": {
+        "faq_jFnVUx": {
+          "type": "faq",
+          "settings": {
+            "question": "How does ReLife compare to Stryker or Cardinal reprocessing?",
+            "answer": "<p>Unlike broad reprocessors, ReLife is the only ECG-focused, vertically integrated solution, ensuring consistent supply, quality, and sustainability outcomes.</p>"
+          }
+        },
+        "faq_x6HUQj": {
+          "type": "faq",
+          "disabled": true,
+          "settings": {
+            "question": "Is ReLife FDA cleared?",
+            "answer": "<p>Yes, ReLife leadwires are fully FDA 510(k) cleared and manufacture certified to meet OEM quality.</p>"
+          }
+        },
+        "faq_9HXEHR": {
+          "type": "faq",
+          "settings": {
+            "question": "Will reprocessing disrupt my supply chain?",
+            "answer": "<p>No. Our <strong>Reprocessing Product Optimization (RPO)</strong> model ensures seamless ordering and consistent availability.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_jFnVUx",
+        "faq_x6HUQj",
+        "faq_9HXEHR"
+      ],
+      "name": "FAQ",
+      "settings": {}
+    },
+    "section_contact_form_reversed_PNbBbA": {
+      "type": "section-contact-form-reversed",
+      "name": "Contact Form Section Reversed",
+      "settings": {
+        "image_desktop": "shopify://shop_images/footer-form-FIN.webp",
+        "image_mobile": "shopify://shop_images/footer-form-FIN.webp",
+        "section_title": "Sustainability Simplified",
+        "section_description": "Contact Us to Get Started",
+        "enable_bg": true,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_hero_banner_with_icon_VabdfG",
+    "section_text_video_blocks_hqmrXD",
+    "section_image_with_text_b4qNze",
+    "section_multicolumn_relife_j9wtwF",
+    "section_multicolumn_TaRqkk",
+    "section_multicolumn_3HKEbW",
+    "section_image_with_text_V4pTzt",
+    "section_image_with_text_Fz4ECt",
+    "section_simple_text_gpEKYg",
+    "section_banner_with_text_KgwCmi",
+    "section_faq_p8iRTW",
+    "section_contact_form_reversed_PNbBbA"
+  ]
+}

@@ -1,0 +1,144 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+  
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+<section class="" id="section-{{ section_id }}">
+  <div class="container">
+    <div class="lg:grid grid-cols-2 lg:gap-6 items-center">
+      <div class="lg:text-left text-center">
+        {% if section.settings.icon != blank %}
+          {% render 'picture',
+            image_mobile: section.settings.icon,
+            image_desktop: section.settings.icon,
+            is_full_size: false,
+            class: 'lg:mx-0 mx-auto lg:mb-6 mb-3'
+          %}
+        {% endif %}
+        <p class="mb-6 lg:text-40 text-32 font-medium lg:tracking-tight md:mb-8 xl:text-64 lg:px-0 px-2.5 max-w-[700px]">{{ section.settings.title }}</p>
+        {% if section.settings.button_link != blank %}
+          <a class="lg:flex hidden gap-2 items-center justify-center lg:mx-0 mx-auto lg:max-w-max mt-6 text-center text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 font-medium" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+        {% endif %}
+      </div>
+      <div class="grid grid-cols-2 lg:gap-6 gap-4 lg:py-0 pt-7.5 pb-14">
+        {% for block in section.blocks %}
+          <div class="text-center">
+            {% if block.settings.image != blank %}
+              {% render 'picture',
+                image_mobile: block.settings.image,
+                image_desktop: block.settings.image,
+                is_full_size: false,
+                class: 'w-full mb-4'
+              %}
+            {% endif %}
+            <p class="lg:text-2xl text-xl lg:mb-2.5 mb-0.5">{{ block.settings.name }}</p>
+            <span class="text-police-blue-70">{{ block.settings.job_title }}</span>
+          </div>
+        {% endfor %}
+      </div>
+      {% if section.settings.button_link != blank %}
+        <a class="lg:hidden flex gap-2 items-center justify-center lg:mx-0 mx-auto lg:max-w-max text-center text-police-blue px-10 py-4.25 text-sm uppercase bg-yellow hover:scale-102 active:scale-100 disabled:opacity-20 transition duration-100 font-medium" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% endif %}
+    </div>
+  </div>    
+</section>
+
+{% schema %}
+  {
+    "name": "Talk to Expert",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "expert",
+        "name": "Expert",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "job_title",
+            "label": "Job Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Talk to Expert"
+      }
+    ]
+  }
+{% endschema %}

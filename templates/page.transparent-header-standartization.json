@@ -1,0 +1,319 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_banner_with_icon_L9fYKR": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/standardization-mobiile.webp",
+        "image_desktop": "shopify://shop_images/standardization-hero-bg.webp",
+        "background_position": "top",
+        "title": "<p><strong>Standardize ECG Leadwires</strong> <br/>Across the Entire Patient Stay</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>One Patient. One Leadwire. One Time Placement.</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_simple_text_WLCcYq": {
+      "type": "section-simple-text",
+      "custom_css": [
+        ".section-title {@media (min-width: 1280px) {margin-bottom: 12px; }}"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "What Is ECG Leadwire Standardization?",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 0,
+        "text": "<p>Leadwire standardization simplifies clinical workflows, streamlines procurement and SKU inventory, and consolidates vendors with a single leadwire system that works across departments and care settings.</p>",
+        "text_full_width": false,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 600,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 55,
+        "padding_bottom_mobile": 55,
+        "padding_top_desktop": 110,
+        "padding_bottom_desktop": 55
+      }
+    },
+    "section_innovations_yLnXAa": {
+      "type": "section-innovations",
+      "blocks": {
+        "card_QVVfgW": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/standarization-simplified-leadwire-management.webp",
+            "card_image_desktop": "shopify://shop_images/standarization-simplified-leadwire-management.webp",
+            "card_link": "",
+            "heading": "Simplified Leadwire Management",
+            "title": "",
+            "text": "<p>LifeSync leadwires reduce the administrative burden of managing multiple SKUs and vendors, improving day-to-day operational efficiency. Standardization enhances staff familiarity, streamlines procurement, simplifies inventory, and supports consistent clinical performance across the organization.</p>",
+            "button_text": ""
+          }
+        },
+        "card_gtFKF4": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/standardization-direct-device-compatibility.webp",
+            "card_image_desktop": "shopify://shop_images/standardization-direct-device-compatibility.webp",
+            "card_link": "",
+            "heading": "Direct Device Compatibility ",
+            "title": "",
+            "text": "<p>LifeSync leadwires are designed  to connect directly with your existing monitoring equipment. Standardization eliminates cable changes, adapters, and extensions—removing common workarounds and reducing points of failure.</p>",
+            "button_text": ""
+          }
+        },
+        "card_Jg78Ky": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/standardizatoin-continuous-patient-monitoring.webp",
+            "card_image_desktop": "shopify://shop_images/standardizatoin-continuous-patient-monitoring.webp",
+            "card_link": "",
+            "heading": "Continuous Patient Monitoring",
+            "title": "",
+            "text": "<p>LifeSync leadwires remain with the patient from admission through discharge, supporting uninterrupted monitoring across care transitions. Standardization reduces disconnections, reinforces infection control protocols, and eliminates unnecessary lead changes as patients move between departments.</p>",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_QVVfgW",
+        "card_gtFKF4",
+        "card_Jg78Ky"
+      ],
+      "custom_css": [
+        "section div div div {border-radius: 24px;}"
+      ],
+      "name": "Innovations",
+      "settings": {
+        "title": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_video_banner_with_image_NQ6EMx": {
+      "type": "section-video-banner-with-image",
+      "custom_css": [
+        "section {margin-bottom: 80px;}",
+        "section h2 {max-width: 600px; margin-bottom: 2rem;}",
+        "section button {max-width: 400px;}"
+      ],
+      "name": "Video Banner With Image",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/standardizaton-video-bg-blue.webp",
+        "image_desktop": "shopify://shop_images/standardizaton-video-bg-blue.webp",
+        "title": "See Why Hospitals Choose LifeSync ECG Leadwire Standardization",
+        "title_max_width": 0,
+        "image_featured": "shopify://shop_images/standardization-video-featured-top.webp",
+        "title_tag": "h2",
+        "subtitle": "<p><strong>Reduce SKU Complexity</strong><br/>Streamline excessive leadwire configurations into a standardized system designed to work across existing monitoring equipment.<br/><br/><strong>Consolidate Vendors</strong><br/>Replace fragmented suppliers with a single, vertically integrated partner focused exclusively on patient monitoring connections.<br/><br/><strong>Improve Staff Familiarity</strong><br/>Standardize training, procedures, and clinical workflow, creating consistency across departments and care settings.<br/><br/><strong>Create Operational Efficiencies</strong><br/>Simplify procurement, inventory management, and daily clinical workflows—bringing greater clarity and control to cardiac monitoring environments.</p>",
+        "youtube_id": "AyLr0QAXFLY",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "section_video_banner_with_image_LtHpmt": {
+      "type": "section-video-banner-with-image",
+      "custom_css": [
+        "section h2,section p,section button {color: #0d0d63; max-width: 400px;}",
+        "section h2 {margin-bottom: 2rem;}"
+      ],
+      "name": "Video Banner With Image",
+      "settings": {
+        "horizontal_alignment": "left",
+        "image_mobile": "shopify://shop_images/standardizaton-video-bg.webp",
+        "image_desktop": "shopify://shop_images/standardizaton-video-bg.webp",
+        "title": "A Seamless Transition to Standardization ",
+        "title_max_width": 0,
+        "image_featured": "shopify://shop_images/standardization-video-feature.webp",
+        "title_tag": "h2",
+        "subtitle": "<p>Standardizing ECG leadwires across a health system requires coordination across clinical, biomedical, and supply chain teams. LifeSync guides this transition through a proven six-step process designed to minimize disruption and deliver measurable simplification.</p><p>From inventory assessment to implementation and support, our structured approach ensures a controlled, seamless conversion to ECG leadwire standardization.</p>",
+        "youtube_id": "cOLsiCkUv14",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "section_shop_by_jXVKgU": {
+      "type": "section-shop-by",
+      "blocks": {
+        "card_E98dJa": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/shop-by-cardiac.webp",
+            "card_link": "shopify://products/5-leads-radiolucent-ecg-leadwires",
+            "heading": "",
+            "text_max-width": 300,
+            "title": "Cardiac Catheterization",
+            "text": "Optimize cath lab performance with unobstructed views and accurate cardiac imaging.",
+            "button_text": "Shop Cath Lab Leadwires"
+          }
+        },
+        "card_7TrLcC": {
+          "type": "card",
+          "settings": {
+            "card_image_mobile": "shopify://shop_images/shop-by-neuro.webp",
+            "card_image_desktop": "shopify://shop_images/shop-by-neuro.webp",
+            "card_link": "shopify://products/10-leads-radiolucent-ecg-leadwires",
+            "heading": "",
+            "text_max-width": 300,
+            "title": "Electrophysiology",
+            "text": "Eliminate the need to replace or reposition ECG leads during fluoroscopy.",
+            "button_text": "Shop EP Lab Leadwires"
+          }
+        }
+      },
+      "block_order": [
+        "card_E98dJa",
+        "card_7TrLcC"
+      ],
+      "name": "Shop By",
+      "settings": {
+        "title": "Shop for Radiolucent Leadwire",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_steps_text_CHd6xT": {
+      "type": "section-steps-text",
+      "blocks": {
+        "step_CwpDp7": {
+          "type": "step",
+          "settings": {
+            "step_title": "Site survey",
+            "step_content": "<p>90 days before the transition date, our team conducts an onsite survey, meets with stakeholders, and inventories monitor devices and connection needs.</p>",
+            "content_max-width_desktop": 500
+          }
+        },
+        "step_nHTjrD": {
+          "type": "step",
+          "settings": {
+            "step_title": "Inventory & parameter agreement",
+            "step_content": "<p>Our team discusses equipment changes and upgrades with each affected department.</p>",
+            "content_max-width_desktop": 390
+          }
+        },
+        "step_9xwygz": {
+          "type": "step",
+          "settings": {
+            "step_title": "Leadwire Fulfillment",
+            "step_content": "<p>LifeSync manufactures and tests the exact leadwires required for your deployment.</p>",
+            "content_max-width_desktop": 370
+          }
+        },
+        "step_cMHNy6": {
+          "type": "step",
+          "settings": {
+            "step_title": "Training and conversion",
+            "step_content": "<p>Ten days before the transition date, our team trains clinical staff through the transition to the new leadwires and equipment use.<br/><br/></p>",
+            "content_max-width_desktop": 415
+          }
+        },
+        "step_gDtpUt": {
+          "type": "step",
+          "settings": {
+            "step_title": "Go-live implementation",
+            "step_content": "<p>New leadwire inventories are stocked and configurations validated before replacing old configurations.</p>",
+            "content_max-width_desktop": 440
+          }
+        },
+        "step_9FBcW8": {
+          "type": "step",
+          "settings": {
+            "step_title": "Ongoing standardization protocols",
+            "step_content": "<p>Our team updates the hospital’s device and leadwire requirements and ensures changing inventory or equipment needs are met.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_CwpDp7",
+        "step_nHTjrD",
+        "step_9xwygz",
+        "step_cMHNy6",
+        "step_gDtpUt",
+        "step_9FBcW8"
+      ],
+      "name": "Steps with text",
+      "settings": {
+        "enable_bg": false,
+        "enable_bg_desktop": false,
+        "is_static_steps": true,
+        "section_subtitle": "",
+        "section_intro": "Six steps to standardization",
+        "section_title": "<p>How LifeSync Guides Your Hospital Through the Standardization Process</p>",
+        "title_max_width": 500,
+        "section_description": "",
+        "section_description_max_width": 0,
+        "section_description_max_width_mobile": 0,
+        "bottom_title": "",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "section_cta_ANNjaL": {
+      "type": "section-cta",
+      "name": "CTA",
+      "settings": {
+        "cta_position": "cta_center",
+        "section_subtitle": "",
+        "section_title": "Ready to Simplify ECG Leadwire Management?",
+        "title_max_width": 0,
+        "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
+        "text_color": "white",
+        "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
+        "padding_top_cta": 100,
+        "padding_bottom_cta": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80,
+        "cta_text": "Talk to a LifeSync Standardization Expert",
+        "cta_url": "shopify://pages/contact",
+        "cta_target": "self"
+      }
+    }
+  },
+  "order": [
+    "section_hero_banner_with_icon_L9fYKR",
+    "section_simple_text_WLCcYq",
+    "section_innovations_yLnXAa",
+    "section_video_banner_with_image_NQ6EMx",
+    "section_video_banner_with_image_LtHpmt",
+    "section_shop_by_jXVKgU",
+    "section_steps_text_CHd6xT",
+    "section_cta_ANNjaL"
+  ]
+}

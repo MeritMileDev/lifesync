@@ -1,0 +1,260 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+
+  assign heading_text = section.settings.heading_text
+  assign title = section.settings.title
+  assign text = section.settings.text
+  assign disclaimer = section.settings.disclaimer
+
+  assign heading_text_offset_mobile = section.settings.heading_text_offset_mobile
+  assign heading_text_offset_desktop = section.settings.heading_text_offset_desktop
+  assign title_offset_mobile = section.settings.title_offset_mobile
+  assign title_offset_desktop = section.settings.title_offset_desktop
+  assign text_offset_mobile = section.settings.text_offset_mobile
+  assign text_offset_desktop = section.settings.text_offset_desktop
+  assign disclaimer_offset_mobile = section.settings.disclaimer_offset_mobile
+  assign disclaimer_offset_desktop = section.settings.disclaimer_offset_desktop
+  assign title_max_width_mobile = section.settings.title_max_width_mobile
+  assign title_max_width_desktop = section.settings.title_max_width_desktop
+  assign text_max_width_mobile = section.settings.text_max_width_mobile
+  assign text_max_width_desktop = section.settings.text_max_width_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="text-center">
+      {% if heading_text != blank %}
+        <div class="heading-text text-sm font-medium uppercase tracking-wide text-police-blue-70">
+          {{- heading_text -}}
+        </div>
+        {% assign heading_selector = section_id | append: ' .heading-text' %}
+        {% render 'offset',
+          id: heading_selector,
+          padding_top_mobile: 0,
+          padding_bottom_mobile: heading_text_offset_mobile,
+          padding_top_desktop: 0,
+          padding_bottom_desktop: heading_text_offset_desktop
+        %}
+      {% endif %}
+      {% if title != blank %}
+        <div class="title-text mx-auto max-w-65 text-32 font-medium leading-10 lg:max-w-full lg:text-5xl">
+          {{- title -}}
+        </div>
+        {% assign title_selector = section_id | append: ' .title-text' %}
+        {% render 'offset',
+          id: title_selector,
+          padding_top_mobile: 0,
+          padding_bottom_mobile: title_offset_mobile,
+          padding_top_desktop: 0,
+          padding_bottom_desktop: title_offset_desktop
+        %}
+      {% endif %}
+      {% if text != blank %}
+        <div class="text mx-auto max-w-75 lg:max-w-150">{{ text }}</div>
+        {% assign text_selector = section_id | append: ' .text' %}
+        {% render 'offset',
+          id: text_selector,
+          padding_top_mobile: 0,
+          padding_bottom_mobile: text_offset_mobile,
+          padding_top_desktop: 0,
+          padding_bottom_desktop: text_offset_desktop
+        %}
+      {% endif %}
+      {% if disclaimer != blank %}
+        <div class="text-sm text-police-blue-70">{{ disclaimer }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  {% if title_max_width_mobile > 0 %}
+    @media screen and (max-width: 767px) {
+      #section-{{ section_id }} .title-text {
+        max-width: {{ title_max_width_mobile }}px;
+      }
+    }
+  {% endif %}
+
+  {% if title_max_width_desktop > 0 %}
+    @media screen and (min-width: 768px) {
+      #section-{{ section_id }} .title-text {
+        max-width: {{ title_max_width_desktop }}px;
+      }
+    }
+  {% endif %}
+
+  {% if text_max_width_mobile > 0 %}
+    @media screen and (max-width: 767px) {
+      #section-{{ section_id }} .text {
+        max-width: {{ text_max_width_mobile }}px;
+      }
+    }
+  {% endif %}
+
+  {% if text_max_width_desktop > 0 %}
+    @media screen and (min-width: 768px) {
+      #section-{{ section_id }} .text {
+        max-width: {{ text_max_width_desktop }}px;
+      }
+    }
+  {% endif %}
+</style>
+
+{% schema %}
+  {
+    "name": "Banner with Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text"
+      },
+      {
+        "type": "number",
+        "id": "heading_text_offset_mobile",
+        "label": "Heading Text Offset Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "heading_text_offset_desktop",
+        "label": "Heading Text Offset Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "number",
+        "id": "title_offset_mobile",
+        "label": "Title Offset Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "title_offset_desktop",
+        "label": "Title Offset Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "title_max_width_mobile",
+        "label": "Title Max Width Mobile (px)",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "title_max_width_desktop",
+        "label": "Title Max Width Desktop (px)",
+        "default": 0
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "number",
+        "id": "text_offset_mobile",
+        "label": "Text Offset Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "text_offset_desktop",
+        "label": "Text Offset Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_mobile",
+        "label": "Text Max Width Mobile (px)",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "text_max_width_desktop",
+        "label": "Text Max Width Desktop (px)",
+        "default": 0
+      },
+      {
+        "type": "richtext",
+        "id": "disclaimer",
+        "label": "Disclaimer"
+      },
+      {
+        "type": "number",
+        "id": "disclaimer_offset_mobile",
+        "label": "Disclaimer Offset Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "disclaimer_offset_desktop",
+        "label": "Disclaimer Offset Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner with Text"
+      }
+    ]
+  }
+{% endschema %}

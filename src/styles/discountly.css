@@ -1,0 +1,51 @@
+.product-info {
+  .ac_table1 {
+    @apply block border-none leading-none text-police-blue my-6 lg:my-8;
+
+    .ac__tbody {
+      @apply flex flex-col gap-3.5;
+    }
+
+    .ac__tr {
+      @apply flex w-full items-center;
+    }
+
+    .ac__th,
+    .ac__td {
+      @apply !border-none !p-0 text-sm font-medium uppercase leading-none !text-police-blue-70;
+    }
+
+    .ac__td {
+      @apply !text-police-blue !text-base !leading-none;
+    }
+
+    .ac__th1,
+    .ac__td1 {
+      @apply flex w-auto flex-1 !text-left;
+    }
+
+    .ac__td1 {
+      @apply after:block after:h-px after:flex-1 after:self-end after:bg-police-blue-20 after:content-[''] after:mx-2;
+    }
+
+    .ac__th2,
+    .ac__td2 {
+      @apply w-auto !text-right;
+    }
+
+    .ac__td2 {
+      @apply lowercase;
+    }
+
+    .ac_mostpopuler {
+      @apply bg-white text-persian-blue mt-0 ml-2 leading-none text-base lowercase first-letter:capitalize;
+    }
+  }
+
+  .ac__settings__table.ac_table1{
+    &::after{
+      @apply text-red text-left my-4 block;
+      content: "Discount applied in the cart";
+    }
+  }
+}

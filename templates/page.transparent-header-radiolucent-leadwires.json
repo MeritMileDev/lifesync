@@ -1,0 +1,339 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_hero_banner_with_icon_Y9DgKB": {
+      "type": "section-hero-banner-with-icon",
+      "name": "Hero Banner with Icon",
+      "settings": {
+        "image_mobile": "shopify://shop_images/radiolucency-hero-bg.webp",
+        "image_desktop": "shopify://shop_images/radiolucency-hero-bg.webp",
+        "horizontal_alignment": "left",
+        "title": "<p><strong>Radiolucent ECG Leadwires</strong> <br/>for Clearer Imaging</p>",
+        "title_tag": "h1",
+        "subtitle": "<p>Unobstructed views during fluoroscopy with continuous patient monitoring.</p>",
+        "button_label": "",
+        "button_link": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_difference_JP34TL": {
+      "type": "section-difference",
+      "custom_css": [
+        ".section-title {@media (max-width: 768px) {max-width: 330px; }}"
+      ],
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "The Advantages are Clear",
+        "section_note": "*The images shown are for illustration purposes only.",
+        "section_title_max_width": 560,
+        "section_description": "<p>LifeSync radiolucent ECG leadwires minimize imaging obstruction during fluoroscopy and other procedural environments, allowing clinicians to maintain clear views without repositioning or removing leads. The result is improved procedural efficiency, preserved signal integrity, and uninterrupted patient monitoring across care settings.</p>",
+        "section_description_max_width": 560,
+        "label": "See the difference",
+        "tab_name_before": "Traditional",
+        "image_before": "shopify://shop_images/difference-image-before.jpg",
+        "image_before_mobile": "shopify://shop_images/LifeSync.png",
+        "title_before": "Traditional leadwires",
+        "description_before": "<p>Traditional lead wires contain metal that can interfere with imaging, creating artifacts on X-rays, CT scans, and MRIs. These obstructions can obscure critical details, leading to repeat scans and delayed diagnoses. </p>",
+        "tab_name_after": "LifeSync",
+        "image_after": "shopify://shop_images/difference-image-after.jpg",
+        "image_after_mobile": "shopify://shop_images/Taditional.png",
+        "icon_after": "shopify://shop_images/difference-icon-after.svg",
+        "title_after": "Radiolucent leadwires & LeadWear",
+        "description_after": "<p>LifeSync’s radiolucent lead wires are metal-free, ensuring precise, unobstructed imaging. They eliminate scan interference, reducing the need for repeat scans and improving diagnostic accuracy. </p>",
+        "button_label_after": "Shop Radiolucent Leadwires",
+        "button_link_after": "shopify://collections/radiolucent-ecg-lead-wires",
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 112,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_simple_text_VF6N6F": {
+      "type": "section-simple-text",
+      "custom_css": [
+        ".section-title {@media (max-width: 787px) {font-size: 32px; }}"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Radiolucent Leadership Built on Patient Monitoring Expertise",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 0,
+        "title_max_width_desktop": 650,
+        "text": "<p>For over 30 years, LifeSync has developed radiolucent ECG products—including the first and only shielded reusable radiolucent leadwire. As a global, vertically integrated manufacturer focused exclusively on patient monitoring connections, LifeSync applies disciplined design, validation, and quality control to every radiolucent configuration.</p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 500,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 647,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 54,
+        "padding_bottom_mobile": 54,
+        "padding_top_desktop": 110,
+        "padding_bottom_desktop": 110
+      }
+    },
+    "comprehensive_options_E9U3J9": {
+      "type": "comprehensive-options",
+      "custom_css": [
+        ".scaled-image {transform: scale(0.79);}"
+      ],
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "",
+        "title": "Clarity, Efficiency,  and Selection",
+        "text": "<p>Single-use or disposable. Shielded or unshielded. More than 60 radiolucent configurations. Engineered for consistent signal performance and imaging clarity, LifeSync radiolucent leadwires support improve productivity and patient care.</p>",
+        "content_image": "shopify://shop_images/content-image.png",
+        "image_1_mobile": "shopify://shop_images/image-1-mob.png",
+        "image_1_desktop": "shopify://shop_images/image-1-desktop.png",
+        "image_2_mobile": "shopify://shop_images/image-2-mob.png",
+        "image_2_desktop": "shopify://shop_images/image-2-desktop.png",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_slider_r6ik9K": {
+      "type": "section-slider",
+      "blocks": {
+        "slide_dJ9g9x": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_1.jpg",
+            "slide_link": "shopify://collections/radiolucent-ecg-lead-wires"
+          }
+        },
+        "slide_Jcjiye": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_2.jpg",
+            "slide_link": "shopify://collections/radiolucent-ecg-lead-wires"
+          }
+        },
+        "slide_tVQWnG": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_3.jpg",
+            "slide_link": "shopify://collections/radiolucent-ecg-lead-wires"
+          }
+        },
+        "slide_Xkq9hG": {
+          "type": "slide",
+          "settings": {
+            "slide_link": ""
+          }
+        },
+        "slide_qpy4Mh": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_4.jpg",
+            "slide_link": "shopify://collections/radiolucent-ecg-lead-wires"
+          }
+        },
+        "slide_aranJx": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_5.jpg",
+            "slide_link": "shopify://collections/radiolucent-ecg-lead-wires"
+          }
+        }
+      },
+      "block_order": [
+        "slide_dJ9g9x",
+        "slide_Jcjiye",
+        "slide_tVQWnG",
+        "slide_Xkq9hG",
+        "slide_qpy4Mh",
+        "slide_aranJx"
+      ],
+      "settings": {
+        "heading": "",
+        "title": "LifeSync Reusable Radiolucent Leadwires",
+        "no_paddings_desktop": false,
+        "padding_top_mobile": 54,
+        "padding_bottom_mobile": 54,
+        "padding_top_desktop": 105,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_simple_text_GaEfxm": {
+      "type": "section-simple-text",
+      "custom_css": [
+        ".section-title {@media (max-width: 787px) {font-size: 32px; }}"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Radiolucent LeadWear<sup>®</sup>",
+        "is_h1_tag": false,
+        "title_size": "medium",
+        "title_size_mobile": "medium",
+        "title_max_width_mobile": 330,
+        "title_max_width_desktop": 616,
+        "text": "<p>LifeSync LeadWear® is a radiolucent single-patient-use leadwire that travels with the patient outside of procedural areas. The innovative 360° connector encases the electrode, minimizing noise and reducing nuisance alarms. LifeSync LeadWear provide excellent visibility, grab, conductivity, and signal for fast, accurate results across Cath and EP labs.</p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button",
+        "section_max_width": 816,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 52,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 110
+      }
+    },
+    "section_image_with_text_secondary_qLQgrW": {
+      "type": "section-image-with-text-secondary",
+      "settings": {
+        "background_color_mobile": "#f4f9fc",
+        "background_color_desktop": "rgba(0,0,0,0)",
+        "heading": "Noise-reducing connector",
+        "title": "Our innovative 360° connector encases the electrode, minimizing noise and reducing nuisance alarms.",
+        "image_mobile": "shopify://shop_images/image_349e88d5-9128-444d-9c2d-8692064360fe.jpg",
+        "image_desktop": "shopify://shop_images/image-desktop.png",
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 64,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "section_slider_pmVRDH": {
+      "type": "section-slider",
+      "blocks": {
+        "slide_GmLMNp": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_2_11.jpg",
+            "slide_link": ""
+          }
+        },
+        "slide_GfAPmE": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_2_2.jpg",
+            "slide_link": ""
+          }
+        },
+        "slide_8H3Nw4": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_2_3.jpg",
+            "slide_link": ""
+          }
+        },
+        "slide_KMdJc4": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_2_41.jpg",
+            "slide_link": ""
+          }
+        },
+        "slide_YgUAYL": {
+          "type": "slide",
+          "settings": {
+            "slide_image": "shopify://shop_images/slide_2_5.jpg",
+            "slide_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_GmLMNp",
+        "slide_GfAPmE",
+        "slide_8H3Nw4",
+        "slide_KMdJc4",
+        "slide_YgUAYL"
+      ],
+      "custom_css": [
+        ".slider {margin-top: 50px;}"
+      ],
+      "settings": {
+        "heading": "",
+        "title": "Single-patient-use radiolucent LeadWear<sup>®</sup>",
+        "no_paddings_desktop": true,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 35,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_image_with_text_QLjGpN": {
+      "type": "section-image-with-text",
+      "name": "Image with text",
+      "settings": {
+        "section_subtitle": "",
+        "section_title": "",
+        "section_description": "",
+        "subtitle": "",
+        "title": "",
+        "title_max_width": 0,
+        "description": "Through LifeSync Advanced Manufacturing, we partner with OEMs to design and scale radiolucent interconnect solutions for demanding clinical and imaging needs. From concept through high-volume production, our process ensures consistent quality, performance, and supply reliability—helping accelerate time to market while reducing complexity and risk.",
+        "description_max_width": 0,
+        "description_max_width_desktop": 0,
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/radioucent-am.webp",
+        "image_position": "image_left",
+        "image_position_mobile": "bottom",
+        "enable_bg": true,
+        "narrow_section": false,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 100
+      }
+    },
+    "section_cta_4gY6H3": {
+      "type": "section-cta",
+      "name": "CTA",
+      "settings": {
+        "cta_position": "cta_center",
+        "section_subtitle": "",
+        "section_title": "Start Seeing the Radiolucent Difference",
+        "title_max_width": 0,
+        "section_description": "Schedule a consultative assessment to evaluate your current SKUs, vendors, and configurations—and uncover a clear path to standardization.",
+        "text_color": "white",
+        "image_bg": "shopify://shop_images/cta-light-blue-bg.webp",
+        "padding_top_cta": 100,
+        "padding_bottom_cta": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80,
+        "cta_text": "Talk to a LifeSync Expert",
+        "cta_url": "shopify://pages/contact",
+        "cta_target": "self"
+      }
+    }
+  },
+  "order": [
+    "section_hero_banner_with_icon_Y9DgKB",
+    "section_difference_JP34TL",
+    "section_simple_text_VF6N6F",
+    "comprehensive_options_E9U3J9",
+    "section_slider_r6ik9K",
+    "section_simple_text_GaEfxm",
+    "section_image_with_text_secondary_qLQgrW",
+    "section_slider_pmVRDH",
+    "section_image_with_text_QLjGpN",
+    "section_cta_4gY6H3"
+  ]
+}

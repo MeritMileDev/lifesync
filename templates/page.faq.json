@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_simple_text_GFwMw9": {
+      "type": "section-simple-text",
+      "settings": {
+        "subtitle": "",
+        "title": "Frequently asked questions",
+        "title_size": "large",
+        "title_max_width_mobile": 290,
+        "title_max_width_desktop": 0,
+        "text": "<p>Quick answers to questions you may have. <br/>Can’t find what you’re looking for?</p>",
+        "text_full_width": true,
+        "text_max_width_mobile": 0,
+        "text_max_width_desktop": 0,
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact",
+        "button_style": "text",
+        "section_max_width": 0,
+        "background_image_max_width_mobile": 0,
+        "background_image_max_width_desktop": 0,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 34,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "section_faq_Ntcdfr": {
+      "type": "section-faq",
+      "blocks": {
+        "title_wVgkzU": {
+          "type": "title",
+          "settings": {
+            "title": "General"
+          }
+        },
+        "faq_RVXTG3": {
+          "type": "faq",
+          "settings": {
+            "question": "Parturient pharetra odio ut odio",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        },
+        "faq_w67thD": {
+          "type": "faq",
+          "settings": {
+            "question": "Senectus placerat commodo ultrices donec",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        },
+        "title_hykH3z": {
+          "type": "title",
+          "settings": {
+            "title": "Shipping"
+          }
+        },
+        "faq_fQFWcA": {
+          "type": "faq",
+          "settings": {
+            "question": "Fames mauris maecenas curabitur in",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        },
+        "faq_mdeH6V": {
+          "type": "faq",
+          "settings": {
+            "question": "Libero mauris mattis volutpat volutpat",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        },
+        "title_MPArcQ": {
+          "type": "title",
+          "settings": {
+            "title": "Returns"
+          }
+        },
+        "faq_qYdGNb": {
+          "type": "faq",
+          "settings": {
+            "question": "Fames mauris maecenas curabitur in",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        },
+        "faq_hfXiY6": {
+          "type": "faq",
+          "settings": {
+            "question": "Libero mauris mattis volutpat volutpat",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        },
+        "title_PKbn9C": {
+          "type": "title",
+          "settings": {
+            "title": "Misc"
+          }
+        },
+        "faq_X3wD7m": {
+          "type": "faq",
+          "settings": {
+            "question": "Gravida proin faucibus tristique in",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        },
+        "faq_iPTX4F": {
+          "type": "faq",
+          "settings": {
+            "question": "Gravida proin faucibus tristique in",
+            "answer": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_wVgkzU",
+        "faq_RVXTG3",
+        "faq_w67thD",
+        "title_hykH3z",
+        "faq_fQFWcA",
+        "faq_mdeH6V",
+        "title_MPArcQ",
+        "faq_qYdGNb",
+        "faq_hfXiY6",
+        "title_PKbn9C",
+        "faq_X3wD7m",
+        "faq_iPTX4F"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "section_simple_text_GFwMw9",
+    "section_faq_Ntcdfr"
+  ]
+}

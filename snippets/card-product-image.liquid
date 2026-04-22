@@ -1,0 +1,31 @@
+{% comment %}
+  Renders a product image
+
+  Accepts:
+  - featured_media: {Object} Media object from a product (optional)
+  - image_class: {String} The class to apply to the image (optional)
+  - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+
+  Usage:
+  {% render 'card-product-image', featured_media: card_product.featured_media, aspect_ratio: 640/480 %}
+{% endcomment %}
+
+{% assign ratio = aspect_ratio | default: '1' %}
+
+{% if featured_media %}
+  <img
+    srcset="
+    {{ featured_media | image_url : width: 360}} 1x,
+    {{ featured_media | image_url: width: 720 }} 2x
+    "
+    src="{{ featured_media | image_url: width: 533 }}"
+    alt="{{ featured_media.alt | escape }}"
+    class="w-full object-contain {% if image_class %} {{ image_class }}{% endif %}"
+    style="aspect-ratio: {{ ratio }};"
+    {% unless lazy_load == false %}
+      loading="lazy"
+    {% endunless %}
+    width="{{ featured_media.width }}"
+    height="{{ featured_media.height }}"
+  >
+{% endif %}

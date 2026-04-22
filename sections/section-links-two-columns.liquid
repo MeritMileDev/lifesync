@@ -1,0 +1,137 @@
+{% liquid
+  assign section_id = section.id
+
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign padding_top_desktop = section.settings.padding_top_desktop
+  assign padding_bottom_desktop = section.settings.padding_bottom_desktop
+%}
+
+{% render 'offset',
+  id: section_id,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile,
+  padding_top_desktop: padding_top_desktop,
+  padding_bottom_desktop: padding_bottom_desktop
+%}
+
+<section id="section-{{ section_id }}">
+  <div class="container">
+    <div class="md:flex md:pt-12 md:border-t md:border-t-police-blue-20">
+      {% for block in section.blocks %}
+        {% if block.type == 'column' %}
+          {% liquid
+            assign image = block.settings.image
+            assign title = block.settings.title
+            assign button_text = block.settings.button_text
+            assign button_url = block.settings.button_url
+            assign button_type = block.settings.button_type
+
+          %}
+          <div class="py-16 flex flex-col items-center border-t border-t-police-blue-20 flex-1 md:px-12 md:border-t-0 md:border-l md:border-l-police-blue-20 md:first:border-l-0 md:py-12">
+            {% if image != blank %}
+              {% render 'picture', image_desktop: image, image_mobile: image, class: 'size-24 mb-4.5 md:size-35 md:mb-8.5'  %}
+            {% endif %}
+            {% if title != blank %}
+              <div class="text-center text-2xl font-medium mb-3.5 xl:text-5xl md:mb-8.5">{{ title }}</div>
+            {% endif %}
+            {% if button_text != blank and button_url != blank %}
+            <a {% if button_type == 'file' %}download target="_blank" {% endif %} class="w-full uppercase px-10 text-sm leading-none py-5 border border-police-blue-70 text-center text-police-blue font-medium tracking-[1px] hover:scale-102 active:scale-100 transition duration-100 md:max-w-max" href="{{ button_url }}" title="{{ button_text }}">{{ button_text }}</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Links Two Columns",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding Top Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom Mobile (px)",
+        "info": "Until 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_top_desktop",
+        "label": "Padding Top Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_desktop",
+        "label": "Padding Bottom Desktop (px)",
+        "info": "From 768px",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Column",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "select",
+            "id": "button_type",
+            "label": "Button Type",
+            "default": "link",
+            "options": [
+              {
+                "value": "link",
+                "label": "Link"
+              },
+              {
+                "value": "file",
+                "label": "File"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Links Two Columns"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,250 @@
+<script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LifeSync",
+  "url": {{ request.origin | json }},
+  "logo": {{ section.settings.footer_logo | image_url | prepend: 'https:' | json }},
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": {{ settings.store_phone_number | json }},
+    "contactType": "customer service"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": {{ settings.store_address | json }}
+  },
+  "sameAs": [
+    {% if settings.socials_x != blank %}{{ settings.socials_x | json }}{% endif %}{% if settings.socials_linkedin != blank %}{% if settings.socials_x != blank %},{% endif %}{{ settings.socials_linkedin | json }}{% endif %}
+  ],
+  "description": {{ section.settings.description | json }}
+  }
+</script>
+asdasd
+<div class="container py-12 lg:py-18">
+  <div class="mb-12 text-center lg:mb-14 lg:text-left">
+    <a href="{{ routes.root_url }}">
+      <img
+        class="mx-auto max-w-[330px] lg:m-0 lg:max-w-none"
+        src="{{ section.settings.footer_logo | image_url: width: 220 }}"
+        srcset="{{ section.settings.footer_logo | image_url: width: 220 }} 1x, {{ section.settings.footer_logo | image_url: width: 440 }} 2x"
+        alt="{{section.settings.footer_logo.alt}}"
+        width="220"
+        height="48"
+        loading="lazy"
+      >
+    </a>
+  </div>
+  <div class="lg:grid lg:grid-cols-12 lg:gap-6">
+    <div class="lg:col-span-4">
+      {% assign form_id = '6752f8b00b7287d7960f4831' %}
+      <div x-data="omnisend({id: '{{ form_id }}'})">
+        <span x-show="showTitle" class="mb-5.5 block text-center text-sm font-medium uppercase tracking-wide text-bright-gray-50 lg:text-left">
+          {{ section.settings.newsletter_title_1 }}
+        </span>
+        <span x-show="showTitle" class="mb-5.5 block px-10 text-center text-2xl font-medium text-bright-gray lg:px-0 lg:text-left">
+          {{ section.settings.newsletter_title_2 }}
+        </span>
+      </div>
+      {% render 'newsletter', form_id: form_id %}
+      <span class="mb-5.5 mt-16 hidden max-w-max text-center text-sm font-medium uppercase tracking-wide text-bright-gray-50 lg:block lg:text-left">
+        Follow Us
+      </span>
+      <ul class="socials mt-12 flex items-center justify-center gap-8 lg:mt-0 lg:justify-start">
+        {% if settings.socials_x != blank %}
+          <li>
+            <a
+              class="text-white transition duration-300 hover:text-yellow"
+              target="_blank"
+              href="{{ settings.socials_x }}"
+            >
+              {% render 'icon', icon: 'twitter', class: 'w-8 h-8 flex' %}
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.socials_linkedin != blank %}
+          <li>
+            <a
+              class="text-white transition duration-300 hover:text-yellow"
+              target="_blank"
+              href="{{ settings.socials_linkedin }}"
+            >
+              {% render 'icon', icon: 'linkedin', class: 'w-8 h-8 flex' %}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div
+      class="col-span-8 col-start-5 mt-12 border-b border-bright-gray-20 pb-12 text-bright-gray lg:mt-0 lg:pb-16"
+      x-data="{ openMenu: '{{ section.settings.footer_column_title_1 }}' }"
+    >
+      <div class="grid-cols-2 gap-6 lg:grid">
+        <div class="border-y border-bright-gray-20 lg:border-0">
+          {% if linklists[section.settings.footer_menu_1].links.size > 0 %}
+            <p
+              class="mb-0 flex cursor-pointer justify-between py-6 text-center text-sm font-medium uppercase tracking-wide text-bright-gray-50 lg:mb-5.5 lg:cursor-auto lg:py-0 lg:text-left"
+              @click="openMenu = '{{ section.settings.footer_column_title_1 }}'"
+            >
+              {{- section.settings.footer_column_title_1 }}
+              <span
+                class="flex size-6 items-center justify-center transition duration-300 lg:hidden"
+                :class="openMenu === '{{ section.settings.footer_column_title_1 }}' && 'rotate-180'"
+              >
+                {% render 'icon', icon: 'chevron-down' %}
+              </span>
+            </p>
+            <ul
+              class="transition-max-height max-h-0 overflow-hidden duration-500 lg:max-h-none"
+              x-bind:style="openMenu === '{{ section.settings.footer_column_title_1 }}' ? 'max-height: ' + $el.scrollHeight + 'px' : ''"
+            >
+              {% for link in linklists[section.settings.footer_menu_1].links %}
+                <li class="mb-4">
+                  <a {% if link.type == 'http_link' %} target="_blank" {% endif %} class="text-xl transition duration-300 hover:text-yellow lg:text-2xl" href="{{ link.url }}">
+                    {{- link.title -}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+        <div class="border-b border-bright-gray-20 lg:border-0">
+          <p
+            class="mb-0 flex cursor-pointer justify-between py-6 text-center text-sm font-medium uppercase tracking-wide text-bright-gray-50 lg:mb-5.5 lg:cursor-auto lg:py-0 lg:text-left"
+            @click="openMenu = '{{ section.settings.footer_column_title_2 }}'"
+          >
+            {{- section.settings.footer_column_title_2 }}
+            <span
+              class="flex size-6 items-center justify-center transition duration-300 lg:hidden"
+              :class="openMenu === '{{ section.settings.footer_column_title_2 }}' && 'rotate-180'"
+            >
+              {% render 'icon', icon: 'chevron-down' %}
+            </span>
+          </p>
+          <ul
+            class="transition-max-height max-h-0 overflow-hidden duration-500 lg:max-h-none"
+            x-bind:style="openMenu === '{{ section.settings.footer_column_title_2 }}' ? 'max-height: ' + $el.scrollHeight + 'px' : ''"
+          >
+            <li class="mb-4">
+              <a
+                class="text-xl transition duration-300 hover:text-yellow lg:text-2xl"
+                href="tel:{{ settings.store_phone_number }}"
+              >
+                {{- settings.store_phone_number -}}
+              </a>
+            </li>
+            <li class="mb-4">
+              {% if settings.store_address_link %}
+                <a
+                  class="text-xl transition duration-300 hover:text-yellow lg:text-2xl"
+                  target="_blank"
+                  href="{{ settings.store_address_link }}"
+                >
+              {% endif %}
+              <span class="text-xl lg:text-2xl">{{ settings.store_address }}</span>
+              {% if settings.store_address_link %}
+                </a>
+              {% endif %}
+            </li>
+            <li class="mb-4">
+              <span class="text-xl lg:text-2xl">{{ settings.store_hours }}</span>
+            </li>
+            {% if linklists[section.settings.footer_menu_3].links.size > 0 %}
+              {% for link in linklists[section.settings.footer_menu_3].links %}
+                <li class="mb-4">
+                  <a {% if link.type == 'http_link' %} target="_blank" {% endif %} href="{{ link.url }}" class="text-xl transition duration-300 hover:text-yellow lg:text-2xl">
+                    {{- link.title -}}
+                  </a>
+                </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      {% if linklists[section.settings.footer_menu_2].links.size > 0 %}
+        <ul class="mt-12 flex justify-center gap-8 text-bright-gray lg:justify-start">
+          {% for link in linklists[section.settings.footer_menu_2].links %}
+            <li>
+              <a class="transition duration-300 hover:text-yellow" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+  <div class="mt-12 flex flex-col-reverse items-center gap-12 lg:mt-16 lg:grid lg:grid-cols-12 lg:items-end lg:gap-6">
+    <div class="lg:col-span-4">
+      <p class="text-center text-sm text-bright-gray-50 lg:text-left">
+        &copy; {{ 'now' | date: '%Y' }} LifeSync | All rights reserved.
+      </p>
+    </div>
+    <div class="col-span-8 col-start-5">
+      <p class="text-center text-sm text-bright-gray-50 lg:text-left">
+        {{ section.settings.description }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .socials svg {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "tag": "footer",
+    "class": "footer bg-police-blue",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer Logo"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_title_1",
+        "label": "Newsletter Title 1"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_title_2",
+        "label": "Newsletter Title 2"
+      },
+      {
+        "type": "text",
+        "id": "footer_column_title_1",
+        "label": "Footer Column Title 1"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_1",
+        "label": "Menu 1"
+      },
+      {
+        "type": "text",
+        "id": "footer_column_title_2",
+        "label": "Footer Column Title 2"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_2",
+        "label": "Menu 2"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_menu_3",
+        "label": "Menu 3"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "LifeSync is the only vertically-integrated company completely focused on patient connections, and is your single-source provider of cardiac cables, leadwires and neuromonitoring connections, as well as contract manufacturing. You’ll find the perfect mix of high-quality connections and cost-effective prices, ideal for the needs of patient care professionals, procurement departments, and device manufacturers."
+      }
+    ]
+  }
+{% endschema %}

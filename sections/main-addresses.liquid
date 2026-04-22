@@ -1,0 +1,119 @@
+<section id="section-{{ section_id }}" data-customer-addresses>
+  <div class="border-b border-police-blue-20 pb-10 lg:pb-24">
+    <div class="container">
+      <h1 class="mb-2.5 mt-4 text-center text-40 font-medium tracking-tight lg:mb-4 lg:mt-5.5 lg:text-64">
+        {{- 'customer.account.title' | t: first_name: customer.first_name -}}
+      </h1>
+      <div class="flex justify-center">
+        <a
+          class="inline-flex items-center justify-center border border-police-blue px-4 py-1 text-center text-sm font-medium uppercase tracking-wide text-police-blue hover:scale-102 active:scale-100 disabled:opacity-30"
+          href="{{ routes.account_url }}"
+          title="{{ 'customer.log_out' | t }}"
+        >
+          <span class="flex">{% render 'icon', icon: 'chevron-left', class: 'size-4' %}</span>
+          <span>{{- 'customer.account.return' | t -}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="pt-6.5 lg:pt-17">
+      <h2 class="text-center text-32 font-medium lg:text-40">{{ 'customer.addresses.address_page_subtitle' | t }}</h2>
+      <div
+        class="mx-auto mb-9 max-w-75 text-center lg:mb-18 lg:mt-2 lg:max-w-full"
+      >
+        {{- 'customer.addresses.address_page_text' | t -}}
+      </div>
+    </div>
+    <div x-data="{isOpen: false, stateLength: 0}">
+      <div class="lg:flex lg:justify-center">
+        <button
+          @click="isOpen = !isOpen"
+          type="button"
+          class="flex w-full items-center justify-center gap-2 bg-police-blue px-10 py-4.25 text-center text-sm font-medium uppercase tracking-wide text-white hover:scale-102 active:scale-100 disabled:opacity-30 lg:w-auto"
+        >
+          <span>{% render 'icon', icon: 'plus' %}</span>
+          <span>
+            {{ 'customer.addresses.add_new' | t }}
+          </span>
+        </button>
+      </div>
+      <div class="lg:max-w-217 lg:mx-auto" x-show="isOpen" x-cloak>
+        <div class="lg:border lg:border-police-blue-20 lg:!px-10 lg:pt-7 lg:pb-8 lg:mt-20">
+          {% render 'new-address' %}
+        </div>
+      </div>
+    </div>
+    <div class="mb-16 lg:max-w-217 lg:mx-auto">
+      {%- paginate customer.addresses by 4 -%}
+        <ul class="!mt-10 lg:!mt-20 md:grid md:grid-cols-2 md:gap-6">
+          {% for address in customer.addresses %}
+            {% render 'customer-address',
+              addres_data: address,
+              index: forloop.index,
+              offset: paginate.current_offset,
+              class: item_class
+            %}
+          {% endfor %}
+        </ul>
+        {%- if paginate.pages > 1 -%}
+          {%- if paginate.parts.size > 0 -%}
+            <div class="mt-5">
+              {% render 'pagination', paginate: paginate %}
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
+
+{% style %}
+  .checkbox input[type='checkbox'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .checkbox input[type='checkbox']:checked + label:before {
+    background-color: #3c4c5f;
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "t:sections.main-addresses.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,7 @@
+.github
+.vscode
+assets
+adastra.liquid
+node_modules
+pnpm-lock.yaml
+.theme-check.yml

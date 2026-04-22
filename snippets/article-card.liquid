@@ -1,0 +1,40 @@
+{% liquid
+  if class == blank
+    assign class = 'col-span-3'
+  endif
+%}
+
+<div class="{{ class }}{% if view_mode == 'list' %} flex gap-6{% endif %}">
+  <a href="{{ article.url }}" class="block{% if view_mode == 'list' %} basis-[140px] min-w-[140px]{% else %} mb-6 overflow-hidden{% endif %} rounded-3xl">
+    {% if article.image %}
+      <img
+        loading="lazy"
+        class="object-cover w-full transition duration-300 hover:scale-110{% if view_mode == 'list' %} aspect-[35/26]{% else %} aspect-[4/3]{% endif %} rounded-3xl"
+        src="{{ article.image | image_url: width: 410 }}"
+        srcset="{{ article.image | image_url: width: 410 }} 1x, {{ article.image | image_url: width: 820 }} 2x"
+        alt="{{ link.title }}"
+        width="410"
+        height="300"
+      >
+    {% else %}
+    <img
+      loading="lazy"
+      class="object-cover w-full transition duration-300 hover:scale-110{% if view_mode == 'list' %} aspect-[35/26]{% else %} aspect-[4/3]{% endif %} rounded-3xl"
+      src="{{ blog.metafields.custom.article_featured_thumbnail.value | image_url: width: 410 }}"
+      alt="{{ link.title }}"
+      width="410"
+      height="300"
+    >
+    {% endif %}
+  </a>
+  <div {% if view_mode == 'list' %} class="grow flex flex-col-reverse border-b border-police-blue-20" {% endif %}>
+    <p class="text-sm text-police-blue-70 mb-4">{{ article.published_at | date: "%B %e, %Y" }}</p>
+    <h4 class="{% if view_mode == 'list' %}lg:text-lg text-base line-clamp-2 mb-2 font-medium{% else %}line-clamp-3 mb-4 lg:min-h-24{% endif %}">
+      <a class="block hover:underline" href="{{ article.url }}">{{ article.title }}</a>
+    </h4>
+  </div>
+  {% if view_mode != 'list' %}
+    <p class="line-clamp-2 mb-4">{{ article.content | strip | strip_html | truncate: 150 }}</p>
+    <a href="{{ article.url }}" class="text-persian-blue text-base underline hover:no-underline active:underline disabled:opacity-30 uppercase font-medium tracking-wide">Read More</a>
+  {% endif %}
+</div>
