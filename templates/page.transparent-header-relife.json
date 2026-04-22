@@ -270,7 +270,7 @@
           "settings": {
             "icon": "shopify://shop_images/icon-quality.svg",
             "title": "Quality",
-            "description": "FDA 510(k)-cleared reprocessing with a traceable chain of custody",
+            "description": "FDA cleared reprocessing with a traceable chain of custody",
             "description_max_width_mob": 0,
             "button_label": "Learn More",
             "button_link": "#",
