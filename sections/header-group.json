@@ -13,8 +13,9 @@
   "sections": {
     "top-header": {
       "type": "top-header",
+      "disabled": true,
       "settings": {
-        "message": "Manufacturer Direct Medical Supplies • Order by 2PM for Same-Day Shipping • Transparent Pricing",
+        "message": "",
         "bg-color": "#0d0d63",
         "text-color": "#f4f9fc"
       }
