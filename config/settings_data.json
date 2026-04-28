@@ -48,6 +48,11 @@
         "type": "shopify://apps/omnisend-email-marketing-sms/blocks/app-embed/44704aa2-794f-4c5d-8c8e-039c841158e9",
         "disabled": false,
         "settings": {}
+      },
+      "10641372206048101839": {
+        "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-global-embed/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
