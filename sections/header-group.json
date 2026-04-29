@@ -14,7 +14,7 @@
     "top-header": {
       "type": "top-header",
       "custom_css": [
-        "shopify-section-group-header-group {height: 1px;}"
+        ".top-header {height: 1px;}"
       ],
       "settings": {
         "message": "",
