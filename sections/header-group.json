@@ -15,12 +15,12 @@
       "type": "top-header",
       "disabled": true,
       "custom_css": [
-        ".top-header {height: 1px;}"
+        ".top-header {}"
       ],
       "settings": {
         "message": "",
-        "bg-color": "#ffffff",
-        "text-color": "#ffffff"
+        "bg-color": "#0d0d63",
+        "text-color": "#f4f9fc"
       }
     },
     "main-header": {
