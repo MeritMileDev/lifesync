@@ -13,6 +13,7 @@
   "sections": {
     "top-header": {
       "type": "top-header",
+      "disabled": true,
       "custom_css": [
         ".top-header {height: 1px;}"
       ],
