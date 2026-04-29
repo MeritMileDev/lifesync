@@ -14,7 +14,7 @@
     "top-header": {
       "type": "top-header",
       "custom_css": [
-        "section {height: 1px;}"
+        ". {height: 1px;}"
       ],
       "settings": {
         "message": "",
