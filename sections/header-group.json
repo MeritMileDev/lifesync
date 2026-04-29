@@ -13,6 +13,7 @@
   "sections": {
     "top-header": {
       "type": "top-header",
+      "disabled": true,
       "settings": {
         "message": "",
         "bg-color": "#0d0d63",
