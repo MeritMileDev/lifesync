@@ -55,7 +55,7 @@
   {% endunless %}
 
   {% if product.has_only_default_variant %}
-    <div class="mb-2.5 mt-1.5 text-sm leading-none text-police-blue xl:mb-6 xl:mt-5.5">
+    <div class="mb-2.5 mt-1.5 text-sm leading-none text-white xl:mb-6 xl:mt-5.5">
       <span class="text-police-blue-70">{{ 'products.product.sku_label' | t }}</span>
       <span>{{ product.selected_or_first_available_variant.sku }}</span>
     </div>
