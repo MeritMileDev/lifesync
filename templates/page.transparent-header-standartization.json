@@ -168,7 +168,7 @@
           "type": "card",
           "settings": {
             "card_image_mobile": "shopify://shop_images/shop-by-cardiac.webp",
-            "card_link": "shopify://products/5-leads-radiolucent-ecg-leadwires",
+            "card_link": "shopify://products/5-lead-radiolucent-shielded-ecg-leadwires",
             "heading": "",
             "text_max-width": 300,
             "title": "Cardiac Catheterization",
