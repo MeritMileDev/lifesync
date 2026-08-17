@@ -97,5 +97,13 @@
   },
   "presets": {
     "Default": []
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".card {border-radius: 30px}",
+      "[x-data=\"stickyHeader\"] {position: sticky !important; top: 0 !important; z-index: 30 !important;}",
+      ".desktop-header-opaque {position: static !important;}",
+      "header.relative {padding-top: 0 !important;}"
+    ]
   }
 }
