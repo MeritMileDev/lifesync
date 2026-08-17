@@ -11,6 +11,9 @@
   "sections": {
     "main": {
       "type": "contact-form",
+      "custom_css": [
+        "h2 {font-size: 32px; }"
+      ],
       "settings": {
         "title": "Contact LifeSync",
         "subtitle": "For product complaints or returns, send email to: customerservice@lifesync.com",
