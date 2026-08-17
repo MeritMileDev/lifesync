@@ -12,7 +12,7 @@
     "main": {
       "type": "contact-form",
       "custom_css": [
-        "h2 {font-size: 32px; }"
+        ".bg-bright-gray-20.rounded-3xl.px-10.py-10.mt-8 {display: none !important;}"
       ],
       "settings": {
         "title": "Contact LifeSync",
@@ -20,9 +20,36 @@
         "image_desktop": "shopify://shop_images/contact-us.webp",
         "image_mobile": "shopify://shop_images/contact-us.webp"
       }
+    },
+    "17869778377cce24ad": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_Mg7c4n": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "1098949",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_Mg7c4n"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "17869778377cce24ad"
   ]
 }
