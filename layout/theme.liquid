@@ -1,6 +1,19 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-  <head>
+  <head> <script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var hasUTM = utmKeys.some(function(key) { return params.get(key); });
+  if (hasUTM) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (90 * 24 * 60 * 60 * 1000));
+    utmKeys.forEach(function(key) {
+      document.cookie = key + '=' + encodeURIComponent(params.get(key) || '') + ';expires=' + expires.toUTCString() + ';path=/';
+    });
+  }
+})();
+</script>
 <script src="https://sapi.negate.io/script/mEvFFw8BYSu95MSeCFdy3w==?shop=5fd081-35.myshopify.com"></script> <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
