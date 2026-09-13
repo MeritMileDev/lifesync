@@ -122,7 +122,7 @@
             {% if product.variants.size > 1 %}
               {% render 'add-to-cart-button' %}
             {% elsif product.selected_or_first_available_variant.available != false and product.first_available_variant.price > 0 %}
-              {% render 'add-to-cart-button-simple-product', product, class: 'grow' %}
+              {% render 'add-to-cart-button-simple-product', class: 'grow' %}
             {% endif %}
           {% else %}
             <div class="flex">
@@ -169,7 +169,7 @@
                 and product.first_available_variant.price > 0
                 and product.selected_or_first_available_variant.inventory_quantity > 0
               %}
-                {% render 'add-to-cart-button-simple-product', product, class: 'grow' %}
+                {% render 'add-to-cart-button-simple-product', class: 'grow' %}
               {% endif %}
             </div>
           </template>
@@ -272,3 +272,16 @@
     margin: 0;
   }]
 {% endstyle %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'add-to-cart-button-simple-product', product, class: 'grow' %}"
+  to: "{% render 'add-to-cart-button-simple-product', class: 'grow' %}"
+  position: 4751..4814
+- from: "{% render 'add-to-cart-button-simple-product', product, class: 'grow' %}"
+  to: "{% render 'add-to-cart-button-simple-product', class: 'grow' %}"
+  position: 6979..7042
+{% endcomment %}
