@@ -17,11 +17,11 @@
       >
         <div class="items-start xl:grid xl:grid-cols-12 xl:gap-6">
           <div class="product-media relative xl:col-span-7">
-            {% render 'product-gallery', product %}
+            {% render 'product-gallery' %}
           </div>
 
           <div class="product-info xl:sticky xl:top-15 xl:col-span-5 xl:row-span-5 2xl:pl-17.5">
-            {% render 'product-info', product, section_blocks: section.blocks %}
+            {% render 'product-info', section_blocks: section.blocks %}
           </div>
 
           <div class="xl:col-span-7">
@@ -222,3 +222,16 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-gallery', product %}"
+  to: "{% render 'product-gallery' %}"
+  position: 689..719
+- from: "{% render 'product-info', product, section_blocks: section.blocks %}"
+  to: "{% render 'product-info', section_blocks: section.blocks %}"
+  position: 847..906
+{% endcomment %}
