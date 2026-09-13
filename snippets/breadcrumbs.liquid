@@ -134,7 +134,7 @@
                 </span>
               </li>
 
-            {% when 'collection' and collection.handle %}
+            {% when 'collection' %}
               {% liquid
                 assign first_level_menu = nill
                 assign second_level_menu = nill
@@ -310,3 +310,13 @@
     </style>
   {% endif %}
 {% endunless %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% when 'collection' and collection.handle %}"
+  to: "{% when 'collection' %}"
+  position: 6153..6176
+{% endcomment %}
