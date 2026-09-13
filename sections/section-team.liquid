@@ -131,14 +131,7 @@
         </div>
         <div class="flex gap-6 items-center">
           <div class="">
-            {% render 'picture',
-            image_mobile: block.settings.popup_image,
-            image_desktop: block.settings.popup_image,
-            is_full_size: false,
-            lazy: 'eager',
-            class: 'w-full', 
-            style="border-radius: 50%"
-            %}
+            {% render 'picture', image_mobile: block.settings.popup_image, image_desktop: block.settings.popup_image, is_full_size: false, lazy: 'eager', class: 'w-full', border-radius: renamed_variable_50 %}
           </div>
           <div class="">
             <h4>{{ block.settings.name }}</h4>
@@ -262,3 +255,18 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'picture',\n            image_mobile: block.settings.popup_image,\n
+    \           image_desktop: block.settings.popup_image,\n            is_full_size:
+    false,\n            lazy: 'eager',\n            class: 'w-full', \n            style=\"border-radius:
+    50%\"\n            %}"
+  to: "{% render 'picture', image_mobile: block.settings.popup_image, image_desktop:
+    block.settings.popup_image, is_full_size: false, lazy: 'eager', class: 'w-full',
+    border-radius: renamed_variable_50 %}"
+  position: 6042..6238
+{% endcomment %}
